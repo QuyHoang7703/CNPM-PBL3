@@ -29,20 +29,24 @@ namespace CNPM_PBL3
 
         private void picture_Invisible_Click(object sender, EventArgs e)
         {
-            if (guna2TextBox_pasword.PasswordChar == '\0')
-            {
-                picture_Visible.BringToFront();
-                guna2TextBox_pasword.PasswordChar = '•';
-            }
+            picture_Visible.BringToFront();
+            guna2TextBox_pasword.PasswordChar = '•';
+            //if (guna2TextBox_pasword.PasswordChar == '\0')
+            //{
+            //    picture_Visible.BringToFront();
+            //    guna2TextBox_pasword.PasswordChar = '•';
+            //}
         }
 
         private void picture_Visible_Click_1(object sender, EventArgs e)
         {
-            if (guna2TextBox_pasword.PasswordChar == '•')
-            {
-                picture_Invisible.BringToFront();
-                guna2TextBox_pasword.PasswordChar = '\0';
-            }
+            picture_Invisible.BringToFront();
+            guna2TextBox_pasword.PasswordChar = '\0';
+            //if (guna2TextBox_pasword.PasswordChar == '•')
+            //{
+            //    picture_Invisible.BringToFront();
+            //    guna2TextBox_pasword.PasswordChar = '\0';
+            //}
         }
 
         private void guna2PictureBox2_Click(object sender, EventArgs e)

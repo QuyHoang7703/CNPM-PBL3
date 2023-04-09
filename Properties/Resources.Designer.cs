@@ -63,6 +63,46 @@ namespace CNPM_PBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bill {
+            get {
+                object obj = ResourceManager.GetObject("bill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bill_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("bill-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap customers {
+            get {
+                object obj = ResourceManager.GetObject("customers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap customers_removebg_preview__1_ {
+            get {
+                object obj = ResourceManager.GetObject("customers-removebg-preview (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dh1 {
             get {
                 object obj = ResourceManager.GetObject("dh1", resourceCulture);
@@ -86,6 +126,16 @@ namespace CNPM_PBL3.Properties {
         internal static System.Drawing.Bitmap dh3 {
             get {
                 object obj = ResourceManager.GetObject("dh3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mũi_tên_hướng_xuống {
+            get {
+                object obj = ResourceManager.GetObject("mũi tên hướng xuống", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

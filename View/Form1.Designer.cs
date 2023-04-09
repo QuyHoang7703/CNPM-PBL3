@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
@@ -45,8 +44,8 @@
             this.guna2TextBox_pasword = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox_username = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button_ForgotPassword = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -54,13 +53,14 @@
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel_quenMK.SuspendLayout();
             this.panel_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_Visible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_Invisible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -72,25 +72,13 @@
             // 
             this.guna2ShadowForm1.TargetForm = this;
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(-1, -4);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(366, 475);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
-            // 
             // guna2ControlBox1
             // 
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox1.BackColor = System.Drawing.Color.White;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.White;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(787, 12);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(762, 8);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(31, 29);
             this.guna2ControlBox1.TabIndex = 7;
@@ -102,7 +90,7 @@
             this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.White;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(713, 12);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(691, 8);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(31, 29);
             this.guna2ControlBox2.TabIndex = 8;
@@ -119,6 +107,7 @@
             // panel_quenMK
             // 
             this.panel_quenMK.BackColor = System.Drawing.Color.Transparent;
+            this.panel_quenMK.Controls.Add(this.panel_login);
             this.panel_quenMK.Controls.Add(this.guna2CirclePictureBox2);
             this.panel_quenMK.Controls.Add(this.guna2TextBox3);
             this.panel_quenMK.Controls.Add(this.guna2TextBox4);
@@ -147,7 +136,7 @@
             this.panel_login.Controls.Add(this.label1);
             this.panel_login.Controls.Add(this.guna2GradientButton1);
             this.panel_login.FillColor = System.Drawing.Color.White;
-            this.panel_login.Location = new System.Drawing.Point(439, 40);
+            this.panel_login.Location = new System.Drawing.Point(0, 0);
             this.panel_login.Name = "panel_login";
             this.panel_login.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
             this.panel_login.ShadowDepth = 80;
@@ -262,6 +251,16 @@
             this.guna2Button_ForgotPassword.Text = "Forgot Password?";
             this.guna2Button_ForgotPassword.Click += new System.EventHandler(this.guna2Button_ForgotPassword_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(104, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 40);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "User Login";
+            // 
             // guna2GradientButton1
             // 
             this.guna2GradientButton1.Animated = true;
@@ -280,16 +279,6 @@
             this.guna2GradientButton1.Size = new System.Drawing.Size(219, 45);
             this.guna2GradientButton1.TabIndex = 3;
             this.guna2GradientButton1.Text = "Login";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(104, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 40);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "User Login";
             // 
             // guna2CirclePictureBox2
             // 
@@ -407,10 +396,22 @@
             this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
             this.guna2ControlBox3.FillColor = System.Drawing.Color.White;
             this.guna2ControlBox3.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(747, 12);
+            this.guna2ControlBox3.Location = new System.Drawing.Point(728, 8);
             this.guna2ControlBox3.Name = "guna2ControlBox3";
             this.guna2ControlBox3.Size = new System.Drawing.Size(31, 29);
             this.guna2ControlBox3.TabIndex = 8;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(-1, -4);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(366, 475);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // Form1
             // 
@@ -421,7 +422,6 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(830, 471);
-            this.Controls.Add(this.panel_login);
             this.Controls.Add(this.panel_quenMK);
             this.Controls.Add(this.guna2ControlBox3);
             this.Controls.Add(this.guna2ControlBox2);
@@ -433,7 +433,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panel_quenMK.ResumeLayout(false);
             this.panel_quenMK.PerformLayout();
             this.panel_login.ResumeLayout(false);
@@ -442,6 +441,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picture_Visible)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_Invisible)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
