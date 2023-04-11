@@ -107,7 +107,6 @@
             // panel_quenMK
             // 
             this.panel_quenMK.BackColor = System.Drawing.Color.Transparent;
-            this.panel_quenMK.Controls.Add(this.panel_login);
             this.panel_quenMK.Controls.Add(this.guna2CirclePictureBox2);
             this.panel_quenMK.Controls.Add(this.guna2TextBox3);
             this.panel_quenMK.Controls.Add(this.guna2TextBox4);
@@ -136,7 +135,7 @@
             this.panel_login.Controls.Add(this.label1);
             this.panel_login.Controls.Add(this.guna2GradientButton1);
             this.panel_login.FillColor = System.Drawing.Color.White;
-            this.panel_login.Location = new System.Drawing.Point(0, 0);
+            this.panel_login.Location = new System.Drawing.Point(150, 46);
             this.panel_login.Name = "panel_login";
             this.panel_login.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
             this.panel_login.ShadowDepth = 80;
@@ -422,6 +421,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(830, 471);
+            this.Controls.Add(this.panel_login);
             this.Controls.Add(this.panel_quenMK);
             this.Controls.Add(this.guna2ControlBox3);
             this.Controls.Add(this.guna2ControlBox2);

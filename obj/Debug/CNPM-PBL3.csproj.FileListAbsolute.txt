@@ -24,3 +24,21 @@ D:\BT WinForm (at school)\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.CoreCompileInputs
 D:\BT WinForm (at school)\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.CopyComplete
 D:\BT WinForm (at school)\CNPM-PBL3\obj\Debug\CNPM-PBL3.exe
 D:\BT WinForm (at school)\CNPM-PBL3\obj\Debug\CNPM-PBL3.pdb
+D:\New folder\CNPM-PBL3\bin\Debug\CNPM-PBL3.exe.config
+D:\New folder\CNPM-PBL3\bin\Debug\CNPM-PBL3.exe
+D:\New folder\CNPM-PBL3\bin\Debug\CNPM-PBL3.pdb
+D:\New folder\CNPM-PBL3\bin\Debug\Guna.UI2.dll
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.AssemblyReference.cache
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.SuggestedBindingRedirects.cache
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.AddCustomer.resources
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.Bill.resources
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.Form1.resources
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.Properties.Resources.resources
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.GDChinh.resources
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.GenerateResource.cache
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.CoreCompileInputs.cache
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.CopyComplete
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM-PBL3.exe
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM-PBL3.pdb
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.Caidat.resources
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.caidatcuaQL.resources
