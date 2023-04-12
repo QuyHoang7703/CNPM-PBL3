@@ -18,7 +18,7 @@ namespace CNPM_PBL3
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             /* Application.Run(new Form1());*/
-            Application.Run(new caidatcuaQL());
+            //Application.Run(new caidatcuaQL());
             //Application.Run(new GDChinh());
         }
     }
