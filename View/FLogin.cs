@@ -81,7 +81,7 @@ namespace CNPM_PBL3
 
             }else
             {
-                MessageBox.Show("Tài khoản và mật khẩu không đúng!");
+                MessageBox.Show("Tài khoản và mật khẩu không đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             

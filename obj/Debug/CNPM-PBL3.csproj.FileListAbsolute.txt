@@ -108,3 +108,25 @@ D:\1213123\obj\Debug\CNPM-PBL3.csproj.CoreCompileInputs.cache
 D:\1213123\obj\Debug\CNPM-PBL3.csproj.CopyComplete
 D:\1213123\obj\Debug\CNPM-PBL3.exe
 D:\1213123\obj\Debug\CNPM-PBL3.pdb
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\bin\Debug\CNPM-PBL3.exe.config
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\bin\Debug\CNPM-PBL3.exe
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\bin\Debug\CNPM-PBL3.pdb
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\bin\Debug\EntityFramework.dll
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\bin\Debug\Guna.UI2.dll
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\bin\Debug\EntityFramework.xml
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\obj\Debug\CNPM-PBL3.csproj.AssemblyReference.cache
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\obj\Debug\CNPM-PBL3.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\obj\Debug\CNPM_PBL3.View.AddCustomer.resources
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\obj\Debug\CNPM_PBL3.View.FBill.resources
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\obj\Debug\CNPM_PBL3.View.Caidat.resources
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\obj\Debug\CNPM_PBL3.View.SettingOfManager.resources
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\obj\Debug\CNPM_PBL3.FLogin.resources
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\obj\Debug\CNPM_PBL3.Properties.Resources.resources
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\obj\Debug\CNPM_PBL3.View.FMainManager.resources
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\obj\Debug\CNPM-PBL3.csproj.GenerateResource.cache
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\obj\Debug\CNPM-PBL3.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\obj\Debug\CNPM-PBL3.csproj.CopyComplete
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\obj\Debug\CNPM-PBL3.exe
+C:\Users\Admin\OneDrive\Máy tính\PBL3\Test\obj\Debug\CNPM-PBL3.pdb
