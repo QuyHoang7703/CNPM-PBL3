@@ -118,6 +118,12 @@
     <Compile Include="View\Caidat.Designer.cs">
       <DependentUpon>Caidat.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\QLNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLNV.Designer.cs">
+      <DependentUpon>QLNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SettingOfManager.cs">
       <SubType>Form</SubType>
     </Compile>
