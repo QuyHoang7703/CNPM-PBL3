@@ -19,7 +19,7 @@ namespace CNPM_PBL3
             Application.SetCompatibleTextRenderingDefault(false);
             /* Application.Run(new Form1());*/
             //Application.Run(new caidatcuaQL());
-           // Application.Run(new FLogin()); test source tree ne lololololololo
+           // Application.Run(new FLogin()); test source tree ne lololololololo lalalala
 
         }
     }
