@@ -56,14 +56,14 @@
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
             this.guna2GradientPanel1.Location = new System.Drawing.Point(1, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(200, 900);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(839, 906);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
             // PanelMain
             // 
-            this.PanelMain.Location = new System.Drawing.Point(197, 3);
+            this.PanelMain.Location = new System.Drawing.Point(267, 0);
             this.PanelMain.Name = "PanelMain";
-            this.PanelMain.Size = new System.Drawing.Size(900, 900);
+            this.PanelMain.Size = new System.Drawing.Size(959, 903);
             this.PanelMain.TabIndex = 2;
             // 
             // guna2Button7

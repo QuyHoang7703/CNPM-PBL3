@@ -124,12 +124,6 @@
     <Compile Include="View\QLNV.Designer.cs">
       <DependentUpon>QLNV.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SettingOfManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SettingOfManager.Designer.cs">
-      <DependentUpon>SettingOfManager.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,9 +146,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Caidat.resx">
       <DependentUpon>Caidat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\SettingOfManager.resx">
-      <DependentUpon>SettingOfManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
