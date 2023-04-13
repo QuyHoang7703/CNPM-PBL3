@@ -42,3 +42,25 @@ D:\New folder\CNPM-PBL3\obj\Debug\CNPM-PBL3.exe
 D:\New folder\CNPM-PBL3\obj\Debug\CNPM-PBL3.pdb
 D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.Caidat.resources
 D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.caidatcuaQL.resources
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\bin\Debug\CNPM-PBL3.exe.config
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\bin\Debug\CNPM-PBL3.exe
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\bin\Debug\CNPM-PBL3.pdb
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\bin\Debug\Guna.UI2.dll
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.AssemblyReference.cache
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.SuggestedBindingRedirects.cache
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.AddCustomer.resources
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.Caidat.resources
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\obj\Debug\CNPM_PBL3.Properties.Resources.resources
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.GenerateResource.cache
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.CoreCompileInputs.cache
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.CopyComplete
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\obj\Debug\CNPM-PBL3.exe
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\obj\Debug\CNPM-PBL3.pdb
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FBill.resources
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\obj\Debug\CNPM_PBL3.FLogin.resources
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\bin\Debug\EntityFramework.dll
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\bin\Debug\EntityFramework.xml
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FMainManager.resources
+C:\Users\QUYHOANG\Desktop\pbl3-cnpm\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.SettingOfManager.resources

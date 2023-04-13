@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="593515e6433e44baa90c4b1ae4d16eee" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.ChiTietHoaDon" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ChiTietTaiKhoan" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DongHo" Width="1.5" PointX="6" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HoaDon" Width="1.5" PointX="6" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.KhachHang" Width="1.5" PointX="3.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TaiKhoan" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ThuongHieu" Width="1.5" PointX="3.75" PointY="13" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_ChiTietHoaDon_DongHo" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ChiTietHoaDon_HoaDon" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ChiTietTaiKhoan_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_DongHo_ThuongHieu" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_HoaDon_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_HoaDon_TaiKhoan" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

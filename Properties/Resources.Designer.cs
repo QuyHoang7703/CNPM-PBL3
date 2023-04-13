@@ -63,6 +63,36 @@ namespace CNPM_PBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1664270312_201_Nhung_Hinh_Anh_Dong_Ho_Dep_Nhat_Va_Cach_Chup {
+            get {
+                object obj = ResourceManager.GetObject("1664270312_201_Nhung-Hinh-Anh-Dong-Ho-Dep-Nhat-Va-Cach-Chup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1664270312_201_Nhung_Hinh_Anh_Dong_Ho_Dep_Nhat_Va_Cach_Chup1 {
+            get {
+                object obj = ResourceManager.GetObject("1664270312_201_Nhung-Hinh-Anh-Dong-Ho-Dep-Nhat-Va-Cach-Chup1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _371_3711927_people_working_together_cartoon_hd_png_download {
+            get {
+                object obj = ResourceManager.GetObject("371-3711927_people-working-together-cartoon-hd-png-download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bill {
             get {
                 object obj = ResourceManager.GetObject("bill", resourceCulture);
@@ -76,6 +106,30 @@ namespace CNPM_PBL3.Properties {
         internal static System.Drawing.Bitmap bill_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("bill-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap business_people_working_in_office_talking_communicating_and_discussing_office_employees_men_and_women_cooperative_teamwork_partnership_and_cooperation_flat_cartoon_illustration_free_vector {
+            get {
+                object obj = ResourceManager.GetObject("business-people-working-in-office-talking-communicating-and-discussing-office-emp" +
+                        "loyees-men-and-women-cooperative-teamwork-partnership-and-cooperation-flat-carto" +
+                        "on-illustration-free-vector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap business_people_working_in_office_talking_communicating_and_discussing_office_employees_men_and_women_cooperative_teamwork_partnership_and_cooperation_flat_cartoon_illustration_free_vector1 {
+            get {
+                object obj = ResourceManager.GetObject("business-people-working-in-office-talking-communicating-and-discussing-office-emp" +
+                        "loyees-men-and-women-cooperative-teamwork-partnership-and-cooperation-flat-carto" +
+                        "on-illustration-free-vector1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

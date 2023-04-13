@@ -33,13 +33,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -53,17 +62,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\QLTKBLL.cs" />
+    <Compile Include="ChiTietHoaDon.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietTaiKhoan.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\QLTKDAL.cs" />
+    <Compile Include="DongHo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDon.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoan.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThuongHieu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="View\AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\AddCustomer.Designer.cs">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Bill.cs">
+    <Compile Include="View\FBill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Bill.Designer.cs">
-      <DependentUpon>Bill.cs</DependentUpon>
+    <Compile Include="View\FBill.Designer.cs">
+      <DependentUpon>FBill.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Caidat.cs">
       <SubType>Form</SubType>
@@ -71,40 +118,40 @@
     <Compile Include="View\Caidat.Designer.cs">
       <DependentUpon>Caidat.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\caidatcuaQL.cs">
+    <Compile Include="View\SettingOfManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\caidatcuaQL.Designer.cs">
-      <DependentUpon>caidatcuaQL.cs</DependentUpon>
+    <Compile Include="View\SettingOfManager.Designer.cs">
+      <DependentUpon>SettingOfManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form1.cs">
+    <Compile Include="View\FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="View\FLogin.Designer.cs">
+      <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\GDChinh.cs">
+    <Compile Include="View\FMainManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\GDChinh.Designer.cs">
-      <DependentUpon>GDChinh.cs</DependentUpon>
+    <Compile Include="View\FMainManager.Designer.cs">
+      <DependentUpon>FMainManager.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Bill.resx">
-      <DependentUpon>Bill.cs</DependentUpon>
+    <EmbeddedResource Include="View\FBill.resx">
+      <DependentUpon>FBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Caidat.resx">
       <DependentUpon>Caidat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\caidatcuaQL.resx">
-      <DependentUpon>caidatcuaQL.cs</DependentUpon>
+    <EmbeddedResource Include="View\SettingOfManager.resx">
+      <DependentUpon>SettingOfManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="View\FLogin.resx">
+      <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -116,9 +163,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\GDChinh.resx">
-      <DependentUpon>GDChinh.cs</DependentUpon>
+    <EmbeddedResource Include="View\FMainManager.resx">
+      <DependentUpon>FMainManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -157,5 +211,27 @@
   <ItemGroup>
     <None Include="Resources\bill-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business-people-working-in-office-talking-communicating-and-discussing-office-employees-men-and-women-cooperative-teamwork-partnership-and-cooperation-flat-cartoon-illustration-free-vector1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\371-3711927_people-working-together-cartoon-hd-png-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
