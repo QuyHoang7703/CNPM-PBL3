@@ -22,5 +22,6 @@ namespace CNPM_PBL3
         public virtual ChiTietHoaDon ChiTietHoaDon { get; set; }
         public virtual KhachHang KhachHang { get; set; }
         public virtual TaiKhoan TaiKhoan { get; set; }
+        // hii
     }
 }
