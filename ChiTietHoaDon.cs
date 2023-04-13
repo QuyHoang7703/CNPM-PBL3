@@ -22,5 +22,6 @@ namespace CNPM_PBL3
     
         public virtual DongHo DongHo { get; set; }
         public virtual HoaDon HoaDon { get; set; }
+        // sua o day
     }
 }
