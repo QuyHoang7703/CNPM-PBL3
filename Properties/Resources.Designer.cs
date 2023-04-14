@@ -193,5 +193,16 @@ namespace CNPM_PBL3.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_employee_icon_vector_illustration_in_glyph_style_for_any_purpose_png_image_998315 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-employee-icon-vector-illustration-in-glyph-style-for-any-purpose-png-imag" +
+                        "e_998315", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

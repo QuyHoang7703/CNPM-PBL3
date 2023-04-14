@@ -118,43 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="dh3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dh3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1664270312_201_Nhung-Hinh-Anh-Dong-Ho-Dep-Nhat-Va-Cach-Chup1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1664270312_201_Nhung-Hinh-Anh-Dong-Ho-Dep-Nhat-Va-Cach-Chup1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mũi tên hướng xuống" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mũi tên hướng xuống.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1664270312_201_Nhung-Hinh-Anh-Dong-Ho-Dep-Nhat-Va-Cach-Chup" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1664270312_201_Nhung-Hinh-Anh-Dong-Ho-Dep-Nhat-Va-Cach-Chup.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="business-people-working-in-office-talking-communicating-and-discussing-office-employees-men-and-women-cooperative-teamwork-partnership-and-cooperation-flat-cartoon-illustration-free-vector1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\business-people-working-in-office-talking-communicating-and-discussing-office-employees-men-and-women-cooperative-teamwork-partnership-and-cooperation-flat-cartoon-illustration-free-vector1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="customers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dh2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dh2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bill-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bill-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="customers-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\customers-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bill" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="business-people-working-in-office-talking-communicating-and-discussing-office-employees-men-and-women-cooperative-teamwork-partnership-and-cooperation-flat-cartoon-illustration-free-vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\business-people-working-in-office-talking-communicating-and-discussing-office-employees-men-and-women-cooperative-teamwork-partnership-and-cooperation-flat-cartoon-illustration-free-vector.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="371-3711927_people-working-together-cartoon-hd-png-download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\371-3711927_people-working-together-cartoon-hd-png-download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dh1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dh1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bill-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bill-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="business-people-working-in-office-talking-communicating-and-discussing-office-employees-men-and-women-cooperative-teamwork-partnership-and-cooperation-flat-cartoon-illustration-free-vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\business-people-working-in-office-talking-communicating-and-discussing-office-employees-men-and-women-cooperative-teamwork-partnership-and-cooperation-flat-cartoon-illustration-free-vector.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="business-people-working-in-office-talking-communicating-and-discussing-office-employees-men-and-women-cooperative-teamwork-partnership-and-cooperation-flat-cartoon-illustration-free-vector1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\business-people-working-in-office-talking-communicating-and-discussing-office-employees-men-and-women-cooperative-teamwork-partnership-and-cooperation-flat-cartoon-illustration-free-vector1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="371-3711927_people-working-together-cartoon-hd-png-download" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\371-3711927_people-working-together-cartoon-hd-png-download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dh2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dh2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1664270312_201_Nhung-Hinh-Anh-Dong-Ho-Dep-Nhat-Va-Cach-Chup1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1664270312_201_Nhung-Hinh-Anh-Dong-Ho-Dep-Nhat-Va-Cach-Chup1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1664270312_201_Nhung-Hinh-Anh-Dong-Ho-Dep-Nhat-Va-Cach-Chup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1664270312_201_Nhung-Hinh-Anh-Dong-Ho-Dep-Nhat-Va-Cach-Chup.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mũi tên hướng xuống" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mũi tên hướng xuống.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="customers-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customers-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dh3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dh3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pngtree-employee-icon-vector-illustration-in-glyph-style-for-any-purpose-png-image_998315" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-employee-icon-vector-illustration-in-glyph-style-for-any-purpose-png-image_998315.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

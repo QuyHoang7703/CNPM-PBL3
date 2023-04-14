@@ -118,6 +118,12 @@
     <Compile Include="View\Caidat.Designer.cs">
       <DependentUpon>Caidat.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FClock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FClock.Designer.cs">
+      <DependentUpon>FClock.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\QLNV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,12 +144,6 @@
     <Compile Include="View\FMainManager.Designer.cs">
       <DependentUpon>FMainManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Testgit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Testgit.Designer.cs">
-      <DependentUpon>Testgit.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="View\AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Caidat.resx">
       <DependentUpon>Caidat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FClock.resx">
+      <DependentUpon>FClock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
@@ -169,8 +172,8 @@
     <EmbeddedResource Include="View\FMainManager.resx">
       <DependentUpon>FMainManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Testgit.resx">
-      <DependentUpon>Testgit.cs</DependentUpon>
+    <EmbeddedResource Include="View\QLNV.resx">
+      <DependentUpon>QLNV.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -234,6 +237,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\pngtree-employee-icon-vector-illustration-in-glyph-style-for-any-purpose-png-image_998315.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

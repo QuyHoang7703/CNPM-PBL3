@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CNPM_PBL3.View
 {
-    public partial class Testgit : Form
+    public partial class FClock : Form
     {
-        public Testgit()
+        public FClock()
         {
             InitializeComponent();
         }

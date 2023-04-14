@@ -172,3 +172,4 @@ C:\Users\QUYHOANG\Desktop\pbl3_CK\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.CoreCompi
 C:\Users\QUYHOANG\Desktop\pbl3_CK\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.CopyComplete
 C:\Users\QUYHOANG\Desktop\pbl3_CK\CNPM-PBL3\obj\Debug\CNPM-PBL3.exe
 C:\Users\QUYHOANG\Desktop\pbl3_CK\CNPM-PBL3\obj\Debug\CNPM-PBL3.pdb
+C:\Users\QUYHOANG\Desktop\pbl3_CK\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.Testgit.resources
