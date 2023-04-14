@@ -30,7 +30,8 @@ namespace CNPM_PBL3.View
             currentForm.TopLevel = false;
             currentForm.FormBorderStyle= FormBorderStyle.None;
             currentForm.Dock= DockStyle.Fill;
-            PanelMain.Controls.Add(currentForm);
+          //  panelMain.Controls.Add(currentForm);
+            panelMain.Controls.Add(currentForm);
             currentForm.Show();
 
 
@@ -52,6 +53,11 @@ namespace CNPM_PBL3.View
             this.Dispose();
             FLogin f = new FLogin();
             f.Show();
+        }
+
+        private void PanelMain_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

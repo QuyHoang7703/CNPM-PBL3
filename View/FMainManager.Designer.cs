@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMainManager));
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.PanelMain = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ButSetting = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
@@ -38,13 +37,13 @@
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ButBill = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.BorderRadius = 10;
-            this.guna2GradientPanel1.Controls.Add(this.PanelMain);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button7);
             this.guna2GradientPanel1.Controls.Add(this.guna2ButSetting);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button6);
@@ -56,15 +55,8 @@
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
             this.guna2GradientPanel1.Location = new System.Drawing.Point(1, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(839, 906);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(270, 900);
             this.guna2GradientPanel1.TabIndex = 0;
-            // 
-            // PanelMain
-            // 
-            this.PanelMain.Location = new System.Drawing.Point(267, 0);
-            this.PanelMain.Name = "PanelMain";
-            this.PanelMain.Size = new System.Drawing.Size(959, 903);
-            this.PanelMain.TabIndex = 2;
             // 
             // guna2Button7
             // 
@@ -88,7 +80,7 @@
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.Size = new System.Drawing.Size(250, 60);
             this.guna2Button7.TabIndex = 8;
-            this.guna2Button7.Text = "Cài Đặt";
+            this.guna2Button7.Text = "Thoát";
             this.guna2Button7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.guna2Button7.UseTransparentBackground = true;
             this.guna2Button7.Click += new System.EventHandler(this.guna2Button7_Click);
@@ -259,11 +251,19 @@
             this.guna2Button1.UseTransparentBackground = true;
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
+            // panelMain
+            // 
+            this.panelMain.Location = new System.Drawing.Point(268, 0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(900, 900);
+            this.panelMain.TabIndex = 2;
+            // 
             // FMainManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 900);
+            this.ClientSize = new System.Drawing.Size(1170, 900);
+            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
@@ -285,6 +285,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2ButSetting;
         private Guna.UI2.WinForms.Guna2Button guna2Button7;
-        private Guna.UI2.WinForms.Guna2Panel PanelMain;
+        private System.Windows.Forms.Panel panelMain;
     }
 }
