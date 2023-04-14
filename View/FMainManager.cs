@@ -45,7 +45,7 @@ namespace CNPM_PBL3.View
 
         private void guna2ButSetting_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Caidat());
+            OpenChildForm(new FSetting());
         }
 
         private void guna2Button7_Click(object sender, EventArgs e)

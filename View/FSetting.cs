@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace CNPM_PBL3.View
 {
-    public partial class Caidat : Form
+    public partial class FSetting : Form
     {
-        public Caidat()
+        public FSetting()
         {
             InitializeComponent();
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox6_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

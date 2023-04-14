@@ -112,17 +112,23 @@
     <Compile Include="View\FBill.Designer.cs">
       <DependentUpon>FBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Caidat.cs">
+    <Compile Include="View\FSetting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Caidat.Designer.cs">
-      <DependentUpon>Caidat.cs</DependentUpon>
+    <Compile Include="View\FSetting.Designer.cs">
+      <DependentUpon>FSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FClock.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FClock.Designer.cs">
       <DependentUpon>FClock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FDetailClock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FDetailClock.Designer.cs">
+      <DependentUpon>FDetailClock.cs</DependentUpon>
     </Compile>
     <Compile Include="View\QLNV.cs">
       <SubType>Form</SubType>
@@ -150,11 +156,14 @@
     <EmbeddedResource Include="View\FBill.resx">
       <DependentUpon>FBill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Caidat.resx">
-      <DependentUpon>Caidat.cs</DependentUpon>
+    <EmbeddedResource Include="View\FSetting.resx">
+      <DependentUpon>FSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FClock.resx">
       <DependentUpon>FClock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FDetailClock.resx">
+      <DependentUpon>FDetailClock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>

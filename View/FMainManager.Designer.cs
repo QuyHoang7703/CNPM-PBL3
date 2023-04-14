@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMainManager));
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ButSetting = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
@@ -60,13 +60,6 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(270, 900);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
-            // panelMain
-            // 
-            this.panelMain.Location = new System.Drawing.Point(268, 0);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(900, 900);
-            this.panelMain.TabIndex = 2;
-            // 
             // guna2Button2
             // 
             this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
@@ -74,6 +67,9 @@
             this.guna2Button2.BorderRadius = 20;
             this.guna2Button2.BorderThickness = 1;
             this.guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button2.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.guna2Button2.CheckedState.FillColor = System.Drawing.Color.White;
+            this.guna2Button2.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -81,13 +77,21 @@
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
             this.guna2Button2.Location = new System.Drawing.Point(11, 630);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(250, 60);
             this.guna2Button2.TabIndex = 9;
-            this.guna2Button2.Text = "Nhân viên";
+            this.guna2Button2.Text = "  Nhân viên";
+            // 
+            // panelMain
+            // 
+            this.panelMain.Location = new System.Drawing.Point(268, 0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(1100, 900);
+            this.panelMain.TabIndex = 2;
             // 
             // guna2Button7
             // 
@@ -97,7 +101,7 @@
             this.guna2Button7.BorderThickness = 1;
             this.guna2Button7.CheckedState.BorderColor = System.Drawing.Color.White;
             this.guna2Button7.CheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2Button7.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.guna2Button7.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.guna2Button7.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button7.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -125,7 +129,7 @@
             this.guna2ButSetting.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.guna2ButSetting.CheckedState.BorderColor = System.Drawing.Color.White;
             this.guna2ButSetting.CheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2ButSetting.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.guna2ButSetting.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.guna2ButSetting.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2ButSetting.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2ButSetting.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -153,7 +157,7 @@
             this.guna2Button6.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.guna2Button6.CheckedState.BorderColor = System.Drawing.Color.White;
             this.guna2Button6.CheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2Button6.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.guna2Button6.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -168,7 +172,7 @@
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.Size = new System.Drawing.Size(250, 60);
             this.guna2Button6.TabIndex = 6;
-            this.guna2Button6.Text = " Khách Hàng";
+            this.guna2Button6.Text = "     Khách Hàng";
             this.guna2Button6.UseTransparentBackground = true;
             // 
             // guna2Button4
@@ -180,7 +184,7 @@
             this.guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.guna2Button4.CheckedState.BorderColor = System.Drawing.Color.White;
             this.guna2Button4.CheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2Button4.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.guna2Button4.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -207,7 +211,7 @@
             this.guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.guna2Button3.CheckedState.BorderColor = System.Drawing.Color.White;
             this.guna2Button3.CheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2Button3.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.guna2Button3.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -234,7 +238,7 @@
             this.guna2ButBill.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.guna2ButBill.CheckedState.BorderColor = System.Drawing.Color.White;
             this.guna2ButBill.CheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2ButBill.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.guna2ButBill.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.guna2ButBill.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2ButBill.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2ButBill.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -263,7 +267,7 @@
             this.guna2Button1.Checked = true;
             this.guna2Button1.CheckedState.BorderColor = System.Drawing.Color.White;
             this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2Button1.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.guna2Button1.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -286,7 +290,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1170, 900);
+            this.ClientSize = new System.Drawing.Size(1370, 900);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

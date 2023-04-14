@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace CNPM_PBL3.View
 {
-    public partial class FClock : Form
+    public partial class FDetailClock : Form
     {
-        public FClock()
+        public FDetailClock()
         {
             InitializeComponent();
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
