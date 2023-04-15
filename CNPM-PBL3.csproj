@@ -100,11 +100,11 @@
     <Compile Include="ThuongHieu.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="View\AddCustomer.cs">
+    <Compile Include="View\FAddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\AddCustomer.Designer.cs">
-      <DependentUpon>AddCustomer.cs</DependentUpon>
+    <Compile Include="View\FAddCustomer.Designer.cs">
+      <DependentUpon>FAddCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FBill.cs">
       <SubType>Form</SubType>
@@ -136,11 +136,11 @@
     <Compile Include="View\FStatistical.Designer.cs">
       <DependentUpon>FStatistical.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\QLNV.cs">
+    <Compile Include="View\FStaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\QLNV.Designer.cs">
-      <DependentUpon>QLNV.cs</DependentUpon>
+    <Compile Include="View\FStaff.Designer.cs">
+      <DependentUpon>FStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FLogin.cs">
       <SubType>Form</SubType>
@@ -156,8 +156,8 @@
     <Compile Include="View\FMainManager.Designer.cs">
       <DependentUpon>FMainManager.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\AddCustomer.resx">
-      <DependentUpon>AddCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="View\FAddCustomer.resx">
+      <DependentUpon>FAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FBill.resx">
       <DependentUpon>FBill.cs</DependentUpon>
@@ -190,8 +190,8 @@
     <EmbeddedResource Include="View\FStatistical.resx">
       <DependentUpon>FStatistical.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\QLNV.resx">
-      <DependentUpon>QLNV.cs</DependentUpon>
+    <EmbeddedResource Include="View\FStaff.resx">
+      <DependentUpon>FStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

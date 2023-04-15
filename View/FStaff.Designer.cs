@@ -1,6 +1,6 @@
 ﻿namespace CNPM_PBL3.View
 {
-    partial class QLNV
+    partial class FStaff
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLNV));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FStaff));
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -116,7 +116,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(193, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(423, 38);
+            this.label1.Size = new System.Drawing.Size(407, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "DANH SÁCH NHÂN VIÊN";
             // 
@@ -240,10 +240,10 @@
             this.guna2ComboBox1.Size = new System.Drawing.Size(279, 36);
             this.guna2ComboBox1.TabIndex = 13;
             // 
-            // QLNV
+            // FStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
             this.ClientSize = new System.Drawing.Size(1100, 900);
             this.Controls.Add(this.guna2ComboBox1);
@@ -256,7 +256,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2DataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "QLNV";
+            this.Name = "FStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLNV";
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();

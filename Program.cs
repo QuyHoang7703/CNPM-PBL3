@@ -21,7 +21,8 @@ namespace CNPM_PBL3
             // Application.Run(new FSetting());
             //Application.Run(new FLogin());
             // Application.Run(new FClock());
-            Application.Run(new FStatistical());
+
+            Application.Run(new FMainManager());
 
         }
     }

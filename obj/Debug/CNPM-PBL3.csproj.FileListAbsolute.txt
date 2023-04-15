@@ -222,3 +222,28 @@ C:\Users\Admin\OneDrive\Máy tính\lon\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.Copy
 C:\Users\Admin\OneDrive\Máy tính\lon\CNPM-PBL3\obj\Debug\CNPM-PBL3.exe
 C:\Users\Admin\OneDrive\Máy tính\lon\CNPM-PBL3\obj\Debug\CNPM-PBL3.pdb
 C:\Users\Admin\OneDrive\Máy tính\lon\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FStatistical.resources
+D:\PBL3-DongHo\bin\Debug\CNPM-PBL3.exe.config
+D:\PBL3-DongHo\bin\Debug\CNPM-PBL3.exe
+D:\PBL3-DongHo\bin\Debug\CNPM-PBL3.pdb
+D:\PBL3-DongHo\bin\Debug\EntityFramework.dll
+D:\PBL3-DongHo\bin\Debug\EntityFramework.SqlServer.dll
+D:\PBL3-DongHo\bin\Debug\Guna.UI2.dll
+D:\PBL3-DongHo\bin\Debug\EntityFramework.xml
+D:\PBL3-DongHo\bin\Debug\EntityFramework.SqlServer.xml
+D:\PBL3-DongHo\obj\Debug\CNPM-PBL3.csproj.AssemblyReference.cache
+D:\PBL3-DongHo\obj\Debug\CNPM-PBL3.csproj.SuggestedBindingRedirects.cache
+D:\PBL3-DongHo\obj\Debug\CNPM_PBL3.View.FBill.resources
+D:\PBL3-DongHo\obj\Debug\CNPM_PBL3.View.FSetting.resources
+D:\PBL3-DongHo\obj\Debug\CNPM_PBL3.View.FClock.resources
+D:\PBL3-DongHo\obj\Debug\CNPM_PBL3.View.FDetailClock.resources
+D:\PBL3-DongHo\obj\Debug\CNPM_PBL3.FLogin.resources
+D:\PBL3-DongHo\obj\Debug\CNPM_PBL3.Properties.Resources.resources
+D:\PBL3-DongHo\obj\Debug\CNPM_PBL3.View.FMainManager.resources
+D:\PBL3-DongHo\obj\Debug\CNPM_PBL3.View.FStatistical.resources
+D:\PBL3-DongHo\obj\Debug\CNPM-PBL3.csproj.GenerateResource.cache
+D:\PBL3-DongHo\obj\Debug\CNPM-PBL3.csproj.CoreCompileInputs.cache
+D:\PBL3-DongHo\obj\Debug\CNPM-PBL3.csproj.CopyComplete
+D:\PBL3-DongHo\obj\Debug\CNPM-PBL3.exe
+D:\PBL3-DongHo\obj\Debug\CNPM-PBL3.pdb
+D:\PBL3-DongHo\obj\Debug\CNPM_PBL3.View.FStaff.resources
+D:\PBL3-DongHo\obj\Debug\CNPM_PBL3.View.FAddCustomer.resources

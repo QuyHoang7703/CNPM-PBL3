@@ -56,5 +56,23 @@ namespace CNPM_PBL3.View
         {
 
         }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButAddCustomers_Click(object sender, EventArgs e)
+        {
+            
+            FAddCustomer f = new FAddCustomer();
+            f.TopLevel = false;
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.Dock = DockStyle.Fill;
+            this.Controls.Add(f);
+            f.BringToFront();
+           
+            f.Show();
+        }
     }
 }

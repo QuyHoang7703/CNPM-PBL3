@@ -30,7 +30,7 @@ namespace CNPM_PBL3.View
             currentForm.TopLevel = false;
             currentForm.FormBorderStyle= FormBorderStyle.None;
             currentForm.Dock= DockStyle.Fill;
-          //  panelMain.Controls.Add(currentForm);
+         
             panelMain.Controls.Add(currentForm);
             currentForm.Show();
 
@@ -60,6 +60,14 @@ namespace CNPM_PBL3.View
 
         }
 
-       
+        private void guna2ButStaff_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FStaff());
+        }
+
+        private void butClock_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDetailClock());
+        }
     }
 }

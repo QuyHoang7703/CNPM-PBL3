@@ -26,5 +26,10 @@ namespace CNPM_PBL3.View
         {
 
         }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

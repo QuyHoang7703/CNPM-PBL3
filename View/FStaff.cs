@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CNPM_PBL3.View
 {
-    public partial class AddCustomer : Form
+    public partial class FStaff : Form
     {
-        public AddCustomer()
+        public FStaff()
         {
             InitializeComponent();
         }

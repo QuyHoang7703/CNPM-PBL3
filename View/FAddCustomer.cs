@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace CNPM_PBL3.View
 {
-    public partial class QLNV : Form
+    public partial class FAddCustomer : Form
     {
-        public QLNV()
+        public FAddCustomer()
         {
             InitializeComponent();
         }
+
+       
     }
 }
