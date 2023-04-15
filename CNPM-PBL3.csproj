@@ -130,6 +130,12 @@
     <Compile Include="View\FDetailClock.Designer.cs">
       <DependentUpon>FDetailClock.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FStatistical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FStatistical.Designer.cs">
+      <DependentUpon>FStatistical.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\QLNV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </Compile>
     <EmbeddedResource Include="View\FMainManager.resx">
       <DependentUpon>FMainManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FStatistical.resx">
+      <DependentUpon>FStatistical.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\QLNV.resx">
       <DependentUpon>QLNV.cs</DependentUpon>
