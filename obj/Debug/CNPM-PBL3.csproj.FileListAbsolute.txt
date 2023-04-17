@@ -247,3 +247,4 @@ D:\PBL3-DongHo\obj\Debug\CNPM-PBL3.exe
 D:\PBL3-DongHo\obj\Debug\CNPM-PBL3.pdb
 D:\PBL3-DongHo\obj\Debug\CNPM_PBL3.View.FStaff.resources
 D:\PBL3-DongHo\obj\Debug\CNPM_PBL3.View.FAddCustomer.resources
+D:\PBL3-DongHo\obj\Debug\CNPM_PBL3.View.FDetailStaff.resources
