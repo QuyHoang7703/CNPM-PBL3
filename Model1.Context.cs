@@ -30,6 +30,7 @@ namespace CNPM_PBL3
         public virtual DbSet<DongHo> DongHoes { get; set; }
         public virtual DbSet<HoaDon> HoaDons { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
+        public virtual DbSet<KhuyenMai> KhuyenMais { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         public virtual DbSet<ThuongHieu> ThuongHieux { get; set; }
     }

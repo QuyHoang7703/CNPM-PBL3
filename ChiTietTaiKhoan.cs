@@ -20,6 +20,8 @@ namespace CNPM_PBL3
         public string SDT { get; set; }
         public bool GioiTinh { get; set; }
         public string DiaChi { get; set; }
+        public string Email { get; set; }
+        public byte[] AnhDaiDien { get; set; }
     
         public virtual TaiKhoan TaiKhoan { get; set; }
     }

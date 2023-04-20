@@ -12,22 +12,21 @@ namespace CNPM_PBL3
     using System;
     using System.Collections.Generic;
     
-    public partial class KhachHang
+    public partial class KhuyenMai
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KhachHang()
+        public KhuyenMai()
         {
-            this.HoaDons = new HashSet<HoaDon>();
+            this.DongHoes = new HashSet<DongHo>();
         }
     
-        public int MaKH { get; set; }
-        public string HoTen { get; set; }
-        public System.DateTime NgaySinh { get; set; }
-        public string SDT { get; set; }
-        public string DiaChi { get; set; }
-        public bool GioiTinh { get; set; }
+        public int MaKhuyenMai { get; set; }
+        public string TenKhuyenMai { get; set; }
+        public double GiaTriKhuyenMai { get; set; }
+        public System.DateTime NgayBatDau { get; set; }
+        public System.DateTime NgayKetThuc { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HoaDon> HoaDons { get; set; }
+        public virtual ICollection<DongHo> DongHoes { get; set; }
     }
 }

@@ -20,6 +20,8 @@
     <Property Name="SDT" Type="char" MaxLength="12" Nullable="false" />
     <Property Name="GioiTinh" Type="bit" Nullable="false" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nchar" MaxLength="50" />
+    <Property Name="AnhDaiDien" Type="image" />
   </EntityType>
   <EntityType Name="DongHo">
     <Key>
@@ -40,6 +42,8 @@
     <Property Name="HinhAnh" Type="image" Nullable="false" />
     <Property Name="GiaTriBaoHanh" Type="float" Nullable="false" />
     <Property Name="GiaSP" Type="money" Nullable="false" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="MaKhuyenMai" Type="int" />
   </EntityType>
   <EntityType Name="HoaDon">
     <Key>
@@ -60,6 +64,16 @@
     <Property Name="SDT" Type="char" MaxLength="12" Nullable="false" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="GioiTinh" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KhuyenMai">
+    <Key>
+      <PropertyRef Name="MaKhuyenMai" />
+    </Key>
+    <Property Name="MaKhuyenMai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenKhuyenMai" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GiaTriKhuyenMai" Type="float" Nullable="false" />
+    <Property Name="NgayBatDau" Type="date" Nullable="false" />
+    <Property Name="NgayKetThuc" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="TaiKhoan">
     <Key>
@@ -113,6 +127,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_DongHo_KhuyenMai">
+    <End Role="KhuyenMai" Type="Self.KhuyenMai" Multiplicity="0..1" />
+    <End Role="DongHo" Type="Self.DongHo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhuyenMai">
+        <PropertyRef Name="MaKhuyenMai" />
+      </Principal>
+      <Dependent Role="DongHo">
+        <PropertyRef Name="MaKhuyenMai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_DongHo_ThuongHieu">
     <End Role="ThuongHieu" Type="Self.ThuongHieu" Multiplicity="1" />
     <End Role="DongHo" Type="Self.DongHo" Multiplicity="*" />
@@ -155,6 +181,7 @@
     <EntitySet Name="DongHo" EntityType="Self.DongHo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KhuyenMai" EntityType="Self.KhuyenMai" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ThuongHieu" EntityType="Self.ThuongHieu" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_ChiTietHoaDon_DongHo" Association="Self.FK_ChiTietHoaDon_DongHo">
@@ -168,6 +195,10 @@
     <AssociationSet Name="FK_ChiTietTaiKhoan_TaiKhoan" Association="Self.FK_ChiTietTaiKhoan_TaiKhoan">
       <End Role="TaiKhoan" EntitySet="TaiKhoan" />
       <End Role="ChiTietTaiKhoan" EntitySet="ChiTietTaiKhoan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DongHo_KhuyenMai" Association="Self.FK_DongHo_KhuyenMai">
+      <End Role="KhuyenMai" EntitySet="KhuyenMai" />
+      <End Role="DongHo" EntitySet="DongHo" />
     </AssociationSet>
     <AssociationSet Name="FK_DongHo_ThuongHieu" Association="Self.FK_DongHo_ThuongHieu">
       <End Role="ThuongHieu" EntitySet="ThuongHieu" />

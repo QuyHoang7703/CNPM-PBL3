@@ -22,10 +22,13 @@ namespace CNPM_PBL3
             //Application.Run(new FLogin());
             // Application.Run(new FClock());
 
-           // Application.Run(new FDetailStaff());
+            // Application.Run(new FDetailStaff());
             //Application.Run(new FMainManager());
             //Application.Run(new FBill());
-            Application.Run(new FStaff());
+            Application.Run(new FLogin());
+
+
+
 
 
         }

@@ -22,6 +22,8 @@
     <Property Name="SDT" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="GioiTinh" Type="Boolean" Nullable="false" />
     <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="AnhDaiDien" Type="Binary" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="TaiKhoan" Relationship="Self.FK_ChiTietTaiKhoan_TaiKhoan" FromRole="ChiTietTaiKhoan" ToRole="TaiKhoan" />
   </EntityType>
   <EntityType Name="DongHo">
@@ -43,7 +45,10 @@
     <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
     <Property Name="GiaTriBaoHanh" Type="Double" Nullable="false" />
     <Property Name="GiaSP" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="MaKhuyenMai" Type="Int32" />
     <NavigationProperty Name="ChiTietHoaDons" Relationship="Self.FK_ChiTietHoaDon_DongHo" FromRole="DongHo" ToRole="ChiTietHoaDon" />
+    <NavigationProperty Name="KhuyenMai" Relationship="Self.FK_DongHo_KhuyenMai" FromRole="DongHo" ToRole="KhuyenMai" />
     <NavigationProperty Name="ThuongHieu" Relationship="Self.FK_DongHo_ThuongHieu" FromRole="DongHo" ToRole="ThuongHieu" />
   </EntityType>
   <EntityType Name="HoaDon">
@@ -69,6 +74,17 @@
     <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="GioiTinh" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="HoaDons" Relationship="Self.FK_HoaDon_KhachHang" FromRole="KhachHang" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="KhuyenMai">
+    <Key>
+      <PropertyRef Name="MaKhuyenMai" />
+    </Key>
+    <Property Name="MaKhuyenMai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenKhuyenMai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GiaTriKhuyenMai" Type="Double" Nullable="false" />
+    <Property Name="NgayBatDau" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NgayKetThuc" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="DongHoes" Relationship="Self.FK_DongHo_KhuyenMai" FromRole="KhuyenMai" ToRole="DongHo" />
   </EntityType>
   <EntityType Name="TaiKhoan">
     <Key>
@@ -125,6 +141,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_DongHo_KhuyenMai">
+    <End Role="KhuyenMai" Type="Self.KhuyenMai" Multiplicity="0..1" />
+    <End Role="DongHo" Type="Self.DongHo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhuyenMai">
+        <PropertyRef Name="MaKhuyenMai" />
+      </Principal>
+      <Dependent Role="DongHo">
+        <PropertyRef Name="MaKhuyenMai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_DongHo_ThuongHieu">
     <End Role="ThuongHieu" Type="Self.ThuongHieu" Multiplicity="1" />
     <End Role="DongHo" Type="Self.DongHo" Multiplicity="*" />
@@ -167,6 +195,7 @@
     <EntitySet Name="DongHoes" EntityType="Self.DongHo" />
     <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
     <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
+    <EntitySet Name="KhuyenMais" EntityType="Self.KhuyenMai" />
     <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
     <EntitySet Name="ThuongHieux" EntityType="Self.ThuongHieu" />
     <AssociationSet Name="FK_ChiTietHoaDon_DongHo" Association="Self.FK_ChiTietHoaDon_DongHo">
@@ -180,6 +209,10 @@
     <AssociationSet Name="FK_ChiTietTaiKhoan_TaiKhoan" Association="Self.FK_ChiTietTaiKhoan_TaiKhoan">
       <End Role="TaiKhoan" EntitySet="TaiKhoans" />
       <End Role="ChiTietTaiKhoan" EntitySet="ChiTietTaiKhoans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DongHo_KhuyenMai" Association="Self.FK_DongHo_KhuyenMai">
+      <End Role="KhuyenMai" EntitySet="KhuyenMais" />
+      <End Role="DongHo" EntitySet="DongHoes" />
     </AssociationSet>
     <AssociationSet Name="FK_DongHo_ThuongHieu" Association="Self.FK_DongHo_ThuongHieu">
       <End Role="ThuongHieu" EntitySet="ThuongHieux" />

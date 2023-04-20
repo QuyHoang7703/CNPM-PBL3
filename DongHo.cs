@@ -35,9 +35,12 @@ namespace CNPM_PBL3
         public byte[] HinhAnh { get; set; }
         public double GiaTriBaoHanh { get; set; }
         public decimal GiaSP { get; set; }
+        public Nullable<int> SoLuong { get; set; }
+        public Nullable<int> MaKhuyenMai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
+        public virtual KhuyenMai KhuyenMai { get; set; }
         public virtual ThuongHieu ThuongHieu { get; set; }
     }
 }
