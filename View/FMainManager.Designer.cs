@@ -315,7 +315,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2ButSetting;
         private Guna.UI2.WinForms.Guna2Button guna2Button7;
-        private System.Windows.Forms.Panel panelMain;
+        public System.Windows.Forms.Panel panelMain;
         private Guna.UI2.WinForms.Guna2Button guna2ButStaff;
     }
 }

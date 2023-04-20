@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CNPM_PBL3.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,36 +17,23 @@ namespace CNPM_PBL3.View
         {
             InitializeComponent();
         }
-
+        QLForm f = new QLForm();
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
         }
-        private Form currentForm { get; set; }
-        private void OpenChildForm(Form childForm)
-        {
-            if(currentForm!=null)
-                currentForm.Close();
-            currentForm = childForm;
-            currentForm.TopLevel = false;
-            currentForm.FormBorderStyle= FormBorderStyle.None;
-            currentForm.Dock= DockStyle.Fill;
-         
-            panelMain.Controls.Add(currentForm);
-            currentForm.Show();
-
-
-        }
         private void guna2ButBill_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FBill());
+            f.OpenChildForm(panelMain, new FBill());
+            //OpenChildForm(new FBill());
 
 
         }
 
         private void guna2ButSetting_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FSetting());
+            //OpenChildForm(new FSetting());
+            f.OpenChildForm(panelMain, new FSetting());
         }
 
         private void guna2Button7_Click(object sender, EventArgs e)
@@ -62,12 +50,14 @@ namespace CNPM_PBL3.View
 
         private void guna2ButStaff_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FStaff());
+            //OpenChildForm(new FStaff());
+            f.OpenChildForm(panelMain, new FStaff());
         }
 
         private void butClock_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FDetailClock());
+            //OpenChildForm(new FDetailClock());
+            f.OpenChildForm(panelMain, new FClock());
         }
     }
 }
