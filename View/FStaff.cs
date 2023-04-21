@@ -21,9 +21,8 @@ namespace CNPM_PBL3.View
         }
         public void showDGV()
         {
-            QLNVDAL dal = new QLNVDAL();    
-            dataGridView1.DataSource= dal.GetAllNV();
-          // guna2DataGridView1.DataSource= dal.GetAllNV();
+            QLNVBLL bll = new QLNVBLL();
+            dataGridView1.DataSource = bll.GetAllNVBLL();
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -32,11 +31,12 @@ namespace CNPM_PBL3.View
 
         private void butAdd_Click(object sender, EventArgs e)
         {
-            //QLForm.Instance.OpenChildForm(, new FDetailStaff());
+            
             this.Close();
             FDetailStaff f = new FDetailStaff();
 
             f.Show();
+
         }
     }
 }
