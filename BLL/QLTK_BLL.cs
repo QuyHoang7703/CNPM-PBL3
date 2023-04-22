@@ -10,11 +10,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace CNPM_PBL3.BLL
 {
-    internal class QLTKBLL
+    internal class QLTK_BLL
     {
+        QLTK_DAL dal = new QLTK_DAL();
         public TaiKhoan GetTaiKhoan(string username, string password)
         {
-            QLTKDAL dal = new QLTKDAL();
+            
             TaiKhoan t = null;
             foreach (TaiKhoan i in dal.GetDBTaiKhoan())
             {
@@ -32,8 +33,16 @@ namespace CNPM_PBL3.BLL
             return t;
 
         }
-     
-
-
+        public void UpdatePass_BLL(TaiKhoan t, string pass)
+        {
+            dal.UpdatePass_DAL(t, pass);
+        }
+        public void UpdateInformation_BLL(ChiTietTaiKhoan ct)
+        {
+            dal.UpdateInformation_DAL(ct);
+            MessageBox.Show("Cập nhập thành công", "Thông báo", MessageBoxButtons.OK);
+        }
+      
     }
+
 }

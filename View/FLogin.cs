@@ -14,6 +14,8 @@ namespace CNPM_PBL3
 {
     public partial class FLogin : Form
     {
+        QLTK_BLL bll = new QLTK_BLL();
+        TaiKhoan t;
         public FLogin()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace CNPM_PBL3
         private void guna2Button_ForgotPassword_Click(object sender, EventArgs e)
         {
             panel_login.Visible = false;
+           
         }
 
         private void guna2Button_Login_Click(object sender, EventArgs e)
@@ -33,22 +36,12 @@ namespace CNPM_PBL3
         {
             picture_Visible.BringToFront();
             txtPass.PasswordChar = '•';
-            //if (guna2TextBox_pasword.PasswordChar == '\0')
-            //{
-            //    picture_Visible.BringToFront();
-            //    guna2TextBox_pasword.PasswordChar = '•';
-            //}
         }
 
         private void picture_Visible_Click_1(object sender, EventArgs e)
         {
             picture_Invisible.BringToFront();
             txtPass.PasswordChar = '\0';
-            //if (guna2TextBox_pasword.PasswordChar == '•')
-            //{
-            //    picture_Invisible.BringToFront();
-            //    guna2TextBox_pasword.PasswordChar = '\0';
-            //}
         }
         public int checkRole(TaiKhoan t)
         {
@@ -62,29 +55,44 @@ namespace CNPM_PBL3
             {
                 return -1;
             }
-               
-            
-          
         }
         private void butLogin_Click(object sender, EventArgs e)
         {
-            QLTKBLL bll = new QLTKBLL();
-            TaiKhoan t = bll.GetTaiKhoan(txtUserName.Text, txtPass.Text);
-            if (checkRole(t)==1)
+            if(txtUserName.Text =="" && txtPass.Text == "")
             {
-                FMainManager f = new FMainManager();
-                this.Hide();
-                f.Show();
+                MessageBox.Show("Vui lòng không để trống tài khoản và mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }else if (txtUserName.Text != "" && txtPass.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if(checkRole(t)==0) 
+            else
             {
+                t = bll.GetTaiKhoan(txtUserName.Text, txtPass.Text);
+                if (checkRole(t) == 1)
+                {
+                    FMainManager f = new FMainManager();
+                    this.Hide();
+                    f.account = t;
+                    f.Show();
+                }
+                else if (checkRole(t) == 0)
+                {
 
-            }else
-            {
-                MessageBox.Show("Tài khoản và mật khẩu không đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    txtUserName.Text = "";
+                    txtPass.Text = "";
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+           
 
             
         }
+        //public void ReLoadChiTietTaiKhoan(ChiTietTaiKhoan ct)
+        //{
+        //    t.ChiTietTaiKhoan.HoTen = ct.HoTen;
+        //}
     }
 }
