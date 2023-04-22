@@ -33,16 +33,21 @@ namespace CNPM_PBL3.BLL
             return t;
 
         }
-        public void UpdatePass_BLL(TaiKhoan t, string pass)
+        public void UpdatePass_BLL(string pass)
         {
-            dal.UpdatePass_DAL(t, pass);
+            dal.UpdatePass_DAL(pass);
         }
         public void UpdateInformation_BLL(ChiTietTaiKhoan ct)
         {
             dal.UpdateInformation_DAL(ct);
-            MessageBox.Show("Cập nhập thành công", "Thông báo", MessageBoxButtons.OK);
+           
         }
-      
+        public dynamic GetChiTietTaiKhoan_ByID_BLL(int id)
+        {
+            return dal.GetChiTietTaiKhoan_ByID_DAL(id);
+        }
+
+
     }
 
 }

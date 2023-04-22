@@ -18,30 +18,36 @@ namespace CNPM_PBL3.DAL
         }
         public dynamic GetDL(string username)
         {
-            QLDB db = new QLDB();
+           
             var s = db.ChiTietTaiKhoans.Select(p => new { p.HoTen, p.SDT, p.NgaySinh, p.GioiTinh, p.DiaChi, p.TaiKhoan.UserName, p.TaiKhoan.Pass });
             return s;
         }
-        public void UpdatePass_DAL(TaiKhoan t, string pass)
+        public dynamic GetChiTietTaiKhoan_ByID_DAL(int id)
         {
-            var s = db.TaiKhoans.Find(t.ID);
+            var s = db.ChiTietTaiKhoans.Where(p => p.ID == id).Select(p => new { p.HoTen, p.SDT, p.NgaySinh, p.GioiTinh, p.DiaChi, p.TaiKhoan.UserName, p.TaiKhoan.Pass }).FirstOrDefault();
+            //string hoten = s.HoTen;
+            
+            return s;
+        }
+        public void UpdatePass_DAL(string pass)
+        {
+            var s = db.TaiKhoans.Find(FLogin.account.ID);
             s.Pass = pass;
             db.SaveChanges();
         }
         
         public void UpdateInformation_DAL(ChiTietTaiKhoan ct)
         {
-            using(QLDB x = new QLDB())
-            {
                 var s = db.ChiTietTaiKhoans.Find(ct.ID);
                 s.HoTen = ct.HoTen;
                 s.SDT = ct.SDT;
                 s.NgaySinh = ct.NgaySinh;
                 s.GioiTinh = ct.GioiTinh;
                 s.DiaChi = ct.DiaChi;
-                s.AnhDaiDien = ct.AnhDaiDien;
-                x.SaveChanges();
-            }
+            //s.AnhDaiDien = ct.AnhDaiDien;
+            //FLogin.t.ChiTietTaiKhoan = ct;
+                db.SaveChanges();
+            
            
 
         }

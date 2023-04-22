@@ -18,7 +18,7 @@ namespace CNPM_PBL3.View
             InitializeComponent();
         }
         QLForm f = new QLForm();
-        public TaiKhoan account { get; set; }
+        public static TaiKhoan account { get; set; }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
@@ -28,17 +28,19 @@ namespace CNPM_PBL3.View
             f.OpenChildForm(panelMain, new FBill());
             //OpenChildForm(new FBill());
 
-
+                
         }
 
         private void guna2ButSetting_Click(object sender, EventArgs e)
         {
             //OpenChildForm(new FSetting());
             FSetting s = new FSetting();
+            s.GetChiTietTaiKhoan(FLogin.account.ID);
             f.OpenChildForm(panelMain, s);
-            s.account= account;
+            //FSetting.account=account;
+           // s.GetChiTietTaiKhoan(FLogin.t);
             QLTK_BLL bll = new QLTK_BLL();
-            s.GetChiTietTaiKhoan();
+           
 
         }
 

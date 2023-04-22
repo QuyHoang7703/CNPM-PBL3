@@ -19,14 +19,8 @@ namespace CNPM_PBL3.View
             InitializeComponent();
         }
         QLTK_BLL bll = new QLTK_BLL();
-       // string image;
-       // byte[] data =null;
-        public delegate void MyDel(ChiTietTaiKhoan ct);
-        public MyDel d { get; set; }
-        
-        //public string username { get; set; }
-        //public string pass { get; set; }
-        public TaiKhoan account { get; set; }
+      
+       
        
         private void picture_Invisible_Click(object sender, EventArgs e)
         {
@@ -40,13 +34,14 @@ namespace CNPM_PBL3.View
             txtPass.PasswordChar = '\0';
         }
 
-        public void GetChiTietTaiKhoan()
+        public void GetChiTietTaiKhoan(int id)
         {
-            txtName.Text = account.ChiTietTaiKhoan.HoTen;
-            txtPhone.Text = account.ChiTietTaiKhoan.SDT;
-            dtpNS.Value = account.ChiTietTaiKhoan.NgaySinh;
-            txtAddress.Text = account.ChiTietTaiKhoan.DiaChi;
-            if (account.ChiTietTaiKhoan.GioiTinh == true)
+            var s = bll.GetChiTietTaiKhoan_ByID_BLL(id);
+            txtName.Text = s.HoTen;
+            txtPhone.Text = s.SDT;
+            dtpNS.Value = s.NgaySinh;
+            txtAddress.Text = s.DiaChi;
+            if (s.GioiTinh == true)
             {
                 rdbMale.Checked = true;
             }
@@ -54,15 +49,19 @@ namespace CNPM_PBL3.View
             {
                 rdbFemale.Checked = true;
             }
-            txtUserName.Text=account.ChiTietTaiKhoan.TaiKhoan.UserName;
-            txtPass.Text = account.ChiTietTaiKhoan.TaiKhoan.Pass;
+            txtUserName.Text=s.UserName;
+            txtPass.Text = s.Pass;
            // ptbImage.Image = ConverByteToTmage(account.ChiTietTaiKhoan.AnhDaiDien);
 
         }
 
         public void UpdatePass()
         {
-            bll.UpdatePass_BLL(account, txtNewPass.Text);
+           
+            bll.UpdatePass_BLL(txtNewPass.Text);
+            // FLogin.account.Pass=txtNewPass.Text;
+            //TaiKhoan t = FLogin.account;
+           // return t;
         }
         public bool SetGioiTinh()
         {
@@ -74,36 +73,37 @@ namespace CNPM_PBL3.View
         {
             ChiTietTaiKhoan ct = new ChiTietTaiKhoan()
             {
-                ID = account.ID,
+                ID = FLogin.account.ID,
                 HoTen = txtName.Text,
                 SDT = txtPhone.Text,
                 NgaySinh = Convert.ToDateTime(dtpNS.Value.ToString()),
                 GioiTinh = SetGioiTinh(),
                 DiaChi = txtAddress.Text,
                 //  AnhDaiDien = data;
-                AnhDaiDien = ConverImagetoByte(ptbImage.ImageLocation)
+               // AnhDaiDien = ConverImagetoByte(ptbImage.ImageLocation)
                 
                 
             };
-            // FLogin fl = new FLogin();
-            // d+= new FLogin. 
-           //FSetting f = new FSetting();
             
             bll.UpdateInformation_BLL(ct);
-
+            
 
         }
         private void butUpdate_Click(object sender, EventArgs e)
         {
 
-            UpadteInformation();
-            MessageBox.Show("123");
+             UpadteInformation();
+            MessageBox.Show("Cập nhập thành công", "Thông báo", MessageBoxButtons.OK);
+            
+
 
         }
         private void butChangePass_Click(object sender, EventArgs e)
         {
+            //FLogin.account=UpdatePass();
             UpdatePass();
             MessageBox.Show("Thay đổi mật khẩu thành công");
+           
         }
         //public byte[] ConvertToByte(string i)
         //{

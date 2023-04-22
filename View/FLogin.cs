@@ -15,7 +15,7 @@ namespace CNPM_PBL3
     public partial class FLogin : Form
     {
         QLTK_BLL bll = new QLTK_BLL();
-        TaiKhoan t;
+        public static TaiKhoan account;
         public FLogin()
         {
             InitializeComponent();
@@ -67,15 +67,15 @@ namespace CNPM_PBL3
             }
             else
             {
-                t = bll.GetTaiKhoan(txtUserName.Text, txtPass.Text);
-                if (checkRole(t) == 1)
+                account = bll.GetTaiKhoan(txtUserName.Text, txtPass.Text);
+                if (checkRole(account) == 1)
                 {
                     FMainManager f = new FMainManager();
                     this.Hide();
-                    f.account = t;
+                  //  FMainManager.account = t;
                     f.Show();
                 }
-                else if (checkRole(t) == 0)
+                else if (checkRole(account) == 0)
                 {
 
                 }
