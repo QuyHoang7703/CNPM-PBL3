@@ -13,7 +13,7 @@ namespace CNPM_PBL3.DAL
             
             QLDB db = new QLDB();
             var s= db.ChiTietTaiKhoans.Where(p=>p.TaiKhoan.Role.Contains("Nhân viên")).Select(p => 
-            new {p.ID, p.TaiKhoan.UserName, p.HoTen, p.NgaySinh, p.DiaChi, p.SDT, p.GioiTinh}).ToList();
+            new {p.ID, p.TaiKhoan.UserName, p.HoTen, p.NgaySinh, p.DiaChi, p.SDT, p.GioiTinh, p.Email}).ToList();
            
 
             return s;

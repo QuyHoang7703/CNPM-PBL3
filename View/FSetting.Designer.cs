@@ -58,6 +58,8 @@
             this.txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_Visible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_Invisible)).BeginInit();
@@ -290,6 +292,8 @@
             // 
             this.guna2GradientPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
             this.guna2GradientPanel2.BorderRadius = 20;
+            this.guna2GradientPanel2.Controls.Add(this.txtEmail);
+            this.guna2GradientPanel2.Controls.Add(this.label11);
             this.guna2GradientPanel2.Controls.Add(this.rdbFemale);
             this.guna2GradientPanel2.Controls.Add(this.rdbMale);
             this.guna2GradientPanel2.Controls.Add(this.label4);
@@ -315,7 +319,7 @@
             // 
             this.rdbFemale.BackColor = System.Drawing.Color.White;
             this.rdbFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbFemale.Location = new System.Drawing.Point(820, 198);
+            this.rdbFemale.Location = new System.Drawing.Point(817, 146);
             this.rdbFemale.Name = "rdbFemale";
             this.rdbFemale.Size = new System.Drawing.Size(89, 47);
             this.rdbFemale.TabIndex = 12;
@@ -327,7 +331,7 @@
             // 
             this.rdbMale.BackColor = System.Drawing.Color.White;
             this.rdbMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbMale.Location = new System.Drawing.Point(672, 198);
+            this.rdbMale.Location = new System.Drawing.Point(673, 146);
             this.rdbMale.Name = "rdbMale";
             this.rdbMale.Size = new System.Drawing.Size(89, 47);
             this.rdbMale.TabIndex = 12;
@@ -341,7 +345,7 @@
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(667, 149);
+            this.label4.Location = new System.Drawing.Point(668, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 26);
             this.label4.TabIndex = 11;
@@ -353,7 +357,7 @@
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(667, 34);
+            this.label6.Location = new System.Drawing.Point(668, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(135, 26);
             this.label6.TabIndex = 11;
@@ -365,7 +369,7 @@
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(310, 248);
+            this.label7.Location = new System.Drawing.Point(332, 194);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 26);
             this.label7.TabIndex = 11;
@@ -377,11 +381,12 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(310, 34);
+            this.label5.Location = new System.Drawing.Point(332, 24);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 26);
             this.label5.TabIndex = 11;
             this.label5.Text = "Họ tên";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label3
             // 
@@ -389,7 +394,7 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(310, 144);
+            this.label3.Location = new System.Drawing.Point(332, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 26);
             this.label3.TabIndex = 11;
@@ -400,10 +405,10 @@
             this.ptbImage.BackColor = System.Drawing.Color.White;
             this.ptbImage.FillColor = System.Drawing.Color.Gainsboro;
             this.ptbImage.ImageRotate = 0F;
-            this.ptbImage.Location = new System.Drawing.Point(22, 67);
+            this.ptbImage.Location = new System.Drawing.Point(22, 69);
             this.ptbImage.Name = "ptbImage";
             this.ptbImage.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.ptbImage.Size = new System.Drawing.Size(250, 250);
+            this.ptbImage.Size = new System.Drawing.Size(259, 260);
             this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbImage.TabIndex = 9;
             this.ptbImage.TabStop = false;
@@ -419,9 +424,9 @@
             this.butAddImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
             this.butAddImage.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butAddImage.ForeColor = System.Drawing.Color.Black;
-            this.butAddImage.Location = new System.Drawing.Point(9, 365);
+            this.butAddImage.Location = new System.Drawing.Point(3, 335);
             this.butAddImage.Name = "butAddImage";
-            this.butAddImage.Size = new System.Drawing.Size(300, 55);
+            this.butAddImage.Size = new System.Drawing.Size(328, 55);
             this.butAddImage.TabIndex = 8;
             this.butAddImage.Text = "THAY ĐỔI HÌNH ẢNH";
             this.butAddImage.Click += new System.EventHandler(this.butAddImage_Click);
@@ -437,7 +442,7 @@
             this.butUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
             this.butUpdate.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butUpdate.ForeColor = System.Drawing.Color.Black;
-            this.butUpdate.Location = new System.Drawing.Point(522, 365);
+            this.butUpdate.Location = new System.Drawing.Point(522, 381);
             this.butUpdate.Name = "butUpdate";
             this.butUpdate.Size = new System.Drawing.Size(346, 55);
             this.butUpdate.TabIndex = 7;
@@ -453,11 +458,11 @@
             this.dtpNS.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.dtpNS.ForeColor = System.Drawing.Color.Black;
             this.dtpNS.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpNS.Location = new System.Drawing.Point(305, 189);
+            this.dtpNS.Location = new System.Drawing.Point(337, 146);
             this.dtpNS.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNS.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNS.Name = "dtpNS";
-            this.dtpNS.Size = new System.Drawing.Size(274, 45);
+            this.dtpNS.Size = new System.Drawing.Size(280, 45);
             this.dtpNS.TabIndex = 5;
             this.dtpNS.Value = new System.DateTime(2023, 4, 10, 14, 33, 24, 833);
             // 
@@ -476,14 +481,14 @@
             this.txtAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAddress.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAddress.Location = new System.Drawing.Point(305, 291);
+            this.txtAddress.Location = new System.Drawing.Point(337, 224);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtAddress.PlaceholderText = "";
             this.txtAddress.SelectedText = "";
-            this.txtAddress.Size = new System.Drawing.Size(635, 50);
+            this.txtAddress.Size = new System.Drawing.Size(644, 50);
             this.txtAddress.TabIndex = 2;
             // 
             // txtPhone
@@ -501,14 +506,14 @@
             this.txtPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPhone.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.txtPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhone.Location = new System.Drawing.Point(661, 79);
+            this.txtPhone.Location = new System.Drawing.Point(673, 54);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
             this.txtPhone.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtPhone.PlaceholderText = "";
             this.txtPhone.SelectedText = "";
-            this.txtPhone.Size = new System.Drawing.Size(320, 50);
+            this.txtPhone.Size = new System.Drawing.Size(308, 50);
             this.txtPhone.TabIndex = 1;
             // 
             // txtName
@@ -526,15 +531,52 @@
             this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Location = new System.Drawing.Point(305, 79);
+            this.txtName.Location = new System.Drawing.Point(337, 54);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtName.PlaceholderText = "";
             this.txtName.SelectedText = "";
-            this.txtName.Size = new System.Drawing.Size(320, 50);
+            this.txtName.Size = new System.Drawing.Size(288, 50);
             this.txtName.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.Location = new System.Drawing.Point(332, 278);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 26);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtEmail.BorderRadius = 10;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmail.DefaultText = "";
+            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.FillColor = System.Drawing.Color.Gainsboro;
+            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.Location = new System.Drawing.Point(337, 308);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtEmail.PlaceholderText = "";
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.Size = new System.Drawing.Size(644, 50);
+            this.txtEmail.TabIndex = 14;
             // 
             // FSetting
             // 
@@ -595,5 +637,7 @@
         private System.Windows.Forms.RadioButton rdbFemale;
         private Guna.UI2.WinForms.Guna2PictureBox picture_Visible;
         private Guna.UI2.WinForms.Guna2PictureBox picture_Invisible;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
+        private System.Windows.Forms.Label label11;
     }
 }

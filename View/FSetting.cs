@@ -1,4 +1,5 @@
 ﻿using CNPM_PBL3.BLL;
+using CNPM_PBL3.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TheArtOfDevHtmlRenderer.Adapters;
 
 namespace CNPM_PBL3.View
 {
@@ -19,9 +21,6 @@ namespace CNPM_PBL3.View
             InitializeComponent();
         }
         QLTK_BLL bll = new QLTK_BLL();
-      
-       
-       
         private void picture_Invisible_Click(object sender, EventArgs e)
         {
             picture_Visible.BringToFront();
@@ -36,9 +35,11 @@ namespace CNPM_PBL3.View
 
         public void GetChiTietTaiKhoan(int id)
         {
+            QLHA_DAL qLHA_DAL = new QLHA_DAL(); 
             var s = bll.GetChiTietTaiKhoan_ByID_BLL(id);
             txtName.Text = s.HoTen;
             txtPhone.Text = s.SDT;
+            txtEmail.Text = s.Email;
             dtpNS.Value = s.NgaySinh;
             txtAddress.Text = s.DiaChi;
             if (s.GioiTinh == true)
@@ -51,17 +52,13 @@ namespace CNPM_PBL3.View
             }
             txtUserName.Text=s.UserName;
             txtPass.Text = s.Pass;
-           // ptbImage.Image = ConverByteToTmage(account.ChiTietTaiKhoan.AnhDaiDien);
+           ptbImage.Image = qLHA_DAL.ConverByteToTmage(s.AnhDaiDien);
 
         }
 
         public void UpdatePass()
         {
-           
             bll.UpdatePass_BLL(txtNewPass.Text);
-            // FLogin.account.Pass=txtNewPass.Text;
-            //TaiKhoan t = FLogin.account;
-           // return t;
         }
         public bool SetGioiTinh()
         {
@@ -71,23 +68,19 @@ namespace CNPM_PBL3.View
         }
         public void UpadteInformation()
         {
-            ChiTietTaiKhoan ct = new ChiTietTaiKhoan()
-            {
-                ID = FLogin.account.ID,
-                HoTen = txtName.Text,
-                SDT = txtPhone.Text,
-                NgaySinh = Convert.ToDateTime(dtpNS.Value.ToString()),
-                GioiTinh = SetGioiTinh(),
-                DiaChi = txtAddress.Text,
-                //  AnhDaiDien = data;
-               // AnhDaiDien = ConverImagetoByte(ptbImage.ImageLocation)
-                
-                
-            };
-            
+            PictureBox pi = new PictureBox();
+            QLHA_DAL qLHA_DAL = new QLHA_DAL();
+            ChiTietTaiKhoan ct = new ChiTietTaiKhoan();
+            pi.Image = qLHA_DAL.ConverByteToTmage(ct.AnhDaiDien);
+            ct.ID = FLogin.account.ID;
+            ct.HoTen = txtName.Text;
+            ct.SDT = txtPhone.Text;
+            ct.NgaySinh = Convert.ToDateTime(dtpNS.Value.ToString());
+            ct.GioiTinh = SetGioiTinh();
+            ct.DiaChi = txtAddress.Text;
+            ct.Email = txtEmail.Text;
+            ct.AnhDaiDien = qLHA_DAL.ImageToByteArray(ptbImage.Image);
             bll.UpdateInformation_BLL(ct);
-            
-
         }
         private void butUpdate_Click(object sender, EventArgs e)
         {
@@ -100,68 +93,22 @@ namespace CNPM_PBL3.View
         }
         private void butChangePass_Click(object sender, EventArgs e)
         {
-            //FLogin.account=UpdatePass();
             UpdatePass();
             MessageBox.Show("Thay đổi mật khẩu thành công");
            
         }
-        //public byte[] ConvertToByte(string i)
-        //{
-        //    FileStream fs = new FileStream(i, FileMode.Open, FileAccess.Read);
-        //    byte[] data = new byte[fs.Length];
-        //    fs.Read(data, 0, Convert.ToInt32(data.Length));
-        //    fs.Close();
-        //    return data;   
-        //}
-        //public Image ConvertToImage(byte[] data)
-        //{
-
-        //    using (MemoryStream ms = new MemoryStream(data))
-        //    {
-        //        Image image = Image.FromStream(ms);
-
-        //        // Gán đối tượng Image vào thuộc tính Image của PictureBox
-        //        // ptbImage.Image = image;
-        //        // pictureBox1.Image = image;
-        //        return image;
-        //    }
-
-        //}
-        public byte[] ConverImagetoByte(string s)
-        {
-            byte[] data;
-            FileInfo fif = new FileInfo(s);
-            long number = fif.Length;
-            FileStream fs = new FileStream(s, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            data = br.ReadBytes((int)number);
-            return data;
-        }
-        public Image ConverByteToTmage(byte[] i)
-        {
-            Image newimage;
-            using (MemoryStream ms = new MemoryStream(i, 0, i.Length))
-            {
-                ms.Write(i, 0, i.Length);
-                newimage = Image.FromStream(ms, true);
-            }
-            return newimage;
-        }
         private void butAddImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            if(open.ShowDialog() == DialogResult.OK)
-            {
-                
+            open.Filter = "png file|*.PNG";
+            if (open.ShowDialog() == DialogResult.OK)
+            {  
                 ptbImage.ImageLocation = open.FileName;
-
             }
+        }
 
-            //data = ConvertToByte(open.FileName);
-            //ptbImage.Image=ConvertToImage(data);
-            //QLDB db = new QLDB();
-            //account.ChiTietTaiKhoan.AnhDaiDien = data;
-            //db.SaveChanges();
+        private void label5_Click(object sender, EventArgs e)
+        {
 
         }
     }

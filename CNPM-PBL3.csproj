@@ -71,6 +71,7 @@
     <Compile Include="ChiTietTaiKhoan.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\QLHA_DAL.cs" />
     <Compile Include="DAL\QLNVDAL.cs" />
     <Compile Include="DAL\QLTK_DAL.cs" />
     <Compile Include="DongHo.cs">
