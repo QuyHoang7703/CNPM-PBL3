@@ -11,6 +11,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 namespace CNPM_PBL3
 {
@@ -50,7 +51,7 @@ namespace CNPM_PBL3
             {
                 if (t.Role == "Quản lí")
                     return 1;
-                else
+                else 
                     return 0;
             }
             else
@@ -79,18 +80,25 @@ namespace CNPM_PBL3
                     this.Hide();
                     f.Show();
                 }
-                if (checkRole(account) == 0)
+                else if (checkRole(account) == 0)
                 {
 
+
+                }
+                else 
+                {
+                    txtUserNameLogin.Text =txtPass.Text ="";
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+          
+
+            
         }
         Random Randomrandom = new Random();
         int otp;
-
         private void butForgot_Click(object sender, EventArgs e)
         {
-            bll = new QLTK_BLL();
             if (txtUserNameForgot.Text == "")
             {
                 MessageBox.Show("Không để trống tên tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -103,17 +111,17 @@ namespace CNPM_PBL3
             }
             else
             {
-                if (bll.GetTaiKhoanByEmail(txtUserNameForgot.Text, txtEmail.Text) == 1)
+                if (bll.GetTaiKhoanByEmail_BLL(txtUserNameForgot.Text, txtEmail.Text))
                 {
                     try
                     {
                         otp = Randomrandom.Next(100000, 999999);
-                        var fromAddress = new MailAddress("tranthangkhuong203@gmail.com");
+                        var fromAddress = new MailAddress("hoangvanquy772003@gmail.com");
                         var toAddress = new MailAddress(txtEmail.ToString());
-                        const string frompass = "kuiynitbihpxhtqw";
+                        const string frompass = "kuiynitbihpxhtqw";// tìm hiểu lại
                         const string subject = "Mật khẩu mới của bạn là:";
                         string body = otp.ToString();
-                        var smtp = new SmtpClient
+                        var smtp = new SmtpClient// tìm hiểu lại
                         {
                             Host = "smtp.gmail.com",
                             Port = 587,
@@ -132,7 +140,7 @@ namespace CNPM_PBL3
                             smtp.Send(message);
                         }
                         MessageBox.Show("OTP đã được gửi" + otp);
-                        bll.updatePass(bll.getIdByUserName(txtUserNameForgot.Text), otp.ToString());
+                        bll.UpdatePassForFogotLogin_BLL(bll.getIdByUserName_BLL(txtUserNameForgot.Text), otp.ToString());
                     }
                     catch (Exception ex)
                     {

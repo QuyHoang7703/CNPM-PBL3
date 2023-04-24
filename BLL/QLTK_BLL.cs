@@ -48,20 +48,22 @@ namespace CNPM_PBL3.BLL
             return dal.GetChiTietTaiKhoan_ByID_DAL(id);
         }
         // moi lam
-        public int GetTaiKhoanByEmail(string username, string email)
+        public bool GetTaiKhoanByEmail_BLL(string username, string email)
         {
             dal = new QLTK_DAL();
-            int count = 0;
+            bool check = false;
             foreach (TaiKhoan i in dal.GetDBTaiKhoan())
             {
-                if (i.UserName == username )
+                //i.ChiTietTaiKhoan.
+                if (i.UserName == username && i.ChiTietTaiKhoan.Email==email )
                 {
-                    count++;
+                    check= true;
+                    break;
                 }
             }
-            return count;
+            return check;
         }
-        public int getIdByUserName(string username)
+        public int getIdByUserName_BLL(string username)
         {
             int result = 0;
             dal = new QLTK_DAL();
@@ -74,12 +76,12 @@ namespace CNPM_PBL3.BLL
             }
             return result;
         }
-        public void updatePass(int ID, string password)
+        public void UpdatePassForFogotLogin_BLL(int ID, string password)
         {
             try
             {
-                dal = new QLTK_DAL();
-                dal.UpdatePassWord(ID, password);
+                
+                dal.UpdatePassWord_DAL(ID, password);
             }
             catch (DbUpdateException ex)
             {

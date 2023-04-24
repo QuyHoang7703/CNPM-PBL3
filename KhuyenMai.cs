@@ -20,11 +20,11 @@ namespace CNPM_PBL3
             this.DongHoes = new HashSet<DongHo>();
         }
     
-        public int MaKM { get; set; }
-        public string TenKM { get; set; }
-        public double GiaTriKM { get; set; }
-        public System.DateTime NgayBĐ { get; set; }
-        public System.DateTime NgayKT { get; set; }
+        public int MaKhuyenMai { get; set; }
+        public string TenKhuyenMai { get; set; }
+        public double GiaTriKhuyenMai { get; set; }
+        public System.DateTime NgayBatDau { get; set; }
+        public System.DateTime NgayKetThuc { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DongHo> DongHoes { get; set; }

@@ -26,7 +26,7 @@ namespace CNPM_PBL3.DAL
         {
             var s = db.ChiTietTaiKhoans.Where(p => p.ID == id).Select(p => new
             {
-                p.HoTen, p.SDT, p.NgaySinh, p.GioiTinh, p.DiaChi, p.TaiKhoan.UserName, p.TaiKhoan.Pass, p.AnhDaiDien 
+                p.HoTen, p.SDT, p.NgaySinh, p.GioiTinh, p.DiaChi, p.TaiKhoan.UserName, p.TaiKhoan.Pass, p.AnhDaiDien, p.Email
             }).FirstOrDefault();
             return s;
         }
@@ -48,10 +48,9 @@ namespace CNPM_PBL3.DAL
             s.AnhDaiDien = ct.AnhDaiDien;
             db.SaveChanges();
         }
-        // moi lam
-        public void UpdatePassWord(int ID, string password)
+        // Email
+        public void UpdatePassWord_DAL(int ID, string password)
         {
-            db = new QLDB();
             TaiKhoan taiKhoan = db.TaiKhoans.Find(ID);
             taiKhoan.Pass = password;
             db.SaveChanges();

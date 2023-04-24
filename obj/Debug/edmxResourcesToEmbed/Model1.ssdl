@@ -21,6 +21,7 @@
     <Property Name="GioiTinh" Type="bit" Nullable="false" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="AnhDaiDien" Type="image" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <EntityType Name="DongHo">
     <Key>
@@ -42,7 +43,7 @@
     <Property Name="GiaTriBaoHanh" Type="float" Nullable="false" />
     <Property Name="GiaSP" Type="money" Nullable="false" />
     <Property Name="SoLuong" Type="int" />
-    <Property Name="MaKM" Type="int" />
+    <Property Name="MaKhuyenMai" Type="int" />
   </EntityType>
   <EntityType Name="HoaDon">
     <Key>
@@ -66,13 +67,13 @@
   </EntityType>
   <EntityType Name="KhuyenMai">
     <Key>
-      <PropertyRef Name="MaKM" />
+      <PropertyRef Name="MaKhuyenMai" />
     </Key>
-    <Property Name="MaKM" Type="int" Nullable="false" />
-    <Property Name="TenKM" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="GiaTriKM" Type="float" Nullable="false" />
-    <Property Name="NgayBĐ" Type="date" Nullable="false" />
-    <Property Name="NgayKT" Type="date" Nullable="false" />
+    <Property Name="MaKhuyenMai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenKhuyenMai" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GiaTriKhuyenMai" Type="float" Nullable="false" />
+    <Property Name="NgayBatDau" Type="date" Nullable="false" />
+    <Property Name="NgayKetThuc" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="TaiKhoan">
     <Key>
@@ -82,7 +83,6 @@
     <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Pass" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Role" Type="nvarchar" MaxLength="30" Nullable="false" />
-    <Property Name="Email" Type="nchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="ThuongHieu">
     <Key>
@@ -132,10 +132,10 @@
     <End Role="DongHo" Type="Self.DongHo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="KhuyenMai">
-        <PropertyRef Name="MaKM" />
+        <PropertyRef Name="MaKhuyenMai" />
       </Principal>
       <Dependent Role="DongHo">
-        <PropertyRef Name="MaKM" />
+        <PropertyRef Name="MaKhuyenMai" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

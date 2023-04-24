@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="QLDB">
     <EntitySetMapping Name="ChiTietHoaDons">
       <EntityTypeMapping TypeName="Model.ChiTietHoaDon">
         <MappingFragment StoreEntitySet="ChiTietHoaDon">
@@ -22,6 +22,7 @@
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="AnhDaiDien" ColumnName="AnhDaiDien" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -44,7 +45,7 @@
           <ScalarProperty Name="GiaTriBaoHanh" ColumnName="GiaTriBaoHanh" />
           <ScalarProperty Name="GiaSP" ColumnName="GiaSP" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-          <ScalarProperty Name="MaKM" ColumnName="MaKM" />
+          <ScalarProperty Name="MaKhuyenMai" ColumnName="MaKhuyenMai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -73,11 +74,11 @@
     <EntitySetMapping Name="KhuyenMais">
       <EntityTypeMapping TypeName="Model.KhuyenMai">
         <MappingFragment StoreEntitySet="KhuyenMai">
-          <ScalarProperty Name="MaKM" ColumnName="MaKM" />
-          <ScalarProperty Name="TenKM" ColumnName="TenKM" />
-          <ScalarProperty Name="GiaTriKM" ColumnName="GiaTriKM" />
-          <ScalarProperty Name="NgayBĐ" ColumnName="NgayBĐ" />
-          <ScalarProperty Name="NgayKT" ColumnName="NgayKT" />
+          <ScalarProperty Name="MaKhuyenMai" ColumnName="MaKhuyenMai" />
+          <ScalarProperty Name="TenKhuyenMai" ColumnName="TenKhuyenMai" />
+          <ScalarProperty Name="GiaTriKhuyenMai" ColumnName="GiaTriKhuyenMai" />
+          <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
+          <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -88,7 +89,6 @@
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="Pass" ColumnName="Pass" />
           <ScalarProperty Name="Role" ColumnName="Role" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
