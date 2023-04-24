@@ -22,7 +22,6 @@
     <Property Name="SDT" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="GioiTinh" Type="Boolean" Nullable="false" />
     <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
     <Property Name="AnhDaiDien" Type="Binary" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="TaiKhoan" Relationship="Self.FK_ChiTietTaiKhoan_TaiKhoan" FromRole="ChiTietTaiKhoan" ToRole="TaiKhoan" />
   </EntityType>
@@ -46,7 +45,7 @@
     <Property Name="GiaTriBaoHanh" Type="Double" Nullable="false" />
     <Property Name="GiaSP" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <Property Name="SoLuong" Type="Int32" />
-    <Property Name="MaKhuyenMai" Type="Int32" />
+    <Property Name="MaKM" Type="Int32" />
     <NavigationProperty Name="ChiTietHoaDons" Relationship="Self.FK_ChiTietHoaDon_DongHo" FromRole="DongHo" ToRole="ChiTietHoaDon" />
     <NavigationProperty Name="KhuyenMai" Relationship="Self.FK_DongHo_KhuyenMai" FromRole="DongHo" ToRole="KhuyenMai" />
     <NavigationProperty Name="ThuongHieu" Relationship="Self.FK_DongHo_ThuongHieu" FromRole="DongHo" ToRole="ThuongHieu" />
@@ -77,13 +76,13 @@
   </EntityType>
   <EntityType Name="KhuyenMai">
     <Key>
-      <PropertyRef Name="MaKhuyenMai" />
+      <PropertyRef Name="MaKM" />
     </Key>
-    <Property Name="MaKhuyenMai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TenKhuyenMai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="GiaTriKhuyenMai" Type="Double" Nullable="false" />
-    <Property Name="NgayBatDau" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="NgayKetThuc" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MaKM" Type="Int32" Nullable="false" />
+    <Property Name="TenKM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GiaTriKM" Type="Double" Nullable="false" />
+    <Property Name="NgayBĐ" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NgayKT" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="DongHoes" Relationship="Self.FK_DongHo_KhuyenMai" FromRole="KhuyenMai" ToRole="DongHo" />
   </EntityType>
   <EntityType Name="TaiKhoan">
@@ -94,6 +93,7 @@
     <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Role" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="ChiTietTaiKhoan" Relationship="Self.FK_ChiTietTaiKhoan_TaiKhoan" FromRole="TaiKhoan" ToRole="ChiTietTaiKhoan" />
     <NavigationProperty Name="HoaDons" Relationship="Self.FK_HoaDon_TaiKhoan" FromRole="TaiKhoan" ToRole="HoaDon" />
   </EntityType>
@@ -146,10 +146,10 @@
     <End Role="DongHo" Type="Self.DongHo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="KhuyenMai">
-        <PropertyRef Name="MaKhuyenMai" />
+        <PropertyRef Name="MaKM" />
       </Principal>
       <Dependent Role="DongHo">
-        <PropertyRef Name="MaKhuyenMai" />
+        <PropertyRef Name="MaKM" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -189,7 +189,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="QLDB" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ChiTietHoaDons" EntityType="Self.ChiTietHoaDon" />
     <EntitySet Name="ChiTietTaiKhoans" EntityType="Self.ChiTietTaiKhoan" />
     <EntitySet Name="DongHoes" EntityType="Self.DongHo" />

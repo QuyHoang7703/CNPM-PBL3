@@ -25,7 +25,6 @@
           <Property Name="SDT" Type="char" MaxLength="12" Nullable="false" />
           <Property Name="GioiTinh" Type="bit" Nullable="false" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Email" Type="nchar" MaxLength="50" />
           <Property Name="AnhDaiDien" Type="image" />
         </EntityType>
         <EntityType Name="DongHo">
@@ -48,7 +47,7 @@
           <Property Name="GiaTriBaoHanh" Type="float" Nullable="false" />
           <Property Name="GiaSP" Type="money" Nullable="false" />
           <Property Name="SoLuong" Type="int" />
-          <Property Name="MaKhuyenMai" Type="int" />
+          <Property Name="MaKM" Type="int" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
@@ -72,13 +71,13 @@
         </EntityType>
         <EntityType Name="KhuyenMai">
           <Key>
-            <PropertyRef Name="MaKhuyenMai" />
+            <PropertyRef Name="MaKM" />
           </Key>
-          <Property Name="MaKhuyenMai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenKhuyenMai" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="GiaTriKhuyenMai" Type="float" Nullable="false" />
-          <Property Name="NgayBatDau" Type="date" Nullable="false" />
-          <Property Name="NgayKetThuc" Type="date" Nullable="false" />
+          <Property Name="MaKM" Type="int" Nullable="false" />
+          <Property Name="TenKM" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GiaTriKM" Type="float" Nullable="false" />
+          <Property Name="NgayBĐ" Type="date" Nullable="false" />
+          <Property Name="NgayKT" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="TaiKhoan">
           <Key>
@@ -88,6 +87,7 @@
           <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Pass" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Role" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Email" Type="nchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="ThuongHieu">
           <Key>
@@ -137,10 +137,10 @@
           <End Role="DongHo" Type="Self.DongHo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="KhuyenMai">
-              <PropertyRef Name="MaKhuyenMai" />
+              <PropertyRef Name="MaKM" />
             </Principal>
             <Dependent Role="DongHo">
-              <PropertyRef Name="MaKhuyenMai" />
+              <PropertyRef Name="MaKM" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -245,7 +245,6 @@
           <Property Name="SDT" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="GioiTinh" Type="Boolean" Nullable="false" />
           <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="AnhDaiDien" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="TaiKhoan" Relationship="Self.FK_ChiTietTaiKhoan_TaiKhoan" FromRole="ChiTietTaiKhoan" ToRole="TaiKhoan" />
         </EntityType>
@@ -269,7 +268,7 @@
           <Property Name="GiaTriBaoHanh" Type="Double" Nullable="false" />
           <Property Name="GiaSP" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" />
-          <Property Name="MaKhuyenMai" Type="Int32" />
+          <Property Name="MaKM" Type="Int32" />
           <NavigationProperty Name="ChiTietHoaDons" Relationship="Self.FK_ChiTietHoaDon_DongHo" FromRole="DongHo" ToRole="ChiTietHoaDon" />
           <NavigationProperty Name="KhuyenMai" Relationship="Self.FK_DongHo_KhuyenMai" FromRole="DongHo" ToRole="KhuyenMai" />
           <NavigationProperty Name="ThuongHieu" Relationship="Self.FK_DongHo_ThuongHieu" FromRole="DongHo" ToRole="ThuongHieu" />
@@ -300,13 +299,13 @@
         </EntityType>
         <EntityType Name="KhuyenMai">
           <Key>
-            <PropertyRef Name="MaKhuyenMai" />
+            <PropertyRef Name="MaKM" />
           </Key>
-          <Property Name="MaKhuyenMai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenKhuyenMai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="GiaTriKhuyenMai" Type="Double" Nullable="false" />
-          <Property Name="NgayBatDau" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="NgayKetThuc" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MaKM" Type="Int32" Nullable="false" />
+          <Property Name="TenKM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GiaTriKM" Type="Double" Nullable="false" />
+          <Property Name="NgayBĐ" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NgayKT" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="DongHoes" Relationship="Self.FK_DongHo_KhuyenMai" FromRole="KhuyenMai" ToRole="DongHo" />
         </EntityType>
         <EntityType Name="TaiKhoan">
@@ -317,6 +316,7 @@
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Role" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="ChiTietTaiKhoan" Relationship="Self.FK_ChiTietTaiKhoan_TaiKhoan" FromRole="TaiKhoan" ToRole="ChiTietTaiKhoan" />
           <NavigationProperty Name="HoaDons" Relationship="Self.FK_HoaDon_TaiKhoan" FromRole="TaiKhoan" ToRole="HoaDon" />
         </EntityType>
@@ -369,10 +369,10 @@
           <End Role="DongHo" Type="Self.DongHo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="KhuyenMai">
-              <PropertyRef Name="MaKhuyenMai" />
+              <PropertyRef Name="MaKM" />
             </Principal>
             <Dependent Role="DongHo">
-              <PropertyRef Name="MaKhuyenMai" />
+              <PropertyRef Name="MaKM" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -412,7 +412,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QLDB" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ChiTietHoaDons" EntityType="Self.ChiTietHoaDon" />
           <EntitySet Name="ChiTietTaiKhoans" EntityType="Self.ChiTietTaiKhoan" />
           <EntitySet Name="DongHoes" EntityType="Self.DongHo" />
@@ -455,7 +455,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="QLDB">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="ChiTietHoaDons">
             <EntityTypeMapping TypeName="Model.ChiTietHoaDon">
               <MappingFragment StoreEntitySet="ChiTietHoaDon">
@@ -476,7 +476,6 @@
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
                 <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
                 <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="AnhDaiDien" ColumnName="AnhDaiDien" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -500,7 +499,7 @@
                 <ScalarProperty Name="GiaTriBaoHanh" ColumnName="GiaTriBaoHanh" />
                 <ScalarProperty Name="GiaSP" ColumnName="GiaSP" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-                <ScalarProperty Name="MaKhuyenMai" ColumnName="MaKhuyenMai" />
+                <ScalarProperty Name="MaKM" ColumnName="MaKM" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -529,11 +528,11 @@
           <EntitySetMapping Name="KhuyenMais">
             <EntityTypeMapping TypeName="Model.KhuyenMai">
               <MappingFragment StoreEntitySet="KhuyenMai">
-                <ScalarProperty Name="MaKhuyenMai" ColumnName="MaKhuyenMai" />
-                <ScalarProperty Name="TenKhuyenMai" ColumnName="TenKhuyenMai" />
-                <ScalarProperty Name="GiaTriKhuyenMai" ColumnName="GiaTriKhuyenMai" />
-                <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
-                <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
+                <ScalarProperty Name="MaKM" ColumnName="MaKM" />
+                <ScalarProperty Name="TenKM" ColumnName="TenKM" />
+                <ScalarProperty Name="GiaTriKM" ColumnName="GiaTriKM" />
+                <ScalarProperty Name="NgayBĐ" ColumnName="NgayBĐ" />
+                <ScalarProperty Name="NgayKT" ColumnName="NgayKT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -544,6 +543,7 @@
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Pass" ColumnName="Pass" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

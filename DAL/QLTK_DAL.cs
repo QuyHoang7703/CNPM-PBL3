@@ -19,14 +19,14 @@ namespace CNPM_PBL3.DAL
         public dynamic GetDL(string username)
         {
            
-            var s = db.ChiTietTaiKhoans.Select(p => new { p.HoTen, p.SDT, p.NgaySinh, p.GioiTinh, p.DiaChi, p.TaiKhoan.UserName, p.TaiKhoan.Pass, p.Email });
+            var s = db.ChiTietTaiKhoans.Select(p => new { p.HoTen, p.SDT, p.NgaySinh, p.GioiTinh, p.DiaChi, p.TaiKhoan.UserName, p.TaiKhoan.Pass });
             return s;
         }
         public dynamic GetChiTietTaiKhoan_ByID_DAL(int id)
         {
             var s = db.ChiTietTaiKhoans.Where(p => p.ID == id).Select(p => new
             {
-                p.HoTen, p.SDT, p.NgaySinh, p.GioiTinh, p.DiaChi, p.TaiKhoan.UserName, p.TaiKhoan.Pass, p.AnhDaiDien , p.Email
+                p.HoTen, p.SDT, p.NgaySinh, p.GioiTinh, p.DiaChi, p.TaiKhoan.UserName, p.TaiKhoan.Pass, p.AnhDaiDien 
             }).FirstOrDefault();
             return s;
         }
@@ -42,11 +42,18 @@ namespace CNPM_PBL3.DAL
             var s = db.ChiTietTaiKhoans.Find(ct.ID);
             s.HoTen = ct.HoTen;
             s.SDT = ct.SDT;
-            s.Email = ct.Email;
             s.NgaySinh = ct.NgaySinh;
             s.GioiTinh = ct.GioiTinh;
             s.DiaChi = ct.DiaChi;
             s.AnhDaiDien = ct.AnhDaiDien;
+            db.SaveChanges();
+        }
+        // moi lam
+        public void UpdatePassWord(int ID, string password)
+        {
+            db = new QLDB();
+            TaiKhoan taiKhoan = db.TaiKhoans.Find(ID);
+            taiKhoan.Pass = password;
             db.SaveChanges();
         }
     }

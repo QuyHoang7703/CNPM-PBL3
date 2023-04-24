@@ -78,7 +78,6 @@ namespace CNPM_PBL3.View
             ct.NgaySinh = Convert.ToDateTime(dtpNS.Value.ToString());
             ct.GioiTinh = SetGioiTinh();
             ct.DiaChi = txtAddress.Text;
-            ct.Email = txtEmail.Text;
             ct.AnhDaiDien = qLHA_DAL.ImageToByteArray(ptbImage.Image);
             bll.UpdateInformation_BLL(ct);
         }

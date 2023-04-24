@@ -36,7 +36,7 @@ namespace CNPM_PBL3
         public double GiaTriBaoHanh { get; set; }
         public decimal GiaSP { get; set; }
         public Nullable<int> SoLuong { get; set; }
-        public Nullable<int> MaKhuyenMai { get; set; }
+        public Nullable<int> MaKM { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
