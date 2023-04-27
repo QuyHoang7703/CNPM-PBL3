@@ -50,7 +50,6 @@ namespace CNPM_PBL3.BLL
         // moi lam
         public bool GetTaiKhoanByEmail_BLL(string username, string email)
         {
-            dal = new QLTK_DAL();
             bool check = false;
             foreach (TaiKhoan i in dal.GetDBTaiKhoan())
             {

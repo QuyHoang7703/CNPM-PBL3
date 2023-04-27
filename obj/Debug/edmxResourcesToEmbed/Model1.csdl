@@ -16,7 +16,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="HoTen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="SDT" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />

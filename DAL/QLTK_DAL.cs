@@ -16,12 +16,12 @@ namespace CNPM_PBL3.DAL
             list = s;
             return list;
         }
-        public dynamic GetDL(string username)
-        {
+        //public dynamic GetDL(string username)
+        //{
            
-            var s = db.ChiTietTaiKhoans.Select(p => new { p.HoTen, p.SDT, p.NgaySinh, p.GioiTinh, p.DiaChi, p.TaiKhoan.UserName, p.TaiKhoan.Pass });
-            return s;
-        }
+        //    var s = db.ChiTietTaiKhoans.Select(p => new { p.HoTen, p.SDT, p.NgaySinh, p.GioiTinh, p.DiaChi, p.TaiKhoan.UserName, p.TaiKhoan.Pass });
+        //    return s;
+        //}
         public dynamic GetChiTietTaiKhoan_ByID_DAL(int id)
         {
             var s = db.ChiTietTaiKhoans.Where(p => p.ID == id).Select(p => new

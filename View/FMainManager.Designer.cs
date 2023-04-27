@@ -55,7 +55,7 @@
             this.guna2GradientPanel1.Controls.Add(this.guna2Button1);
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(1, 0);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(2, 1);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(270, 900);
             this.guna2GradientPanel1.TabIndex = 0;
@@ -205,7 +205,7 @@
             this.butClock.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.butClock.CheckedState.BorderColor = System.Drawing.Color.White;
             this.butClock.CheckedState.FillColor = System.Drawing.Color.White;
-            this.butClock.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.butClock.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.butClock.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butClock.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butClock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -283,7 +283,7 @@
             // 
             // panelMain
             // 
-            this.panelMain.Location = new System.Drawing.Point(268, 0);
+            this.panelMain.Location = new System.Drawing.Point(269, 1);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1100, 900);
             this.panelMain.TabIndex = 2;
@@ -293,8 +293,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 900);
-            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.guna2GradientPanel1);
+            this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "FMainManager";

@@ -25,6 +25,7 @@ namespace CNPM_PBL3.View
         }
         private void guna2ButBill_Click(object sender, EventArgs e)
         {
+            //QLForm k = new QLForm();
             f.OpenChildForm(panelMain, new FBill());
             //OpenChildForm(new FBill());
 
@@ -37,9 +38,7 @@ namespace CNPM_PBL3.View
             FSetting s = new FSetting();
             s.GetChiTietTaiKhoan(FLogin.account.ID);
             f.OpenChildForm(panelMain, s);
-            //FSetting.account=account;
-           // s.GetChiTietTaiKhoan(FLogin.t);
-            QLTK_BLL bll = new QLTK_BLL();
+           // QLTK_BLL bll = new QLTK_BLL();
            
 
         }

@@ -35,7 +35,7 @@ namespace CNPM_PBL3.View
 
         public void GetChiTietTaiKhoan(int id)
         {
-            QLHA_DAL qLHA_DAL = new QLHA_DAL(); 
+            QLHA qLHA_DAL = new QLHA(); 
             var s = bll.GetChiTietTaiKhoan_ByID_BLL(id);
             txtName.Text = s.HoTen;
             txtPhone.Text = s.SDT;
@@ -69,7 +69,7 @@ namespace CNPM_PBL3.View
         public void UpadteInformation()
         {
             PictureBox pi = new PictureBox();
-            QLHA_DAL qLHA_DAL = new QLHA_DAL();
+            QLHA qLHA_DAL = new QLHA();
             ChiTietTaiKhoan ct = new ChiTietTaiKhoan();
             pi.Image = qLHA_DAL.ConverByteToTmage(ct.AnhDaiDien);
             ct.ID = FLogin.account.ID;
@@ -84,10 +84,8 @@ namespace CNPM_PBL3.View
         private void butUpdate_Click(object sender, EventArgs e)
         {
 
-             UpadteInformation();
+            UpadteInformation();
             MessageBox.Show("Cập nhập thành công", "Thông báo", MessageBoxButtons.OK);
-            
-
 
         }
         private void butChangePass_Click(object sender, EventArgs e)
