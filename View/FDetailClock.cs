@@ -114,11 +114,28 @@ namespace CNPM_PBL3.View
                 return false;
             }
         }
+        public bool Exception()
+        {
+            try
+            {
+                float bedaymatso = float.Parse(txtBedaymatso.Text);
+                decimal giaTien = decimal.Parse(txtGia.Text);
+                float giatriBH = float.Parse(txtGiatriBH.Text);
+                float duongkinh = float.Parse(txtDuongkinh.Text);
+                int soluong = int.Parse(txtSoluong.Text);
+                return true;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Vui lòng nhập đúng định dạng số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
         
         private void ButLuu_Click(object sender, EventArgs e)
         {
             QLHA ha = new QLHA();
-            if (Check() == false && bll.CheckID(txtMasp.Text))
+            if (Check() == false && Exception())
             {
                 DongHo dongHo = new DongHo
                 {
@@ -143,10 +160,6 @@ namespace CNPM_PBL3.View
                 bll.ExecuteDB(dongHo);
                 d1(bll.GetAllSP_BLL());
                 this.Dispose();
-            }
-            else
-            {
-                MessageBox.Show("Sản phẩm đã tồn tại !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

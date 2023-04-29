@@ -5,6 +5,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CNPM_PBL3.DAL
 {
@@ -16,36 +17,7 @@ namespace CNPM_PBL3.DAL
                 var s = db.DongHoes.Select(p => new {p.MaSP, p.XuatSu, p.ThuongHieu.TenThuongHieu, p.GiaSP, p.GioiTinhSP, p.GiaTriBaoHanh, p.SoLuong}).ToList();
                 return s;
         }
-        public dynamic GetSPByXuatXu_DAL(string xuatxu)
-        {     
-                var s = db.DongHoes.Where( p=> p.XuatSu == xuatxu)
-                    .Select(p => new { p.MaSP, p.XuatSu, p.ThuongHieu.TenThuongHieu, p.GiaSP, p.GioiTinhSP, p.GiaTriBaoHanh, p.SoLuong }).ToList();
-                return s;
-        }
-        public dynamic GetSPByGender_DAL(string gender)
-        {        
-              var s = db.DongHoes.Where(p => p.GioiTinhSP == gender)
-                    .Select(p => new { p.MaSP, p.XuatSu, p.ThuongHieu.TenThuongHieu, p.GiaSP, p.GioiTinhSP, p.GiaTriBaoHanh, p.SoLuong }).ToList();
-                return s;    
-        }
-        public dynamic GetSPByShape_DAL(string shape)
-        {
-            var s = db.DongHoes.Where(p => p.HinhDangMatSo == shape)
-                  .Select(p => new { p.MaSP, p.XuatSu, p.ThuongHieu.TenThuongHieu, p.GiaSP, p.GioiTinhSP, p.GiaTriBaoHanh, p.SoLuong }).ToList();
-            return s;
-        }
-        public dynamic GetSPByColor_DAL(string color)
-        {
-            var s = db.DongHoes.Where(p => p.MauMatSo == color)
-                  .Select(p => new { p.MaSP, p.XuatSu, p.ThuongHieu.TenThuongHieu, p.GiaSP, p.GioiTinhSP, p.GiaTriBaoHanh, p.SoLuong }).ToList();
-            return s;
-        }
-        public dynamic GetSPByBrand_DAL(string brand)
-        {
-            var s = db.DongHoes.Where(p => p.ThuongHieu.TenThuongHieu == brand)
-                  .Select(p => new { p.MaSP, p.XuatSu, p.ThuongHieu.TenThuongHieu, p.GiaSP, p.GioiTinhSP, p.GiaTriBaoHanh, p.SoLuong }).ToList();
-            return s;
-        }
+       
         public dynamic GetSPByTxtSearch_DAL(string text)
         {
             var s = db.DongHoes.Where(p => (p.MaSP).Contains(text))
@@ -57,11 +29,7 @@ namespace CNPM_PBL3.DAL
             var s = db.DongHoes.Select(p => p).ToList();
                 return s;         
         }
-        public string checkID(string id)
-        {
-            var s = db.DongHoes.Where(p => p.MaSP == id).Select(p => new { p.MaSP }).FirstOrDefault();
-            return s.MaSP;
-        }
+  
         public List<ThuongHieu> GetAllTH_DAL()
         { 
                 List<ThuongHieu> data = new List<ThuongHieu>();
@@ -105,6 +73,33 @@ namespace CNPM_PBL3.DAL
             var s = db.DongHoes.Where(p => p.KhuyenMai.TenKhuyenMai == name).
                 Select(p => new { p.MaKhuyenMai }).FirstOrDefault();
             return (int)s.MaKhuyenMai;
+        }
+        public dynamic TinKiem(ComboBox th, ComboBox gt)
+        {
+            string thuongHieu = null;
+            string gioitinh = null;
+            var s = db.DongHoes.Select(p => p).ToList();
+            if (th.SelectedItem != null)
+            {
+                thuongHieu = th.SelectedItem.ToString();
+                if (string.IsNullOrWhiteSpace(thuongHieu) == false)
+                {
+                    s = s.Where(p => p.ThuongHieu.TenThuongHieu == thuongHieu)
+                        .Select(p => p).ToList();
+                }
+            }
+            if(gt.SelectedItem != null){
+
+                gioitinh = gt.SelectedItem.ToString();
+
+                if (string.IsNullOrWhiteSpace(gioitinh) == false)
+                {
+                    s = s.Where(p => p.GioiTinhSP == gioitinh)
+                        .Select(p => p).ToList();
+                }
+            }
+
+            return s;
         }
     }
 }

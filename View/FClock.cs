@@ -17,8 +17,9 @@ namespace CNPM_PBL3.View
         public FClock()
         {
             InitializeComponent();
-            ShowDGV(bll.GetAllSP_BLL());
-            SetCBBThuongHieu();
+        //    ShowDGV(bll.GetAllSP_BLL());
+            SetCBBThuongHieu1();
+         //   hienthi(cbbThuongHieu, cbbGioiTinh);
         }
 
         public void ShowDGV(dynamic s)
@@ -74,47 +75,39 @@ namespace CNPM_PBL3.View
             //dataGridView1.DataSource = list;
         }
 
-        private void việtNamToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ToolStripMenuItem clickedItem = sender as ToolStripMenuItem;
-            string clickedItemName = clickedItem.Text;          
-            dataGridView1.DataSource = bll.GetSPByXuatXu_BLL(clickedItemName);
-        }
-
-        private void namToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ToolStripMenuItem clickedItem = sender as ToolStripMenuItem;
-            string clickedItemName = clickedItem.Text;
-            dataGridView1.DataSource = bll.GetSPByGender_BLL(clickedItemName);
-        }
-
-        private void hìnhDạngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ToolStripMenuItem clickedItem = sender as ToolStripMenuItem;
-            string clickedItemName = clickedItem.Text;
-            dataGridView1.DataSource = bll.GetSPByShape_BLL(clickedItemName);
-        }
-
-        private void xanhDươngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ToolStripMenuItem clickedItem = sender as ToolStripMenuItem;
-            string clickedItemName = clickedItem.Text;
-            dataGridView1.DataSource = bll.GetSPByColor_BLL(clickedItemName);
-        }
-        public void SetCBBThuongHieu()
-        {
-            toolStripComboBox1.Items.AddRange(bll.GetListCBBThuongHieu().ToArray());
-        }
-
-        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = bll.GetSPByBrand_BLL(toolStripComboBox1.SelectedItem.ToString());
-        }
+      
+      
+     
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
             dataGridView1.DataSource = bll.GetSPByTxtSearch(txtsearch.Text);
+        }
 
+        private void cbbGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+        public void SetCBBThuongHieu1()
+        {
+            cbbThuongHieu.Items.AddRange(bll.GetListCBBThuongHieu().ToArray());
+        }
+        public void hienthi(ComboBox th, ComboBox gt)
+        {
+            ShowDGV(bll.TimKiem_BLL(th, gt));
+          //  bll.TimKiem_BLL(th, gt);
+        }
+        
+
+        
+        private void cbbThuongHieu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            hienthi(cbbThuongHieu, cbbGioiTinh);
         }
     }
 }

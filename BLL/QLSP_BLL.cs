@@ -16,31 +16,6 @@ namespace CNPM_PBL3.BLL
             var s = dal.GetAllSP_DAL();
             return s;
         }
-        public dynamic GetSPByXuatXu_BLL(string xuatxu)
-        {
-            var s = dal.GetSPByXuatXu_DAL(xuatxu);
-            return s;
-        }
-        public dynamic GetSPByGender_BLL(string gender)
-        {
-            var s = dal.GetSPByGender_DAL(gender);
-            return s;
-        }
-        public dynamic GetSPByShape_BLL(string shape)
-        {
-            var s = dal.GetSPByShape_DAL(shape);
-            return s;
-        }
-        public dynamic GetSPByColor_BLL(string color)
-        {
-            var s = dal.GetSPByColor_DAL(color);
-            return s;
-        }
-        public dynamic GetSPByBrand_BLL(string brand)
-        {
-            var s = dal.GetSPByBrand_DAL(brand);
-            return s;
-        }
         public dynamic GetSPByTxtSearch(string text)
         {
             var s = dal.GetSPByTxtSearch_DAL(text);
@@ -78,19 +53,11 @@ namespace CNPM_PBL3.BLL
             }
             return data;
         }
-        public bool CheckID(string iD)
-        {
-            if(iD != dal.checkID(iD))
-            {
-                return true;
-            }
-            return false;
-        }
         public void ExecuteDB(DongHo s)
         {
             if (GetSPBYMaSP(s.MaSP) == null)
             {
-                dal.AddSP_DAL(s);
+                dal.AddSP_DAL(s);            
             }
             if(GetSPBYMaSP(s.MaSP) != null) 
             {
@@ -123,6 +90,9 @@ namespace CNPM_PBL3.BLL
         {
             return dal.GetMaKM_DAL(name);
         }
-
+        public dynamic TimKiem_BLL(ComboBox th, ComboBox gt)
+        {
+            return dal.TinKiem(th, gt);
+        }
     }
 }
