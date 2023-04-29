@@ -26,7 +26,6 @@ namespace CNPM_PBL3.BLL
                     {
                         t = i;
                         break;
-
                     }
 
                 }

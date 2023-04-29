@@ -100,10 +100,7 @@ namespace CNPM_PBL3.View
                 {
                     MessageBox.Show("Tài khoản đã tồn tại rồi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            
-               
             }
-           
         }
 
         private void butAddPicture_Click(object sender, EventArgs e)

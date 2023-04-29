@@ -26,9 +26,7 @@ namespace CNPM_PBL3.BLL
                     list.Add(s);
             }
             return list;
-               
-
-        }
+        }      
         public void AddNV_BLL(TaiKhoan t, ChiTietTaiKhoan ct)
         {
             dal.AddNV_DAL(t, ct);

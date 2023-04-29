@@ -62,8 +62,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\CBBItems.cs" />
     <Compile Include="BLL\QLForm.cs" />
     <Compile Include="BLL\QLNV_BLL.cs" />
+    <Compile Include="BLL\QLSP_BLL.cs" />
     <Compile Include="BLL\QLTK_BLL.cs" />
     <Compile Include="ChiTietHoaDon.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -73,6 +75,7 @@
     </Compile>
     <Compile Include="DAL\QLHA.cs" />
     <Compile Include="DAL\QLNV_DAL.cs" />
+    <Compile Include="DAL\QLSP_DAL.cs" />
     <Compile Include="DAL\QLTK_DAL.cs" />
     <Compile Include="DongHo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
