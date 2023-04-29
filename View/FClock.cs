@@ -17,9 +17,7 @@ namespace CNPM_PBL3.View
         public FClock()
         {
             InitializeComponent();
-        //    ShowDGV(bll.GetAllSP_BLL());
             SetCBBThuongHieu1();
-         //   hienthi(cbbThuongHieu, cbbGioiTinh);
         }
 
         public void ShowDGV(dynamic s)
@@ -65,19 +63,8 @@ namespace CNPM_PBL3.View
 
         private void ButSapXep_Click(object sender, EventArgs e)
         {
-            // Sắp xếp danh sách sinh viên theo điểm từ cao đến thấp
-           //   sinhVienList.Sort((sv1, sv2) => sv2.Diem.CompareTo(sv1.Diem));
-
-            // Gán danh sách đã sắp xếp cho DataSource của DataGridView
-           // dataGridView1.DataSource = sinhVienList;
-            //List<DongHo> list = bll.GetAllSP_BLL();
-            //list.Sort((l1, l2) => l2.GiaSP.CompareTo(l1.GiaSP));
-            //dataGridView1.DataSource = list;
+           
         }
-
-      
-      
-     
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -95,11 +82,8 @@ namespace CNPM_PBL3.View
         public void hienthi(ComboBox th, ComboBox gt)
         {
             ShowDGV(bll.TimKiem_BLL(th, gt));
-          //  bll.TimKiem_BLL(th, gt);
         }
-        
-
-        
+    
         private void cbbThuongHieu_SelectedIndexChanged(object sender, EventArgs e)
         {
             
