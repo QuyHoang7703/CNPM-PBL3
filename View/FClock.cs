@@ -18,7 +18,56 @@ namespace CNPM_PBL3.View
         {
             InitializeComponent();
             SetCBBThuongHieu1();
+            GetCBBThuongHieu();
+            GetCBBGioiTinhSP();
+            GetCBBBoMayNangLuong();
+            GetMauMatSo();
+            GetHinhDangMatSo();
+            GetChatLieuMatKinh();
+            GetChatLieuDay();
+            GetXuatXu();
         }
+        public void GetCBBThuongHieu()
+        {
+            cbbThuongHieu.Items.Add("");
+            cbbThuongHieu.Items.AddRange(bll.GetListCBBThuongHieu().ToArray());
+        }
+        public void GetCBBGioiTinhSP()
+        {
+            cbbGioiTinh.Items.Add("");
+            cbbGioiTinh.Items.AddRange(bll.GetGioiTinhSP_BLL().Distinct().ToArray());
+        }
+        public void GetCBBBoMayNangLuong()
+        {
+            cbbBoMayNangLuong.Items.Add("");
+            cbbBoMayNangLuong.Items.AddRange(bll.GetBoMayNangLuong_BLL().Distinct().ToArray());
+        }
+        public void GetMauMatSo()
+        {
+            cbbMauMatSo.Items.Add("");
+            cbbMauMatSo.Items.AddRange(bll.GetMauMatSo_BLL().Distinct().ToArray());
+        }
+        public void GetHinhDangMatSo()
+        {
+            cbbHinhDangMatSo.Items.Add("");
+            cbbHinhDangMatSo.Items.AddRange(bll.GetHinhDangMatSo_BLL().Distinct().ToArray());
+        }
+        public void GetChatLieuMatKinh()
+        {
+            cbbChatLieuMatKinh.Items.Add("");
+            cbbChatLieuMatKinh.Items.AddRange(bll.GetChatLieuMatKinh_BLL().Distinct().ToArray());
+        }
+        public void GetChatLieuDay()
+        {
+            cbbChatLieuDay.Items.Add("");
+            cbbChatLieuDay.Items.AddRange(bll.GetChatLieuDay_BLL().Distinct().ToArray());
+        }
+        public void GetXuatXu()
+        {
+            cbbXuatXu.Items.Add("");
+            cbbXuatXu.Items.AddRange(bll.GetXuatXu_BLL().Distinct().ToArray());
+        }
+
 
         public void ShowDGV(dynamic s)
         {
@@ -79,19 +128,20 @@ namespace CNPM_PBL3.View
         {
             cbbThuongHieu.Items.AddRange(bll.GetListCBBThuongHieu().ToArray());
         }
-        public void hienthi(ComboBox th, ComboBox gt)
+        public void showTimKiem(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX)
         {
-            ShowDGV(bll.TimKiem_BLL(th, gt));
+            ShowDGV(bll.TimKiem_BLL(cbbTH, cbbGT, cbbBMNL, cbbMMS, cbbHDMS, cbbCLMK, cbbCLD, cbbXX));
+            //  bll.TimKiem_BLL(th, gt);
         }
-    
+
+
         private void cbbThuongHieu_SelectedIndexChanged(object sender, EventArgs e)
         {
             
         }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void butTimKiem_Click(object sender, EventArgs e)
         {
-            hienthi(cbbThuongHieu, cbbGioiTinh);
+            showTimKiem(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu);
         }
     }
 }

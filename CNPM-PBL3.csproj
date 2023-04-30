@@ -128,6 +128,12 @@
     <Compile Include="View\FDetailStaff.Designer.cs">
       <DependentUpon>FDetailStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FHomePage.Designer.cs">
+      <DependentUpon>FHomePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FSetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,12 @@
     <Compile Include="View\FMainManager.Designer.cs">
       <DependentUpon>FMainManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FUserControlClock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FUserControlClock.Designer.cs">
+      <DependentUpon>FUserControlClock.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\FAddCustomer.resx">
       <DependentUpon>FAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FDetailStaff.resx">
       <DependentUpon>FDetailStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FHomePage.resx">
+      <DependentUpon>FHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FSetting.resx">
       <DependentUpon>FSetting.cs</DependentUpon>
@@ -211,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FStaff.resx">
       <DependentUpon>FStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FUserControlClock.resx">
+      <DependentUpon>FUserControlClock.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
