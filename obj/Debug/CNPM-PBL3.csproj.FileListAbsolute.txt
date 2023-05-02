@@ -362,3 +362,4 @@ D:\PBL3\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.CopyComplete
 D:\PBL3\CNPM-PBL3\obj\Debug\CNPM-PBL3.exe
 D:\PBL3\CNPM-PBL3\obj\Debug\CNPM-PBL3.pdb
 D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FHomePage.resources
+D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FCustomer.resources

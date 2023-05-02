@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.PTBHinhAnh = new System.Windows.Forms.PictureBox();
-            this.labelChiTiet = new System.Windows.Forms.Label();
             this.labelGiaTri = new System.Windows.Forms.Label();
+            this.labelChiTiet = new System.Windows.Forms.Label();
+            this.PTBHinhAnh = new System.Windows.Forms.PictureBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PTBHinhAnh)).BeginInit();
             this.SuspendLayout();
@@ -44,29 +44,10 @@
             this.guna2Panel1.Controls.Add(this.labelChiTiet);
             this.guna2Panel1.Controls.Add(this.PTBHinhAnh);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(44, 31);
+            this.guna2Panel1.Location = new System.Drawing.Point(34, 31);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(350, 436);
+            this.guna2Panel1.Size = new System.Drawing.Size(363, 436);
             this.guna2Panel1.TabIndex = 0;
-            // 
-            // PTBHinhAnh
-            // 
-            this.PTBHinhAnh.Location = new System.Drawing.Point(3, 14);
-            this.PTBHinhAnh.Name = "PTBHinhAnh";
-            this.PTBHinhAnh.Size = new System.Drawing.Size(344, 246);
-            this.PTBHinhAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PTBHinhAnh.TabIndex = 0;
-            this.PTBHinhAnh.TabStop = false;
-            // 
-            // labelChiTiet
-            // 
-            this.labelChiTiet.AutoSize = true;
-            this.labelChiTiet.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelChiTiet.Location = new System.Drawing.Point(28, 295);
-            this.labelChiTiet.Name = "labelChiTiet";
-            this.labelChiTiet.Size = new System.Drawing.Size(60, 22);
-            this.labelChiTiet.TabIndex = 1;
-            this.labelChiTiet.Text = "label1";
             // 
             // labelGiaTri
             // 
@@ -77,6 +58,26 @@
             this.labelGiaTri.Size = new System.Drawing.Size(60, 22);
             this.labelGiaTri.TabIndex = 2;
             this.labelGiaTri.Text = "label1";
+            // 
+            // labelChiTiet
+            // 
+            this.labelChiTiet.AutoSize = true;
+            this.labelChiTiet.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelChiTiet.Location = new System.Drawing.Point(13, 292);
+            this.labelChiTiet.Name = "labelChiTiet";
+            this.labelChiTiet.Size = new System.Drawing.Size(51, 19);
+            this.labelChiTiet.TabIndex = 1;
+            this.labelChiTiet.Text = "label1";
+            this.labelChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PTBHinhAnh
+            // 
+            this.PTBHinhAnh.Location = new System.Drawing.Point(3, 13);
+            this.PTBHinhAnh.Name = "PTBHinhAnh";
+            this.PTBHinhAnh.Size = new System.Drawing.Size(357, 246);
+            this.PTBHinhAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PTBHinhAnh.TabIndex = 0;
+            this.PTBHinhAnh.TabStop = false;
             // 
             // FUserControlClock
             // 

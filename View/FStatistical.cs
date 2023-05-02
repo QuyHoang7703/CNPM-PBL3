@@ -16,5 +16,10 @@ namespace CNPM_PBL3.View
         {
             InitializeComponent();
         }
+
+        private void guna2CircleProgressBar5_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

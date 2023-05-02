@@ -30,6 +30,7 @@ namespace CNPM_PBL3.View
             set
             {
                 labelChiTiet.Text = value;
+               
 
             }
         }

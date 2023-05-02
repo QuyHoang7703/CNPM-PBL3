@@ -71,7 +71,6 @@ namespace CNPM_PBL3.View
             f.Dock = DockStyle.Fill;
             this.Controls.Add(f);
             f.BringToFront();
-           
             f.Show();
         }
     }
