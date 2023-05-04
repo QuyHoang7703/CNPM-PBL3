@@ -50,11 +50,7 @@ namespace CNPM_PBL3.View
             f.Show();
         }
 
-        private void PanelMain_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+       
         private void guna2ButStaff_Click(object sender, EventArgs e)
         {
             //OpenChildForm(new FStaff());
@@ -65,6 +61,11 @@ namespace CNPM_PBL3.View
         {
             //OpenChildForm(new FDetailClock());
             f.OpenChildForm(panelMain, new FClock());
+        }
+
+        private void butLichSu_Click(object sender, EventArgs e)
+        {
+            f.OpenChildForm(panelMain, new FPurchaseHistory());
         }
     }
 }

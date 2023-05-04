@@ -8,16 +8,18 @@ namespace CNPM_PBL3.DAL
 {
     internal class QLKH_DAL
     {
-        QLDB qLDB = new QLDB();
+        QLDB db = new QLDB();
         public dynamic GetAllKH_DAL()
         {
-            var s = qLDB.KhachHangs.Select(p => new {p.MaKH, p.HoTen, p.NgaySinh, p.SDT, p.DiaChi, p.GioiTinh}).ToList();
+           
+            var s = db.KhachHangs.Select(p => new {p.MaKH, p.HoTen, p.NgaySinh, p.SDT, p.DiaChi, p.GioiTinh}).ToList();
+          
             return s;
         }
         public void AddKhachHang_DAL(KhachHang khachhang)
         {
-            qLDB.KhachHangs.Add(khachhang);
-            qLDB.SaveChanges();
+            db.KhachHangs.Add(khachhang);
+            db.SaveChanges();
         }
     }
 }

@@ -114,25 +114,28 @@ namespace CNPM_PBL3.View
 
         private void butSort_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string columnname = cbbItems.SelectedItem.ToString();
-                string direction = cbbSort.SelectedItem.ToString();
-                if(direction=="Giảm dần")
-                {
-                    dgvNV.Sort(dgvNV.Columns[columnname], ListSortDirection.Descending);
+            //try
+            //{
+            //    string columnname = cbbItems.SelectedItem.ToString();
+            //    string direction = cbbSort.SelectedItem.ToString();
+            //    if(direction=="Giảm dần")
+            //    {
+            //        dgvNV.Sort(dgvNV.Columns[columnname], ListSortDirection.Descending);
 
-                }
-                else
-                {
-                    dgvNV.Sort(dgvNV.Columns[columnname], ListSortDirection.Ascending);
-                }
+            //    }
+            //    else
+            //    {
+            //        dgvNV.Sort(dgvNV.Columns[columnname], ListSortDirection.Ascending);
+            //    }
 
-            }
-            catch (Exception)
-            {
+            //}
+            //catch (Exception)
+            //{
 
-            }
+            //}
+            string columnname = cbbItems.SelectedItem.ToString();
+            string direction = cbbSort.SelectedItem.ToString();
+            showDGV(bll.SortBy_BLL(columnname, direction));
         }
     }
 }

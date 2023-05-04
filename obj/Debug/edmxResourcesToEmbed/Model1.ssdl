@@ -3,11 +3,12 @@
   <EntityType Name="ChiTietHoaDon">
     <Key>
       <PropertyRef Name="MaHD" />
+      <PropertyRef Name="MaSP" />
     </Key>
-    <Property Name="MaHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaHD" Type="int" Nullable="false" />
     <Property Name="MaSP" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="SoLuong" Type="int" Nullable="false" />
-    <Property Name="GiaTien" Type="money" Nullable="false" />
+    <Property Name="DonGia" Type="money" Nullable="false" />
     <Property Name="TongTien" Type="money" Nullable="false" />
   </EntityType>
   <EntityType Name="ChiTietTaiKhoan">
@@ -105,7 +106,7 @@
   </Association>
   <Association Name="FK_ChiTietHoaDon_HoaDon">
     <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
-    <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="0..1" />
+    <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="HoaDon">
         <PropertyRef Name="MaHD" />

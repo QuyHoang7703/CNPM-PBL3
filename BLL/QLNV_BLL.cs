@@ -56,5 +56,9 @@ namespace CNPM_PBL3.BLL
         //    }
         //    return l;
         //}
+        public dynamic SortBy_BLL(string sortBy, string direction)
+        {
+            return dal.SortBy_DAL(sortBy, direction);
+        }
     }
 }

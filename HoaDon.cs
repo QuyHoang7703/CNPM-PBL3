@@ -14,12 +14,19 @@ namespace CNPM_PBL3
     
     public partial class HoaDon
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public HoaDon()
+        {
+            this.ChiTietHoaDons = new HashSet<ChiTietHoaDon>();
+        }
+    
         public int MaHD { get; set; }
         public int ID { get; set; }
         public int MaKH { get; set; }
         public System.DateTime NgayBan { get; set; }
     
-        public virtual ChiTietHoaDon ChiTietHoaDon { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
         public virtual KhachHang KhachHang { get; set; }
         public virtual TaiKhoan TaiKhoan { get; set; }
     }

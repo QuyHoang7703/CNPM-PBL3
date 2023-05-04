@@ -1,4 +1,5 @@
 ﻿using CNPM_PBL3.BLL;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace CNPM_PBL3.View
             GetCBBGioiTinh();
         }
         QLKH_BLL bll = new QLKH_BLL();
+        public KhachHang khachHang;
         public void GetCBBGioiTinh()
         {
             CBBGioiTinh.Items.Clear();
@@ -28,65 +30,83 @@ namespace CNPM_PBL3.View
         public void AddKachHang()
         {
             bool check = false;
-            if(CBBGioiTinh.SelectedItem.ToString() == "Nam")
+            if(CBBGioiTinh.SelectedItem.ToString()=="Nam")
             {
                 check = true;
             }
-            else
-            {
-                check = false;
-            }
-            KhachHang khachHang = new KhachHang()
+          
+            khachHang = new KhachHang()
             {
                 HoTen = txtHoTen.Text,
                 SDT = txtSDT.Text,
                 DiaChi = txtDiaChi.Text,
                 GioiTinh = check,
-                NgaySinh = Convert.ToDateTime(DTPKhachHang.Value)
+                NgaySinh = (dtpNS.Value)
             };
             bll.AddKhachHang_BLL(khachHang);
+         
+        }
+        public int GetIdKhachHang()
+        {
+            return bll.GetIdKhachHang_BLL(khachHang);
         }
         private void ButThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void ButLuu_Click(object sender, EventArgs e)
+        public bool Check()
         {
-            try
+            bool hasEmptyControl = false;
+
+            foreach (Control control in this.Controls)
+            {
+                if (control is Guna2TextBox)
+                {
+                    Guna2TextBox textBox = (Guna2TextBox)control;
+                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        hasEmptyControl = true;
+                        break;
+                    }
+                }
+                else if (control is Guna2ComboBox)
+                {
+                    Guna2ComboBox comboBox = (Guna2ComboBox)control;
+                    if (comboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(comboBox.SelectedItem.ToString()))
+                    {
+                        hasEmptyControl = true;
+                        break;
+                    }
+                }
+                //else if (control is RadioButton)
+                //{
+                //   RadioButton radioButton = (RadioButton)control;
+                //    if(radioButton.Checked==null) { }
+                //    hasEmptyControl = true;
+                //}
+            }
+            if (hasEmptyControl)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin vào các ô trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        private void ButAdd_Click(object sender, EventArgs e)
+        {
+            
+            if (!Check())
             {
                 AddKachHang();
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Dispose();
             }
-            catch (Exception)
-            {
-                if (string.IsNullOrEmpty(txtHoTen.Text))
-                {
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    if(string.IsNullOrEmpty(txtSDT.Text))
-                    {
-                        MessageBox.Show("Vui lòng điền đầy đủ thông tin ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        if(string.IsNullOrEmpty(txtDiaChi.Text))
-                        {
-                            MessageBox.Show("Vui lòng điền đầy đủ thông tin ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            if(CBBGioiTinh.SelectedItem == null)
-                            {
-                                MessageBox.Show("Vui lòng điền đầy đủ thông tin ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                        }
-                    }
-                }
-            }
+            FBill.idKhacHang = GetIdKhachHang();
+            //MessageBox.Show(FBill.idKhacHang.ToString());
+
         }
     }
 }

@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="BLL\CBBItems.cs" />
     <Compile Include="BLL\QLForm.cs" />
+    <Compile Include="BLL\QLHD_BLL.cs" />
     <Compile Include="BLL\QLKH_BLL.cs" />
     <Compile Include="BLL\QLNV_BLL.cs" />
     <Compile Include="BLL\QLSP_BLL.cs" />
@@ -75,6 +76,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\QLHA.cs" />
+    <Compile Include="DAL\QLHD_DAL.cs" />
     <Compile Include="DAL\QLKH_DAL.cs" />
     <Compile Include="DAL\QLNV_DAL.cs" />
     <Compile Include="DAL\QLSP_DAL.cs" />
@@ -124,11 +126,11 @@
     <Compile Include="View\FBill.Designer.cs">
       <DependentUpon>FBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FCustomer.cs">
+    <Compile Include="View\FDetailBill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FCustomer.Designer.cs">
-      <DependentUpon>FCustomer.cs</DependentUpon>
+    <Compile Include="View\FDetailBill.Designer.cs">
+      <DependentUpon>FDetailBill.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FDetailStaff.cs">
       <SubType>Form</SubType>
@@ -141,6 +143,12 @@
     </Compile>
     <Compile Include="View\FHomePage.Designer.cs">
       <DependentUpon>FHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FPurchaseHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FPurchaseHistory.Designer.cs">
+      <DependentUpon>FPurchaseHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FSetting.cs">
       <SubType>Form</SubType>
@@ -198,14 +206,17 @@
     <EmbeddedResource Include="View\FBill.resx">
       <DependentUpon>FBill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FCustomer.resx">
-      <DependentUpon>FCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="View\FDetailBill.resx">
+      <DependentUpon>FDetailBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FDetailStaff.resx">
       <DependentUpon>FDetailStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FHomePage.resx">
       <DependentUpon>FHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FPurchaseHistory.resx">
+      <DependentUpon>FPurchaseHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FSetting.resx">
       <DependentUpon>FSetting.cs</DependentUpon>
@@ -310,5 +321,6 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

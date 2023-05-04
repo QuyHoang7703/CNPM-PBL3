@@ -80,8 +80,7 @@ namespace CNPM_PBL3.View
             {
                 Add();
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Dispose();
-                QLNV_BLL bll = new QLNV_BLL();
+                this.Dispose();              
                 d(bll.GetAllNV_BLL());
             }
             catch (Exception)

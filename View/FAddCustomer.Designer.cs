@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ButLuu = new Guna.UI2.WinForms.Guna2Button();
+            this.ButAdd = new Guna.UI2.WinForms.Guna2Button();
             this.txtDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtHoTen = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
@@ -41,28 +41,28 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.CBBGioiTinh = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.DTPKhachHang = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
+            this.dtpNS = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ButLuu
+            // ButAdd
             // 
-            this.ButLuu.BorderRadius = 10;
-            this.ButLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ButLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ButLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ButLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ButLuu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
-            this.ButLuu.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButLuu.ForeColor = System.Drawing.Color.Black;
-            this.ButLuu.Location = new System.Drawing.Point(215, 699);
-            this.ButLuu.Name = "ButLuu";
-            this.ButLuu.Size = new System.Drawing.Size(183, 72);
-            this.ButLuu.TabIndex = 0;
-            this.ButLuu.Text = "Thêm";
-            this.ButLuu.Click += new System.EventHandler(this.ButLuu_Click);
+            this.ButAdd.BorderRadius = 10;
+            this.ButAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
+            this.ButAdd.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButAdd.ForeColor = System.Drawing.Color.Black;
+            this.ButAdd.Location = new System.Drawing.Point(215, 699);
+            this.ButAdd.Name = "ButAdd";
+            this.ButAdd.Size = new System.Drawing.Size(183, 72);
+            this.ButAdd.TabIndex = 0;
+            this.ButAdd.Text = "Thêm";
+            this.ButAdd.Click += new System.EventHandler(this.ButAdd_Click);
             // 
             // txtDiaChi
             // 
@@ -82,7 +82,7 @@
             this.txtDiaChi.PasswordChar = '\0';
             this.txtDiaChi.PlaceholderText = "";
             this.txtDiaChi.SelectedText = "";
-            this.txtDiaChi.Size = new System.Drawing.Size(328, 49);
+            this.txtDiaChi.Size = new System.Drawing.Size(317, 49);
             this.txtDiaChi.TabIndex = 2;
             // 
             // txtHoTen
@@ -103,7 +103,7 @@
             this.txtHoTen.PasswordChar = '\0';
             this.txtHoTen.PlaceholderText = "";
             this.txtHoTen.SelectedText = "";
-            this.txtHoTen.Size = new System.Drawing.Size(328, 49);
+            this.txtHoTen.Size = new System.Drawing.Size(317, 49);
             this.txtHoTen.TabIndex = 2;
             // 
             // txtSDT
@@ -124,7 +124,7 @@
             this.txtSDT.PasswordChar = '\0';
             this.txtSDT.PlaceholderText = "";
             this.txtSDT.SelectedText = "";
-            this.txtSDT.Size = new System.Drawing.Size(328, 53);
+            this.txtSDT.Size = new System.Drawing.Size(317, 53);
             this.txtSDT.TabIndex = 2;
             // 
             // ButThoat
@@ -228,18 +228,10 @@
             this.CBBGioiTinh.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBBGioiTinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.CBBGioiTinh.ItemHeight = 30;
-            this.CBBGioiTinh.Location = new System.Drawing.Point(719, 519);
+            this.CBBGioiTinh.Location = new System.Drawing.Point(719, 530);
             this.CBBGioiTinh.Name = "CBBGioiTinh";
-            this.CBBGioiTinh.Size = new System.Drawing.Size(115, 36);
+            this.CBBGioiTinh.Size = new System.Drawing.Size(134, 36);
             this.CBBGioiTinh.TabIndex = 24;
-            // 
-            // DTPKhachHang
-            // 
-            this.DTPKhachHang.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTPKhachHang.Location = new System.Drawing.Point(719, 610);
-            this.DTPKhachHang.Name = "DTPKhachHang";
-            this.DTPKhachHang.Size = new System.Drawing.Size(272, 27);
-            this.DTPKhachHang.TabIndex = 25;
             // 
             // label5
             // 
@@ -251,14 +243,30 @@
             this.label5.TabIndex = 26;
             this.label5.Text = "Ngày Sinh";
             // 
+            // dtpNS
+            // 
+            this.dtpNS.BorderRadius = 10;
+            this.dtpNS.Checked = true;
+            this.dtpNS.FillColor = System.Drawing.Color.Gainsboro;
+            this.dtpNS.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.dtpNS.ForeColor = System.Drawing.Color.Black;
+            this.dtpNS.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpNS.Location = new System.Drawing.Point(719, 610);
+            this.dtpNS.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNS.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNS.Name = "dtpNS";
+            this.dtpNS.Size = new System.Drawing.Size(280, 45);
+            this.dtpNS.TabIndex = 27;
+            this.dtpNS.Value = new System.DateTime(2023, 4, 10, 14, 33, 24, 833);
+            // 
             // FAddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
             this.ClientSize = new System.Drawing.Size(1100, 900);
+            this.Controls.Add(this.dtpNS);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.DTPKhachHang);
             this.Controls.Add(this.CBBGioiTinh);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -270,7 +278,7 @@
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.ButThoat);
-            this.Controls.Add(this.ButLuu);
+            this.Controls.Add(this.ButAdd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FAddCustomer";
             this.Text = "AddCustomer";
@@ -283,7 +291,7 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Button ButLuu;
+        private Guna.UI2.WinForms.Guna2Button ButAdd;
         private Guna.UI2.WinForms.Guna2TextBox txtDiaChi;
         private Guna.UI2.WinForms.Guna2TextBox txtHoTen;
         private Guna.UI2.WinForms.Guna2TextBox txtSDT;
@@ -296,7 +304,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2ComboBox CBBGioiTinh;
-        private System.Windows.Forms.DateTimePicker DTPKhachHang;
         private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNS;
     }
 }

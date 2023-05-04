@@ -3,11 +3,12 @@
   <EntityType Name="ChiTietHoaDon">
     <Key>
       <PropertyRef Name="MaHD" />
+      <PropertyRef Name="MaSP" />
     </Key>
-    <Property Name="MaHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaHD" Type="Int32" Nullable="false" />
     <Property Name="MaSP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="SoLuong" Type="Int32" Nullable="false" />
-    <Property Name="GiaTien" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <Property Name="TongTien" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <NavigationProperty Name="DongHo" Relationship="Self.FK_ChiTietHoaDon_DongHo" FromRole="ChiTietHoaDon" ToRole="DongHo" />
     <NavigationProperty Name="HoaDon" Relationship="Self.FK_ChiTietHoaDon_HoaDon" FromRole="ChiTietHoaDon" ToRole="HoaDon" />
@@ -59,7 +60,7 @@
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="MaKH" Type="Int32" Nullable="false" />
     <Property Name="NgayBan" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="ChiTietHoaDon" Relationship="Self.FK_ChiTietHoaDon_HoaDon" FromRole="HoaDon" ToRole="ChiTietHoaDon" />
+    <NavigationProperty Name="ChiTietHoaDons" Relationship="Self.FK_ChiTietHoaDon_HoaDon" FromRole="HoaDon" ToRole="ChiTietHoaDon" />
     <NavigationProperty Name="KhachHang" Relationship="Self.FK_HoaDon_KhachHang" FromRole="HoaDon" ToRole="KhachHang" />
     <NavigationProperty Name="TaiKhoan" Relationship="Self.FK_HoaDon_TaiKhoan" FromRole="HoaDon" ToRole="TaiKhoan" />
   </EntityType>
@@ -119,7 +120,7 @@
   </Association>
   <Association Name="FK_ChiTietHoaDon_HoaDon">
     <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
-    <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="0..1" />
+    <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="HoaDon">
         <PropertyRef Name="MaHD" />

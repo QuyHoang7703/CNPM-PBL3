@@ -43,8 +43,8 @@ namespace CNPM_PBL3.DAL
                 using (QLDB db = new QLDB())
                 {
                     db.TaiKhoans.Add(t);
-                    var s = db.TaiKhoans.Find(t.ID);
-                    ct.TaiKhoan = s;
+                   // var s = db.TaiKhoans.Find(t.ID);
+                    ct.TaiKhoan = t;
                     db.ChiTietTaiKhoans.Add(ct);
                     db.SaveChanges();
                 }
@@ -68,10 +68,31 @@ namespace CNPM_PBL3.DAL
         //    {
 
         //    }
-                
-          
-        //}
 
+
+        //}
+        public dynamic SortBy_DAL(string sortBy, string direction)
+        {
+            QLDB db = new QLDB();
+            var s = db.TaiKhoans.Where(p => p.Role == "Nhân viên").Select(p => new { p.ID, p.UserName, p.ChiTietTaiKhoan.HoTen, p.ChiTietTaiKhoan.SDT }).ToList();
+            //var s = GetAllNV_DAL();
+            //s= s.ToList();
+            if (direction == "Tăng dần")
+            {
+                return s.OrderBy(p => p.GetType().GetProperty(sortBy).GetValue(p, null)).ToList();
+                //return s = s.OrderBy(s => s.ID).ToList();
+                //var s = typeof(dynamic).GetProperty(sortBy);
+                //return s.OrderBy(p => propertyInfo.GetValue(p, null)).ToList();
+
+            }
+            else
+            {
+                return s = s.OrderByDescending(p => p.GetType().GetProperty(sortBy).GetValue(p, null)).ToList();
+
+            }
+
+
+        }
 
     }
 }

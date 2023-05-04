@@ -7,7 +7,7 @@
           <ScalarProperty Name="MaHD" ColumnName="MaHD" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-          <ScalarProperty Name="GiaTien" ColumnName="GiaTien" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
           <ScalarProperty Name="TongTien" ColumnName="TongTien" />
         </MappingFragment>
       </EntityTypeMapping>

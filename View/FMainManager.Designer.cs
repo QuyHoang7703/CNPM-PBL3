@@ -33,7 +33,7 @@
             this.guna2ButStaff = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ButSetting = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.butLichSu = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.butClock = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ButBill = new Guna.UI2.WinForms.Guna2Button();
@@ -48,7 +48,7 @@
             this.guna2GradientPanel1.Controls.Add(this.guna2ButStaff);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button7);
             this.guna2GradientPanel1.Controls.Add(this.guna2ButSetting);
-            this.guna2GradientPanel1.Controls.Add(this.guna2Button6);
+            this.guna2GradientPanel1.Controls.Add(this.butLichSu);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button4);
             this.guna2GradientPanel1.Controls.Add(this.butClock);
             this.guna2GradientPanel1.Controls.Add(this.guna2ButBill);
@@ -142,32 +142,33 @@
             this.guna2ButSetting.UseTransparentBackground = true;
             this.guna2ButSetting.Click += new System.EventHandler(this.guna2ButSetting_Click);
             // 
-            // guna2Button6
+            // butLichSu
             // 
-            this.guna2Button6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
-            this.guna2Button6.BorderRadius = 20;
-            this.guna2Button6.BorderThickness = 1;
-            this.guna2Button6.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button6.CheckedState.BorderColor = System.Drawing.Color.White;
-            this.guna2Button6.CheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2Button6.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
-            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button6.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button6.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button6.Image")));
-            this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button6.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button6.Location = new System.Drawing.Point(11, 498);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(250, 60);
-            this.guna2Button6.TabIndex = 6;
-            this.guna2Button6.Text = "     Khách Hàng";
-            this.guna2Button6.UseTransparentBackground = true;
+            this.butLichSu.BackColor = System.Drawing.Color.Transparent;
+            this.butLichSu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
+            this.butLichSu.BorderRadius = 20;
+            this.butLichSu.BorderThickness = 1;
+            this.butLichSu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.butLichSu.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.butLichSu.CheckedState.FillColor = System.Drawing.Color.White;
+            this.butLichSu.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.butLichSu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butLichSu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butLichSu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butLichSu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butLichSu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
+            this.butLichSu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butLichSu.ForeColor = System.Drawing.Color.Black;
+            this.butLichSu.Image = ((System.Drawing.Image)(resources.GetObject("butLichSu.Image")));
+            this.butLichSu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.butLichSu.ImageSize = new System.Drawing.Size(40, 40);
+            this.butLichSu.Location = new System.Drawing.Point(11, 498);
+            this.butLichSu.Name = "butLichSu";
+            this.butLichSu.Size = new System.Drawing.Size(250, 60);
+            this.butLichSu.TabIndex = 6;
+            this.butLichSu.Text = "Lịch sử mua hàng";
+            this.butLichSu.UseTransparentBackground = true;
+            this.butLichSu.Click += new System.EventHandler(this.butLichSu_Click);
             // 
             // guna2Button4
             // 
@@ -311,7 +312,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2ButBill;
         private Guna.UI2.WinForms.Guna2Button butClock;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private Guna.UI2.WinForms.Guna2Button butLichSu;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2ButSetting;
         private Guna.UI2.WinForms.Guna2Button guna2Button7;

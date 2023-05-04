@@ -8,11 +8,12 @@
         <EntityType Name="ChiTietHoaDon">
           <Key>
             <PropertyRef Name="MaHD" />
+            <PropertyRef Name="MaSP" />
           </Key>
-          <Property Name="MaHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaHD" Type="int" Nullable="false" />
           <Property Name="MaSP" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="SoLuong" Type="int" Nullable="false" />
-          <Property Name="GiaTien" Type="money" Nullable="false" />
+          <Property Name="DonGia" Type="money" Nullable="false" />
           <Property Name="TongTien" Type="money" Nullable="false" />
         </EntityType>
         <EntityType Name="ChiTietTaiKhoan">
@@ -110,7 +111,7 @@
         </Association>
         <Association Name="FK_ChiTietHoaDon_HoaDon">
           <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
-          <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="0..1" />
+          <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HoaDon">
               <PropertyRef Name="MaHD" />
@@ -226,11 +227,12 @@
         <EntityType Name="ChiTietHoaDon">
           <Key>
             <PropertyRef Name="MaHD" />
+            <PropertyRef Name="MaSP" />
           </Key>
-          <Property Name="MaHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaHD" Type="Int32" Nullable="false" />
           <Property Name="MaSP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
-          <Property Name="GiaTien" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="TongTien" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <NavigationProperty Name="DongHo" Relationship="Self.FK_ChiTietHoaDon_DongHo" FromRole="ChiTietHoaDon" ToRole="DongHo" />
           <NavigationProperty Name="HoaDon" Relationship="Self.FK_ChiTietHoaDon_HoaDon" FromRole="ChiTietHoaDon" ToRole="HoaDon" />
@@ -282,7 +284,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="MaKH" Type="Int32" Nullable="false" />
           <Property Name="NgayBan" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="ChiTietHoaDon" Relationship="Self.FK_ChiTietHoaDon_HoaDon" FromRole="HoaDon" ToRole="ChiTietHoaDon" />
+          <NavigationProperty Name="ChiTietHoaDons" Relationship="Self.FK_ChiTietHoaDon_HoaDon" FromRole="HoaDon" ToRole="ChiTietHoaDon" />
           <NavigationProperty Name="KhachHang" Relationship="Self.FK_HoaDon_KhachHang" FromRole="HoaDon" ToRole="KhachHang" />
           <NavigationProperty Name="TaiKhoan" Relationship="Self.FK_HoaDon_TaiKhoan" FromRole="HoaDon" ToRole="TaiKhoan" />
         </EntityType>
@@ -342,7 +344,7 @@
         </Association>
         <Association Name="FK_ChiTietHoaDon_HoaDon">
           <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
-          <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="0..1" />
+          <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HoaDon">
               <PropertyRef Name="MaHD" />
@@ -462,7 +464,7 @@
                 <ScalarProperty Name="MaHD" ColumnName="MaHD" />
                 <ScalarProperty Name="MaSP" ColumnName="MaSP" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-                <ScalarProperty Name="GiaTien" ColumnName="GiaTien" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
                 <ScalarProperty Name="TongTien" ColumnName="TongTien" />
               </MappingFragment>
             </EntityTypeMapping>
