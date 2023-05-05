@@ -259,7 +259,7 @@
             this.panel_login.Controls.Add(this.label1);
             this.panel_login.Controls.Add(this.butLogin);
             this.panel_login.FillColor = System.Drawing.Color.White;
-            this.panel_login.Location = new System.Drawing.Point(90, 55);
+            this.panel_login.Location = new System.Drawing.Point(438, 58);
             this.panel_login.Name = "panel_login";
             this.panel_login.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
             this.panel_login.ShadowDepth = 80;

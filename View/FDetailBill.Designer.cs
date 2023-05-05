@@ -31,7 +31,9 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dtpNM = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpNS = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.butCancel = new Guna.UI2.WinForms.Guna2Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtTongTien = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dtpNM = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -61,7 +61,7 @@
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(180, 22);
+            this.guna2Panel1.Location = new System.Drawing.Point(171, 22);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(729, 70);
             this.guna2Panel1.TabIndex = 6;
@@ -91,10 +91,27 @@
             this.guna2Panel2.Controls.Add(this.txtSDT);
             this.guna2Panel2.Controls.Add(this.txtHoTen);
             this.guna2Panel2.Controls.Add(this.label7);
-            this.guna2Panel2.Location = new System.Drawing.Point(64, 115);
+            this.guna2Panel2.Location = new System.Drawing.Point(55, 115);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(995, 276);
             this.guna2Panel2.TabIndex = 7;
+            // 
+            // dtpNM
+            // 
+            this.dtpNM.BorderRadius = 10;
+            this.dtpNM.Checked = true;
+            this.dtpNM.Enabled = false;
+            this.dtpNM.FillColor = System.Drawing.Color.Gainsboro;
+            this.dtpNM.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.dtpNM.ForeColor = System.Drawing.Color.Black;
+            this.dtpNM.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpNM.Location = new System.Drawing.Point(687, 206);
+            this.dtpNM.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNM.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNM.Name = "dtpNM";
+            this.dtpNM.Size = new System.Drawing.Size(274, 45);
+            this.dtpNM.TabIndex = 31;
+            this.dtpNM.Value = new System.DateTime(2023, 4, 10, 14, 33, 24, 833);
             // 
             // dtpNS
             // 
@@ -105,13 +122,23 @@
             this.dtpNS.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.dtpNS.ForeColor = System.Drawing.Color.Black;
             this.dtpNS.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpNS.Location = new System.Drawing.Point(706, 122);
+            this.dtpNS.Location = new System.Drawing.Point(687, 122);
             this.dtpNS.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNS.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNS.Name = "dtpNS";
-            this.dtpNS.Size = new System.Drawing.Size(255, 45);
+            this.dtpNS.Size = new System.Drawing.Size(274, 45);
             this.dtpNS.TabIndex = 31;
             this.dtpNS.Value = new System.DateTime(2023, 4, 10, 14, 33, 24, 833);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(576, 215);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(114, 25);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Ngày mua";
             // 
             // label5
             // 
@@ -252,7 +279,7 @@
             this.guna2Panel3.BorderThickness = 1;
             this.guna2Panel3.Controls.Add(this.label6);
             this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
-            this.guna2Panel3.Location = new System.Drawing.Point(303, 412);
+            this.guna2Panel3.Location = new System.Drawing.Point(294, 412);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(529, 70);
             this.guna2Panel3.TabIndex = 7;
@@ -272,7 +299,7 @@
             // 
             this.dgvCTHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCTHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCTHD.Location = new System.Drawing.Point(147, 499);
+            this.dgvCTHD.Location = new System.Drawing.Point(138, 499);
             this.dgvCTHD.Name = "dgvCTHD";
             this.dgvCTHD.RowHeadersWidth = 51;
             this.dgvCTHD.RowTemplate.Height = 24;
@@ -289,7 +316,7 @@
             this.butCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
             this.butCancel.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butCancel.ForeColor = System.Drawing.Color.Black;
-            this.butCancel.Location = new System.Drawing.Point(761, 769);
+            this.butCancel.Location = new System.Drawing.Point(752, 769);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(185, 57);
             this.butCancel.TabIndex = 28;
@@ -300,7 +327,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(47, 790);
+            this.label8.Location = new System.Drawing.Point(38, 790);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(107, 25);
             this.label8.TabIndex = 29;
@@ -319,7 +346,7 @@
             this.txtTongTien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTongTien.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongTien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTongTien.Location = new System.Drawing.Point(194, 777);
+            this.txtTongTien.Location = new System.Drawing.Point(185, 777);
             this.txtTongTien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.PasswordChar = '\0';
@@ -327,33 +354,6 @@
             this.txtTongTien.SelectedText = "";
             this.txtTongTien.Size = new System.Drawing.Size(223, 49);
             this.txtTongTien.TabIndex = 30;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(576, 215);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(114, 25);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Ngày mua";
-            // 
-            // dtpNM
-            // 
-            this.dtpNM.BorderRadius = 10;
-            this.dtpNM.Checked = true;
-            this.dtpNM.Enabled = false;
-            this.dtpNM.FillColor = System.Drawing.Color.Gainsboro;
-            this.dtpNM.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.dtpNM.ForeColor = System.Drawing.Color.Black;
-            this.dtpNM.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpNM.Location = new System.Drawing.Point(706, 206);
-            this.dtpNM.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpNM.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpNM.Name = "dtpNM";
-            this.dtpNM.Size = new System.Drawing.Size(255, 45);
-            this.dtpNM.TabIndex = 31;
-            this.dtpNM.Value = new System.DateTime(2023, 4, 10, 14, 33, 24, 833);
             // 
             // FDetailBill
             // 

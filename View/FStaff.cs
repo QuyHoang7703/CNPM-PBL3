@@ -137,5 +137,7 @@ namespace CNPM_PBL3.View
             string direction = cbbSort.SelectedItem.ToString();
             showDGV(bll.SortBy_BLL(columnname, direction));
         }
+
+      
     }
 }

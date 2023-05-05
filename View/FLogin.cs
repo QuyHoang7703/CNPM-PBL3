@@ -19,6 +19,8 @@ namespace CNPM_PBL3
     {
         QLTK_BLL bll = new QLTK_BLL();
         public static TaiKhoan account;
+        public delegate void mydel();
+        public mydel d { get; set; }
         public FLogin()
         {
             InitializeComponent();
@@ -78,11 +80,18 @@ namespace CNPM_PBL3
                 {
                     FMainManager f = new FMainManager();
                     this.Hide();
+                    this.d += new FLogin.mydel(f.show);
+                    d();
                     f.Show();
                 }
-                else if (checkRole(account) == 0)
+                else
+                if (checkRole(account) == 0)
                 {
-
+                    FMainManager f = new FMainManager();
+                    this.Hide();
+                    this.d += new FLogin.mydel(f.show);
+                    d();
+                    f.Show();
 
                 }
                 else 

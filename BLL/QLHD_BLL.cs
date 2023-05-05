@@ -1,6 +1,7 @@
 ﻿using CNPM_PBL3.DAL;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,8 +89,53 @@ namespace CNPM_PBL3.BLL
         {
             dal.UpDateSoLuong(maSP, soLuong);
         }
-            
 
-            
+        public dynamic GetHD_ByTxtSearch(string text)
+        {
+           
+            List<dynamic> list = new List<dynamic>();
+            int number;
+            DateTime dateTime;
+            bool checkDateTime = DateTime.TryParse(text, out dateTime);
+            bool check = int.TryParse(text, out number);
+            if (string.IsNullOrEmpty(text))
+            {
+                list = GetAllHD_BLL();
+            }
+            else
+            {
+               var s = GetAllHD_BLL(); ;
+                if (check)
+                {
+                    int i = Convert.ToInt32(text);
+                 
+                    for (int j = 0; j < s.Count; j++)
+                    {
+                        if (i == s[j].MaKhachHang)
+                            list.Add(s[j]);
+                    }
+                }
+                else
+                {
+                    var y = s.Where(p => p.HoTen.Contains(text)).ToList();
+                    foreach (var j in y)
+                    {
+                        list.Add(j);
+                    }
+                }
+                if (checkDateTime)
+                {
+                    DateTime dt = Convert.ToDateTime(text);
+                    for(int j = 0; j < s.Count; j++)
+                    {
+                        if (dt == s[j].NgayBan.Date)
+                            list.Add(s[j]);
+                    } 
+                }
+            }
+            return list;
+        }
+      
+
     }
 }

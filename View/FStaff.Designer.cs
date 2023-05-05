@@ -118,6 +118,7 @@
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(279, 50);
             this.txtSearch.TabIndex = 8;
+           
             // 
             // butAdd
             // 

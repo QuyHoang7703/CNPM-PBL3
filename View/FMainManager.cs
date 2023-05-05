@@ -1,4 +1,5 @@
 ﻿using CNPM_PBL3.BLL;
+using CNPM_PBL3.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,11 +19,27 @@ namespace CNPM_PBL3.View
             InitializeComponent();
         }
         QLForm f = new QLForm();
+        QLNV_DAL dal = new QLNV_DAL();
         public static TaiKhoan account { get; set; }
-        private void guna2Button1_Click(object sender, EventArgs e)
+        public void show()
         {
-
+            f.OpenChildForm(panelMain, new FHomePage());
+            var s = dal.GetDetailStaff_DAL(FLogin.account.ID);
+            label1.Text = s.HoTen + "\n" + FLogin.account.Role;
+            if(FLogin.account.Role == "Nhân viên")
+            {
+                this.label1.Location = new System.Drawing.Point(35, 170);
+                butClock.Visible = false;
+                ButThongKe.Visible = false;
+                this.ButTrangChu.Location = new System.Drawing.Point(11, 254);
+                this.guna2ButBill.Location = new System.Drawing.Point(11, 320);
+                this.butLichSu.Location = new System.Drawing.Point(11, 380);
+                this.guna2ButSetting.Location = new System.Drawing.Point(11, 440);
+                guna2ButStaff.Visible = false;
+            }
+            
         }
+      
         private void guna2ButBill_Click(object sender, EventArgs e)
         {
             //QLForm k = new QLForm();
@@ -66,6 +83,12 @@ namespace CNPM_PBL3.View
         private void butLichSu_Click(object sender, EventArgs e)
         {
             f.OpenChildForm(panelMain, new FPurchaseHistory());
+        }
+
+        private void ButTrangChu_Click(object sender, EventArgs e)
+        {
+            f.OpenChildForm(panelMain, new FHomePage());
+
         }
     }
 }

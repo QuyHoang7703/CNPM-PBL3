@@ -25,6 +25,7 @@ namespace CNPM_PBL3.View
             GetChatLieuMatKinh();
             GetChatLieuDay();
             GetXuatXu();
+            showHinhAnh(qLSP.GetAllSP2_DAL());
         }
         QLSP_DAL qLSP = new QLSP_DAL();
         QLSP_BLL bll = new QLSP_BLL();

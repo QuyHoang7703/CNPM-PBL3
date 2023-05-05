@@ -37,5 +37,13 @@ namespace CNPM_PBL3.View
 
             f.ShowDialog();
         }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            
+                ShowDGV(bll.GetHD_ByTxtSearch(txtsearch.Text));
+            
+           
+        }
     }
 }

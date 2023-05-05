@@ -156,7 +156,7 @@
             "ID",
             "Giá",
             "Số Lượng"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(790, 784);
+            this.guna2ComboBox1.Location = new System.Drawing.Point(733, 784);
             this.guna2ComboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2ComboBox1.Name = "guna2ComboBox1";
             this.guna2ComboBox1.Size = new System.Drawing.Size(223, 36);
@@ -172,7 +172,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(994, 428);
+            this.dataGridView1.Size = new System.Drawing.Size(910, 428);
             this.dataGridView1.TabIndex = 16;
             // 
             // txtsearch
@@ -213,7 +213,7 @@
             this.butTimKiem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
             this.butTimKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butTimKiem.ForeColor = System.Drawing.Color.Black;
-            this.butTimKiem.Location = new System.Drawing.Point(966, 143);
+            this.butTimKiem.Location = new System.Drawing.Point(829, 141);
             this.butTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.butTimKiem.Name = "butTimKiem";
             this.butTimKiem.Size = new System.Drawing.Size(120, 39);
@@ -233,7 +233,7 @@
             this.cbbXuatXu.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbXuatXu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbXuatXu.ItemHeight = 30;
-            this.cbbXuatXu.Location = new System.Drawing.Point(767, 186);
+            this.cbbXuatXu.Location = new System.Drawing.Point(630, 184);
             this.cbbXuatXu.Margin = new System.Windows.Forms.Padding(4);
             this.cbbXuatXu.Name = "cbbXuatXu";
             this.cbbXuatXu.Size = new System.Drawing.Size(174, 36);
@@ -243,7 +243,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(795, 160);
+            this.label8.Location = new System.Drawing.Point(658, 158);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 22);
             this.label8.TabIndex = 69;
@@ -261,7 +261,7 @@
             this.cbbMauMatSo.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbMauMatSo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbMauMatSo.ItemHeight = 30;
-            this.cbbMauMatSo.Location = new System.Drawing.Point(764, 112);
+            this.cbbMauMatSo.Location = new System.Drawing.Point(627, 110);
             this.cbbMauMatSo.Margin = new System.Windows.Forms.Padding(4);
             this.cbbMauMatSo.Name = "cbbMauMatSo";
             this.cbbMauMatSo.Size = new System.Drawing.Size(174, 36);
@@ -271,7 +271,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(795, 86);
+            this.label7.Location = new System.Drawing.Point(658, 84);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 22);
             this.label7.TabIndex = 67;
@@ -281,7 +281,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(607, 160);
+            this.label6.Location = new System.Drawing.Point(470, 158);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 22);
             this.label6.TabIndex = 66;
@@ -299,7 +299,7 @@
             this.cbbChatLieuDay.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbChatLieuDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbChatLieuDay.ItemHeight = 30;
-            this.cbbChatLieuDay.Location = new System.Drawing.Point(585, 186);
+            this.cbbChatLieuDay.Location = new System.Drawing.Point(448, 184);
             this.cbbChatLieuDay.Margin = new System.Windows.Forms.Padding(4);
             this.cbbChatLieuDay.Name = "cbbChatLieuDay";
             this.cbbChatLieuDay.Size = new System.Drawing.Size(174, 36);
@@ -309,7 +309,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(407, 160);
+            this.label5.Location = new System.Drawing.Point(270, 158);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(165, 22);
             this.label5.TabIndex = 64;
@@ -319,7 +319,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(224, 160);
+            this.label4.Location = new System.Drawing.Point(87, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(156, 22);
             this.label4.TabIndex = 63;
@@ -329,7 +329,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(581, 86);
+            this.label3.Location = new System.Drawing.Point(444, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(175, 22);
             this.label3.TabIndex = 62;
@@ -339,7 +339,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(439, 86);
+            this.label2.Location = new System.Drawing.Point(302, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 22);
             this.label2.TabIndex = 61;
@@ -349,7 +349,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(241, 86);
+            this.label1.Location = new System.Drawing.Point(104, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 22);
             this.label1.TabIndex = 60;
@@ -367,7 +367,7 @@
             this.cbbChatLieuMatKinh.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbChatLieuMatKinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbChatLieuMatKinh.ItemHeight = 30;
-            this.cbbChatLieuMatKinh.Location = new System.Drawing.Point(400, 186);
+            this.cbbChatLieuMatKinh.Location = new System.Drawing.Point(263, 184);
             this.cbbChatLieuMatKinh.Margin = new System.Windows.Forms.Padding(4);
             this.cbbChatLieuMatKinh.Name = "cbbChatLieuMatKinh";
             this.cbbChatLieuMatKinh.Size = new System.Drawing.Size(174, 36);
@@ -385,7 +385,7 @@
             this.cbbHinhDangMatSo.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbHinhDangMatSo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbHinhDangMatSo.ItemHeight = 30;
-            this.cbbHinhDangMatSo.Location = new System.Drawing.Point(215, 186);
+            this.cbbHinhDangMatSo.Location = new System.Drawing.Point(78, 184);
             this.cbbHinhDangMatSo.Margin = new System.Windows.Forms.Padding(4);
             this.cbbHinhDangMatSo.Name = "cbbHinhDangMatSo";
             this.cbbHinhDangMatSo.Size = new System.Drawing.Size(174, 36);
@@ -403,7 +403,7 @@
             this.cbbBoMayNangLuong.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbBoMayNangLuong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbBoMayNangLuong.ItemHeight = 30;
-            this.cbbBoMayNangLuong.Location = new System.Drawing.Point(582, 112);
+            this.cbbBoMayNangLuong.Location = new System.Drawing.Point(445, 110);
             this.cbbBoMayNangLuong.Margin = new System.Windows.Forms.Padding(4);
             this.cbbBoMayNangLuong.Name = "cbbBoMayNangLuong";
             this.cbbBoMayNangLuong.Size = new System.Drawing.Size(174, 36);
@@ -421,7 +421,7 @@
             this.cbbThuongHieu.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbThuongHieu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbThuongHieu.ItemHeight = 30;
-            this.cbbThuongHieu.Location = new System.Drawing.Point(215, 112);
+            this.cbbThuongHieu.Location = new System.Drawing.Point(78, 110);
             this.cbbThuongHieu.Margin = new System.Windows.Forms.Padding(4);
             this.cbbThuongHieu.Name = "cbbThuongHieu";
             this.cbbThuongHieu.Size = new System.Drawing.Size(174, 36);
@@ -439,7 +439,7 @@
             this.cbbGioiTinh.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbGioiTinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbGioiTinh.ItemHeight = 30;
-            this.cbbGioiTinh.Location = new System.Drawing.Point(400, 112);
+            this.cbbGioiTinh.Location = new System.Drawing.Point(263, 110);
             this.cbbGioiTinh.Margin = new System.Windows.Forms.Padding(4);
             this.cbbGioiTinh.Name = "cbbGioiTinh";
             this.cbbGioiTinh.Size = new System.Drawing.Size(174, 36);

@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FPurchaseHistory));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvLSMH = new System.Windows.Forms.DataGridView();
             this.butDetailBill = new Guna.UI2.WinForms.Guna2Button();
+            this.txtsearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLSMH)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +64,7 @@
             // 
             this.dgvLSMH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLSMH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLSMH.Location = new System.Drawing.Point(33, 204);
+            this.dgvLSMH.Location = new System.Drawing.Point(40, 324);
             this.dgvLSMH.Name = "dgvLSMH";
             this.dgvLSMH.RowHeadersWidth = 51;
             this.dgvLSMH.RowTemplate.Height = 24;
@@ -80,12 +82,37 @@
             this.butDetailBill.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
             this.butDetailBill.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDetailBill.ForeColor = System.Drawing.Color.Black;
-            this.butDetailBill.Location = new System.Drawing.Point(401, 664);
+            this.butDetailBill.Location = new System.Drawing.Point(392, 746);
             this.butDetailBill.Name = "butDetailBill";
             this.butDetailBill.Size = new System.Drawing.Size(246, 55);
             this.butDetailBill.TabIndex = 27;
             this.butDetailBill.Text = "Xem Chi Tiết";
             this.butDetailBill.Click += new System.EventHandler(this.butDetailBill_Click);
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.Animated = true;
+            this.txtsearch.AutoRoundedCorners = true;
+            this.txtsearch.BorderRadius = 19;
+            this.txtsearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtsearch.DefaultText = "";
+            this.txtsearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtsearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtsearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtsearch.IconLeft")));
+            this.txtsearch.Location = new System.Drawing.Point(760, 254);
+            this.txtsearch.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.PasswordChar = '\0';
+            this.txtsearch.PlaceholderText = "Tìm Kiếm";
+            this.txtsearch.SelectedText = "";
+            this.txtsearch.Size = new System.Drawing.Size(291, 41);
+            this.txtsearch.TabIndex = 90;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
             // FPurchaseHistory
             // 
@@ -93,6 +120,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
             this.ClientSize = new System.Drawing.Size(1082, 853);
+            this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.butDetailBill);
             this.Controls.Add(this.dgvLSMH);
             this.Controls.Add(this.guna2Panel1);
@@ -112,5 +140,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvLSMH;
         private Guna.UI2.WinForms.Guna2Button butDetailBill;
+        private Guna.UI2.WinForms.Guna2TextBox txtsearch;
     }
 }
