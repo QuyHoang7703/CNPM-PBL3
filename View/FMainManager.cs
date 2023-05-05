@@ -32,10 +32,11 @@ namespace CNPM_PBL3.View
             butClock.Visible = false;
             ButThongKe.Visible = false;
             this.ButTrangChu.Location = new System.Drawing.Point(11, 254);
-            this.guna2ButBill.Location = new System.Drawing.Point(11, 320);
-            this.butLichSu.Location = new System.Drawing.Point(11, 380);
-            this.guna2ButSetting.Location = new System.Drawing.Point(11, 440);
+            this.guna2ButBill.Location = new System.Drawing.Point(11, 314);
+            this.butLichSu.Location = new System.Drawing.Point(11, 374);
+            this.guna2ButSetting.Location = new System.Drawing.Point(11, 434);
             guna2ButStaff.Visible = false;
+            butKhuyenMai.Visible = false;
 
         }
       

@@ -361,7 +361,6 @@ D:\PBL3\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.CopyComplete
 D:\PBL3\CNPM-PBL3\obj\Debug\CNPM-PBL3.exe
 D:\PBL3\CNPM-PBL3\obj\Debug\CNPM-PBL3.pdb
 D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FHomePage.resources
-D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FCustomer.resources
 D:\PBL3-DongHo_Ver6\CNPM-PBL3\bin\Debug\CNPM-PBL3.exe.config
 D:\PBL3-DongHo_Ver6\CNPM-PBL3\bin\Debug\CNPM-PBL3.exe
 D:\PBL3-DongHo_Ver6\CNPM-PBL3\bin\Debug\CNPM-PBL3.pdb
@@ -472,3 +471,7 @@ C:\Users\Admin\OneDrive\Máy tính\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FStaf
 C:\Users\Admin\OneDrive\Máy tính\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FUserControlClock.resources
 C:\Users\Admin\OneDrive\Máy tính\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FDetailKhuyenMai.resources
 C:\Users\Admin\OneDrive\Máy tính\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FKhuyenMai.resources
+D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FDetailBill.resources
+D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FDetailKhuyenMai.resources
+D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FKhuyenMai.resources
+D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FPurchaseHistory.resources

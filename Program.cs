@@ -19,7 +19,7 @@ namespace CNPM_PBL3
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new Form1());
             // Application.Run(new FSetting());
-             Application.Run(new FLogin());
+            // Application.Run(new FLogin());
             // Application.Run(new FClock());
             //Application.Run(new FDetailClock());
             // Application.Run(new FDetailStaff());
@@ -30,7 +30,7 @@ namespace CNPM_PBL3
             // Application.Run(new FCustomer());
             //Application.Run(new FBill());
             //Application.Run(new FAddCustomer());
-            //Application.Run(new FPurchaseHistory());
+            Application.Run(new FPurchaseHistory());
            // Application.Run(new FKhuyenMai());
 
         }

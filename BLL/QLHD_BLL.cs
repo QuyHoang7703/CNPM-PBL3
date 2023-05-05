@@ -106,7 +106,7 @@ namespace CNPM_PBL3.BLL
                 bool checkDateTime = DateTime.TryParse(text, out dateTime);
                 foreach (var i in GetAllHD_BLL())
                 {
-                    if ((check && i.MaHoaDon == number) || (checkDateTime && i.NgayBan == dateTime)|| i.HoTen.Contains(text) )
+                    if ((check && i.MaHoaDon == number) || (checkDateTime && i.NgayBan.Date == dateTime) || i.HoTen.Contains(text))
                     {
                         list.Add(i);
                     }
