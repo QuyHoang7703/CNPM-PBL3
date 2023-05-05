@@ -66,6 +66,7 @@
     <Compile Include="BLL\QLForm.cs" />
     <Compile Include="BLL\QLHD_BLL.cs" />
     <Compile Include="BLL\QLKH_BLL.cs" />
+    <Compile Include="BLL\QLKM_BLL.cs" />
     <Compile Include="BLL\QLNV_BLL.cs" />
     <Compile Include="BLL\QLSP_BLL.cs" />
     <Compile Include="BLL\QLTK_BLL.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="DAL\QLHA.cs" />
     <Compile Include="DAL\QLHD_DAL.cs" />
     <Compile Include="DAL\QLKH_DAL.cs" />
+    <Compile Include="DAL\QLKM_DAL.cs" />
     <Compile Include="DAL\QLNV_DAL.cs" />
     <Compile Include="DAL\QLSP_DAL.cs" />
     <Compile Include="DAL\QLTK_DAL.cs" />
@@ -132,6 +134,12 @@
     <Compile Include="View\FDetailBill.Designer.cs">
       <DependentUpon>FDetailBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FDetailKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FDetailKhuyenMai.Designer.cs">
+      <DependentUpon>FDetailKhuyenMai.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FDetailStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +151,12 @@
     </Compile>
     <Compile Include="View\FHomePage.Designer.cs">
       <DependentUpon>FHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FKhuyenMai.Designer.cs">
+      <DependentUpon>FKhuyenMai.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FPurchaseHistory.cs">
       <SubType>Form</SubType>
@@ -209,11 +223,17 @@
     <EmbeddedResource Include="View\FDetailBill.resx">
       <DependentUpon>FDetailBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FDetailKhuyenMai.resx">
+      <DependentUpon>FDetailKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FDetailStaff.resx">
       <DependentUpon>FDetailStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FHomePage.resx">
       <DependentUpon>FHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FKhuyenMai.resx">
+      <DependentUpon>FKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FPurchaseHistory.resx">
       <DependentUpon>FPurchaseHistory.cs</DependentUpon>

@@ -53,6 +53,30 @@ namespace CNPM_PBL3.BLL
             }
             return data;
         }
+        public decimal GetGiaSPByIdSP(string masp)
+        {
+            decimal gia = 0;
+            foreach (var i in dal.GetAllSP2_DAL())
+            {
+                if (i.MaSP == masp)
+                {
+                    gia = i.GiaSP;
+                }
+            }
+            return gia;
+        }
+        public List<dynamic> GetSPByMaKM(int MaKM)
+        {
+            List<dynamic> data = new List<dynamic>();
+            foreach (var i in dal.GetAllSP2_DAL())
+            {
+                if (i.MaKhuyenMai == MaKM)
+                {
+                    data.Add(i);
+                }
+            }
+            return data;
+        }
         public void ExecuteDB(DongHo s)
         {
             if (GetSPBYMaSP(s.MaSP) == null)

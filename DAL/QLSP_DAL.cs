@@ -35,6 +35,12 @@ namespace CNPM_PBL3.DAL
             return s;
         }
 
+        public dynamic GetSpByThuongHieu(string thuongHieu)
+        {
+            var s = db.DongHoes.Where(p => p.ThuongHieu.TenThuongHieu == thuongHieu)
+                .Select(p => p).ToList();
+            return s;
+        }
         public List<ThuongHieu> GetAllTH_DAL()
         {
             List<ThuongHieu> data = new List<ThuongHieu>();
