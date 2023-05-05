@@ -20,24 +20,23 @@ namespace CNPM_PBL3.View
         }
         QLForm f = new QLForm();
         QLNV_DAL dal = new QLNV_DAL();
-        public static TaiKhoan account { get; set; }
+       // public static TaiKhoan account { get; set; }
+        private void PanelFrame_Paint(object sender, PaintEventArgs e)
+        {
+            lbThongTin.Text = FLogin.account.ChiTietTaiKhoan.HoTen + "\n" + FLogin.account.Role + "\n"  + "ID: " +FLogin.account.ID + "";
+        }
         public void show()
         {
             f.OpenChildForm(panelMain, new FHomePage());
-            var s = dal.GetDetailStaff_DAL(FLogin.account.ID);
-            label1.Text = s.HoTen + "\n" + FLogin.account.Role;
-            if(FLogin.account.Role == "Nhân viên")
-            {
-                this.label1.Location = new System.Drawing.Point(35, 170);
-                butClock.Visible = false;
-                ButThongKe.Visible = false;
-                this.ButTrangChu.Location = new System.Drawing.Point(11, 254);
-                this.guna2ButBill.Location = new System.Drawing.Point(11, 320);
-                this.butLichSu.Location = new System.Drawing.Point(11, 380);
-                this.guna2ButSetting.Location = new System.Drawing.Point(11, 440);
-                guna2ButStaff.Visible = false;
-            }
-            
+            this.lbThongTin.Location = new System.Drawing.Point(35, 170);
+            butClock.Visible = false;
+            ButThongKe.Visible = false;
+            this.ButTrangChu.Location = new System.Drawing.Point(11, 254);
+            this.guna2ButBill.Location = new System.Drawing.Point(11, 320);
+            this.butLichSu.Location = new System.Drawing.Point(11, 380);
+            this.guna2ButSetting.Location = new System.Drawing.Point(11, 440);
+            guna2ButStaff.Visible = false;
+
         }
       
         private void guna2ButBill_Click(object sender, EventArgs e)
@@ -90,5 +89,7 @@ namespace CNPM_PBL3.View
             f.OpenChildForm(panelMain, new FHomePage());
 
         }
+
+      
     }
 }

@@ -318,7 +318,7 @@
             this.txtsearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtsearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtsearch.IconLeft")));
-            this.txtsearch.Location = new System.Drawing.Point(26, 225);
+            this.txtsearch.Location = new System.Drawing.Point(753, 225);
             this.txtsearch.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.PasswordChar = '\0';

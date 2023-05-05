@@ -22,7 +22,7 @@ namespace CNPM_PBL3.BLL
             {
                 int number;
                 bool check = int.TryParse(text, out number);
-                if ((check && s.ID==number) || s.HoTen==text || s.UserName==text) 
+                if ((check && s.ID==number) || s.HoTen.Contains(text) || s.UserName==text) 
                     list.Add(s);
             }
             return list;

@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMainManager));
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.PanelFrame = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lbThongTin = new System.Windows.Forms.Label();
             this.guna2ButStaff = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ButSetting = new Guna.UI2.WinForms.Guna2Button();
@@ -39,28 +40,40 @@
             this.guna2ButBill = new Guna.UI2.WinForms.Guna2Button();
             this.ButTrangChu = new Guna.UI2.WinForms.Guna2Button();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2GradientPanel1.SuspendLayout();
+            this.PanelFrame.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2GradientPanel1
+            // PanelFrame
             // 
-            this.guna2GradientPanel1.BorderRadius = 10;
-            this.guna2GradientPanel1.Controls.Add(this.label1);
-            this.guna2GradientPanel1.Controls.Add(this.guna2ButStaff);
-            this.guna2GradientPanel1.Controls.Add(this.guna2Button7);
-            this.guna2GradientPanel1.Controls.Add(this.guna2ButSetting);
-            this.guna2GradientPanel1.Controls.Add(this.butLichSu);
-            this.guna2GradientPanel1.Controls.Add(this.ButThongKe);
-            this.guna2GradientPanel1.Controls.Add(this.butClock);
-            this.guna2GradientPanel1.Controls.Add(this.guna2ButBill);
-            this.guna2GradientPanel1.Controls.Add(this.ButTrangChu);
-            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(2, 1);
-            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(270, 900);
-            this.guna2GradientPanel1.TabIndex = 0;
+            this.PanelFrame.BorderRadius = 10;
+            this.PanelFrame.Controls.Add(this.lbThongTin);
+            this.PanelFrame.Controls.Add(this.guna2ButStaff);
+            this.PanelFrame.Controls.Add(this.guna2Button7);
+            this.PanelFrame.Controls.Add(this.guna2ButSetting);
+            this.PanelFrame.Controls.Add(this.butLichSu);
+            this.PanelFrame.Controls.Add(this.ButThongKe);
+            this.PanelFrame.Controls.Add(this.butClock);
+            this.PanelFrame.Controls.Add(this.guna2ButBill);
+            this.PanelFrame.Controls.Add(this.ButTrangChu);
+            this.PanelFrame.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
+            this.PanelFrame.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
+            this.PanelFrame.Location = new System.Drawing.Point(2, 1);
+            this.PanelFrame.Name = "PanelFrame";
+            this.PanelFrame.Size = new System.Drawing.Size(270, 900);
+            this.PanelFrame.TabIndex = 0;
+            this.PanelFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelFrame_Paint);
+            // 
+            // lbThongTin
+            // 
+            this.lbThongTin.AutoSize = true;
+            this.lbThongTin.BackColor = System.Drawing.Color.Transparent;
+            this.lbThongTin.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThongTin.Location = new System.Drawing.Point(35, 106);
+            this.lbThongTin.Name = "lbThongTin";
+            this.lbThongTin.Size = new System.Drawing.Size(109, 25);
+            this.lbThongTin.TabIndex = 10;
+            this.lbThongTin.Text = "Thông tin";
+            this.lbThongTin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2ButStaff
             // 
@@ -153,7 +166,7 @@
             this.butLichSu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.butLichSu.CheckedState.BorderColor = System.Drawing.Color.White;
             this.butLichSu.CheckedState.FillColor = System.Drawing.Color.White;
-            this.butLichSu.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.butLichSu.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.butLichSu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butLichSu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butLichSu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -182,7 +195,7 @@
             this.ButThongKe.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.ButThongKe.CheckedState.BorderColor = System.Drawing.Color.White;
             this.ButThongKe.CheckedState.FillColor = System.Drawing.Color.White;
-            this.ButThongKe.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.ButThongKe.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.ButThongKe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ButThongKe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.ButThongKe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -292,39 +305,27 @@
             this.panelMain.Size = new System.Drawing.Size(1100, 900);
             this.panelMain.TabIndex = 2;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 150);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 25);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "6546546545645646";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FMainManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 900);
-            this.Controls.Add(this.guna2GradientPanel1);
+            this.Controls.Add(this.PanelFrame);
             this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "FMainManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GDChinh";
-            this.guna2GradientPanel1.ResumeLayout(false);
-            this.guna2GradientPanel1.PerformLayout();
+            this.PanelFrame.ResumeLayout(false);
+            this.PanelFrame.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2GradientPanel PanelFrame;
         private Guna.UI2.WinForms.Guna2Button ButTrangChu;
         private Guna.UI2.WinForms.Guna2Button guna2ButBill;
         private Guna.UI2.WinForms.Guna2Button butClock;
@@ -334,6 +335,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button7;
         public System.Windows.Forms.Panel panelMain;
         private Guna.UI2.WinForms.Guna2Button guna2ButStaff;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbThongTin;
     }
 }

@@ -14,7 +14,7 @@ namespace CNPM_PBL3.BLL
         public List<string> GetDBCBB()
         {
             List<string> list = new List<string>();
-            foreach(DongHo i in dal.GetALLDH_DAL())
+            foreach (DongHo i in dal.GetALLDH_DAL())
             {
                 list.Add(i.MaSP);
             }
@@ -24,27 +24,26 @@ namespace CNPM_PBL3.BLL
         {
             List<dynamic> list = new List<dynamic>();
             //var s= dal.GetALLDH_DAL();
-            foreach(var i in dal.GetAllHD_DAL())
+            foreach (var i in dal.GetAllHD_DAL())
             {
                 var pt = new
                 {
-                    
-                    MaHoaDon =i.MaHD,
-                    MaKhachHang=i.KhachHang.MaKH,
-                    HoTen =i.KhachHang.HoTen,
-                    NgayBan=i.NgayBan,
-                    MaNhanVien=i.ID,
-                    
+
+                    MaHoaDon = i.MaHD,
+                    MaKhachHang = i.KhachHang.MaKH,
+                    HoTen = i.KhachHang.HoTen,
+                    NgayBan = i.NgayBan,
+                    MaNhanVien = i.ID,
 
                 };
                 list.Add(pt);
             }
             return list;
-            
+
         }
         public dynamic GetChiTietHoaDon(int maHD)
         {
-            foreach(var i in dal.GetAllHD_DAL())
+            foreach (var i in dal.GetAllHD_DAL())
             {
                 if (i.MaHD == maHD)
                     return i;
@@ -55,13 +54,13 @@ namespace CNPM_PBL3.BLL
         public decimal GetDonGia(string maSP)
         {
             decimal giaSP = 0;
-            foreach(var i in dal.GetALLDH_DAL())
+            foreach (var i in dal.GetALLDH_DAL())
             {
                 if (i.MaSP == maSP)
                 {
                     giaSP = i.GiaSP;
                 }
-                   
+
             }
             return giaSP;
         }
@@ -69,11 +68,11 @@ namespace CNPM_PBL3.BLL
         public int GetSoLuong(string maSP)
         {
             int soLuong = 0;
-            foreach(var i in dal.GetALLDH_DAL())
+            foreach (var i in dal.GetALLDH_DAL())
             {
-                if(i.MaSP==maSP)
+                if (i.MaSP == maSP)
                 {
-                   soLuong= i.SoLuong;
+                    soLuong = i.SoLuong;
                 }
             }
             return soLuong;
@@ -83,7 +82,7 @@ namespace CNPM_PBL3.BLL
             dal.AddHD_DAL(hd, list);
         }
 
-       
+
 
         public void UpdateSoLuong(string maSP, int soLuong)
         {
@@ -92,50 +91,32 @@ namespace CNPM_PBL3.BLL
 
         public dynamic GetHD_ByTxtSearch(string text)
         {
-           
+
             List<dynamic> list = new List<dynamic>();
-            int number;
-            DateTime dateTime;
-            bool checkDateTime = DateTime.TryParse(text, out dateTime);
-            bool check = int.TryParse(text, out number);
+
             if (string.IsNullOrEmpty(text))
             {
                 list = GetAllHD_BLL();
             }
             else
-            {
-               var s = GetAllHD_BLL(); ;
-                if (check)
+            {              
+                int number;
+                bool check = int.TryParse(text, out number);
+                DateTime dateTime;
+                bool checkDateTime = DateTime.TryParse(text, out dateTime);
+                foreach (var i in GetAllHD_BLL())
                 {
-                    int i = Convert.ToInt32(text);
-                 
-                    for (int j = 0; j < s.Count; j++)
+                    if ((check && i.MaHoaDon == number) || (checkDateTime && i.NgayBan == dateTime)|| i.HoTen.Contains(text) )
                     {
-                        if (i == s[j].MaKhachHang)
-                            list.Add(s[j]);
+                        list.Add(i);
                     }
-                }
-                else
-                {
-                    var y = s.Where(p => p.HoTen.Contains(text)).ToList();
-                    foreach (var j in y)
-                    {
-                        list.Add(j);
-                    }
-                }
-                if (checkDateTime)
-                {
-                    DateTime dt = Convert.ToDateTime(text);
-                    for(int j = 0; j < s.Count; j++)
-                    {
-                        if (dt == s[j].NgayBan.Date)
-                            list.Add(s[j]);
-                    } 
-                }
+                }               
             }
             return list;
         }
-      
+
+
 
     }
 }
+

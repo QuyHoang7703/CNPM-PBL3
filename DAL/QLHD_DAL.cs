@@ -26,15 +26,15 @@ namespace CNPM_PBL3.DAL
             return s;
             
         }
-        public List<dynamic> GetAllHD1_DAL()
-        {
-            List<dynamic> li = new List<dynamic>();
-            QLDB db = new QLDB();
-            var s = db.HoaDons./*Where(p => p.MaKH == i).*/Select(p => new { p.MaHD, p.MaKH, p.KhachHang.HoTen, p.ID, p.NgayBan }).ToList(); 
-            li .AddRange(s);
-            return li;
+        //public List<dynamic> GetAllHD1_DAL()
+        //{
+        //    List<dynamic> li = new List<dynamic>();
+        //    QLDB db = new QLDB();
+        //    var s = db.HoaDons./*Where(p => p.MaKH == i).*/Select(p => new { p.MaHD, p.MaKH, p.KhachHang.HoTen, p.ID, p.NgayBan }).ToList(); 
+        //    li .AddRange(s);
+        //    return li;
 
-        }
+        //}
         public void AddHD_DAL(HoaDon hd, List<ChiTietHoaDon> list)
         {
             using(QLDB db = new QLDB())
@@ -58,9 +58,7 @@ namespace CNPM_PBL3.DAL
                 
                     var s = db.DongHoes.Find(maSP);
                     s.SoLuong = soLuong;
-                    db.SaveChanges();
-                
-                
+                    db.SaveChanges();               
             }
         }
             
