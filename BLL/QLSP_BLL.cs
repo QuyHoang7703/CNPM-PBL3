@@ -281,7 +281,37 @@ namespace CNPM_PBL3.BLL
                 return s;
             }
         }
-        public dynamic TimKiemTrangChu_BLL(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX)
+        public List<decimal> GetGiatri_CBBGiaSP(string txt)
+        {
+            List<decimal> li = new List<decimal>();
+            //ab10.0000-300.0000
+            string inputString = txt;
+            string inputString1 = txt;
+            int startIndex = inputString.IndexOfAny("0123456789".ToCharArray());// timf vị trí số xuất hiện đầu tiên
+            int endIndex = inputString.IndexOf('-', startIndex);
+            if (endIndex == -1)
+            {
+                endIndex = inputString.Length;
+            }
+            if (inputString.Contains("Trên"))
+            {
+                string numberString = inputString.Substring(startIndex, endIndex - startIndex);
+                decimal number = Convert.ToDecimal(numberString);
+                li.Add(number);
+
+            }
+            else
+            {
+                string numberString = inputString.Substring(startIndex, endIndex - startIndex);
+                string numberString1 = inputString1.Substring(endIndex - startIndex + 1, endIndex);
+                decimal number = Convert.ToDecimal(numberString);
+                li.Add(number);
+                decimal number2 = Convert.ToDecimal(numberString1);
+                li.Add(number2);
+            }
+            return li;
+        }
+        public dynamic TimKiemTrangChu_BLL(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX, ComboBox cbbGSP)
         {
             string thuongHieu = "";
             if (cbbTH.SelectedItem != null)
@@ -322,6 +352,11 @@ namespace CNPM_PBL3.BLL
             if (cbbXX.SelectedItem != null)
             {
                 xuatXu = cbbXX.SelectedItem.ToString();
+            }
+            string giaSP = "";
+            if (cbbGSP.SelectedItem != null)
+            {
+                giaSP = cbbGSP.SelectedItem.ToString();
             }
             using (QLDB db = new QLDB())
             {
@@ -373,6 +408,25 @@ namespace CNPM_PBL3.BLL
 
                     s = s.Where(p => p.XuatSu == xuatXu)
                             .Select(p => p).ToList();
+                }
+                if (!string.IsNullOrWhiteSpace(giaSP))
+                {
+                    List<decimal> li = new List<decimal>();
+                    li = GetGiatri_CBBGiaSP(giaSP);
+                    if (li.Count == 1)
+                    {
+                        decimal gia1 = li[0];
+
+                        s = s.Where(p => p.GiaSP >= gia1)
+                           .Select(p => p).ToList();
+                    }
+                    else
+                    {
+                        decimal gia1 = li[0];
+                        decimal gia2 = li[1];
+                        s = s.Where(p => p.GiaSP >= gia1 && p.GiaSP <= gia2)
+                           .Select(p => p).ToList();
+                    }
                 }
                 if (s.Count == 0)
                 {

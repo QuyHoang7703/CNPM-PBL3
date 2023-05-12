@@ -39,11 +39,12 @@ namespace CNPM_PBL3.View
             butKhuyenMai.Visible = false;
 
         }
-      
+
+        public static FBill fBill = new FBill(); 
         private void guna2ButBill_Click(object sender, EventArgs e)
         {
             //QLForm k = new QLForm();
-            f.OpenChildForm(panelMain, new FBill());
+            f.OpenChildForm(panelMain, fBill);
             //OpenChildForm(new FBill());
 
                 

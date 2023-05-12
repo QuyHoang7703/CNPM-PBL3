@@ -31,7 +31,7 @@ namespace CNPM_PBL3.BLL
 
                     MaHoaDon = i.MaHD,
                     MaKhachHang = i.KhachHang.MaKH,
-                    HoTen = i.KhachHang.HoTenKH,
+                    HoTen = i.KhachHang.HoTen,
                     NgayBan = i.NgayBan,
                     MaNhanVien = i.ID,
 

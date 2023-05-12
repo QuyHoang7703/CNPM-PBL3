@@ -29,8 +29,12 @@ namespace CNPM_PBL3.View
             cbbMaSP.Items.Clear();
             cbbMaSP.Items.AddRange(bll.GetDBCBB().ToArray());
         }
-       
 
+        public void get(string s)
+        {
+            cbbMaSP.SelectedItem = s;
+            
+        }
         private void ButAddCustomers_Click(object sender, EventArgs e)
         {
             FAddCustomer f = new FAddCustomer();

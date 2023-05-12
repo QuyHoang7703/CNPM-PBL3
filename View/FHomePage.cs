@@ -25,6 +25,7 @@ namespace CNPM_PBL3.View
             GetChatLieuMatKinh();
             GetChatLieuDay();
             GetXuatXu();
+            GetGiaSP();
             showHinhAnh(qLSP.GetAllSP2_DAL());
         }
         QLSP_DAL qLSP = new QLSP_DAL();
@@ -38,6 +39,15 @@ namespace CNPM_PBL3.View
                     item.ChatLieuMatKinh + " - " + item.BoMayNangLuong + " - " + item.DuongKinhMatSo + "mm";
                 fUserControlClock.GiaSP = Convert.ToString(item.GiaSP) + "đ";
                 fUserControlClock.hinhAnh = item.HinhAnh;
+                fUserControlClock.MSP = item.MaSP;
+                if (item.MaKhuyenMai != null)
+                {
+                    fUserControlClock.khuyenmai = "Khuyến mãi " + qLSP.giaTriKuyenMai_DAL(item.MaKhuyenMai) + "%";
+                }
+                else
+                {
+                    fUserControlClock.khuyenmai = null;
+                }
                 flowLayoutPanel1.Controls.Add(fUserControlClock);
             }
         }
@@ -81,22 +91,29 @@ namespace CNPM_PBL3.View
             cbbXuatXu.Items.Add("");
             cbbXuatXu.Items.AddRange(bll.GetXuatXu_BLL().Distinct().ToArray());
         }
-        public void showTimKiem(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX)
+        public void GetGiaSP()
         {
-            showHinhAnh(bll.TimKiemTrangChu_BLL(cbbTH, cbbGT, cbbBMNL, cbbMMS, cbbHDMS, cbbCLMK, cbbCLD, cbbXX));
+            cbbGiaSP.Items.Add("");
+            cbbGiaSP.Items.Add("10.0000-300.0000");
+            cbbGiaSP.Items.Add("300.0000-500.0000");
+            cbbGiaSP.Items.Add("Trên 300.0000 ");
+        }
+        public void showTimKiem(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX, ComboBox cbbgsp)
+        {
+            showHinhAnh(bll.TimKiemTrangChu_BLL(cbbTH, cbbGT, cbbBMNL, cbbMMS, cbbHDMS, cbbCLMK, cbbCLD, cbbXX, cbbgsp));
 
         }
 
         private void butTimKiem_Click(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
-            showTimKiem(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu);
+            showTimKiem(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP);
         }
 
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
-            showHinhAnh(bll.TimKiemTrenTXTTrangChu_BLL(txtsearch.Text, bll.TimKiemTrangChu_BLL(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu)));
+            showHinhAnh(bll.TimKiemTrenTXTTrangChu_BLL(txtsearch.Text, bll.TimKiemTrangChu_BLL(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP)));
         }
     }
 }

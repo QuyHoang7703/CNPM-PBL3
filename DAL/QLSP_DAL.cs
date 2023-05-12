@@ -93,6 +93,13 @@ namespace CNPM_PBL3.DAL
                 return s.TenThuongHieu;
             }
         }
-
+        public string giaTriKuyenMai_DAL(int maKM)
+        {
+            using (QLDB db = new QLDB())
+            {
+                var s = db.KhuyenMais.Where(p => p.MaKhuyenMai == maKM).Select(p => p).Single();
+                return s.GiaTriKhuyenMai.ToString();
+            }
+        }
     }
 }
