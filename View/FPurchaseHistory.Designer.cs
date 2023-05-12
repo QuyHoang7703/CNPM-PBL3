@@ -34,6 +34,7 @@
             this.dgvLSMH = new System.Windows.Forms.DataGridView();
             this.butDetailBill = new Guna.UI2.WinForms.Guna2Button();
             this.txtsearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.butInHoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLSMH)).BeginInit();
             this.SuspendLayout();
@@ -82,7 +83,7 @@
             this.butDetailBill.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
             this.butDetailBill.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDetailBill.ForeColor = System.Drawing.Color.Black;
-            this.butDetailBill.Location = new System.Drawing.Point(392, 746);
+            this.butDetailBill.Location = new System.Drawing.Point(117, 754);
             this.butDetailBill.Name = "butDetailBill";
             this.butDetailBill.Size = new System.Drawing.Size(246, 55);
             this.butDetailBill.TabIndex = 27;
@@ -114,12 +115,31 @@
             this.txtsearch.TabIndex = 90;
             this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
+            // butInHoaDon
+            // 
+            this.butInHoaDon.BorderRadius = 15;
+            this.butInHoaDon.BorderThickness = 1;
+            this.butInHoaDon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butInHoaDon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butInHoaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butInHoaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butInHoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
+            this.butInHoaDon.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butInHoaDon.ForeColor = System.Drawing.Color.Black;
+            this.butInHoaDon.Location = new System.Drawing.Point(630, 754);
+            this.butInHoaDon.Name = "butInHoaDon";
+            this.butInHoaDon.Size = new System.Drawing.Size(246, 55);
+            this.butInHoaDon.TabIndex = 91;
+            this.butInHoaDon.Text = "In Hóa Đơn";
+            this.butInHoaDon.Click += new System.EventHandler(this.butInHoaDon_Click);
+            // 
             // FPurchaseHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
             this.ClientSize = new System.Drawing.Size(1082, 853);
+            this.Controls.Add(this.butInHoaDon);
             this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.butDetailBill);
             this.Controls.Add(this.dgvLSMH);
@@ -141,5 +161,6 @@
         private System.Windows.Forms.DataGridView dgvLSMH;
         private Guna.UI2.WinForms.Guna2Button butDetailBill;
         private Guna.UI2.WinForms.Guna2TextBox txtsearch;
+        private Guna.UI2.WinForms.Guna2Button butInHoaDon;
     }
 }

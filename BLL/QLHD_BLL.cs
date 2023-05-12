@@ -31,7 +31,7 @@ namespace CNPM_PBL3.BLL
 
                     MaHoaDon = i.MaHD,
                     MaKhachHang = i.KhachHang.MaKH,
-                    HoTen = i.KhachHang.HoTen,
+                    HoTen = i.KhachHang.HoTenKH,
                     NgayBan = i.NgayBan,
                     MaNhanVien = i.ID,
 
@@ -59,6 +59,7 @@ namespace CNPM_PBL3.BLL
         }
         //
 
+        //bỏ bên QLSP
         public decimal GetDonGia(string maSP)
         {
             decimal giaSP = 0;
@@ -72,7 +73,7 @@ namespace CNPM_PBL3.BLL
             }
             return giaSP;
         }
-        //bỏ bên QLSP
+        
         public int GetSoLuong(string maSP)
         {
             int soLuong = 0;
@@ -85,6 +86,20 @@ namespace CNPM_PBL3.BLL
             }
             return soLuong;
         }
+        public float GetGiaTriKhuyenMai(string maSP)
+        {
+            float giaTriKM = 0.0f;
+            foreach(var i in dal.GetALLDH_DAL())
+            {
+                if (i.MaSP == maSP)
+                {
+                    if(i.MaKhuyenMai!=null)
+                    giaTriKM= (float)i.KhuyenMai.GiaTriKhuyenMai;
+                }
+            }
+            return giaTriKM;
+        }
+        //
         public void AddHD(HoaDon hd, List<ChiTietHoaDon> list)
         {
             dal.AddHD_DAL(hd, list);

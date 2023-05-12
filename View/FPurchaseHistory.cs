@@ -32,10 +32,15 @@ namespace CNPM_PBL3.View
             {
                 dynamic t = bll.GetChiTietHoaDon(Convert.ToInt32(l[0].Cells["MaHoaDon"].Value.ToString()));
                 f.GetChiTiet(t);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn 1 hóa đơn để in", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
-            f.ShowDialog();
+            
         }
 
         private void txtsearch_TextChanged(object sender, EventArgs e)
@@ -44,6 +49,23 @@ namespace CNPM_PBL3.View
                 ShowDGV(bll.GetHD_ByTxtSearch(txtsearch.Text));
             
            
+        }
+
+        private void butInHoaDon_Click(object sender, EventArgs e)
+        {
+            FPrintBill fPrintBill= new FPrintBill();
+            DataGridViewSelectedRowCollection l = dgvLSMH.SelectedRows;
+            if(l.Count == 1)
+            {
+                fPrintBill.idKH = Convert.ToInt32(l[0].Cells["MaKhachHang"].Value.ToString());
+                fPrintBill.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn 1 hóa đơn để in", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
         }
     }
 }

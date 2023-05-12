@@ -10,7 +10,7 @@ namespace CNPM_PBL3.BLL
     internal class QLForm
     {
         //private static QLForm _instance;
-        public static QLForm Instance { get; set; }
+       // public static QLForm Instance { get; set; }
         private Form currentForm { get; set; }
         public void OpenChildForm(Panel parentForm, Form childForm)
         {

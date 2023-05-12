@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dtpNgayBan = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.butAdd = new Guna.UI2.WinForms.Guna2Button();
             this.txtThanhTien = new Guna.UI2.WinForms.Guna2TextBox();
@@ -44,11 +43,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDonGia = new Guna.UI2.WinForms.Guna2TextBox();
-        //    this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.dgvHD = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSLCoSan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbGiaThat = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
@@ -276,14 +275,8 @@
             this.txtDonGia.PasswordChar = '\0';
             this.txtDonGia.PlaceholderText = "";
             this.txtDonGia.SelectedText = "";
-            this.txtDonGia.Size = new System.Drawing.Size(246, 45);
+            this.txtDonGia.Size = new System.Drawing.Size(193, 45);
             this.txtDonGia.TabIndex = 18;
-            // 
-            // guna2BorderlessForm1
-            // 
-           /* this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;*/
             // 
             // guna2PictureBox1
             // 
@@ -339,12 +332,24 @@
             this.txtSLCoSan.Size = new System.Drawing.Size(80, 45);
             this.txtSLCoSan.TabIndex = 18;
             // 
+            // lbGiaThat
+            // 
+            this.lbGiaThat.AutoSize = true;
+            this.lbGiaThat.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGiaThat.Location = new System.Drawing.Point(931, 307);
+            this.lbGiaThat.Name = "lbGiaThat";
+            this.lbGiaThat.Size = new System.Drawing.Size(94, 25);
+            this.lbGiaThat.TabIndex = 27;
+            this.lbGiaThat.Text = "Giá thật";
+            this.lbGiaThat.Visible = false;
+            // 
             // FBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
             this.ClientSize = new System.Drawing.Size(1100, 900);
+            this.Controls.Add(this.lbGiaThat);
             this.Controls.Add(this.dgvHD);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label9);
@@ -396,5 +401,6 @@
         private System.Windows.Forms.DataGridView dgvHD;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox txtSLCoSan;
+        private System.Windows.Forms.Label lbGiaThat;
     }
 }

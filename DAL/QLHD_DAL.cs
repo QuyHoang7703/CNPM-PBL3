@@ -10,14 +10,14 @@ namespace CNPM_PBL3.DAL
     {
         public dynamic GetALLDH_DAL()
         {
-            
-            using(QLDB db = new QLDB())
-            {
-               
-                var s = db.DongHoes.Select(p => p).ToList();
+
+            //using(QLDB db = new QLDB())
+            //{
+            QLDB db = new QLDB();
+            var s = db.DongHoes.Select(p => p).ToList();
               
                 return s;
-            }
+            //}
         }
         public dynamic GetAllHD_DAL()
         {

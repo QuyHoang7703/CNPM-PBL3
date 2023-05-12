@@ -37,21 +37,45 @@ namespace CNPM_PBL3.View
         }
         private void ButAddCustomers_Click(object sender, EventArgs e)
         {
-            FAddCustomer f = new FAddCustomer();
-            f.TopLevel = false;
-            f.FormBorderStyle = FormBorderStyle.None;
-            f.Dock = DockStyle.Fill;
-            this.Controls.Add(f);
-            f.BringToFront();
-            f.Show();
+            //FAddCustomer f = new FAddCustomer();
+            //f.TopLevel = false;
+            //f.FormBorderStyle = FormBorderStyle.None;
+            //f.Dock = DockStyle.Fill;
+            //this.Controls.Add(f);
+            //f.BringToFront();
+            //f.Show();
+            FAddCustomer fAddCustomer = new FAddCustomer();
+            QLForm f = new QLForm();
+            f.OpenChildForm(FMainManager.panelMain, fAddCustomer);
+            fAddCustomer.BringToFront();
+            
         }
 
         private void cbbMaSP_SelectedIndexChanged(object sender, EventArgs e)
         {
             string maSP = cbbMaSP.SelectedItem.ToString();
-            txtDonGia.Text = (bll.GetDonGia(maSP)).ToString();
+            
+            float giaTriKM = bll.GetGiaTriKhuyenMai(maSP);
+            MessageBox.Show("" + giaTriKM);
+            if (giaTriKM != 0)
+            {
+               
+                txtDonGia.Text = (bll.GetDonGia(maSP) - bll.GetDonGia(maSP)*(decimal)giaTriKM/100).ToString();
+                lbGiaThat.Visible = true;
+                lbGiaThat.Text = (bll.GetDonGia(maSP)).ToString();
+              
+            }
+            else
+            {
+                txtDonGia.Text = (bll.GetDonGia(maSP)).ToString();
+                lbGiaThat.Visible = false;
+
+            }
+           
             txtSLCoSan.Text = (bll.GetSoLuong(maSP)).ToString();
             txtSoLuong.Text = "";
+
+
         }
         public void ShowDGVHD()
         {
@@ -231,6 +255,7 @@ namespace CNPM_PBL3.View
                 if (result == DialogResult.OK)
                 {
                     FPrintBill f = new FPrintBill();
+                    f.idKH = idKhacHang;
                     f.Show();
                    
                 }
@@ -239,6 +264,8 @@ namespace CNPM_PBL3.View
                 cbbMaSP.Items.Clear();
                 txtSLCoSan.Text = "";
                 txtSoLuong.Text = "";
+                lbGiaThat.Visible= false;
+                txtDonGia.Text = "";
 
             }
             else if(idKhacHang > 0 && dgvHD.DataSource == null)
