@@ -9,7 +9,7 @@
     <Property Name="MaSP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="SoLuong" Type="Int32" Nullable="false" />
     <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-    <Property Name="TongTien" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ThanhTien" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <NavigationProperty Name="DongHo" Relationship="Self.FK_ChiTietHoaDon_DongHo" FromRole="ChiTietHoaDon" ToRole="DongHo" />
     <NavigationProperty Name="HoaDon" Relationship="Self.FK_ChiTietHoaDon_HoaDon" FromRole="ChiTietHoaDon" ToRole="HoaDon" />
   </EntityType>
@@ -69,7 +69,7 @@
       <PropertyRef Name="MaKH" />
     </Key>
     <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="HoTen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HoTenKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="SDT" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />

@@ -90,8 +90,6 @@ namespace CNPM_PBL3.DAL
                 return s = s.OrderByDescending(p => p.GetType().GetProperty(sortBy).GetValue(p, null)).ToList();
 
             }
-
-
         }
 
     }

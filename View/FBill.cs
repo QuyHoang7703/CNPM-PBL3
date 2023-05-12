@@ -47,6 +47,7 @@ namespace CNPM_PBL3.View
             string maSP = cbbMaSP.SelectedItem.ToString();
             txtDonGia.Text = (bll.GetDonGia(maSP)).ToString();
             txtSLCoSan.Text = (bll.GetSoLuong(maSP)).ToString();
+            txtSoLuong.Text = "";
         }
         public void ShowDGVHD()
         {
@@ -55,14 +56,14 @@ namespace CNPM_PBL3.View
             dt.Columns.Add("Mã sản phẩm", typeof(string));
             dt.Columns.Add("Số lượng", typeof(int));
             dt.Columns.Add("Đơn giá", typeof(decimal));
-            dt.Columns.Add("Tổng tiền", typeof(decimal));
+            dt.Columns.Add("Thành tiền", typeof(decimal));
             foreach (dynamic i in list)
             {
                 DataRow dr = dt.NewRow();
                 dr["Mã sản phẩm"] = i.maSanPham;
                 dr["Số lượng"] = i.soLuong;
                 dr["Đơn giá"] = i.donGia;
-                dr["Tổng tiền"] = i.tongTien;
+                dr["Thành tiền"] = i.thanhTien;
 
                 dt.Rows.Add(dr);
             }
@@ -92,7 +93,7 @@ namespace CNPM_PBL3.View
             
             if (cbbMaSP.SelectedIndex >= 0)
             {    
-                if (!string.IsNullOrEmpty(txtSoLuong.Text))
+                if (!string.IsNullOrEmpty(txtSoLuong.Text) && txtSoLuong.Text!="0")
                 {
                     int soLuong;
                     if (Int32.TryParse(txtSoLuong.Text, out soLuong))
@@ -101,7 +102,7 @@ namespace CNPM_PBL3.View
                         sp.maSanPham = cbbMaSP.SelectedItem.ToString();
                         sp.soLuong = soLuong;
                         sp.donGia = Convert.ToDecimal(txtDonGia.Text);
-                        sp.tongTien = sp.soLuong * sp.donGia;
+                        sp.thanhTien = sp.soLuong * sp.donGia;
                         int sLHienCo = (Convert.ToInt32(txtSLCoSan.Text) - soLuong);
                         if (sLHienCo < 0)
                         {
@@ -114,7 +115,7 @@ namespace CNPM_PBL3.View
                         {
                             dynamic temp = list[index];
                             temp.soLuong += sp.soLuong;
-                            temp.tongTien = temp.soLuong * temp.donGia;
+                            temp.thanhTien = temp.soLuong * temp.donGia;
                             list[index] = temp;
                         }
                         else
@@ -185,7 +186,7 @@ namespace CNPM_PBL3.View
                         MaSP=i.maSanPham,
                         SoLuong=i.soLuong,
                         DonGia=i.donGia,
-                        TongTien= i.soLuong * i.donGia
+                        ThanhTien= i.soLuong * i.donGia
                     };
                     m.Add(ct);
                 }
@@ -202,13 +203,13 @@ namespace CNPM_PBL3.View
             decimal t = 0;
             foreach(var i in list)
             {
-                t += i.tongTien;
+                t += i.thanhTien;
             }
             return t;
         }
         private void butThanhToan_Click(object sender, EventArgs e)
         {
-            if(idKhacHang > 0)
+            if(idKhacHang > 0 && dgvHD.DataSource!=null)
             {
                 Add();
                 foreach (var i in list)
@@ -218,18 +219,36 @@ namespace CNPM_PBL3.View
 
                 decimal tongTien = TinhTien();
                 txtThanhTien.Text = tongTien.ToString();
-                idKhacHang = 0;
-                dgvHD.DataSource = null;
+              
+                
                 
                 MessageBox.Show("Tạo hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult result = MessageBox.Show("Bạn có muốn in hóa đơn không!", "THÔNG BÁO", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    FPrintBill f = new FPrintBill();
+                    f.Show();
+                   
+                }
+                idKhacHang = 0;
+                dgvHD.DataSource = null;
+                cbbMaSP.Items.Clear();
+                txtSLCoSan.Text = "";
+                txtSoLuong.Text = "";
+
+            }
+            else if(idKhacHang > 0 && dgvHD.DataSource == null)
+            {
+                MessageBox.Show("Hãy chọn sản phẩm muốn tạo hóa đơn", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Nhập thông tin khách hàng trước khi tạo hóa đơn");
+                MessageBox.Show("Nhập thông tin khách hàng trước khi tạo hóa đơn", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
 
         }
-     
+
+       
     }
 }

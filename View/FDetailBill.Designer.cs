@@ -105,11 +105,11 @@
             this.dtpNM.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.dtpNM.ForeColor = System.Drawing.Color.Black;
             this.dtpNM.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpNM.Location = new System.Drawing.Point(687, 206);
+            this.dtpNM.Location = new System.Drawing.Point(711, 204);
             this.dtpNM.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNM.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNM.Name = "dtpNM";
-            this.dtpNM.Size = new System.Drawing.Size(274, 45);
+            this.dtpNM.Size = new System.Drawing.Size(261, 45);
             this.dtpNM.TabIndex = 31;
             this.dtpNM.Value = new System.DateTime(2023, 4, 10, 14, 33, 24, 833);
             // 
@@ -122,11 +122,11 @@
             this.dtpNS.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.dtpNS.ForeColor = System.Drawing.Color.Black;
             this.dtpNS.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpNS.Location = new System.Drawing.Point(687, 122);
+            this.dtpNS.Location = new System.Drawing.Point(711, 122);
             this.dtpNS.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNS.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNS.Name = "dtpNS";
-            this.dtpNS.Size = new System.Drawing.Size(274, 45);
+            this.dtpNS.Size = new System.Drawing.Size(261, 45);
             this.dtpNS.TabIndex = 31;
             this.dtpNS.Value = new System.DateTime(2023, 4, 10, 14, 33, 24, 833);
             // 

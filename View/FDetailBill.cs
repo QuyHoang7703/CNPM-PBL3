@@ -30,8 +30,8 @@ namespace CNPM_PBL3.View
         public void GetChiTiet(dynamic t)
         {
             if (t != null)
-            {
-                txtHoTen.Text = t.KhachHang.HoTen;
+            {         
+                txtHoTen.Text = t.KhachHang.HoTenKH;
                 txtSDT.Text = t.KhachHang.SDT;
                 txtDiaChi.Text = t.KhachHang.DiaChi;
                 dtpNS.Value = t.KhachHang.NgaySinh;
@@ -45,18 +45,24 @@ namespace CNPM_PBL3.View
                     cbbGioiTinh.SelectedIndex = 1;
                 }
             }
+            decimal thanhTien = 0;
             List<dynamic> list = new List<dynamic>();
-            foreach(var i in t.ChiTietHoaDons)
+            foreach (var i in t.ChiTietHoaDons)
             {
                 var chitiet = new
                 {
-                    MaSanPham=i.MaSP,
-                    SoLuong=i.SoLuong,
-                    DonGia=i.DonGia,
+                    MaSanPham = i.MaSP,
+                    SoLuong = i.SoLuong,
+                    DonGia = i.DonGia,
+                    ThanhTien = i.SoLuong * i.DonGia
+
                 };
                 list.Add(chitiet);
-            }
 
+                thanhTien += i.ThanhTien;
+
+            }
+            txtTongTien.Text = thanhTien.ToString();
             dgvCTHD.DataSource = list;
 
         }

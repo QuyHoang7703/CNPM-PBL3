@@ -40,7 +40,7 @@
             this.butClock = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ButBill = new Guna.UI2.WinForms.Guna2Button();
             this.ButTrangChu = new Guna.UI2.WinForms.Guna2Button();
-            this.panelMain = new System.Windows.Forms.Panel();
+            FMainManager.panelMain = new System.Windows.Forms.Panel();
             this.PanelFrame.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -339,11 +339,11 @@
             // 
             // panelMain
             // 
-            this.panelMain.Location = new System.Drawing.Point(269, 1);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1100, 900);
-            this.panelMain.TabIndex = 2;
+            FMainManager.panelMain.Location = new System.Drawing.Point(269, 1);
+            FMainManager.panelMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            FMainManager.panelMain.Name = "panelMain";
+            FMainManager.panelMain.Size = new System.Drawing.Size(1100, 900);
+            FMainManager.panelMain.TabIndex = 2;
             // 
             // FMainManager
             // 
@@ -351,7 +351,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 900);
             this.Controls.Add(this.PanelFrame);
-            this.Controls.Add(this.panelMain);
+            this.Controls.Add(FMainManager.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -374,7 +374,7 @@
         private Guna.UI2.WinForms.Guna2Button ButThongKe;
         private Guna.UI2.WinForms.Guna2Button guna2ButSetting;
         private Guna.UI2.WinForms.Guna2Button guna2Button7;
-        public System.Windows.Forms.Panel panelMain;
+        public static System.Windows.Forms.Panel panelMain;
         private Guna.UI2.WinForms.Guna2Button guna2ButStaff;
         private System.Windows.Forms.Label lbThongTin;
         private Guna.UI2.WinForms.Guna2Button butKhuyenMai;

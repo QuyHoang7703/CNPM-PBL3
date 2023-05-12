@@ -31,7 +31,7 @@ namespace CNPM_PBL3.BLL
 
                     MaHoaDon = i.MaHD,
                     MaKhachHang = i.KhachHang.MaKH,
-                    HoTen = i.KhachHang.HoTen,
+                    HoTen = i.KhachHang.HoTenKH,
                     NgayBan = i.NgayBan,
                     MaNhanVien = i.ID,
 
@@ -50,7 +50,15 @@ namespace CNPM_PBL3.BLL
             }
             return null;
         }
-        //public List<dynamic> Get
+
+        //printbill
+        public dynamic GetDetailBillForPrint_BLL(int maHD)
+        {
+            return dal.GetDetailBillForPrint_DAL(maHD);
+            
+        }
+        //
+
         public decimal GetDonGia(string maSP)
         {
             decimal giaSP = 0;
@@ -113,6 +121,19 @@ namespace CNPM_PBL3.BLL
                 }               
             }
             return list;
+        }
+        public int GetMaHoaDon_ByMaKH(int maKH)
+        {
+            int maHD = 0;
+            foreach (var i in dal.GetAllHD_DAL())
+            {
+                if (i.MaKH == maKH)
+                {
+                    maHD = i.MaHD;
+                    break;
+                }
+            }
+            return maHD;
         }
 
 

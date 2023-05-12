@@ -18,7 +18,7 @@ namespace CNPM_PBL3
         public string MaSP { get; set; }
         public int SoLuong { get; set; }
         public decimal DonGia { get; set; }
-        public decimal TongTien { get; set; }
+        public decimal ThanhTien { get; set; }
     
         public virtual DongHo DongHo { get; set; }
         public virtual HoaDon HoaDon { get; set; }

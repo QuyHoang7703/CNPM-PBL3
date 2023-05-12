@@ -37,7 +37,7 @@ namespace CNPM_PBL3.View
           
             khachHang = new KhachHang()
             {
-                HoTen = txtHoTen.Text,
+                HoTenKH = txtHoTen.Text,
                 SDT = txtSDT.Text,
                 DiaChi = txtDiaChi.Text,
                 GioiTinh = check,

@@ -9,7 +9,7 @@
     <Property Name="MaSP" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="SoLuong" Type="int" Nullable="false" />
     <Property Name="DonGia" Type="money" Nullable="false" />
-    <Property Name="TongTien" Type="money" Nullable="false" />
+    <Property Name="ThanhTien" Type="money" Nullable="false" />
   </EntityType>
   <EntityType Name="ChiTietTaiKhoan">
     <Key>
@@ -60,7 +60,7 @@
       <PropertyRef Name="MaKH" />
     </Key>
     <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="HoTen" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="HoTenKH" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="NgaySinh" Type="date" Nullable="false" />
     <Property Name="SDT" Type="char" MaxLength="12" Nullable="false" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />

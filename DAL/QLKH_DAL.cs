@@ -12,7 +12,7 @@ namespace CNPM_PBL3.DAL
         public dynamic GetAllKH_DAL()
         {
            
-            var s = db.KhachHangs.Select(p => new {p.MaKH, p.HoTen, p.NgaySinh, p.SDT, p.DiaChi, p.GioiTinh}).ToList();
+            var s = db.KhachHangs.Select(p => new {p.MaKH, p.HoTenKH, p.NgaySinh, p.SDT, p.DiaChi, p.GioiTinh}).ToList();
           
             return s;
         }

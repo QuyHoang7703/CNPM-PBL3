@@ -16,7 +16,7 @@ namespace CNPM_PBL3.BLL
         {
             if(currentForm !=null)
             {
-                currentForm.Close();
+                currentForm.Hide();
             }
             currentForm = childForm;
             currentForm.TopLevel = false;

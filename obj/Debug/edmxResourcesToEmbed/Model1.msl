@@ -8,7 +8,7 @@
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="DonGia" ColumnName="DonGia" />
-          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -63,7 +63,7 @@
       <EntityTypeMapping TypeName="Model.KhachHang">
         <MappingFragment StoreEntitySet="KhachHang">
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="HoTenKH" ColumnName="HoTenKH" />
           <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
           <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />

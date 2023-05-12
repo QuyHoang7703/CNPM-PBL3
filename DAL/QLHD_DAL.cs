@@ -35,6 +35,29 @@ namespace CNPM_PBL3.DAL
         //    return li;
 
         //}
+
+        //printbill
+        public dynamic GetDetailBillForPrint_DAL(int maHD)
+        {
+            QLDB db = new QLDB();
+            var s = db.ChiTietHoaDons.Where(p => p.MaHD == maHD).Select(p => new
+            {
+                p.MaSP,
+                p.SoLuong,
+                p.DonGia,
+                p.ThanhTien,
+                p.HoaDon.TaiKhoan.UserName,
+                p.HoaDon.NgayBan,
+                p.HoaDon.KhachHang.MaKH,
+                p.HoaDon.KhachHang.HoTenKH,
+                p.HoaDon.MaHD,
+                p.HoaDon.KhachHang.DiaChi,
+                p.HoaDon.KhachHang.SDT,
+                p.HoaDon.TaiKhoan.ID,
+                p.HoaDon.TaiKhoan.ChiTietTaiKhoan.HoTen
+            }).ToList();
+            return s;
+        }
         public void AddHD_DAL(HoaDon hd, List<ChiTietHoaDon> list)
         {
             using(QLDB db = new QLDB())
@@ -61,6 +84,7 @@ namespace CNPM_PBL3.DAL
                     db.SaveChanges();               
             }
         }
+       
             
 
        

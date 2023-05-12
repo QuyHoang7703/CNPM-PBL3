@@ -62,7 +62,7 @@
             this.dtpNgayBan.FillColor = System.Drawing.Color.White;
             this.dtpNgayBan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpNgayBan.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpNgayBan.Location = new System.Drawing.Point(716, 374);
+            this.dtpNgayBan.Location = new System.Drawing.Point(716, 384);
             this.dtpNgayBan.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgayBan.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNgayBan.Name = "dtpNgayBan";
@@ -252,7 +252,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(520, 374);
+            this.label2.Location = new System.Drawing.Point(520, 384);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 25);
             this.label2.TabIndex = 22;

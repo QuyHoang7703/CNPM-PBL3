@@ -21,7 +21,7 @@ namespace CNPM_PBL3
         }
     
         public int MaKH { get; set; }
-        public string HoTen { get; set; }
+        public string HoTenKH { get; set; }
         public System.DateTime NgaySinh { get; set; }
         public string SDT { get; set; }
         public string DiaChi { get; set; }
