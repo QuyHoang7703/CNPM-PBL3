@@ -30,6 +30,7 @@ namespace CNPM_PBL3.View
         }
         QLSP_DAL qLSP = new QLSP_DAL();
         QLSP_BLL bll = new QLSP_BLL();
+        QLHD_BLL qLHD = new QLHD_BLL();
         public void showHinhAnh(dynamic list)
         {
             foreach (var item in list)
@@ -42,7 +43,9 @@ namespace CNPM_PBL3.View
                 fUserControlClock.MSP = item.MaSP;
                 if (item.MaKhuyenMai != null)
                 {
-                    fUserControlClock.khuyenmai = "Khuyến mãi " + qLSP.giaTriKuyenMai_DAL(item.MaKhuyenMai) + "%";
+                    float giaTriKM = qLHD.GetGiaTriKhuyenMai(item.MaSP);
+                    fUserControlClock.khuyenmai = "Khuyến mãi " + giaTriKM.ToString()+ "%\n"
+                        + (qLHD.GetDonGia(item.MaSP) - qLHD.GetDonGia(item.MaSP) * (decimal)giaTriKM / 100).ToString() + "đ"; ;
                 }
                 else
                 {

@@ -27,6 +27,7 @@ namespace CNPM_PBL3.View
         }
         public void show()
         {
+
             f.OpenChildForm(panelMain, new FHomePage());
             this.lbThongTin.Location = new System.Drawing.Point(35, 170);
             butClock.Visible = false;

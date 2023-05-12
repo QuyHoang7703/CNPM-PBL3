@@ -17,6 +17,7 @@ namespace CNPM_PBL3.View
         public FUserControlClock()
         {
             InitializeComponent();
+            //hienthi();
         }
         public delegate void mydel(string s);
         public mydel d { get; set; }
@@ -87,9 +88,21 @@ namespace CNPM_PBL3.View
                 labelKM.Text = value;
             }
         }
+        public void hienthi()
+        {
+            if (labelKM.Text == "")
+            {
+                labelGiaTri.Font = new Font(labelGiaTri.Font, labelGiaTri.Font.Style & ~FontStyle.Strikeout);
+            }
+            else
+            {
+                labelGiaTri.Font = new Font(labelGiaTri.Font, labelGiaTri.Font.Style & FontStyle.Strikeout);
+            }
 
+        }
         private void ButGioHang_Click(object sender, EventArgs e)
         {
+
             try
             {
                 QLForm qLForm = new QLForm();
@@ -102,77 +115,24 @@ namespace CNPM_PBL3.View
             {
                 MessageBox.Show("Thêm vào hóa đơn thất bại");
             }
-           
+
         }
 
-        private void PTBHinhAnh_Click(object sender, EventArgs e)
+        private void guna2Panel1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (ButGioHang.Visible == false)
-            {
-                ButGioHang.Visible = true;
-                panel1.Visible = true;
-            }
-            else
-            {
-                ButGioHang.Visible = false;
-                panel1.Visible = false;
-            }
+            ButGioHang.Visible = true;
+            panel1.Visible = true;
         }
 
-        private void labelChiTiet_Click(object sender, EventArgs e)
+        private void FUserControlClock_MouseLeave(object sender, EventArgs e)
         {
-            if (ButGioHang.Visible == false)
-            {
-                ButGioHang.Visible = true;
-                panel1.Visible = true;
-            }
-            else
-            {
-                ButGioHang.Visible = false;
-                panel1.Visible = false;
-            }
+            ButGioHang.Visible = false;
+            panel1.Visible = false;
         }
 
-        private void labelKM_Click(object sender, EventArgs e)
+        private void FUserControlClock_Load(object sender, EventArgs e)
         {
-            if (ButGioHang.Visible == false)
-            {
-                ButGioHang.Visible = true;
-                panel1.Visible = true;
-            }
-            else
-            {
-                ButGioHang.Visible = false;
-                panel1.Visible = false;
-            }
-        }
-
-        private void labelGiaTri_Click(object sender, EventArgs e)
-        {
-            if (ButGioHang.Visible == false)
-            {
-                ButGioHang.Visible = true;
-                panel1.Visible = true;
-            }
-            else
-            {
-                ButGioHang.Visible = false;
-                panel1.Visible = false;
-            }
-        }
-
-        private void guna2Panel1_Click(object sender, EventArgs e)
-        {
-            if (ButGioHang.Visible == false)
-            {
-                ButGioHang.Visible = true;
-                panel1.Visible = true;
-            }
-            else
-            {
-                ButGioHang.Visible = false;
-                panel1.Visible = false;
-            }
+            hienthi();
         }
     }
 }

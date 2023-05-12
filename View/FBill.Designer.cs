@@ -397,7 +397,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtDonGia;
-      //  private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+      // private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private System.Windows.Forms.DataGridView dgvHD;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox txtSLCoSan;

@@ -14,7 +14,7 @@ namespace CNPM_PBL3.BLL
         private Form currentForm { get; set; }
         public void OpenChildForm(Panel parentForm, Form childForm)
         {
-            if(currentForm !=null)
+            if (currentForm != null)
             {
                 currentForm.Hide();
             }

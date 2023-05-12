@@ -80,8 +80,8 @@ namespace CNPM_PBL3
                 {
                     FMainManager f = new FMainManager();
                     this.Hide();
-                    //this.d += new FLogin.mydel(f.show);
-                    //d();
+                    /*this.d += new FLogin.mydel(f.show);
+                    d();*/
                     f.Show();
                 }
                 else

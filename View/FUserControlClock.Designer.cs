@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUserControlClock));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.ButGioHang = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelKM = new System.Windows.Forms.Label();
             this.labelGiaTri = new System.Windows.Forms.Label();
             this.labelChiTiet = new System.Windows.Forms.Label();
             this.PTBHinhAnh = new System.Windows.Forms.PictureBox();
-            this.labelKM = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.ButGioHang = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PTBHinhAnh)).BeginInit();
             this.SuspendLayout();
@@ -55,18 +55,53 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(363, 436);
             this.guna2Panel1.TabIndex = 0;
-            this.guna2Panel1.Click += new System.EventHandler(this.guna2Panel1_Click);
+            this.guna2Panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseMove);
+            // 
+            // ButGioHang
+            // 
+            this.ButGioHang.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButGioHang.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButGioHang.Image = ((System.Drawing.Image)(resources.GetObject("ButGioHang.Image")));
+            this.ButGioHang.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButGioHang.ImageRotate = 0F;
+            this.ButGioHang.ImageSize = new System.Drawing.Size(50, 50);
+            this.ButGioHang.Location = new System.Drawing.Point(268, 359);
+            this.ButGioHang.Name = "ButGioHang";
+            this.ButGioHang.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButGioHang.Size = new System.Drawing.Size(80, 66);
+            this.ButGioHang.TabIndex = 5;
+            this.ButGioHang.Visible = false;
+            this.ButGioHang.Click += new System.EventHandler(this.ButGioHang_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Red;
+            this.panel1.Location = new System.Drawing.Point(17, 431);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(331, 5);
+            this.panel1.TabIndex = 4;
+            this.panel1.Visible = false;
+            // 
+            // labelKM
+            // 
+            this.labelKM.AutoSize = true;
+            this.labelKM.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKM.Location = new System.Drawing.Point(95, 342);
+            this.labelKM.Name = "labelKM";
+            this.labelKM.Size = new System.Drawing.Size(70, 25);
+            this.labelKM.TabIndex = 3;
+            this.labelKM.Text = "label1";
+            this.labelKM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelGiaTri
             // 
             this.labelGiaTri.AutoSize = true;
-            this.labelGiaTri.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGiaTri.Location = new System.Drawing.Point(141, 403);
+            this.labelGiaTri.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGiaTri.Location = new System.Drawing.Point(133, 403);
             this.labelGiaTri.Name = "labelGiaTri";
-            this.labelGiaTri.Size = new System.Drawing.Size(60, 22);
+            this.labelGiaTri.Size = new System.Drawing.Size(67, 26);
             this.labelGiaTri.TabIndex = 2;
             this.labelGiaTri.Text = "label1";
-            this.labelGiaTri.Click += new System.EventHandler(this.labelGiaTri_Click);
             // 
             // labelChiTiet
             // 
@@ -78,7 +113,6 @@
             this.labelChiTiet.TabIndex = 1;
             this.labelChiTiet.Text = "label1";
             this.labelChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelChiTiet.Click += new System.EventHandler(this.labelChiTiet_Click);
             // 
             // PTBHinhAnh
             // 
@@ -88,43 +122,6 @@
             this.PTBHinhAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PTBHinhAnh.TabIndex = 0;
             this.PTBHinhAnh.TabStop = false;
-            this.PTBHinhAnh.Click += new System.EventHandler(this.PTBHinhAnh_Click);
-            // 
-            // labelKM
-            // 
-            this.labelKM.AutoSize = true;
-            this.labelKM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKM.Location = new System.Drawing.Point(102, 342);
-            this.labelKM.Name = "labelKM";
-            this.labelKM.Size = new System.Drawing.Size(60, 23);
-            this.labelKM.TabIndex = 3;
-            this.labelKM.Text = "label1";
-            this.labelKM.Click += new System.EventHandler(this.labelKM_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.Location = new System.Drawing.Point(17, 431);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(331, 5);
-            this.panel1.TabIndex = 4;
-            this.panel1.Visible = false;
-            // 
-            // ButGioHang
-            // 
-            this.ButGioHang.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.ButGioHang.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.ButGioHang.Image = ((System.Drawing.Image)(resources.GetObject("ButGioHang.Image")));
-            this.ButGioHang.ImageOffset = new System.Drawing.Point(0, 0);
-            this.ButGioHang.ImageRotate = 0F;
-            this.ButGioHang.ImageSize = new System.Drawing.Size(50, 50);
-            this.ButGioHang.Location = new System.Drawing.Point(283, 370);
-            this.ButGioHang.Name = "ButGioHang";
-            this.ButGioHang.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.ButGioHang.Size = new System.Drawing.Size(80, 66);
-            this.ButGioHang.TabIndex = 5;
-            this.ButGioHang.Visible = false;
-            this.ButGioHang.Click += new System.EventHandler(this.ButGioHang_Click);
             // 
             // FUserControlClock
             // 
@@ -134,6 +131,8 @@
             this.Controls.Add(this.guna2Panel1);
             this.Name = "FUserControlClock";
             this.Size = new System.Drawing.Size(437, 500);
+            this.Load += new System.EventHandler(this.FUserControlClock_Load);
+            this.MouseLeave += new System.EventHandler(this.FUserControlClock_MouseLeave);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PTBHinhAnh)).EndInit();
