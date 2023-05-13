@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +22,8 @@ namespace CNPM_PBL3.View
         }
         public delegate void mydel(string s);
         public mydel d { get; set; }
+        public delegate void mydel1();
+        public mydel1 d1 { get; set; }
 
 
         public byte[] data { get; set; }
@@ -105,8 +108,8 @@ namespace CNPM_PBL3.View
 
             try
             {
-                QLForm qLForm = new QLForm();
-                qLForm.OpenChildForm(FMainManager.panelMain, FMainManager.fBill);
+               
+                FMainManager f = new FMainManager();
                 this.d += new FUserControlClock.mydel(FMainManager.fBill.get);
                 d(MSP);
                 MessageBox.Show("Thêm vào hóa đơn thành công");

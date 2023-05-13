@@ -43,8 +43,8 @@ namespace CNPM_PBL3.View
             return bll.GetMaKM(nameKM);
         }
 
-        string MaSP;
-        int makm;
+        //string MaSP;
+        //int makm;
 
         public void ShowDGV()
         {

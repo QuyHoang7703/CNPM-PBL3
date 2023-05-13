@@ -46,6 +46,7 @@ namespace CNPM_PBL3.DAL
             s.GioiTinh = ct.GioiTinh;
             s.DiaChi = ct.DiaChi;
             s.AnhDaiDien = ct.AnhDaiDien;
+            s.Email = ct.Email;
             db.SaveChanges();
         }
         // Email

@@ -17,7 +17,7 @@ namespace CNPM_PBL3.View
         public FClock()
         {
             InitializeComponent();
-            SetCBBThuongHieu1();
+           
             GetCBBThuongHieu();
             GetCBBGioiTinhSP();
             GetCBBBoMayNangLuong();
@@ -131,7 +131,7 @@ namespace CNPM_PBL3.View
         public void showTimKiem(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX)
         {
             ShowDGV(bll.TimKiem_BLL(cbbTH, cbbGT, cbbBMNL, cbbMMS, cbbHDMS, cbbCLMK, cbbCLD, cbbXX));
-            //  bll.TimKiem_BLL(th, gt);
+          
         }
 
 

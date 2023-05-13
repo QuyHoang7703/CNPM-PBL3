@@ -44,7 +44,7 @@ namespace CNPM_PBL3.View
                 txtSoluong.Text = d.SoLuong.ToString();
                 txtBedaymatso.Text = d.BeDayMatSo.ToString();
                 string nameTH = d.ThuongHieu.TenThuongHieu;
-                comboThuonghieu.SelectedIndex = bll.GetMaTH_BLL(nameTH) -1;
+                comboThuonghieu.Text = nameTH;
                 comboGioitinh.Text = d.GioiTinhSP;
                 comboBomayNL.Text = d.BoMayNangLuong;
                 comboChatlieuday.Text = d.ChatLieuDay;
@@ -52,8 +52,16 @@ namespace CNPM_PBL3.View
                 comboMucCN.Text = d.MucChongNuoc;
                 comboChatlieumatkinh.Text = d.ChatLieuMatKinh;
                 picHinhAnh.Image = qLHA_DAL.ConverByteToTmage(d.HinhAnh);
-                string nameKM = d.KhuyenMai.TenKhuyenMai;
-                comboMaKM.SelectedIndex = bll.GetMaKM_BLL(nameKM) - 2;
+                if(d.MaKhuyenMai != null)
+                {
+                    string nameKM = d.KhuyenMai.TenKhuyenMai;
+                   comboMaKM.Text = nameKM;
+                }
+                else
+                {
+                    comboMaKM.SelectedIndex = 0;
+                }
+               
             }
         }
         public void SetCBBThuongHieu()
@@ -62,6 +70,7 @@ namespace CNPM_PBL3.View
         }
         public void SetCBBKhuyenMai()
         {
+            comboMaKM.Items.Add("");
             comboMaKM.Items.AddRange(bll.GetListCBBKhuyenMai().ToArray());
         }
 

@@ -20,10 +20,13 @@ namespace CNPM_PBL3.View
         }
         QLForm f = new QLForm();
         QLNV_DAL dal = new QLNV_DAL();
-       // public static TaiKhoan account { get; set; }
-        private void PanelFrame_Paint(object sender, PaintEventArgs e)
+        public void get1()
         {
-            lbThongTin.Text = FLogin.account.ChiTietTaiKhoan.HoTen + "\n" + FLogin.account.Role + "\n"  + "ID: " +FLogin.account.ID + "";
+          // guna2ButBill.PerformClick();
+        }
+        private void PanelFrame_Paint_1(object sender, PaintEventArgs e)
+        {
+            lbThongTin.Text = FLogin.account.ChiTietTaiKhoan.HoTen + "\n" + FLogin.account.Role + "\n" + "ID: " + FLogin.account.ID + "";
         }
         public void show()
         {
@@ -40,45 +43,26 @@ namespace CNPM_PBL3.View
             butKhuyenMai.Visible = false;
 
         }
-
-        public static FBill fBill = new FBill(); 
-        private void guna2ButBill_Click(object sender, EventArgs e)
-        {
-            //QLForm k = new QLForm();
-            f.OpenChildForm(panelMain, fBill);
-            //OpenChildForm(new FBill());
-
-                
-        }
-
-        private void guna2ButSetting_Click(object sender, EventArgs e)
-        {
-            //OpenChildForm(new FSetting());
-            FSetting s = new FSetting();
-            s.GetChiTietTaiKhoan(FLogin.account.ID);
-            f.OpenChildForm(panelMain, s);
-           // QLTK_BLL bll = new QLTK_BLL();
-           
-
-        }
-
-        private void guna2Button7_Click(object sender, EventArgs e)
+        private void ButDangXuat_Click(object sender, EventArgs e)
         {
             this.Dispose();
             FLogin f = new FLogin();
             f.Show();
         }
 
-       
-        private void guna2ButStaff_Click(object sender, EventArgs e)
+        private void ButTrangChu_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new FStaff());
-            f.OpenChildForm(panelMain, new FStaff());
+            f.OpenChildForm(panelMain, new FHomePage());
+        }
+        public static FBill fBill = new FBill();
+        private void guna2ButBill_Click(object sender, EventArgs e)
+        {
+            f.OpenChildForm(panelMain, fBill);
+            guna2ButBill.Checked = true;
         }
 
         private void butClock_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new FDetailClock());
             f.OpenChildForm(panelMain, new FClock());
         }
 
@@ -87,15 +71,23 @@ namespace CNPM_PBL3.View
             f.OpenChildForm(panelMain, new FPurchaseHistory());
         }
 
-        private void ButTrangChu_Click(object sender, EventArgs e)
+        private void guna2ButSetting_Click(object sender, EventArgs e)
         {
-            f.OpenChildForm(panelMain, new FHomePage());
+            FSetting s = new FSetting();
+            s.GetChiTietTaiKhoan(FLogin.account.ID);
+            f.OpenChildForm(panelMain, s);
+        }
 
+        private void guna2ButStaff_Click(object sender, EventArgs e)
+        {
+            f.OpenChildForm(panelMain, new FStaff());
         }
 
         private void butKhuyenMai_Click(object sender, EventArgs e)
         {
             f.OpenChildForm(panelMain, new FKhuyenMai());
         }
+
+       
     }
 }

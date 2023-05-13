@@ -33,14 +33,14 @@
             this.butKhuyenMai = new Guna.UI2.WinForms.Guna2Button();
             this.lbThongTin = new System.Windows.Forms.Label();
             this.guna2ButStaff = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
+            this.ButDangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ButSetting = new Guna.UI2.WinForms.Guna2Button();
             this.butLichSu = new Guna.UI2.WinForms.Guna2Button();
             this.ButThongKe = new Guna.UI2.WinForms.Guna2Button();
             this.butClock = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ButBill = new Guna.UI2.WinForms.Guna2Button();
             this.ButTrangChu = new Guna.UI2.WinForms.Guna2Button();
-            FMainManager.panelMain = new System.Windows.Forms.Panel();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.PanelFrame.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.PanelFrame.Controls.Add(this.butKhuyenMai);
             this.PanelFrame.Controls.Add(this.lbThongTin);
             this.PanelFrame.Controls.Add(this.guna2ButStaff);
-            this.PanelFrame.Controls.Add(this.guna2Button7);
+            this.PanelFrame.Controls.Add(this.ButDangXuat);
             this.PanelFrame.Controls.Add(this.guna2ButSetting);
             this.PanelFrame.Controls.Add(this.butLichSu);
             this.PanelFrame.Controls.Add(this.ButThongKe);
@@ -59,12 +59,12 @@
             this.PanelFrame.Controls.Add(this.ButTrangChu);
             this.PanelFrame.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
             this.PanelFrame.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
-            this.PanelFrame.Location = new System.Drawing.Point(3, 1);
+            this.PanelFrame.Location = new System.Drawing.Point(0, 1);
             this.PanelFrame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelFrame.Name = "PanelFrame";
             this.PanelFrame.Size = new System.Drawing.Size(269, 900);
-            this.PanelFrame.TabIndex = 0;
-            this.PanelFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelFrame_Paint);
+            this.PanelFrame.TabIndex = 1;
+            this.PanelFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelFrame_Paint_1);
             // 
             // butKhuyenMai
             // 
@@ -134,33 +134,33 @@
             this.guna2ButStaff.Text = "  Nhân viên";
             this.guna2ButStaff.Click += new System.EventHandler(this.guna2ButStaff_Click);
             // 
-            // guna2Button7
+            // ButDangXuat
             // 
-            this.guna2Button7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
-            this.guna2Button7.BorderRadius = 20;
-            this.guna2Button7.BorderThickness = 1;
-            this.guna2Button7.CheckedState.BorderColor = System.Drawing.Color.White;
-            this.guna2Button7.CheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2Button7.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.guna2Button7.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button7.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
-            this.guna2Button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button7.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button7.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button7.Image")));
-            this.guna2Button7.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button7.Location = new System.Drawing.Point(-20, 825);
-            this.guna2Button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Button7.Name = "guna2Button7";
-            this.guna2Button7.Size = new System.Drawing.Size(251, 60);
-            this.guna2Button7.TabIndex = 8;
-            this.guna2Button7.Text = "Thoát";
-            this.guna2Button7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button7.UseTransparentBackground = true;
-            this.guna2Button7.Click += new System.EventHandler(this.guna2Button7_Click);
+            this.ButDangXuat.BackColor = System.Drawing.Color.Transparent;
+            this.ButDangXuat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
+            this.ButDangXuat.BorderRadius = 20;
+            this.ButDangXuat.BorderThickness = 1;
+            this.ButDangXuat.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.ButDangXuat.CheckedState.FillColor = System.Drawing.Color.White;
+            this.ButDangXuat.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.ButDangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButDangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButDangXuat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
+            this.ButDangXuat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButDangXuat.ForeColor = System.Drawing.Color.Black;
+            this.ButDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("ButDangXuat.Image")));
+            this.ButDangXuat.ImageSize = new System.Drawing.Size(40, 40);
+            this.ButDangXuat.Location = new System.Drawing.Point(-31, 828);
+            this.ButDangXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ButDangXuat.Name = "ButDangXuat";
+            this.ButDangXuat.Size = new System.Drawing.Size(251, 60);
+            this.ButDangXuat.TabIndex = 8;
+            this.ButDangXuat.Text = "Thoát";
+            this.ButDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ButDangXuat.UseTransparentBackground = true;
+            this.ButDangXuat.Click += new System.EventHandler(this.ButDangXuat_Click);
             // 
             // guna2ButSetting
             // 
@@ -339,25 +339,21 @@
             // 
             // panelMain
             // 
-            FMainManager.panelMain.Location = new System.Drawing.Point(269, 1);
-            FMainManager.panelMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            FMainManager.panelMain.Name = "panelMain";
-            FMainManager.panelMain.Size = new System.Drawing.Size(1100, 900);
-            FMainManager.panelMain.TabIndex = 2;
+            this.panelMain.Location = new System.Drawing.Point(269, 1);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(1102, 900);
+            this.panelMain.TabIndex = 2;
             // 
             // FMainManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 900);
+            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.PanelFrame);
-            this.Controls.Add(FMainManager.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FMainManager";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GDChinh";
+            this.Text = "Form1";
             this.PanelFrame.ResumeLayout(false);
             this.PanelFrame.PerformLayout();
             this.ResumeLayout(false);
@@ -367,16 +363,16 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2GradientPanel PanelFrame;
-        private Guna.UI2.WinForms.Guna2Button ButTrangChu;
-        private Guna.UI2.WinForms.Guna2Button guna2ButBill;
-        private Guna.UI2.WinForms.Guna2Button butClock;
+        private Guna.UI2.WinForms.Guna2Button butKhuyenMai;
+        private System.Windows.Forms.Label lbThongTin;
+        private Guna.UI2.WinForms.Guna2Button guna2ButStaff;
+        private Guna.UI2.WinForms.Guna2Button ButDangXuat;
+        private Guna.UI2.WinForms.Guna2Button guna2ButSetting;
         private Guna.UI2.WinForms.Guna2Button butLichSu;
         private Guna.UI2.WinForms.Guna2Button ButThongKe;
-        private Guna.UI2.WinForms.Guna2Button guna2ButSetting;
-        private Guna.UI2.WinForms.Guna2Button guna2Button7;
-        public static System.Windows.Forms.Panel panelMain;
-        private Guna.UI2.WinForms.Guna2Button guna2ButStaff;
-        private System.Windows.Forms.Label lbThongTin;
-        private Guna.UI2.WinForms.Guna2Button butKhuyenMai;
+        private Guna.UI2.WinForms.Guna2Button butClock;
+        public Guna.UI2.WinForms.Guna2Button guna2ButBill;
+        private Guna.UI2.WinForms.Guna2Button ButTrangChu;
+        public System.Windows.Forms.Panel panelMain;
     }
 }

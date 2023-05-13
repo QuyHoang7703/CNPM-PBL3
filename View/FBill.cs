@@ -37,16 +37,14 @@ namespace CNPM_PBL3.View
         }
         private void ButAddCustomers_Click(object sender, EventArgs e)
         {
-            //FAddCustomer f = new FAddCustomer();
-            //f.TopLevel = false;
-            //f.FormBorderStyle = FormBorderStyle.None;
-            //f.Dock = DockStyle.Fill;
-            //this.Controls.Add(f);
-            //f.BringToFront();
-            //f.Show();
+            FAddCustomer f = new FAddCustomer();
+            f.TopLevel = false;
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.Dock = DockStyle.Fill;
+            this.Controls.Add(f);
+            f.BringToFront();
+            f.Show();
             FAddCustomer fAddCustomer = new FAddCustomer();
-            QLForm f = new QLForm();
-            f.OpenChildForm(FMainManager.panelMain, fAddCustomer);
             fAddCustomer.BringToFront();
             
         }

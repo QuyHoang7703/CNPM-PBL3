@@ -178,6 +178,12 @@
     <Compile Include="View\FKhuyenMai.Designer.cs">
       <DependentUpon>FKhuyenMai.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FMainManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FMainManager.Designer.cs">
+      <DependentUpon>FMainManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FPrintBill.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,12 +234,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\FMainManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FMainManager.Designer.cs">
-      <DependentUpon>FMainManager.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FUserControlClock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -264,6 +264,9 @@
     <EmbeddedResource Include="View\FKhuyenMai.resx">
       <DependentUpon>FKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FMainManager.resx">
+      <DependentUpon>FMainManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FPrintBill.resx">
       <DependentUpon>FPrintBill.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,9 +295,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\FMainManager.resx">
-      <DependentUpon>FMainManager.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\FStatistical.resx">
       <DependentUpon>FStatistical.cs</DependentUpon>
     </EmbeddedResource>

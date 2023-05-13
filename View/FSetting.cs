@@ -79,6 +79,7 @@ namespace CNPM_PBL3.View
             ct.GioiTinh = SetGioiTinh();
             ct.DiaChi = txtAddress.Text;
             ct.AnhDaiDien = qLHA_DAL.ImageToByteArray(ptbImage.Image);
+            ct.Email = txtEmail.Text;
             bll.UpdateInformation_BLL(ct);
         }
         private void butUpdate_Click(object sender, EventArgs e)

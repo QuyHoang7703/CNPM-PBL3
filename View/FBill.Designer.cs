@@ -43,6 +43,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDonGia = new Guna.UI2.WinForms.Guna2TextBox();
+
+        //    this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.dgvHD = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
@@ -278,6 +281,18 @@
             this.txtDonGia.Size = new System.Drawing.Size(193, 45);
             this.txtDonGia.TabIndex = 18;
             // 
+
+
+
+            /*// guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // */
+
+
+
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = global::CNPM_PBL3.Properties.Resources.bill_removebg_preview;
@@ -376,8 +391,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
-
+            this.PerformLayout();        
         }
 
         #endregion
@@ -397,7 +411,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtDonGia;
-      // private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+       // private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private System.Windows.Forms.DataGridView dgvHD;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox txtSLCoSan;
