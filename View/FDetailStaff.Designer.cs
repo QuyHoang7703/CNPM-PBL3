@@ -51,6 +51,8 @@
             this.rdbFemale = new System.Windows.Forms.RadioButton();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbbRole = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAnhDaiDien)).BeginInit();
             this.SuspendLayout();
@@ -383,12 +385,39 @@
             this.label9.TabIndex = 28;
             this.label9.Text = "Email";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(71, 616);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(97, 25);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "Chức vụ";
+            // 
+            // cbbRole
+            // 
+            this.cbbRole.BackColor = System.Drawing.Color.Transparent;
+            this.cbbRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbRole.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbRole.ItemHeight = 30;
+            this.cbbRole.Location = new System.Drawing.Point(203, 606);
+            this.cbbRole.Name = "cbbRole";
+            this.cbbRole.Size = new System.Drawing.Size(153, 36);
+            this.cbbRole.TabIndex = 35;
+            // 
             // FDetailStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
             this.ClientSize = new System.Drawing.Size(1082, 853);
+            this.Controls.Add(this.cbbRole);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.rdbFemale);
             this.Controls.Add(this.rdbMale);
             this.Controls.Add(this.butCancel);
@@ -447,5 +476,7 @@
         private System.Windows.Forms.RadioButton rdbFemale;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbRole;
     }
 }

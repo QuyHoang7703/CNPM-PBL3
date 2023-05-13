@@ -142,7 +142,7 @@
             this.ButDangXuat.BorderThickness = 1;
             this.ButDangXuat.CheckedState.BorderColor = System.Drawing.Color.White;
             this.ButDangXuat.CheckedState.FillColor = System.Drawing.Color.White;
-            this.ButDangXuat.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.ButDangXuat.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.ButDangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ButDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.ButDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -151,14 +151,14 @@
             this.ButDangXuat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButDangXuat.ForeColor = System.Drawing.Color.Black;
             this.ButDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("ButDangXuat.Image")));
+            this.ButDangXuat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ButDangXuat.ImageSize = new System.Drawing.Size(40, 40);
-            this.ButDangXuat.Location = new System.Drawing.Point(12, 796);
+            this.ButDangXuat.Location = new System.Drawing.Point(12, 803);
             this.ButDangXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButDangXuat.Name = "ButDangXuat";
-            this.ButDangXuat.Size = new System.Drawing.Size(177, 60);
+            this.ButDangXuat.Size = new System.Drawing.Size(251, 60);
             this.ButDangXuat.TabIndex = 8;
             this.ButDangXuat.Text = "Thoát";
-            this.ButDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ButDangXuat.UseTransparentBackground = true;
             this.ButDangXuat.Click += new System.EventHandler(this.ButDangXuat_Click);
             // 
@@ -373,6 +373,6 @@
         private Guna.UI2.WinForms.Guna2Button butClock;
         public Guna.UI2.WinForms.Guna2Button guna2ButBill;
         private Guna.UI2.WinForms.Guna2Button ButTrangChu;
-        public System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Panel panelMain;
     }
 }

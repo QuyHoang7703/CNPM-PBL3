@@ -26,26 +26,29 @@ namespace CNPM_PBL3.View
             GetChatLieuDay();
             GetXuatXu();
             GetGiaSP();
-            showHinhAnh(qLSP.GetAllSP2_DAL());
+            //List<dynamic> l = bll.TimKiemTrangChu_BLL(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP);
+            //showTimKiem(l);
+            //showHinhAnh(l);
         }
         QLSP_DAL qLSP = new QLSP_DAL();
         QLSP_BLL bll = new QLSP_BLL();
         QLHD_BLL qLHD = new QLHD_BLL();
-        public void showHinhAnh(dynamic list)
+        public void showHinhAnh(List<dynamic> list)
         {
             foreach (var item in list)
-            {
+            {   
                 FUserControlClock fUserControlClock = new FUserControlClock();
-                fUserControlClock.chiTiet = qLSP.tenThuongHieu_DAL(item.MaThuongHieu) + " - " + item.MaSP + " - " + item.GioiTinhSP + "\n" +
-                    item.ChatLieuMatKinh + " - " + item.BoMayNangLuong + " - " + item.DuongKinhMatSo + "mm";
+                fUserControlClock.chiTiet = item.TenThuongHieu + " - " + item.MaSP + " - " + item.GioiTinhSP + "\n" +
+                    item.ChatLieuMatKinh + " - " + item.BoMayNangLuong + " - " ;
                 fUserControlClock.GiaSP = Convert.ToString(item.GiaSP) + "đ";
                 fUserControlClock.hinhAnh = item.HinhAnh;
                 fUserControlClock.MSP = item.MaSP;
                 if (item.MaKhuyenMai != null)
                 {
-                    float giaTriKM = qLHD.GetGiaTriKhuyenMai(item.MaSP);
-                    fUserControlClock.khuyenmai = "Khuyến mãi " + giaTriKM.ToString()+ "%\n"
-                        + (qLHD.GetDonGia(item.MaSP) - qLHD.GetDonGia(item.MaSP) * (decimal)giaTriKM / 100).ToString() + "đ"; ;
+                    //float giaTriKM = qLHD.GetGiaTriKhuyenMai(item.MaSP);
+                    fUserControlClock.khuyenmai = "Khuyến mãi " + item.GiaTriKhuyenMai+ "%\n"
+                        + (item.GiaSP- item.GiaSP*(decimal)item.GiaTriKhuyenMai/100).ToString() +"đ";
+                        //+ (qLHD.GetDonGia(item.MaSP) - qLHD.GetDonGia(item.MaSP) * (decimal)giaTriKM / 100).ToString() + "đ"; ;
                 }
                 else
                 {
@@ -103,7 +106,7 @@ namespace CNPM_PBL3.View
         }
         public void showTimKiem(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX, ComboBox cbbgsp)
         {
-            showHinhAnh(bll.TimKiemTrangChu_BLL(cbbTH, cbbGT, cbbBMNL, cbbMMS, cbbHDMS, cbbCLMK, cbbCLD, cbbXX, cbbgsp));
+          //  showHinhAnh(bll.TimKiemTrangChu_BLL(cbbTH, cbbGT, cbbBMNL, cbbMMS, cbbHDMS, cbbCLMK, cbbCLD, cbbXX, cbbgsp));
 
         }
 
@@ -116,7 +119,7 @@ namespace CNPM_PBL3.View
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
-            showHinhAnh(bll.TimKiemTrenTXTTrangChu_BLL(txtsearch.Text, bll.TimKiemTrangChu_BLL(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP)));
+           // showHinhAnh(bll.TimKiemTrenTXTTrangChu_BLL(txtsearch.Text, bll.TimKiemTrangChu_BLL(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP)));
         }
     }
 }

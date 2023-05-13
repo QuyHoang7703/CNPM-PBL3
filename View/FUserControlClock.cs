@@ -36,13 +36,11 @@ namespace CNPM_PBL3.View
             get
             {
                 return labelChiTiet.Text;
-
+              
             }
             set
-            {
+            {               
                 labelChiTiet.Text = value;
-               
-
             }
         }
         public string GiaSP

@@ -83,6 +83,8 @@ namespace CNPM_PBL3
                     /*this.d += new FLogin.mydel(f.show);
                     d();*/
                     f.Show();
+                    
+
                 }
                 else
                 if (checkRole(account) == 0)
@@ -161,6 +163,11 @@ namespace CNPM_PBL3
                     MessageBox.Show("OTP chưa được gửi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void ctbCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

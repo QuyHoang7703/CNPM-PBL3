@@ -62,20 +62,12 @@ namespace CNPM_PBL3.DAL
 
             }
         }
-        //public void SortBy_DAL(string columnName, string direction)
-        //{
-        //    using (QLDB db = new QLDB())
-        //    {
-
-        //    }
-
-
-        //}
+       
         public dynamic SortBy_DAL(string sortBy, string direction)
         {
             QLDB db = new QLDB();
             var s = db.TaiKhoans.Where(p => p.Role == "Nhân viên").Select(p => new { p.ID, p.UserName, p.ChiTietTaiKhoan.HoTen, p.ChiTietTaiKhoan.SDT }).ToList();
-            //var s = GetAllNV_DAL();
+            //var s = GetAllNV2_DAL();
             //s= s.ToList();
             if (direction == "Tăng dần")
             {

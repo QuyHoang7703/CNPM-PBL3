@@ -18,6 +18,7 @@ namespace CNPM_PBL3.View
         public FDetailStaff()
         {
             InitializeComponent();
+            SetCBBRole();
         }
         public delegate void Mydel(dynamic a);
         public Mydel d { get; set; }
@@ -26,31 +27,50 @@ namespace CNPM_PBL3.View
         {
             this.Dispose();
         }
+        public void SetCBBRole()
+        {
+            cbbRole.Items.Add("Nhân viên");
+            cbbRole.Items.Add("Quản lí");
+        }
         public void Add()
         {
-            TaiKhoan t = new TaiKhoan()
+            if (cbbRole.SelectedItem != null)
             {
-                UserName=txtUserName.Text,
-                Pass=txtPass.Text,
-                Role="Nhân viên"
-            };  
-            QLHA ha = new QLHA();
-            bool gender = false;
-            if (rdbMale.Checked)
-            {
-                gender = true;
+                TaiKhoan t = new TaiKhoan()
+                {
+                    UserName = txtUserName.Text,
+                    Pass = txtPass.Text,
+                    Role = cbbRole.SelectedItem.ToString()
+                    //Role="Nhân viên"
+                };
+                QLHA ha = new QLHA();
+                bool gender = false;
+                if (rdbMale.Checked)
+                {
+                    gender = true;
+                }
+                ChiTietTaiKhoan ct = new ChiTietTaiKhoan()
+                {
+                    Email = txtEmail.Text,
+                    HoTen = txtName.Text,
+                    SDT = txtPhone.Text,
+                    DiaChi = txtAddress.Text,
+                    GioiTinh = gender,
+                    NgaySinh = Convert.ToDateTime(dtpNS.Value.ToString()),
+                    AnhDaiDien = ha.ImageToByteArray(ptbAnhDaiDien.Image)
+                };
+                bll.AddNV_BLL(t, ct);
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Dispose();
+                d(bll.GetAllNV_BLL());
             }
-            ChiTietTaiKhoan ct = new ChiTietTaiKhoan()
+            else
             {
-                Email = txtEmail.Text,
-                HoTen = txtName.Text,
-                SDT = txtPhone.Text,
-                DiaChi = txtAddress.Text,
-                GioiTinh = gender,
-                NgaySinh = Convert.ToDateTime(dtpNS.Value.ToString()),
-                AnhDaiDien = ha.ImageToByteArray(ptbAnhDaiDien.Image)
-            };
-            bll.AddNV_BLL(t, ct);
+                MessageBox.Show("Vui lòng chọn chức vụ", "THÔNG BÁO");
+                return;
+            }
+                
+                     
         }
         public void GetDetailStaff(int id)
         {
@@ -78,10 +98,7 @@ namespace CNPM_PBL3.View
         {
             try
             {
-                Add();
-                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Dispose();              
-                d(bll.GetAllNV_BLL());
+                Add();             
             }
             catch (Exception)
             {

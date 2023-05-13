@@ -17,8 +17,10 @@ namespace CNPM_PBL3.View
         public FMainManager()
         {
             InitializeComponent();
+            f.OpenChildForm(panelMain, new FHomePage());
         }
         QLForm f = new QLForm();
+        
         QLNV_DAL dal = new QLNV_DAL();
         public void get1()
         {
@@ -45,7 +47,7 @@ namespace CNPM_PBL3.View
         }
         private void ButDangXuat_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Hide();
             FLogin f = new FLogin();
             f.Show();
         }

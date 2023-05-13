@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FLogin));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.ctbCancel = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -73,16 +73,17 @@
             // 
             this.guna2ShadowForm1.TargetForm = this;
             // 
-            // guna2ControlBox1
+            // ctbCancel
             // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.BackColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(721, 8);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(31, 29);
-            this.guna2ControlBox1.TabIndex = 7;
+            this.ctbCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctbCancel.BackColor = System.Drawing.Color.White;
+            this.ctbCancel.FillColor = System.Drawing.Color.White;
+            this.ctbCancel.IconColor = System.Drawing.Color.DimGray;
+            this.ctbCancel.Location = new System.Drawing.Point(721, 8);
+            this.ctbCancel.Name = "ctbCancel";
+            this.ctbCancel.Size = new System.Drawing.Size(31, 29);
+            this.ctbCancel.TabIndex = 7;
+            this.ctbCancel.Click += new System.EventHandler(this.ctbCancel_Click);
             // 
             // guna2ControlBox2
             // 
@@ -437,7 +438,7 @@
             this.Controls.Add(this.panel_Forgot);
             this.Controls.Add(this.guna2ControlBox3);
             this.Controls.Add(this.guna2ControlBox2);
-            this.Controls.Add(this.guna2ControlBox1);
+            this.Controls.Add(this.ctbCancel);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -462,7 +463,7 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2ControlBox ctbCancel;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;

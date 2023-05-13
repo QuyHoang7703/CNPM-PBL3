@@ -86,7 +86,7 @@
             // 
             this.labelKM.AutoSize = true;
             this.labelKM.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKM.Location = new System.Drawing.Point(95, 342);
+            this.labelKM.Location = new System.Drawing.Point(71, 348);
             this.labelKM.Name = "labelKM";
             this.labelKM.Size = new System.Drawing.Size(70, 25);
             this.labelKM.TabIndex = 3;
@@ -97,7 +97,7 @@
             // 
             this.labelGiaTri.AutoSize = true;
             this.labelGiaTri.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGiaTri.Location = new System.Drawing.Point(133, 403);
+            this.labelGiaTri.Location = new System.Drawing.Point(124, 399);
             this.labelGiaTri.Name = "labelGiaTri";
             this.labelGiaTri.Size = new System.Drawing.Size(67, 26);
             this.labelGiaTri.TabIndex = 2;
@@ -106,10 +106,10 @@
             // labelChiTiet
             // 
             this.labelChiTiet.AutoSize = true;
-            this.labelChiTiet.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelChiTiet.Location = new System.Drawing.Point(13, 292);
+            this.labelChiTiet.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelChiTiet.Location = new System.Drawing.Point(13, 286);
             this.labelChiTiet.Name = "labelChiTiet";
-            this.labelChiTiet.Size = new System.Drawing.Size(51, 19);
+            this.labelChiTiet.Size = new System.Drawing.Size(60, 22);
             this.labelChiTiet.TabIndex = 1;
             this.labelChiTiet.Text = "label1";
             this.labelChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
