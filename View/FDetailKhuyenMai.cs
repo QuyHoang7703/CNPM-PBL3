@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CNPM_PBL3.View
 {
@@ -21,7 +22,6 @@ namespace CNPM_PBL3.View
             SetCBBThuongHieu();
             GetChiTietKhuyenMai();
             ShowDGV();
-
         }
 
         public static int IdKhuyenMai = 0;
@@ -43,14 +43,9 @@ namespace CNPM_PBL3.View
             return bll.GetMaKM(nameKM);
         }
 
-      
         string MaSP;
         int makm;
-      
-        public void cbbSanPham_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            MaSP = cbbSanPham.SelectedItem.ToString();
-        }
+
         public void ShowDGV()
         {
             DataTable dt = new DataTable();
@@ -65,8 +60,12 @@ namespace CNPM_PBL3.View
                 dr["MaKhuyenMai"] = i.MaKhuyenMai;
                 dr["MaSanPham"] = i.MaSP;
                 dr["TenThuongHieu"] = i.TenThuongHieu;
-                dr["GiaTruocKhuyenMai"] = i.GiaTruocKhuyenMai;
-                dr["GiaSauKhuyenMai"] = i.GiaSauKhuyenMai;
+                decimal myDecimal = i.GiaTruocKhuyenMai;
+                string formattedDecimal = myDecimal.ToString("#,##0.000 đ");
+                dr["GiaTruocKhuyenMai"] = formattedDecimal;
+                decimal myDecimal1 = i.GiaSauKhuyenMai;
+                string formattedDecimal1 = myDecimal1.ToString("#,##0.000 đ");
+                dr["GiaSauKhuyenMai"] = formattedDecimal1;
                 dt.Rows.Add(dr);
             }
             dataGridView1.DataSource = dt;
@@ -99,13 +98,12 @@ namespace CNPM_PBL3.View
             }
             return b;
         }
-
-      
+        string selectedItem;
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
+
             if (check())
             {
-                int count = 0;
                 dynamic ct = new
                 {
                     MaKhuyenMai = IdKhuyenMai,
@@ -114,15 +112,27 @@ namespace CNPM_PBL3.View
                     GiaTruocKhuyenMai = bllsp.GetGiaSPByIdSP(cbbSanPham.SelectedItem.ToString()),
                     GiaSauKhuyenMai = bllsp.GetGiaSPByIdSP(cbbSanPham.SelectedItem.ToString()) * ((100 - GiaTriKM) / 100)
                 };
+
+                selectedItem = cbbSanPham.SelectedItem.ToString();
+
                 list.Add(ct);
                 bll.UpdateKMByMaSP(ct.MaSP, ct.MaKhuyenMai);
-                bll.UpdateGiaSP(ct.MaSP, ct.GiaSauKhuyenMai);
                 ShowDGV();
             }
             else
             {
                 MessageBox.Show("Bạn chưa chọn sản phẩm nào ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            SetCBBMaSP();
+        }
+
+        public void cbbSanPham_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            // MaSP = cbbSanPham.SelectedItem.ToString();
+            // cbbSanPham.Items.Remove(selectedItem);
+            //  cbbSanPham.Items.Clear();
+            string thuongHieu = cbbThuongHieu.SelectedItem.ToString();
+            cbbSanPham.Items.AddRange(bll.GetListCBBSPByThuongHieu(thuongHieu).ToArray());
         }
 
         public void GetChiTietKhuyenMai()
@@ -150,24 +160,36 @@ namespace CNPM_PBL3.View
 
         private void guna2Button2_Click_1(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count >= 0)
             {
-                string masp = dataGridView1.Rows[index].Cells[1].Value.ToString();
                 if (MessageBox.Show("Bạn có muốn xóa sản phẩm này khỏi đợt khuyến mãi ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    bll.DeleteKM(masp);
-                    int h = 0;
-                    foreach (var i in list)
+                    List<string> data = new List<string>();
+                    List<decimal> listPrice = new List<decimal>();
+                    foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                     {
-                        if (i.MaSP == masp)
+                        data.Add(row.Cells["MaSanPham"].Value.ToString());
+                        //      listPrice.Add(Convert.ToDecimal(row.Cells["GiaTruocKhuyenMai"].Value.ToString()));
+                    }
+                    bll.DeleteKM(data);
+                    //bll.PriceListUpdate(data, listPrice);
+                    //   int h = 0;
+
+                    foreach (string item in data)
+                    {
+                        foreach (var i in list)
                         {
-                            list.Remove(i);
-                            break;
+                            if (i.MaSP == item)
+                            {
+                                list.Remove(i);
+                                break;
+                            }
                         }
                     }
 
                     ShowDGV();
                     MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
             }
             else
@@ -175,7 +197,5 @@ namespace CNPM_PBL3.View
                 MessageBox.Show("Bạn chưa chọn sản phẩm nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-       
     }
 }

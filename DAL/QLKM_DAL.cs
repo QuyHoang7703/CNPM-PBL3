@@ -43,6 +43,15 @@ namespace CNPM_PBL3.DAL
             s.GiaSP = giasp;
             db.SaveChanges();
         }
+        public void PriceListUpdate(List<string> masp, List<decimal> listPrice)
+        {
+            for (int i = 0; i < masp.Count; i++)
+            {
+                var s = db.DongHoes.Find(masp[i]);
+                s.GiaSP = listPrice[i];
+                db.SaveChanges();
+            }
+        }
         public void UpdateAllKM(KhuyenMai k)
         {
             KhuyenMai s = db.KhuyenMais.Find(k.MaKhuyenMai);
@@ -71,18 +80,21 @@ namespace CNPM_PBL3.DAL
         }
         public dynamic GetMaSPByThuongHieu(string ThuongHieu)
         {
-            //List<string> listMaSP = new List<string>();
-            //foreach(var i in dal.GetAllSP_DAL())
-            //{
-            //    if (i.ThuongHieu.TenThuongHieu == ThuongHieu)
-            //    {
-            //        listMaSP.Add(i.MaSP);
-            //    }
-            //}
-            //return listMaSP;
+
             var s = db.DongHoes.Where(p => p.ThuongHieu.TenThuongHieu == ThuongHieu).
                 Select(p => p).ToList();
             return s;
+        }
+        public void PriceListUpdate(List<string> masp)
+        {
+            foreach (string i in masp)
+            {
+                var s = db.DongHoes.Find(i);
+                decimal giatrikm = Convert.ToDecimal(s.KhuyenMai.GiaTriKhuyenMai);
+                decimal giasp = (s.GiaSP / (100 - giatrikm)) * 100;
+                s.GiaSP = giasp;
+                db.SaveChanges();
+            }
         }
     }
 }

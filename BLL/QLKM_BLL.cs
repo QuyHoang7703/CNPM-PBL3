@@ -35,7 +35,8 @@ namespace CNPM_PBL3.BLL
             List<CBBItems> data = new List<CBBItems>();
             foreach (DongHo i in dalsp.GetSpByThuongHieu(thuongHieu))
             {
-                data.Add(new CBBItems { Text = i.MaSP });
+                if (i.MaKhuyenMai == null)
+                    data.Add(new CBBItems { Text = i.MaSP });
             }
             return data;
         }
@@ -43,9 +44,12 @@ namespace CNPM_PBL3.BLL
         {
             dal.UpdateKMByMaKM(masp, MaKM);
         }
-        public void UpdateKM(int makm)
+        public void UpdateKM(List<int> makm)
         {
-            dal.UpdateKM(makm);
+            foreach (int i in makm)
+            {
+                dal.UpdateKM(i);
+            }
         }
         public void UpdateAllKM(KhuyenMai k)
         {
@@ -55,17 +59,46 @@ namespace CNPM_PBL3.BLL
         {
             dal.UpdateGiaSP(masp, giasp);
         }
-        public void DeleteKM(string masp)
+        public void PriceListUpdate(List<string> lisMasp, List<decimal> listPrice)
         {
-            dal.DeleteKM(masp);
+            dal.PriceListUpdate(lisMasp, listPrice);
         }
-        public void DeleteKMByMaKM(int makm)
+        public void DeleteKM(List<string> masp)
         {
-            dal.DeleteKMByMaKM(makm);
+            foreach (string i in masp)
+            {
+                dal.DeleteKM(i);
+            }
+        }
+        public void DeleteKMByMaKM(List<int> listmakm)
+        {
+            foreach (int i in listmakm)
+            {
+                dal.DeleteKMByMaKM(i);
+            }
         }
         public int GetMaKM(string nameKM)
         {
             return dal.GetMaKm(nameKM);
+        }
+        public List<string> GetMaSPByMaKM(List<int> makm)
+        {
+            List<string> list = new List<string>();
+            foreach (DongHo i in dalsp.GetAllSP2_DAL())
+            {
+                foreach (int item in makm)
+                {
+                    if (i.MaKhuyenMai == item)
+                    {
+                        list.Add(i.MaSP);
+                    }
+                }
+            }
+            return list;
+        }
+        public void PriceListUpdate(List<string> masp)
+        {
+            dal.PriceListUpdate(masp);
         }
     }
 }
