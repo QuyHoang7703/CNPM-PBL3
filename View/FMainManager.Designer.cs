@@ -86,7 +86,7 @@
             this.butKhuyenMai.Image = ((System.Drawing.Image)(resources.GetObject("butKhuyenMai.Image")));
             this.butKhuyenMai.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.butKhuyenMai.ImageSize = new System.Drawing.Size(40, 40);
-            this.butKhuyenMai.Location = new System.Drawing.Point(12, 676);
+            this.butKhuyenMai.Location = new System.Drawing.Point(12, 690);
             this.butKhuyenMai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butKhuyenMai.Name = "butKhuyenMai";
             this.butKhuyenMai.Size = new System.Drawing.Size(251, 60);
@@ -99,7 +99,7 @@
             this.lbThongTin.AutoSize = true;
             this.lbThongTin.BackColor = System.Drawing.Color.Transparent;
             this.lbThongTin.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThongTin.Location = new System.Drawing.Point(35, 106);
+            this.lbThongTin.Location = new System.Drawing.Point(26, 105);
             this.lbThongTin.Name = "lbThongTin";
             this.lbThongTin.Size = new System.Drawing.Size(109, 25);
             this.lbThongTin.TabIndex = 10;
@@ -126,7 +126,7 @@
             this.guna2ButStaff.Image = ((System.Drawing.Image)(resources.GetObject("guna2ButStaff.Image")));
             this.guna2ButStaff.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2ButStaff.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ButStaff.Location = new System.Drawing.Point(12, 610);
+            this.guna2ButStaff.Location = new System.Drawing.Point(12, 613);
             this.guna2ButStaff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2ButStaff.Name = "guna2ButStaff";
             this.guna2ButStaff.Size = new System.Drawing.Size(251, 60);
@@ -152,10 +152,10 @@
             this.ButDangXuat.ForeColor = System.Drawing.Color.Black;
             this.ButDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("ButDangXuat.Image")));
             this.ButDangXuat.ImageSize = new System.Drawing.Size(40, 40);
-            this.ButDangXuat.Location = new System.Drawing.Point(-31, 828);
+            this.ButDangXuat.Location = new System.Drawing.Point(12, 796);
             this.ButDangXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButDangXuat.Name = "ButDangXuat";
-            this.ButDangXuat.Size = new System.Drawing.Size(251, 60);
+            this.ButDangXuat.Size = new System.Drawing.Size(177, 60);
             this.ButDangXuat.TabIndex = 8;
             this.ButDangXuat.Text = "Thoát";
             this.ButDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -182,7 +182,7 @@
             this.guna2ButSetting.Image = ((System.Drawing.Image)(resources.GetObject("guna2ButSetting.Image")));
             this.guna2ButSetting.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2ButSetting.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ButSetting.Location = new System.Drawing.Point(12, 544);
+            this.guna2ButSetting.Location = new System.Drawing.Point(12, 549);
             this.guna2ButSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2ButSetting.Name = "guna2ButSetting";
             this.guna2ButSetting.Size = new System.Drawing.Size(251, 60);
@@ -211,7 +211,7 @@
             this.butLichSu.Image = ((System.Drawing.Image)(resources.GetObject("butLichSu.Image")));
             this.butLichSu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.butLichSu.ImageSize = new System.Drawing.Size(40, 40);
-            this.butLichSu.Location = new System.Drawing.Point(12, 479);
+            this.butLichSu.Location = new System.Drawing.Point(12, 485);
             this.butLichSu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butLichSu.Name = "butLichSu";
             this.butLichSu.Size = new System.Drawing.Size(251, 60);
@@ -241,7 +241,7 @@
             this.ButThongKe.Image = ((System.Drawing.Image)(resources.GetObject("ButThongKe.Image")));
             this.ButThongKe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ButThongKe.ImageSize = new System.Drawing.Size(40, 40);
-            this.ButThongKe.Location = new System.Drawing.Point(12, 412);
+            this.ButThongKe.Location = new System.Drawing.Point(12, 421);
             this.ButThongKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButThongKe.Name = "ButThongKe";
             this.ButThongKe.Size = new System.Drawing.Size(251, 60);
@@ -269,7 +269,7 @@
             this.butClock.Image = ((System.Drawing.Image)(resources.GetObject("butClock.Image")));
             this.butClock.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.butClock.ImageSize = new System.Drawing.Size(40, 40);
-            this.butClock.Location = new System.Drawing.Point(12, 346);
+            this.butClock.Location = new System.Drawing.Point(12, 357);
             this.butClock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butClock.Name = "butClock";
             this.butClock.Size = new System.Drawing.Size(251, 60);
@@ -298,7 +298,7 @@
             this.guna2ButBill.Image = ((System.Drawing.Image)(resources.GetObject("guna2ButBill.Image")));
             this.guna2ButBill.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2ButBill.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ButBill.Location = new System.Drawing.Point(12, 281);
+            this.guna2ButBill.Location = new System.Drawing.Point(12, 293);
             this.guna2ButBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2ButBill.Name = "guna2ButBill";
             this.guna2ButBill.Size = new System.Drawing.Size(251, 60);
@@ -328,7 +328,7 @@
             this.ButTrangChu.Image = ((System.Drawing.Image)(resources.GetObject("ButTrangChu.Image")));
             this.ButTrangChu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ButTrangChu.ImageSize = new System.Drawing.Size(40, 40);
-            this.ButTrangChu.Location = new System.Drawing.Point(12, 215);
+            this.ButTrangChu.Location = new System.Drawing.Point(12, 229);
             this.ButTrangChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButTrangChu.Name = "ButTrangChu";
             this.ButTrangChu.Size = new System.Drawing.Size(251, 60);

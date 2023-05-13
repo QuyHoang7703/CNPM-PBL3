@@ -21,7 +21,7 @@ namespace CNPM_PBL3.DAL
             db.KhuyenMais.Add(k);
             db.SaveChanges();
         }
-        public void UpdateKMByMaKM(string Masp, int MaKM)
+        public void UpdateKMByMaSP_DAL(string Masp, int MaKM)
         {
             var s = db.DongHoes.Find(Masp);
             s.MaKhuyenMai = MaKM;
@@ -98,3 +98,4 @@ namespace CNPM_PBL3.DAL
         }
     }
 }
+

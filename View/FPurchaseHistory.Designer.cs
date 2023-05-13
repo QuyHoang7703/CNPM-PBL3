@@ -65,7 +65,7 @@
             // 
             this.dgvLSMH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLSMH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLSMH.Location = new System.Drawing.Point(40, 324);
+            this.dgvLSMH.Location = new System.Drawing.Point(50, 297);
             this.dgvLSMH.Name = "dgvLSMH";
             this.dgvLSMH.RowHeadersWidth = 51;
             this.dgvLSMH.RowTemplate.Height = 24;
@@ -83,7 +83,7 @@
             this.butDetailBill.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
             this.butDetailBill.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDetailBill.ForeColor = System.Drawing.Color.Black;
-            this.butDetailBill.Location = new System.Drawing.Point(117, 754);
+            this.butDetailBill.Location = new System.Drawing.Point(124, 737);
             this.butDetailBill.Name = "butDetailBill";
             this.butDetailBill.Size = new System.Drawing.Size(246, 55);
             this.butDetailBill.TabIndex = 27;
@@ -105,7 +105,7 @@
             this.txtsearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtsearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtsearch.IconLeft")));
-            this.txtsearch.Location = new System.Drawing.Point(760, 254);
+            this.txtsearch.Location = new System.Drawing.Point(760, 223);
             this.txtsearch.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.PasswordChar = '\0';
@@ -126,7 +126,7 @@
             this.butInHoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
             this.butInHoaDon.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butInHoaDon.ForeColor = System.Drawing.Color.Black;
-            this.butInHoaDon.Location = new System.Drawing.Point(630, 754);
+            this.butInHoaDon.Location = new System.Drawing.Point(641, 737);
             this.butInHoaDon.Name = "butInHoaDon";
             this.butInHoaDon.Size = new System.Drawing.Size(246, 55);
             this.butInHoaDon.TabIndex = 91;

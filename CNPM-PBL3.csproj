@@ -154,11 +154,11 @@
     <Compile Include="View\FDetailBill.Designer.cs">
       <DependentUpon>FDetailBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FDetailKhuyenMai.cs">
+    <Compile Include="View\FDetailSale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FDetailKhuyenMai.Designer.cs">
-      <DependentUpon>FDetailKhuyenMai.cs</DependentUpon>
+    <Compile Include="View\FDetailSale.Designer.cs">
+      <DependentUpon>FDetailSale.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FDetailStaff.cs">
       <SubType>Form</SubType>
@@ -172,11 +172,11 @@
     <Compile Include="View\FHomePage.Designer.cs">
       <DependentUpon>FHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FKhuyenMai.cs">
+    <Compile Include="View\FSale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FKhuyenMai.Designer.cs">
-      <DependentUpon>FKhuyenMai.cs</DependentUpon>
+    <Compile Include="View\FSale.Designer.cs">
+      <DependentUpon>FSale.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FMainManager.cs">
       <SubType>Form</SubType>
@@ -252,8 +252,8 @@
     <EmbeddedResource Include="View\FDetailBill.resx">
       <DependentUpon>FDetailBill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FDetailKhuyenMai.resx">
-      <DependentUpon>FDetailKhuyenMai.cs</DependentUpon>
+    <EmbeddedResource Include="View\FDetailSale.resx">
+      <DependentUpon>FDetailSale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FDetailStaff.resx">
       <DependentUpon>FDetailStaff.cs</DependentUpon>
@@ -261,8 +261,8 @@
     <EmbeddedResource Include="View\FHomePage.resx">
       <DependentUpon>FHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FKhuyenMai.resx">
-      <DependentUpon>FKhuyenMai.cs</DependentUpon>
+    <EmbeddedResource Include="View\FSale.resx">
+      <DependentUpon>FSale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FMainManager.resx">
       <DependentUpon>FMainManager.cs</DependentUpon>

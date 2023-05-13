@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CNPM_PBL3.BLL
 {
@@ -19,34 +20,38 @@ namespace CNPM_PBL3.BLL
         {
             dal.AddKM_DAL(k);
         }
-        public List<CBBItems> GetListCBBSP()
+        public List<string> GetListCBBSP()
         {
-            List<CBBItems> data = new List<CBBItems>();
+            List<string> data = new List<string>();
             foreach (DongHo i in dalsp.GetAllSP2_DAL())
             {
                 if (i.MaKhuyenMai == null)
-                    data.Add(new CBBItems { Text = i.MaSP });
+                    data.Add(i.MaSP);
             }
             return data;
         }
 
-        public List<CBBItems> GetListCBBSPByThuongHieu(string thuongHieu)
+        public List<string> GetListCBBSPByThuongHieu(string thuongHieu)
         {
-            List<CBBItems> data = new List<CBBItems>();
-            foreach (DongHo i in dalsp.GetSpByThuongHieu(thuongHieu))
+            List<string> data = new List<string>();
+            //QLDB db = new QLDB();
+            //var s= db.DongHoes.Select(p=>p).ToList();
+            foreach (var i in dalsp.GetAllSP2_DAL())
             {
-                if (i.MaKhuyenMai == null)
-                    data.Add(new CBBItems { Text = i.MaSP });
+                if (i.ThuongHieu.TenThuongHieu == thuongHieu && i.MaKhuyenMai == null)
+
+                    data.Add(i.MaSP);
             }
+            // MessageBox.Show("blo");
             return data;
         }
-        public void UpdateKMByMaSP(string masp, int MaKM)
+        public void UpdateKMByMaSP_BLL(string masp, int MaKM)
         {
-            dal.UpdateKMByMaKM(masp, MaKM);
+            dal.UpdateKMByMaSP_DAL(masp, MaKM);
         }
-        public void UpdateKM(List<int> makm)
+        public void UpdateKM(List<int> maKM)
         {
-            foreach (int i in makm)
+            foreach (int i in maKM)
             {
                 dal.UpdateKM(i);
             }
@@ -70,9 +75,9 @@ namespace CNPM_PBL3.BLL
                 dal.DeleteKM(i);
             }
         }
-        public void DeleteKMByMaKM(List<int> listmakm)
+        public void DeleteKMByMaKM(List<int> listMaKM)
         {
-            foreach (int i in listmakm)
+            foreach (int i in listMaKM)
             {
                 dal.DeleteKMByMaKM(i);
             }
@@ -102,3 +107,4 @@ namespace CNPM_PBL3.BLL
         }
     }
 }
+

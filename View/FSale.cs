@@ -12,21 +12,19 @@ using System.Windows.Forms;
 
 namespace CNPM_PBL3.View
 {
-    public partial class FKhuyenMai : Form
+    public partial class FSale : Form
     {
-        public delegate void Mydel_3(int MaKM);
-        public Mydel_3 d1 { get; set; }
 
         QLKM_BLL bll = new QLKM_BLL();
         QLSP_BLL bllsp = new QLSP_BLL();
-        public FKhuyenMai()
+        public FSale()
         {
             InitializeComponent();
             ShowDGV();
-            AutoUpdateKM();
+            AutoUpdateGiaTriKM();
             Enable(false);
         }
-
+        bool check;
         public void Enable(bool enable)
         {
             txtTenKm.Enabled = txtGiaTri.Enabled = guna2HtmlLabel6.Enabled = dateBatDau.Enabled = dateKetThuc.Enabled = enable;
@@ -34,11 +32,6 @@ namespace CNPM_PBL3.View
         public void ShowDGV()
         {
             dataGridView1.DataSource = bll.GetAllKhuyenMai_BLL();
-        }
-        public void Reset()
-        {
-            txtTenKm.Text = txtGiaTri.Text = guna2HtmlLabel6.Text = "";
-            dateBatDau.Value = dateKetThuc.Value = DateTime.Now;
         }
         public bool CheckTextBox()
         {
@@ -89,13 +82,13 @@ namespace CNPM_PBL3.View
             }
         }
 
-        bool check;
+        
 
-        private void butthem_Click_1(object sender, EventArgs e)
+        private void butThem_Click_1(object sender, EventArgs e)
         {
             check = true;
-            butsua.Enabled = butChiTiet.Enabled = bttXoa.Enabled = false;
-            butcancel.Enabled = butLuu.Enabled = true;
+            butCapNhap.Enabled = butChiTiet.Enabled = butXoa.Enabled = false;
+            butLuu.Enabled = true;
             guna2HtmlLabel6.Text = txtTenKm.Text = txtGiaTri.Text = "";
             dateBatDau.Value = dateKetThuc.Value = DateTime.Now;
             Enable(true);
@@ -110,6 +103,8 @@ namespace CNPM_PBL3.View
                 {
                     txtTenKm.Text = row.Cells["TenKHuyenMai"].Value.ToString();
                     txtGiaTri.Text = row.Cells["GiaTriKhuyenMai"].Value.ToString();
+                    dateBatDau.Value = (DateTime)row.Cells["NgayBatDau"].Value;
+                    dateKetThuc.Value = (DateTime)row.Cells["NgayKetThuc"].Value;
                     if (dateBatDau.Value <= DateTime.Now && dateKetThuc.Value >= DateTime.Now)
                     {
                         guna2HtmlLabel6.Text = "Đang diễn ra";
@@ -118,22 +113,22 @@ namespace CNPM_PBL3.View
                     {
                         guna2HtmlLabel6.Text = "Hết đợt khuyến mãi";
                     }
-                    dateBatDau.Value = (DateTime)row.Cells["NgayBatDau"].Value;
-                    dateKetThuc.Value = (DateTime)row.Cells["NgayKetThuc"].Value;
+                    FDetailSale.IdKhuyenMai = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                    FDetailSale.GiaTriKM = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value.ToString());
+
                 }
-            }
-            FDetailKhuyenMai.IdKhuyenMai = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            FDetailKhuyenMai.GiaTriKM = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value.ToString());
+            }          
+           
             Enable(false);
-            butthem.Enabled = butsua.Enabled = butChiTiet.Enabled = bttXoa.Enabled = true;
-            butLuu.Enabled = butcancel.Enabled = false;
+            butThem.Enabled = butCapNhap.Enabled = butChiTiet.Enabled = butXoa.Enabled = true;
+            butLuu.Enabled  = false;
         }
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void butCapNhap_Click_1(object sender, EventArgs e)
         {
             check = false;
             Enable(true);
-            butthem.Enabled = butChiTiet.Enabled = bttXoa.Enabled = false;
-            butcancel.Enabled = butLuu.Enabled = true;
+            butThem.Enabled = butChiTiet.Enabled = butXoa.Enabled = false;
+            butLuu.Enabled = true;
         }
        
         private void butLuu_Click_1(object sender, EventArgs e)
@@ -154,33 +149,43 @@ namespace CNPM_PBL3.View
                 {
                     bll.AddKM_BLL(khuyenMai);
                 }
-                Reset();
+                txtTenKm.Text = txtGiaTri.Text = guna2HtmlLabel6.Text = "";
+                dateBatDau.Value = dateKetThuc.Value = DateTime.Now;
                 ShowDGV();
             }
+          
         }
         private void butChiTiet_Click_1(object sender, EventArgs e)
         {
-            int maKM = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            FDetailKhuyenMai f = new FDetailKhuyenMai();
-            f.ShowDialog();
+            DataGridViewSelectedRowCollection l = dataGridView1.SelectedRows;
+            if (l.Count == 1)
+            {
+                //int maKM = Convert.ToInt32(l[0].Cells["MaKhuyenMai"].Value.ToString());
+                FDetailSale f = new FDetailSale();
+                
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ chọn một mã khuyến mãi để xem", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
-        private void guna2Button2_Click_1(object sender, EventArgs e)
+        private void butXoa_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count >= 0)
             {
                 if (MessageBox.Show("Bạn có muốn xóa đợt khuyến mãi này?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    List<int> listmakm = new List<int>();
+                    List<int> listMaKM = new List<int>();
                     List<decimal> listPrice = new List<decimal>();
                     foreach (DataGridViewRow i in dataGridView1.SelectedRows)
                     {
-                        listmakm.Add(Convert.ToInt32(i.Cells["MaKhuyenMai"].Value.ToString()));
+                        listMaKM.Add(Convert.ToInt32(i.Cells["MaKhuyenMai"].Value.ToString()));
                     }
-
-                    bll.UpdateKM(listmakm);
-                    //   bll.PriceListUpdate(bll.GetMaSPByMaKM(listmakm));
-                    bll.DeleteKMByMaKM(listmakm);
+                    bll.UpdateKM(listMaKM);
+                    bll.DeleteKMByMaKM(listMaKM);
                     ShowDGV();
                     MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -190,7 +195,7 @@ namespace CNPM_PBL3.View
                 MessageBox.Show("Bạn chưa chọn sản phẩm nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        public void AutoUpdateKM()
+        public void AutoUpdateGiaTriKM()
         {
             List<int> data = new List<int>();
             foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -203,12 +208,12 @@ namespace CNPM_PBL3.View
             bll.UpdateKM(data);
         }
 
-        private void butcancel_Click(object sender, EventArgs e)
-        {
-            Enable(false);
-            butthem.Enabled = butsua.Enabled = butChiTiet.Enabled = bttXoa.Enabled = true;
-            butLuu.Enabled = butcancel.Enabled = false;
-        }
+        //private void butcancel_Click(object sender, EventArgs e)
+        //{
+        //    Enable(false);
+        //    butThem.Enabled = butCapNhap.Enabled = butChiTiet.Enabled = bttXoa.Enabled = true;
+        //    butLuu.Enabled = false;
+        //}
 
        
     }

@@ -12,11 +12,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CNPM_PBL3.View
 {
-    public partial class FDetailKhuyenMai : Form
+    public partial class FDetailSale : Form
     {
         QLKM_BLL bll = new QLKM_BLL();
         QLSP_BLL bllsp = new QLSP_BLL();
-        public FDetailKhuyenMai()
+        public FDetailSale()
         {
             InitializeComponent();
             SetCBBThuongHieu();
@@ -26,11 +26,13 @@ namespace CNPM_PBL3.View
 
         public static int IdKhuyenMai = 0;
         public static decimal GiaTriKM = 0;
+        //public int ValueThuongHieu;
         public List<dynamic> list = new List<dynamic>();
+        // public string thuongHieu = cbbThuongHieu.SelectedItem.ToString();
 
         public void SetCBBThuongHieu()
         {
-            cbbThuongHieu.Items.Add(new CBBItems { Text = "Tất cả" });
+            cbbThuongHieu.Items.Add(new CBBItems { Text = "Tất cả", Value = 0 });
             cbbThuongHieu.Items.AddRange(bllsp.GetListCBBThuongHieu().ToArray());
         }
         public void SetCBBMaSP()
@@ -43,15 +45,13 @@ namespace CNPM_PBL3.View
             return bll.GetMaKM(nameKM);
         }
 
-        //string MaSP;
-        //int makm;
 
         public void ShowDGV()
         {
             DataTable dt = new DataTable();
-            dt.Columns.Add("MaKhuyenMai");
-            dt.Columns.Add("MaSanPham");
-            dt.Columns.Add("TenThuongHieu");
+            dt.Columns.Add("MaKhuyenMai", typeof(int));
+            dt.Columns.Add("MaSanPham", typeof(string));
+            dt.Columns.Add("TenThuongHieu", typeof(string));
             dt.Columns.Add("GiaTruocKhuyenMai");
             dt.Columns.Add("GiaSauKhuyenMai");
             foreach (dynamic i in list)
@@ -60,20 +60,19 @@ namespace CNPM_PBL3.View
                 dr["MaKhuyenMai"] = i.MaKhuyenMai;
                 dr["MaSanPham"] = i.MaSP;
                 dr["TenThuongHieu"] = i.TenThuongHieu;
-                decimal myDecimal = i.GiaTruocKhuyenMai;
-                string formattedDecimal = myDecimal.ToString("#,##0.000 đ");
+                decimal giaTruocKM = i.GiaTruocKhuyenMai;
+                string formattedDecimal = giaTruocKM.ToString("#,##0.000 đ");
                 dr["GiaTruocKhuyenMai"] = formattedDecimal;
-                decimal myDecimal1 = i.GiaSauKhuyenMai;
-                string formattedDecimal1 = myDecimal1.ToString("#,##0.000 đ");
+                decimal giaSauKM = i.GiaSauKhuyenMai;
+                string formattedDecimal1 = giaSauKM.ToString("#,##0.000 đ");
                 dr["GiaSauKhuyenMai"] = formattedDecimal1;
                 dt.Rows.Add(dr);
             }
             dataGridView1.DataSource = dt;
         }
-
         private void cbbThuongHieu_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (cbbThuongHieu.SelectedIndex == 0)
+            if (((CBBItems)cbbThuongHieu.SelectedItem).Value == 0)
             {
                 cbbSanPham.Items.Clear();
                 SetCBBMaSP();
@@ -81,28 +80,25 @@ namespace CNPM_PBL3.View
             else
             {
                 cbbSanPham.Items.Clear();
-                string thuongHieu = cbbThuongHieu.SelectedItem.ToString();
+                string thuongHieu = ((CBBItems)cbbThuongHieu.SelectedItem).Text;
+                MessageBox.Show(thuongHieu);
                 cbbSanPham.Items.AddRange(bll.GetListCBBSPByThuongHieu(thuongHieu).ToArray());
             }
+            // SetCBBMaSP();
         }
-        public bool check()
+        public void cbbSanPham_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            bool b = true;
-            if (cbbSanPham.SelectedIndex >= 0)
-            {
-                b = true;
-            }
-            else
-            {
-                b = false;
-            }
-            return b;
+            // MaSP = cbbSanPham.SelectedItem.ToString();
+            // cbbSanPham.Items.Remove(selectedItem);
+            //  cbbSanPham.Items.Clear();
+            // string thuongHieu = cbbThuongHieu.SelectedItem.ToString();
+            //cbbSanPham.Items.AddRange(bll.GetListCBBSPByThuongHieu(thuongHieu).ToArray());
         }
-        string selectedItem;
-        private void guna2Button1_Click_1(object sender, EventArgs e)
-        {
 
-            if (check())
+
+        private void butThem_Click(object sender, EventArgs e)
+        {
+            if (cbbSanPham.SelectedIndex >= 0)
             {
                 dynamic ct = new
                 {
@@ -112,35 +108,27 @@ namespace CNPM_PBL3.View
                     GiaTruocKhuyenMai = bllsp.GetGiaSPByIdSP(cbbSanPham.SelectedItem.ToString()),
                     GiaSauKhuyenMai = bllsp.GetGiaSPByIdSP(cbbSanPham.SelectedItem.ToString()) * ((100 - GiaTriKM) / 100)
                 };
-
-                selectedItem = cbbSanPham.SelectedItem.ToString();
-
                 list.Add(ct);
-                bll.UpdateKMByMaSP(ct.MaSP, ct.MaKhuyenMai);
+                bll.UpdateKMByMaSP_BLL(ct.MaSP, ct.MaKhuyenMai);
                 ShowDGV();
             }
             else
             {
                 MessageBox.Show("Bạn chưa chọn sản phẩm nào ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            SetCBBMaSP();
+            //SetCBBMaSP();
+            cbbSanPham.Items.Clear();
+            string thuongHieu = ((CBBItems)cbbThuongHieu.SelectedItem).Text;
+            cbbSanPham.Items.AddRange(bll.GetListCBBSPByThuongHieu(thuongHieu).ToArray());
+            
         }
 
-        public void cbbSanPham_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            // MaSP = cbbSanPham.SelectedItem.ToString();
-            // cbbSanPham.Items.Remove(selectedItem);
-            //  cbbSanPham.Items.Clear();
-            string thuongHieu = cbbThuongHieu.SelectedItem.ToString();
-            cbbSanPham.Items.AddRange(bll.GetListCBBSPByThuongHieu(thuongHieu).ToArray());
-        }
+
 
         public void GetChiTietKhuyenMai()
         {
-
             foreach (var i in bllsp.GetSPByMaKM(IdKhuyenMai))
             {
-
                 dynamic t = new
                 {
                     MaKhuyenMai = i.MaKhuyenMai,
@@ -158,7 +146,7 @@ namespace CNPM_PBL3.View
             index = e.RowIndex;
         }
 
-        private void guna2Button2_Click_1(object sender, EventArgs e)
+        private void Xoa_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count >= 0)
             {
@@ -197,5 +185,12 @@ namespace CNPM_PBL3.View
                 MessageBox.Show("Bạn chưa chọn sản phẩm nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void butCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+      
     }
 }

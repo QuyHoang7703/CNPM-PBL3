@@ -85,7 +85,7 @@ namespace CNPM_PBL3.View
 
         private void butKhuyenMai_Click(object sender, EventArgs e)
         {
-            f.OpenChildForm(panelMain, new FKhuyenMai());
+            f.OpenChildForm(panelMain, new FSale());
         }
 
        

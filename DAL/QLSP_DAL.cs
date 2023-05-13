@@ -31,8 +31,14 @@ namespace CNPM_PBL3.DAL
         }
         public dynamic GetAllSP2_DAL()
         {
-            var s = db.DongHoes.Select(p => p).ToList();
+            var s = db.DongHoes.AsNoTracking().Select(p => p).ToList();
+            //var s = db.DongHoes.Select(p => p).ToList();
             return s;
+        }
+
+        public void GetData()
+        {
+
         }
 
         public dynamic GetSpByThuongHieu(string thuongHieu)
