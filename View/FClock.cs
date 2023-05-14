@@ -26,6 +26,7 @@ namespace CNPM_PBL3.View
             GetChatLieuMatKinh();
             GetChatLieuDay();
             GetXuatXu();
+            GetGiaSP();
         }
         public void GetCBBThuongHieu()
         {
@@ -67,7 +68,14 @@ namespace CNPM_PBL3.View
             cbbXuatXu.Items.Add("");
             cbbXuatXu.Items.AddRange(bll.GetXuatXu_BLL().Distinct().ToArray());
         }
-
+        public void GetGiaSP()
+        {
+            cbbGiaSP.Items.Add("");
+            cbbGiaSP.Items.Add("10.0000-50.0000");
+            cbbGiaSP.Items.Add("50.0000-150.0000");
+            cbbGiaSP.Items.Add("150.0000-250.0000");
+            cbbGiaSP.Items.Add("Trên 250.0000 ");
+        }
 
         public void ShowDGV(dynamic s)
         {
@@ -128,9 +136,9 @@ namespace CNPM_PBL3.View
         {
             cbbThuongHieu.Items.AddRange(bll.GetListCBBThuongHieu().ToArray());
         }
-        public void showTimKiem(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX)
+        public void showTimKiem(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX, ComboBox cbbGSP)
         {
-            //ShowDGV(bll.TimKiem_BLL(cbbTH, cbbGT, cbbBMNL, cbbMMS, cbbHDMS, cbbCLMK, cbbCLD, cbbXX));
+            ShowDGV(bll.TimKiemFClock_BLL(cbbTH, cbbGT, cbbBMNL, cbbMMS, cbbHDMS, cbbCLMK, cbbCLD, cbbXX, cbbGSP));
           
         }
 
@@ -141,7 +149,7 @@ namespace CNPM_PBL3.View
         }
         private void butTimKiem_Click(object sender, EventArgs e)
         {
-            showTimKiem(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu);
+            showTimKiem(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP);
         }
     }
 }

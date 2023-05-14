@@ -185,39 +185,27 @@ namespace CNPM_PBL3.BLL
             }
             return list;
         }
-        //public dynamic TimKiemTrangChu_BLL(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX, ComboBox cbbGSP)
-        //{
-        //    //return dal.TimKiemTrangChu_DAL(cbbTH, cbbGT, cbbBMNL, cbbMMS, cbbHDMS, cbbCLMK, cbbCLD, cbbXX, cbbGSP);
-        //    List<dynamic> list = new List<dynamic>();
-        //    //foreach(var i in dal.TimKiemTrangChu_DAL(cbbTH, cbbGT, cbbBMNL, cbbMMS, cbbHDMS, cbbCLMK, cbbCLD, cbbXX, cbbGSP))
-        //    //{
-        //    //    var t = new
-        //    //    {
-        //    //        TenThuongHieu=i.ThuongHieu.TenThuongHieu,
-        //    //        MaSP =i.MaSP,
-        //    //        GioiTinhSP=i.GioiTinhSP,
-        //    //        ChatLieuMatKinh=i.ChatLieuMatKinh,
-        //    //        BoMayNangLuong=i.BoMayNangLuong,
-        //    //        GiaSP=i.GiaSP,
-        //    //        GiaTriKhuyenMai=i.KhuyenMai.GiaTriKhuyenMai,
-        //    //        //GiaSP= 
-        //    //    };
-        //    //    list.Add(t);
-        //    //}
-        //    //return list;
-        //}
-
-
-
+        public dynamic TimKiemTrangChu_BLL(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX, ComboBox cbbGSP)
+        {
+            return dal.TimKiemDongHo_DAL(cbbTH, cbbGT, cbbBMNL, cbbMMS, cbbHDMS, cbbCLMK, cbbCLD, cbbXX, cbbGSP);
+        }
+        public dynamic TimKiemFClock_BLL(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX, ComboBox cbbGSP)
+        {
+            List<DongHo> list = dal.TimKiemDongHo_DAL(cbbTH, cbbGT, cbbBMNL, cbbMMS, cbbHDMS, cbbCLMK, cbbCLD, cbbXX, cbbGSP);
+            if(list.Count == 0)
+            {
+                MessageBox.Show("Không Tìm Thấy Sản Phẩm");
+            }
+            var s = list.Select(p => new { p.MaSP, p.ThuongHieu.TenThuongHieu, p.GioiTinhSP, p.BoMayNangLuong, p.MauMatSo, p.HinhDangMatSo, p.ChatLieuMatKinh, p.ChatLieuDay, p.XuatSu, p.GiaSP }).ToList();
+            return s;      
+        }
         public dynamic TimKiemTrenTXTTrangChu_BLL(string txt, List<DongHo> list)
         {
-            var s = list.Where(p => p.MaSP.Contains(txt)).Select(p => p).ToList();
-
-            if (s.Count == 0)
+            if (dal.TimKiemTrenTXT_DAL(txt, list).Count == 0)
             {
                 MessageBox.Show("Không tồn tại sản phẩm");
             }
-            return s;
+            return dal.TimKiemTrenTXT_DAL(txt, list);
         }
     }
 }

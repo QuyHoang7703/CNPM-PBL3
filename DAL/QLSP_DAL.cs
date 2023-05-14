@@ -107,103 +107,8 @@ namespace CNPM_PBL3.DAL
                 return s.GiaTriKhuyenMai.ToString();
             }
         }
-        //public dynamic TimKiem_DAL(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX)
-        //{
-        //    string thuongHieu = "";
-        //    if (cbbTH.SelectedItem != null)
-        //    {
-        //        thuongHieu = cbbTH.SelectedItem.ToString();
-        //    }
-        //    string gioiTinhSP = "";
-        //    if (cbbGT.SelectedItem != null)
-        //    {
-        //        gioiTinhSP = cbbGT.SelectedItem.ToString();
-        //    }
-        //    string boMayNangNuong = "";
-        //    if (cbbBMNL.SelectedItem != null)
-        //    {
-        //        boMayNangNuong = cbbBMNL.SelectedItem.ToString();
-        //    }
-        //    string mauMatSo = "";
-        //    if (cbbMMS.SelectedItem != null)
-        //    {
-        //        mauMatSo = cbbMMS.SelectedItem.ToString();
-        //    }
-        //    string hinhDangMatSo = "";
-        //    if (cbbHDMS.SelectedItem != null)
-        //    {
-        //        hinhDangMatSo = cbbHDMS.SelectedItem.ToString();
-        //    }
-        //    string chatLieuMatKinh = "";
-        //    if (cbbCLMK.SelectedItem != null)
-        //    {
-        //        chatLieuMatKinh = cbbCLMK.SelectedItem.ToString();
-        //    }
-        //    string chatLieuDay = "";
-        //    if (cbbCLD.SelectedItem != null)
-        //    {
-        //        chatLieuDay = cbbCLD.SelectedItem.ToString();
-        //    }
-        //    string xuatXu = "";
-        //    if (cbbXX.SelectedItem != null)
-        //    {
-        //        xuatXu = cbbXX.SelectedItem.ToString();
-        //    }
-        //    using (QLDB db = new QLDB())
-        //    {
-        //        var s = db.DongHoes.Select(p => new { p.MaSP, p.ThuongHieu.TenThuongHieu, p.GioiTinhSP, p.BoMayNangLuong, p.MauMatSo, p.HinhDangMatSo, p.ChatLieuMatKinh, p.ChatLieuDay, p.XuatSu }).ToList();
-
-        //        if (!string.IsNullOrWhiteSpace(thuongHieu))
-        //        {
-        //            s = s.Where(p => p.TenThuongHieu == thuongHieu)
-        //                    .Select(p => p).ToList();
-        //        }
-        //        if (!string.IsNullOrWhiteSpace(gioiTinhSP))
-        //        {
-        //            s = s.Where(p => p.GioiTinhSP == gioiTinhSP)
-        //                    .Select(p => p).ToList();
-        //        }
-        //        if (!string.IsNullOrWhiteSpace(boMayNangNuong))
-        //        {
-        //            s = s.Where(p => p.BoMayNangLuong == boMayNangNuong)
-        //                    .Select(p => p).ToList();
-        //        }
-        //        if (!string.IsNullOrEmpty(mauMatSo))
-        //        {
-        //            s = s.Where(p => p.MauMatSo == mauMatSo)
-        //                    .Select(p => p).ToList();
-        //        }
-        //        if (!string.IsNullOrWhiteSpace(hinhDangMatSo))
-        //        {
-
-        //            s = s.Where(p => p.HinhDangMatSo == hinhDangMatSo)
-        //                    .Select(p => p).ToList();
-        //        }
-        //        if (!string.IsNullOrWhiteSpace(chatLieuMatKinh))
-        //        {
-
-
-        //            s = s.Where(p => p.ChatLieuMatKinh == chatLieuMatKinh)
-        //                    .Select(p => p).ToList();
-        //        }
-        //        if (!string.IsNullOrWhiteSpace(chatLieuDay))
-        //        {
-
-
-        //            s = s.Where(p => p.ChatLieuDay == chatLieuDay)
-        //                    .Select(p => p).ToList();
-        //        }
-        //        if (!string.IsNullOrWhiteSpace(xuatXu))
-        //        {
-
-
-        //            s = s.Where(p => p.XuatSu == xuatXu)
-        //                    .Select(p => p).ToList();
-        //        }
-        //        return s;
-        //    }
-        //}
-        public dynamic TimKiemTrangChu_DAL(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX, ComboBox cbbGSP)
+       
+        public dynamic TimKiemDongHo_DAL(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX, ComboBox cbbGSP)
         {
             string thuongHieu = "";
             if (cbbTH.SelectedItem != null)
@@ -251,7 +156,6 @@ namespace CNPM_PBL3.DAL
                 giaSP = cbbGSP.SelectedItem.ToString();
             }
             QLDB db = new QLDB();
-            
                 var s = db.DongHoes.Select(p => p).ToList();
 
                 if (!string.IsNullOrWhiteSpace(thuongHieu))
@@ -320,21 +224,14 @@ namespace CNPM_PBL3.DAL
                            .Select(p => p).ToList();
                     }
                 }
-                if (s.Count == 0)
-                {
-                    MessageBox.Show("Không tồn tại sản phẩm");
-                }
                 return s;
-            
-
         }
         public List<decimal> GetGiatri_CBBGiaSP(string txt)
         {
             List<decimal> li = new List<decimal>();
-            //ab10.0000-300.0000
             string inputString = txt;
             string inputString1 = txt;
-            int startIndex = inputString.IndexOfAny("0123456789".ToCharArray());// timf vị trí số xuất hiện đầu tiên
+            int startIndex = inputString.IndexOfAny("0123456789".ToCharArray());
             int endIndex = inputString.IndexOf('-', startIndex);
             if (endIndex == -1)
             {
@@ -350,13 +247,18 @@ namespace CNPM_PBL3.DAL
             else
             {
                 string numberString = inputString.Substring(startIndex, endIndex - startIndex);
-                string numberString1 = inputString1.Substring(endIndex - startIndex + 1, endIndex);
+                string numberString1 = inputString1.Substring(endIndex - startIndex + 1, inputString1.Length - endIndex - 1);
                 decimal number = Convert.ToDecimal(numberString);
                 li.Add(number);
                 decimal number2 = Convert.ToDecimal(numberString1);
                 li.Add(number2);
             }
             return li;
+        }
+        public dynamic TimKiemTrenTXT_DAL(string txt, List<DongHo> list)
+        {
+            var s = list.Where(p => p.MaSP.Contains(txt)).Select(p => p).ToList();
+            return s;
         }
     }
 }
