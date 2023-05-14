@@ -108,20 +108,27 @@ namespace CNPM_PBL3.View
                     if (dateBatDau.Value <= DateTime.Now && dateKetThuc.Value >= DateTime.Now)
                     {
                         guna2HtmlLabel6.Text = "Đang diễn ra";
+                        butChiTiet.Enabled = true;
                     }
-                    else
+                    else if (dateBatDau.Value > DateTime.Now)
+                    {
+                        guna2HtmlLabel6.Text = "Chưa diễn ra";
+                        butChiTiet.Enabled = false;
+                    }
+                    else if (dateKetThuc.Value < DateTime.Now)
                     {
                         guna2HtmlLabel6.Text = "Hết đợt khuyến mãi";
+                        butChiTiet.Enabled = false;
                     }
                     FDetailSale.IdKhuyenMai = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                     FDetailSale.GiaTriKM = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value.ToString());
 
                 }
-            }          
-           
+            }
+
             Enable(false);
-            butThem.Enabled = butCapNhap.Enabled = butChiTiet.Enabled = butXoa.Enabled = true;
-            butLuu.Enabled  = false;
+            butThem.Enabled = butCapNhap.Enabled = butXoa.Enabled = true;
+            butLuu.Enabled = false;
         }
         private void butCapNhap_Click_1(object sender, EventArgs e)
         {

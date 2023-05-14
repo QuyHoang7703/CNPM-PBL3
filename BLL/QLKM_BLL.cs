@@ -64,10 +64,10 @@ namespace CNPM_PBL3.BLL
         {
             dal.UpdateGiaSP(masp, giasp);
         }
-        public void PriceListUpdate(List<string> lisMasp, List<decimal> listPrice)
-        {
-            dal.PriceListUpdate(lisMasp, listPrice);
-        }
+        //public void PriceListUpdate(List<string> lisMasp, List<decimal> listPrice)
+        //{
+        //    dal.PriceListUpdate(lisMasp, listPrice);
+        //}
         public void DeleteKM(List<string> masp)
         {
             foreach (string i in masp)
@@ -101,9 +101,13 @@ namespace CNPM_PBL3.BLL
             }
             return list;
         }
-        public void PriceListUpdate(List<string> masp)
+        //public void PriceListUpdate(List<string> masp)
+        //{
+        //    dal.PriceListUpdate(masp);
+        //}
+        public string GetTenThuongHieuByMaSP(string masp)
         {
-            dal.PriceListUpdate(masp);
+            return dal.GetNameTHBYMaSP(masp);
         }
     }
 }

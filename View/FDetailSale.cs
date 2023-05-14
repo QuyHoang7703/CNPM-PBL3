@@ -104,7 +104,7 @@ namespace CNPM_PBL3.View
                 {
                     MaKhuyenMai = IdKhuyenMai,
                     MaSP = cbbSanPham.SelectedItem.ToString(),
-                    TenThuongHieu = cbbThuongHieu.SelectedItem.ToString(),
+                    TenThuongHieu = bll.GetTenThuongHieuByMaSP(cbbSanPham.SelectedItem.ToString()),
                     GiaTruocKhuyenMai = bllsp.GetGiaSPByIdSP(cbbSanPham.SelectedItem.ToString()),
                     GiaSauKhuyenMai = bllsp.GetGiaSPByIdSP(cbbSanPham.SelectedItem.ToString()) * ((100 - GiaTriKM) / 100)
                 };

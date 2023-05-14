@@ -43,15 +43,15 @@ namespace CNPM_PBL3.DAL
             s.GiaSP = giasp;
             db.SaveChanges();
         }
-        public void PriceListUpdate(List<string> masp, List<decimal> listPrice)
-        {
-            for (int i = 0; i < masp.Count; i++)
-            {
-                var s = db.DongHoes.Find(masp[i]);
-                s.GiaSP = listPrice[i];
-                db.SaveChanges();
-            }
-        }
+        //public void PriceListUpdate(List<string> masp, List<decimal> listPrice)
+        //{
+        //    for (int i = 0; i < masp.Count; i++)
+        //    {
+        //        var s = db.DongHoes.Find(masp[i]);
+        //        s.GiaSP = listPrice[i];
+        //        db.SaveChanges();
+        //    }
+        //}
         public void UpdateAllKM(KhuyenMai k)
         {
             KhuyenMai s = db.KhuyenMais.Find(k.MaKhuyenMai);
@@ -85,16 +85,21 @@ namespace CNPM_PBL3.DAL
                 Select(p => p).ToList();
             return s;
         }
-        public void PriceListUpdate(List<string> masp)
+        //public void PriceListUpdate(List<string> masp)
+        //{
+        //    foreach (string i in masp)
+        //    {
+        //        var s = db.DongHoes.Find(i);
+        //        decimal giatrikm = Convert.ToDecimal(s.KhuyenMai.GiaTriKhuyenMai);
+        //        decimal giasp = (s.GiaSP / (100 - giatrikm)) * 100;
+        //        s.GiaSP = giasp;
+        //        db.SaveChanges();
+        //    }
+        //}
+        public string GetNameTHBYMaSP(string masp)
         {
-            foreach (string i in masp)
-            {
-                var s = db.DongHoes.Find(i);
-                decimal giatrikm = Convert.ToDecimal(s.KhuyenMai.GiaTriKhuyenMai);
-                decimal giasp = (s.GiaSP / (100 - giatrikm)) * 100;
-                s.GiaSP = giasp;
-                db.SaveChanges();
-            }
+            DongHo i = db.DongHoes.Find(masp);
+            return i.ThuongHieu.TenThuongHieu;
         }
     }
 }
