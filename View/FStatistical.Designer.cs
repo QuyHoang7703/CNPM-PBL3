@@ -29,73 +29,79 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FStatistical));
-            System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation1 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation2 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation3 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation4 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation5 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation6 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.guna2ShadowPanel5 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lableTongHoaDonT = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ShadowPanel6 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lableDoanhThuT = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ShadowPanel7 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lableTongKhachHangT = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.guna2PictureBox9 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ShadowPanel8 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lableTongSanPhamT = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.guna2PictureBox10 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ShadowPanel4 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lableTongHoaDon = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.guna2CircleProgressBar2 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.guna2CircleProgressBar4 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.guna2CircleProgressBar5 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.guna2CircleProgressBar3 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lableDoanhThu = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lableTongKhachHang = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lableTongSanPham = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.labelSP1 = new System.Windows.Forms.Label();
+            this.labelSP2 = new System.Windows.Forms.Label();
+            this.labelSP3 = new System.Windows.Forms.Label();
+            this.labelSP4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.guna2ShadowPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
+            this.guna2ShadowPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).BeginInit();
+            this.guna2ShadowPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).BeginInit();
+            this.guna2ShadowPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).BeginInit();
+            this.guna2ShadowPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
             this.guna2CircleProgressBar1.SuspendLayout();
             this.guna2CircleProgressBar2.SuspendLayout();
             this.guna2CircleProgressBar4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.guna2ShadowPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2ShadowPanel2.SuspendLayout();
@@ -139,13 +145,18 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.guna2PictureBox5);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.monthCalendar1);
+            this.tabPage1.Controls.Add(this.guna2ShadowPanel5);
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.guna2PictureBox7);
+            this.tabPage1.Controls.Add(this.guna2ShadowPanel6);
+            this.tabPage1.Controls.Add(this.guna2ShadowPanel7);
+            this.tabPage1.Controls.Add(this.guna2ShadowPanel8);
+            this.tabPage1.Controls.Add(this.guna2ShadowPanel4);
+            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.guna2PictureBox4);
-            this.tabPage1.Controls.Add(this.guna2HtmlLabel11);
-            this.tabPage1.Controls.Add(this.guna2HtmlLabel10);
             this.tabPage1.Controls.Add(this.guna2Panel1);
-            this.tabPage1.Controls.Add(this.chart1);
             this.tabPage1.Controls.Add(this.guna2ShadowPanel3);
             this.tabPage1.Controls.Add(this.guna2ShadowPanel2);
             this.tabPage1.Controls.Add(this.guna2ShadowPanel1);
@@ -159,174 +170,314 @@
             this.tabPage1.Text = "Tổng quan";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // monthCalendar1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dataGridView1.Location = new System.Drawing.Point(37, 633);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(692, 222);
-            this.dataGridView1.TabIndex = 10;
+            this.monthCalendar1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthCalendar1.Location = new System.Drawing.Point(752, 30);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 18;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
-            // Column1
+            // guna2ShadowPanel5
             // 
-            this.Column1.HeaderText = "Mã khách hàng";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
+            this.guna2ShadowPanel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel5.Controls.Add(this.lableTongHoaDonT);
+            this.guna2ShadowPanel5.Controls.Add(this.label8);
+            this.guna2ShadowPanel5.Controls.Add(this.guna2PictureBox6);
+            this.guna2ShadowPanel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.guna2ShadowPanel5.Location = new System.Drawing.Point(8, 601);
+            this.guna2ShadowPanel5.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ShadowPanel5.Name = "guna2ShadowPanel5";
+            this.guna2ShadowPanel5.Radius = 20;
+            this.guna2ShadowPanel5.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel5.ShadowShift = 0;
+            this.guna2ShadowPanel5.Size = new System.Drawing.Size(349, 134);
+            this.guna2ShadowPanel5.TabIndex = 16;
             // 
-            // Column2
+            // lableTongHoaDonT
             // 
-            this.Column2.HeaderText = "Tên khách hàng";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
+            this.lableTongHoaDonT.AutoSize = true;
+            this.lableTongHoaDonT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lableTongHoaDonT.Location = new System.Drawing.Point(69, 71);
+            this.lableTongHoaDonT.Name = "lableTongHoaDonT";
+            this.lableTongHoaDonT.Size = new System.Drawing.Size(85, 23);
+            this.lableTongHoaDonT.TabIndex = 5;
+            this.lableTongHoaDonT.Text = "Hóa Đơn";
             // 
-            // Column3
+            // label8
             // 
-            this.Column3.HeaderText = "Lượt mua";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(49, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(145, 32);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "HÓA ĐƠN";
             // 
-            // Column4
+            // guna2PictureBox6
             // 
-            this.Column4.HeaderText = "Tổng tiên";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
+            this.guna2PictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox6.Image")));
+            this.guna2PictureBox6.ImageRotate = 0F;
+            this.guna2PictureBox6.Location = new System.Drawing.Point(223, 22);
+            this.guna2PictureBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2PictureBox6.Name = "guna2PictureBox6";
+            this.guna2PictureBox6.Size = new System.Drawing.Size(113, 101);
+            this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox6.TabIndex = 1;
+            this.guna2PictureBox6.TabStop = false;
             // 
-            // Column5
+            // label9
             // 
-            this.Column5.HeaderText = "Địa chỉ";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(58, 417);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(317, 25);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "DOANH THU THEO THÁNG";
             // 
-            // Column6
+            // guna2PictureBox7
             // 
-            this.Column6.HeaderText = "Số điện thoại";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
+            this.guna2PictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox7.Image")));
+            this.guna2PictureBox7.ImageRotate = 0F;
+            this.guna2PictureBox7.Location = new System.Drawing.Point(8, 404);
+            this.guna2PictureBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2PictureBox7.Name = "guna2PictureBox7";
+            this.guna2PictureBox7.Size = new System.Drawing.Size(64, 47);
+            this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox7.TabIndex = 13;
+            this.guna2PictureBox7.TabStop = false;
+            // 
+            // guna2ShadowPanel6
+            // 
+            this.guna2ShadowPanel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel6.Controls.Add(this.lableDoanhThuT);
+            this.guna2ShadowPanel6.Controls.Add(this.label11);
+            this.guna2ShadowPanel6.Controls.Add(this.guna2PictureBox8);
+            this.guna2ShadowPanel6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.guna2ShadowPanel6.Location = new System.Drawing.Point(365, 601);
+            this.guna2ShadowPanel6.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ShadowPanel6.Name = "guna2ShadowPanel6";
+            this.guna2ShadowPanel6.Radius = 20;
+            this.guna2ShadowPanel6.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel6.ShadowShift = 0;
+            this.guna2ShadowPanel6.Size = new System.Drawing.Size(347, 134);
+            this.guna2ShadowPanel6.TabIndex = 14;
+            // 
+            // lableDoanhThuT
+            // 
+            this.lableDoanhThuT.AutoSize = true;
+            this.lableDoanhThuT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lableDoanhThuT.Location = new System.Drawing.Point(50, 70);
+            this.lableDoanhThuT.Name = "lableDoanhThuT";
+            this.lableDoanhThuT.Size = new System.Drawing.Size(102, 23);
+            this.lableDoanhThuT.TabIndex = 7;
+            this.lableDoanhThuT.Text = "Doanh Thu";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(25, 11);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(184, 32);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "DOANH THU";
+            // 
+            // guna2PictureBox8
+            // 
+            this.guna2PictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox8.Image")));
+            this.guna2PictureBox8.ImageRotate = 0F;
+            this.guna2PictureBox8.Location = new System.Drawing.Point(227, 22);
+            this.guna2PictureBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2PictureBox8.Name = "guna2PictureBox8";
+            this.guna2PictureBox8.Size = new System.Drawing.Size(101, 91);
+            this.guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox8.TabIndex = 1;
+            this.guna2PictureBox8.TabStop = false;
+            // 
+            // guna2ShadowPanel7
+            // 
+            this.guna2ShadowPanel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel7.Controls.Add(this.lableTongKhachHangT);
+            this.guna2ShadowPanel7.Controls.Add(this.label13);
+            this.guna2ShadowPanel7.Controls.Add(this.guna2PictureBox9);
+            this.guna2ShadowPanel7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.guna2ShadowPanel7.Location = new System.Drawing.Point(365, 459);
+            this.guna2ShadowPanel7.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ShadowPanel7.Name = "guna2ShadowPanel7";
+            this.guna2ShadowPanel7.Radius = 20;
+            this.guna2ShadowPanel7.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel7.ShadowShift = 0;
+            this.guna2ShadowPanel7.Size = new System.Drawing.Size(349, 134);
+            this.guna2ShadowPanel7.TabIndex = 15;
+            // 
+            // lableTongKhachHangT
+            // 
+            this.lableTongKhachHangT.AutoSize = true;
+            this.lableTongKhachHangT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lableTongKhachHangT.Location = new System.Drawing.Point(50, 71);
+            this.lableTongKhachHangT.Name = "lableTongKhachHangT";
+            this.lableTongKhachHangT.Size = new System.Drawing.Size(113, 23);
+            this.lableTongKhachHangT.TabIndex = 6;
+            this.lableTongKhachHangT.Text = "Khách Hàng";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(25, 9);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(212, 32);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "KHÁCH HÀNG";
+            // 
+            // guna2PictureBox9
+            // 
+            this.guna2PictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox9.Image")));
+            this.guna2PictureBox9.ImageRotate = 0F;
+            this.guna2PictureBox9.Location = new System.Drawing.Point(227, 14);
+            this.guna2PictureBox9.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2PictureBox9.Name = "guna2PictureBox9";
+            this.guna2PictureBox9.Size = new System.Drawing.Size(118, 113);
+            this.guna2PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox9.TabIndex = 1;
+            this.guna2PictureBox9.TabStop = false;
+            // 
+            // guna2ShadowPanel8
+            // 
+            this.guna2ShadowPanel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel8.Controls.Add(this.lableTongSanPhamT);
+            this.guna2ShadowPanel8.Controls.Add(this.label15);
+            this.guna2ShadowPanel8.Controls.Add(this.guna2PictureBox10);
+            this.guna2ShadowPanel8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.guna2ShadowPanel8.Location = new System.Drawing.Point(8, 459);
+            this.guna2ShadowPanel8.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ShadowPanel8.Name = "guna2ShadowPanel8";
+            this.guna2ShadowPanel8.Radius = 20;
+            this.guna2ShadowPanel8.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel8.ShadowShift = 0;
+            this.guna2ShadowPanel8.Size = new System.Drawing.Size(349, 134);
+            this.guna2ShadowPanel8.TabIndex = 12;
+            // 
+            // lableTongSanPhamT
+            // 
+            this.lableTongSanPhamT.AutoSize = true;
+            this.lableTongSanPhamT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lableTongSanPhamT.Location = new System.Drawing.Point(69, 71);
+            this.lableTongSanPhamT.Name = "lableTongSanPhamT";
+            this.lableTongSanPhamT.Size = new System.Drawing.Size(93, 23);
+            this.lableTongSanPhamT.TabIndex = 5;
+            this.lableTongSanPhamT.Text = "Sản Phẩm";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(49, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(163, 32);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "SẢN PHẨM";
+            // 
+            // guna2PictureBox10
+            // 
+            this.guna2PictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox10.Image")));
+            this.guna2PictureBox10.ImageRotate = 0F;
+            this.guna2PictureBox10.Location = new System.Drawing.Point(223, 26);
+            this.guna2PictureBox10.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2PictureBox10.Name = "guna2PictureBox10";
+            this.guna2PictureBox10.Size = new System.Drawing.Size(113, 101);
+            this.guna2PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox10.TabIndex = 1;
+            this.guna2PictureBox10.TabStop = false;
+            // 
+            // guna2ShadowPanel4
+            // 
+            this.guna2ShadowPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel4.Controls.Add(this.lableTongHoaDon);
+            this.guna2ShadowPanel4.Controls.Add(this.label6);
+            this.guna2ShadowPanel4.Controls.Add(this.guna2PictureBox5);
+            this.guna2ShadowPanel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.guna2ShadowPanel4.Location = new System.Drawing.Point(9, 227);
+            this.guna2ShadowPanel4.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ShadowPanel4.Name = "guna2ShadowPanel4";
+            this.guna2ShadowPanel4.Radius = 20;
+            this.guna2ShadowPanel4.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel4.ShadowShift = 0;
+            this.guna2ShadowPanel4.Size = new System.Drawing.Size(349, 134);
+            this.guna2ShadowPanel4.TabIndex = 6;
+            // 
+            // lableTongHoaDon
+            // 
+            this.lableTongHoaDon.AutoSize = true;
+            this.lableTongHoaDon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lableTongHoaDon.Location = new System.Drawing.Point(69, 71);
+            this.lableTongHoaDon.Name = "lableTongHoaDon";
+            this.lableTongHoaDon.Size = new System.Drawing.Size(85, 23);
+            this.lableTongHoaDon.TabIndex = 5;
+            this.lableTongHoaDon.Text = "Hóa Đơn";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(49, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(145, 32);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "HÓA ĐƠN";
             // 
             // guna2PictureBox5
             // 
             this.guna2PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.Image")));
             this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(24, 566);
+            this.guna2PictureBox5.Location = new System.Drawing.Point(223, 22);
             this.guna2PictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(64, 43);
+            this.guna2PictureBox5.Size = new System.Drawing.Size(113, 101);
             this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox5.TabIndex = 9;
+            this.guna2PictureBox5.TabIndex = 1;
             this.guna2PictureBox5.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(59, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(299, 25);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "DOANH THU THEO NGÀY";
             // 
             // guna2PictureBox4
             // 
             this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
             this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(24, 213);
+            this.guna2PictureBox4.Location = new System.Drawing.Point(9, 30);
             this.guna2PictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(64, 43);
+            this.guna2PictureBox4.Size = new System.Drawing.Size(64, 47);
             this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox4.TabIndex = 4;
             this.guna2PictureBox4.TabStop = false;
             // 
-            // guna2HtmlLabel11
-            // 
-            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(96, 576);
-            this.guna2HtmlLabel11.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(182, 34);
-            this.guna2HtmlLabel11.TabIndex = 8;
-            this.guna2HtmlLabel11.Text = "Khách hàng VIP";
-            // 
-            // guna2HtmlLabel10
-            // 
-            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(96, 219);
-            this.guna2HtmlLabel10.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(254, 34);
-            this.guna2HtmlLabel10.TabIndex = 4;
-            this.guna2HtmlLabel10.Text = "Doanh thu theo tháng";
-            // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel17);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel16);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel15);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel14);
+            this.guna2Panel1.Controls.Add(this.labelSP4);
+            this.guna2Panel1.Controls.Add(this.labelSP3);
+            this.guna2Panel1.Controls.Add(this.labelSP2);
+            this.guna2Panel1.Controls.Add(this.labelSP1);
             this.guna2Panel1.Controls.Add(this.guna2CircleButton4);
             this.guna2Panel1.Controls.Add(this.guna2CircleButton3);
             this.guna2Panel1.Controls.Add(this.guna2CircleButton2);
             this.guna2Panel1.Controls.Add(this.guna2CircleButton1);
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox6);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel13);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel12);
             this.guna2Panel1.Controls.Add(this.guna2CircleProgressBar1);
-            this.guna2Panel1.Location = new System.Drawing.Point(752, 219);
+            this.guna2Panel1.Location = new System.Drawing.Point(722, 285);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(391, 636);
+            this.guna2Panel1.Size = new System.Drawing.Size(356, 511);
             this.guna2Panel1.TabIndex = 6;
-            // 
-            // guna2HtmlLabel17
-            // 
-            this.guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel17.Location = new System.Drawing.Point(123, 572);
-            this.guna2HtmlLabel17.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel17.Name = "guna2HtmlLabel17";
-            this.guna2HtmlLabel17.Size = new System.Drawing.Size(194, 30);
-            this.guna2HtmlLabel17.TabIndex = 16;
-            this.guna2HtmlLabel17.Text = "Sản phẩm 4 - Loại D";
-            // 
-            // guna2HtmlLabel16
-            // 
-            this.guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel16.Location = new System.Drawing.Point(123, 530);
-            this.guna2HtmlLabel16.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel16.Name = "guna2HtmlLabel16";
-            this.guna2HtmlLabel16.Size = new System.Drawing.Size(191, 30);
-            this.guna2HtmlLabel16.TabIndex = 15;
-            this.guna2HtmlLabel16.Text = "Sản phẩm 3 - Loại C";
-            // 
-            // guna2HtmlLabel15
-            // 
-            this.guna2HtmlLabel15.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel15.Location = new System.Drawing.Point(123, 489);
-            this.guna2HtmlLabel15.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel15.Name = "guna2HtmlLabel15";
-            this.guna2HtmlLabel15.Size = new System.Drawing.Size(192, 30);
-            this.guna2HtmlLabel15.TabIndex = 14;
-            this.guna2HtmlLabel15.Text = "Sản phẩm 2 - Loại B";
-            // 
-            // guna2HtmlLabel14
-            // 
-            this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel14.Location = new System.Drawing.Point(123, 447);
-            this.guna2HtmlLabel14.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
-            this.guna2HtmlLabel14.Size = new System.Drawing.Size(193, 30);
-            this.guna2HtmlLabel14.TabIndex = 10;
-            this.guna2HtmlLabel14.Text = "Sản phẩm 1 - Loại A";
             // 
             // guna2CircleButton4
             // 
@@ -337,7 +488,7 @@
             this.guna2CircleButton4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton4.Location = new System.Drawing.Point(68, 572);
+            this.guna2CircleButton4.Location = new System.Drawing.Point(14, 463);
             this.guna2CircleButton4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CircleButton4.Name = "guna2CircleButton4";
             this.guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -353,7 +504,7 @@
             this.guna2CircleButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton3.Location = new System.Drawing.Point(68, 530);
+            this.guna2CircleButton3.Location = new System.Drawing.Point(14, 421);
             this.guna2CircleButton3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CircleButton3.Name = "guna2CircleButton3";
             this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -369,7 +520,7 @@
             this.guna2CircleButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton2.Location = new System.Drawing.Point(68, 489);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(14, 380);
             this.guna2CircleButton2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CircleButton2.Name = "guna2CircleButton2";
             this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -385,45 +536,12 @@
             this.guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(74)))), ((int)(((byte)(155)))));
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(68, 447);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(14, 338);
             this.guna2CircleButton1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.Size = new System.Drawing.Size(37, 34);
             this.guna2CircleButton1.TabIndex = 10;
-            // 
-            // guna2PictureBox6
-            // 
-            this.guna2PictureBox6.ImageRotate = 0F;
-            this.guna2PictureBox6.Location = new System.Drawing.Point(7, 7);
-            this.guna2PictureBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2PictureBox6.Name = "guna2PictureBox6";
-            this.guna2PictureBox6.Size = new System.Drawing.Size(64, 43);
-            this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox6.TabIndex = 10;
-            this.guna2PictureBox6.TabStop = false;
-            // 
-            // guna2HtmlLabel13
-            // 
-            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel13.Location = new System.Drawing.Point(79, 48);
-            this.guna2HtmlLabel13.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
-            this.guna2HtmlLabel13.Size = new System.Drawing.Size(165, 34);
-            this.guna2HtmlLabel13.TabIndex = 10;
-            this.guna2HtmlLabel13.Text = "theo từng loại";
-            // 
-            // guna2HtmlLabel12
-            // 
-            this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel12.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel12.Location = new System.Drawing.Point(79, 7);
-            this.guna2HtmlLabel12.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
-            this.guna2HtmlLabel12.Size = new System.Drawing.Size(294, 34);
-            this.guna2HtmlLabel12.TabIndex = 9;
-            this.guna2HtmlLabel12.Text = "Top 5 sản phẩm bán chạy";
             // 
             // guna2CircleProgressBar1
             // 
@@ -434,7 +552,7 @@
             this.guna2CircleProgressBar1.FillThickness = 30;
             this.guna2CircleProgressBar1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2CircleProgressBar1.ForeColor = System.Drawing.Color.Gray;
-            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(20, 105);
+            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(14, 4);
             this.guna2CircleProgressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CircleProgressBar1.Minimum = 0;
             this.guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
@@ -513,7 +631,6 @@
             this.guna2CircleProgressBar5.TabIndex = 8;
             this.guna2CircleProgressBar5.Text = "guna2CircleProgressBar5";
             this.guna2CircleProgressBar5.Value = 38;
-            this.guna2CircleProgressBar5.ValueChanged += new System.EventHandler(this.guna2CircleProgressBar5_ValueChanged);
             // 
             // guna2CircleProgressBar3
             // 
@@ -529,221 +646,149 @@
             this.guna2CircleProgressBar3.TabIndex = 0;
             this.guna2CircleProgressBar3.Text = "guna2CircleProgressBar3";
             // 
-            // chart1
-            // 
-            lineAnnotation1.Name = "LineAnnotation1";
-            lineAnnotation2.Name = "LineAnnotation2";
-            lineAnnotation3.Name = "LineAnnotation3";
-            lineAnnotation4.Name = "LineAnnotation4";
-            lineAnnotation5.Name = "LineAnnotation5";
-            lineAnnotation6.Name = "LineAnnotation6";
-            this.chart1.Annotations.Add(lineAnnotation1);
-            this.chart1.Annotations.Add(lineAnnotation2);
-            this.chart1.Annotations.Add(lineAnnotation3);
-            this.chart1.Annotations.Add(lineAnnotation4);
-            this.chart1.Annotations.Add(lineAnnotation5);
-            this.chart1.Annotations.Add(lineAnnotation6);
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(37, 267);
-            this.chart1.Margin = new System.Windows.Forms.Padding(4);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(681, 302);
-            this.chart1.TabIndex = 5;
-            this.chart1.Text = "chart1";
-            // 
             // guna2ShadowPanel3
             // 
             this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel3.Controls.Add(this.guna2HtmlLabel7);
-            this.guna2ShadowPanel3.Controls.Add(this.guna2HtmlLabel8);
+            this.guna2ShadowPanel3.Controls.Add(this.lableDoanhThu);
+            this.guna2ShadowPanel3.Controls.Add(this.label4);
             this.guna2ShadowPanel3.Controls.Add(this.guna2PictureBox3);
-            this.guna2ShadowPanel3.Controls.Add(this.guna2HtmlLabel9);
             this.guna2ShadowPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.guna2ShadowPanel3.Location = new System.Drawing.Point(796, 26);
+            this.guna2ShadowPanel3.Location = new System.Drawing.Point(366, 227);
             this.guna2ShadowPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";
             this.guna2ShadowPanel3.Radius = 20;
             this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel3.ShadowShift = 0;
-            this.guna2ShadowPanel3.Size = new System.Drawing.Size(347, 159);
+            this.guna2ShadowPanel3.Size = new System.Drawing.Size(347, 134);
             this.guna2ShadowPanel3.TabIndex = 4;
             // 
-            // guna2HtmlLabel7
+            // lableDoanhThu
             // 
-            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(31, 119);
-            this.guna2HtmlLabel7.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(68, 21);
-            this.guna2HtmlLabel7.TabIndex = 3;
-            this.guna2HtmlLabel7.Text = "Tăng 28 %";
+            this.lableDoanhThu.AutoSize = true;
+            this.lableDoanhThu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lableDoanhThu.Location = new System.Drawing.Point(50, 70);
+            this.lableDoanhThu.Name = "lableDoanhThu";
+            this.lableDoanhThu.Size = new System.Drawing.Size(102, 23);
+            this.lableDoanhThu.TabIndex = 7;
+            this.lableDoanhThu.Text = "Doanh Thu";
             // 
-            // guna2HtmlLabel8
+            // label4
             // 
-            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(19, 54);
-            this.guna2HtmlLabel8.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(152, 56);
-            this.guna2HtmlLabel8.TabIndex = 2;
-            this.guna2HtmlLabel8.Text = "135.590";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(25, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(184, 32);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "DOANH THU";
             // 
             // guna2PictureBox3
             // 
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
             this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(172, 18);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(227, 22);
             this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(171, 121);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(101, 91);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox3.TabIndex = 1;
             this.guna2PictureBox3.TabStop = false;
             // 
-            // guna2HtmlLabel9
-            // 
-            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Segoe UI Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(16, 18);
-            this.guna2HtmlLabel9.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(136, 38);
-            this.guna2HtmlLabel9.TabIndex = 0;
-            this.guna2HtmlLabel9.Text = "Doanh thu";
-            // 
             // guna2ShadowPanel2
             // 
             this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel2.Controls.Add(this.guna2HtmlLabel4);
-            this.guna2ShadowPanel2.Controls.Add(this.guna2HtmlLabel5);
+            this.guna2ShadowPanel2.Controls.Add(this.lableTongKhachHang);
+            this.guna2ShadowPanel2.Controls.Add(this.label3);
             this.guna2ShadowPanel2.Controls.Add(this.guna2PictureBox2);
-            this.guna2ShadowPanel2.Controls.Add(this.guna2HtmlLabel6);
             this.guna2ShadowPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.guna2ShadowPanel2.Location = new System.Drawing.Point(413, 26);
+            this.guna2ShadowPanel2.Location = new System.Drawing.Point(366, 85);
             this.guna2ShadowPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
             this.guna2ShadowPanel2.Radius = 20;
             this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel2.ShadowShift = 0;
-            this.guna2ShadowPanel2.Size = new System.Drawing.Size(349, 159);
+            this.guna2ShadowPanel2.Size = new System.Drawing.Size(349, 134);
             this.guna2ShadowPanel2.TabIndex = 4;
             // 
-            // guna2HtmlLabel4
+            // lableTongKhachHang
             // 
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(31, 119);
-            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(64, 21);
-            this.guna2HtmlLabel4.TabIndex = 3;
-            this.guna2HtmlLabel4.Text = "Tăng 12%";
+            this.lableTongKhachHang.AutoSize = true;
+            this.lableTongKhachHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lableTongKhachHang.Location = new System.Drawing.Point(50, 71);
+            this.lableTongKhachHang.Name = "lableTongKhachHang";
+            this.lableTongKhachHang.Size = new System.Drawing.Size(113, 23);
+            this.lableTongKhachHang.TabIndex = 6;
+            this.lableTongKhachHang.Text = "Khách Hàng";
             // 
-            // guna2HtmlLabel5
+            // label3
             // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(31, 54);
-            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(106, 56);
-            this.guna2HtmlLabel5.TabIndex = 2;
-            this.guna2HtmlLabel5.Text = "1.200";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(25, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(212, 32);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "KHÁCH HÀNG";
             // 
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(187, 18);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(227, 14);
             this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(159, 121);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(118, 113);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 1;
             this.guna2PictureBox2.TabStop = false;
             // 
-            // guna2HtmlLabel6
-            // 
-            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(16, 18);
-            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(152, 38);
-            this.guna2HtmlLabel6.TabIndex = 0;
-            this.guna2HtmlLabel6.Text = "Khách hàng";
-            // 
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.guna2HtmlLabel3);
-            this.guna2ShadowPanel1.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2ShadowPanel1.Controls.Add(this.lableTongSanPham);
+            this.guna2ShadowPanel1.Controls.Add(this.label2);
             this.guna2ShadowPanel1.Controls.Add(this.guna2PictureBox1);
-            this.guna2ShadowPanel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(24, 26);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(9, 85);
             this.guna2ShadowPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.Radius = 20;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.ShadowShift = 0;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(349, 159);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(349, 134);
             this.guna2ShadowPanel1.TabIndex = 3;
             // 
-            // guna2HtmlLabel3
+            // lableTongSanPham
             // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(31, 119);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(110, 21);
-            this.guna2HtmlLabel3.TabIndex = 3;
-            this.guna2HtmlLabel3.Text = "15 sản phẩm mới";
+            this.lableTongSanPham.AutoSize = true;
+            this.lableTongSanPham.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lableTongSanPham.Location = new System.Drawing.Point(69, 71);
+            this.lableTongSanPham.Name = "lableTongSanPham";
+            this.lableTongSanPham.Size = new System.Drawing.Size(93, 23);
+            this.lableTongSanPham.TabIndex = 5;
+            this.lableTongSanPham.Text = "Sản Phẩm";
             // 
-            // guna2HtmlLabel2
+            // label2
             // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(31, 54);
-            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(106, 56);
-            this.guna2HtmlLabel2.TabIndex = 2;
-            this.guna2HtmlLabel2.Text = "1.589";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(49, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 32);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "SẢN PHẨM";
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(164, 18);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(223, 26);
             this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(159, 121);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(113, 101);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(31, 18);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(129, 38);
-            this.guna2HtmlLabel1.TabIndex = 0;
-            this.guna2HtmlLabel1.Text = "Sản phẩm";
             // 
             // tabPage2
             // 
@@ -755,6 +800,52 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Lịch sử kinh doanh";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // labelSP1
+            // 
+            this.labelSP1.AutoSize = true;
+            this.labelSP1.Location = new System.Drawing.Point(65, 347);
+            this.labelSP1.Name = "labelSP1";
+            this.labelSP1.Size = new System.Drawing.Size(229, 23);
+            this.labelSP1.TabIndex = 17;
+            this.labelSP1.Text = "Mã Sản phẩm 1 - Số Lượng";
+            // 
+            // labelSP2
+            // 
+            this.labelSP2.AutoSize = true;
+            this.labelSP2.Location = new System.Drawing.Point(65, 391);
+            this.labelSP2.Name = "labelSP2";
+            this.labelSP2.Size = new System.Drawing.Size(229, 23);
+            this.labelSP2.TabIndex = 18;
+            this.labelSP2.Text = "Mã Sản phẩm 2 - Số Lượng";
+            // 
+            // labelSP3
+            // 
+            this.labelSP3.AutoSize = true;
+            this.labelSP3.Location = new System.Drawing.Point(65, 432);
+            this.labelSP3.Name = "labelSP3";
+            this.labelSP3.Size = new System.Drawing.Size(229, 23);
+            this.labelSP3.TabIndex = 19;
+            this.labelSP3.Text = "Mã Sản phẩm 3 - Số Lượng";
+            // 
+            // labelSP4
+            // 
+            this.labelSP4.AutoSize = true;
+            this.labelSP4.Location = new System.Drawing.Point(65, 474);
+            this.labelSP4.Name = "labelSP4";
+            this.labelSP4.Size = new System.Drawing.Size(229, 23);
+            this.labelSP4.TabIndex = 20;
+            this.labelSP4.Text = "Mã Sản phẩm 4 - Số Lượng";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(720, 249);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(246, 32);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "TOP 4 SẢN PHẨM";
             // 
             // FStatistical
             // 
@@ -769,16 +860,28 @@
             this.guna2TabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.guna2ShadowPanel5.ResumeLayout(false);
+            this.guna2ShadowPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).EndInit();
+            this.guna2ShadowPanel6.ResumeLayout(false);
+            this.guna2ShadowPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).EndInit();
+            this.guna2ShadowPanel7.ResumeLayout(false);
+            this.guna2ShadowPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).EndInit();
+            this.guna2ShadowPanel8.ResumeLayout(false);
+            this.guna2ShadowPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).EndInit();
+            this.guna2ShadowPanel4.ResumeLayout(false);
+            this.guna2ShadowPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
             this.guna2CircleProgressBar1.ResumeLayout(false);
             this.guna2CircleProgressBar2.ResumeLayout(false);
             this.guna2CircleProgressBar4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.guna2ShadowPanel3.ResumeLayout(false);
             this.guna2ShadowPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
@@ -802,43 +905,51 @@
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar4;
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar5;
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel17;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel16;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel15;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel5;
+        private System.Windows.Forms.Label lableTongHoaDonT;
+        private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox7;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel6;
+        private System.Windows.Forms.Label lableDoanhThuT;
+        private System.Windows.Forms.Label label11;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox8;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel7;
+        private System.Windows.Forms.Label lableTongKhachHangT;
+        private System.Windows.Forms.Label label13;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox9;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel8;
+        private System.Windows.Forms.Label lableTongSanPhamT;
+        private System.Windows.Forms.Label label15;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox10;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel4;
+        private System.Windows.Forms.Label lableTongHoaDon;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
+        private System.Windows.Forms.Label lableDoanhThu;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lableTongKhachHang;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lableTongSanPham;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Label labelSP4;
+        private System.Windows.Forms.Label labelSP3;
+        private System.Windows.Forms.Label labelSP2;
+        private System.Windows.Forms.Label labelSP1;
+        private System.Windows.Forms.Label label5;
     }
 }

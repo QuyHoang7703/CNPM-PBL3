@@ -88,6 +88,9 @@ namespace CNPM_PBL3.View
             f.OpenChildForm(panelMain, new FSale());
         }
 
-       
+        private void ButThongKe_Click(object sender, EventArgs e)
+        {
+            f.OpenChildForm(panelMain, new FStatistical());
+        }
     }
 }

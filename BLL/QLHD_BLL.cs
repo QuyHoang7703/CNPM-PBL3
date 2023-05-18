@@ -191,8 +191,49 @@ namespace CNPM_PBL3.BLL
             }
             return maHD;
         }
+        public List<int> GetMAHDTrongNgay_BLL(DateTime dt)
+        {
+            QLDB db = new QLDB();
+            List<int> list = new List<int>();
+            var s = db.HoaDons.Select(p => new { p.MaHD, p.NgayBan }).ToList();
+            foreach (var i in s)
+            {
+                if (i.NgayBan.Date == dt)
+                {
+                    list.Add(i.MaHD);
+                }
+            }
+            return list;
+        }
 
-
+        public List<int> GetMAHDTrongThang_BLL(DateTime dt)
+        {
+            QLDB db = new QLDB();
+            List<int> list = new List<int>();
+            var s = db.HoaDons.Select(p => new { p.MaHD, p.NgayBan }).ToList();
+            foreach (var i in s)
+            {
+                if (i.NgayBan.Date.Month == dt.Month)
+                {
+                    list.Add(i.MaHD);
+                }
+            }
+            return list;
+        }
+        public decimal TongTienTrongNgay_BLL(List<int> list)
+        {
+            QLDB db = new QLDB();
+            decimal t = 0;
+            foreach (var i in list)
+            {
+                var s = db.ChiTietHoaDons.Where(p => p.MaHD == i).Select(p => p.ThanhTien).ToList();
+                foreach (decimal j in s)
+                {
+                    t = t + j;
+                }
+            }
+            return t;
+        }
 
     }
 }

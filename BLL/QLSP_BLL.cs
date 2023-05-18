@@ -1,4 +1,5 @@
 ﻿using CNPM_PBL3.DAL;
+using CNPM_PBL3.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
@@ -403,18 +404,89 @@ namespace CNPM_PBL3.BLL
             var s = list.Select(p => new { p.MaSP, p.ThuongHieu.TenThuongHieu, p.GioiTinhSP, p.BoMayNangLuong, p.MauMatSo, p.HinhDangMatSo, p.ChatLieuMatKinh, p.ChatLieuDay, p.XuatSu, p.GiaSP }).ToList();
             return s;      
         }
-        public dynamic TimKiemTrenTXT_DAL(string txt, List<DongHo> list)
+        public dynamic TimKiemTrenTXT_BLL(string txt, List<DongHo> list)
         {
             var s = list.Where(p => p.MaSP.Contains(txt)).Select(p => p).ToList();
             return s;
         }
         public dynamic TimKiemTrenTXTTrangChu_BLL(string txt, List<DongHo> list)
         {
-            if (TimKiemTrenTXT_DAL(txt, list).Count == 0)
+            if (TimKiemTrenTXT_BLL(txt, list).Count == 0)
             {
                 MessageBox.Show("Không tồn tại sản phẩm");
             }
-            return TimKiemTrenTXT_DAL(txt, list);
+            return TimKiemTrenTXT_BLL(txt, list);
+        }
+        public List<string> GetMaSPCoTrongThang_BLL(List<int> list)
+        {
+            QLDB db = new QLDB();
+            List<string> l = new List<string>();
+            foreach (var i in list)
+            {
+                var s = db.ChiTietHoaDons.Where(p => p.MaHD == i).Select(p => p.MaSP).ToList();
+                foreach (string j in s)
+                {
+                    l.Add(j);
+                }
+            }
+            return l.Distinct().ToList();
+        }
+        public int GetTongSP_BLL(List<int> list)
+        {
+            QLDB db = new QLDB();
+            int t = 0;
+            foreach (var i in list)
+            {
+                var ss = db.ChiTietHoaDons.Where(p => p.MaHD == i).Select(p => p.SoLuong).ToList();
+                foreach (int j in ss)
+                {
+                    t = t + j;
+                }
+            }
+            return t;
+        }
+        public List<string> GetMaSPCoTrongThang(List<int> list)
+        {
+            QLDB db = new QLDB();
+            List<string> l = new List<string>();
+            foreach (var i in list)
+            {
+                var s = db.ChiTietHoaDons.Where(p => p.MaHD == i).Select(p => p.MaSP).ToList();
+                foreach (string j in s)
+                {
+                    l.Add(j);
+                }
+            }
+            return l.Distinct().ToList();
+        }
+        public List<SanPham> TongSPTrongThang_BLL(List<string> list, List<int> li)
+        {
+            List<SanPham> ll = new List<SanPham>();
+            QLDB db = new QLDB();
+            foreach (var i in list)
+            {
+                int t = 0;
+                foreach (int j in li)
+                {
+                    var s = db.ChiTietHoaDons.Where(p => p.MaHD == j).Select(p => new { p.MaSP, p.SoLuong }).ToList();
+                    foreach (var f in s)
+                    {
+                        if (i == f.MaSP)
+                        {
+                            t = t + f.SoLuong;
+
+                        }
+                    }
+
+                }
+                SanPham a = new SanPham();
+                a.masp = i;
+                a.soluong = t;
+
+                ll.Add(a);
+
+            }
+            return ll;
         }
     }
 }

@@ -39,5 +39,16 @@ namespace CNPM_PBL3.BLL
             
             return khachHang.MaKH;
         }
+        public int TongKHTrongNgay_BLL(List<int> list)
+        {
+            QLDB db = new QLDB();
+            int t = 0;
+            foreach (var i in list)
+            {
+                var s = db.HoaDons.Where(p => p.MaHD == i).Select(p => p.MaKH).ToList();
+                t = t + s.Count;
+            }
+            return t;
+        }
     }
 }

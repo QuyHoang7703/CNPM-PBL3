@@ -248,6 +248,7 @@
             this.ButThongKe.TabIndex = 4;
             this.ButThongKe.Text = "Thống Kê";
             this.ButThongKe.UseTransparentBackground = true;
+            this.ButThongKe.Click += new System.EventHandler(this.ButThongKe_Click);
             // 
             // butClock
             // 
