@@ -33,7 +33,7 @@ namespace CNPM_PBL3.View
         public void get(string s)
         {
             cbbMaSP.SelectedItem = s;
-            
+
         }
         private void ButAddCustomers_Click(object sender, EventArgs e)
         {
@@ -44,9 +44,10 @@ namespace CNPM_PBL3.View
             this.Controls.Add(f);
             f.BringToFront();
             f.Show();
-            FAddCustomer fAddCustomer = new FAddCustomer();
-            fAddCustomer.BringToFront();
-            
+            //FAddCustomer fAddCustomer = new FAddCustomer();
+            //fAddCustomer.BringToFront();
+
+
         }
 
         private void cbbMaSP_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace CNPM_PBL3.View
             string maSP = cbbMaSP.SelectedItem.ToString();
             
             float giaTriKM = bll.GetGiaTriKhuyenMai(maSP);
-            MessageBox.Show("" + giaTriKM);
+           // MessageBox.Show("" + giaTriKM);
             if (giaTriKM != 0)
             {
                
@@ -264,6 +265,8 @@ namespace CNPM_PBL3.View
                 txtSoLuong.Text = "";
                 lbGiaThat.Visible= false;
                 txtDonGia.Text = "";
+                txtThanhTien.Text = "";
+                
 
             }
             else if(idKhacHang > 0 && dgvHD.DataSource == null)

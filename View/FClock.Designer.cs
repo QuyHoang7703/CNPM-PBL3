@@ -32,8 +32,6 @@
             this.ButThem = new Guna.UI2.WinForms.Guna2Button();
             this.ButCapNhat = new Guna.UI2.WinForms.Guna2Button();
             this.ButXoa = new Guna.UI2.WinForms.Guna2Button();
-            this.ButSapXep = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtsearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.butTimKiem = new Guna.UI2.WinForms.Guna2Button();
@@ -71,7 +69,7 @@
             this.ButThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
             this.ButThem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButThem.ForeColor = System.Drawing.Color.Black;
-            this.ButThem.Location = new System.Drawing.Point(55, 784);
+            this.ButThem.Location = new System.Drawing.Point(115, 784);
             this.ButThem.Margin = new System.Windows.Forms.Padding(2);
             this.ButThem.Name = "ButThem";
             this.ButThem.Size = new System.Drawing.Size(88, 39);
@@ -92,7 +90,7 @@
             this.ButCapNhat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
             this.ButCapNhat.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButCapNhat.ForeColor = System.Drawing.Color.Black;
-            this.ButCapNhat.Location = new System.Drawing.Point(211, 784);
+            this.ButCapNhat.Location = new System.Drawing.Point(396, 784);
             this.ButCapNhat.Margin = new System.Windows.Forms.Padding(2);
             this.ButCapNhat.Name = "ButCapNhat";
             this.ButCapNhat.Size = new System.Drawing.Size(133, 39);
@@ -113,56 +111,13 @@
             this.ButXoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
             this.ButXoa.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButXoa.ForeColor = System.Drawing.Color.Black;
-            this.ButXoa.Location = new System.Drawing.Point(445, 784);
+            this.ButXoa.Location = new System.Drawing.Point(713, 784);
             this.ButXoa.Margin = new System.Windows.Forms.Padding(2);
             this.ButXoa.Name = "ButXoa";
             this.ButXoa.Size = new System.Drawing.Size(74, 39);
             this.ButXoa.TabIndex = 13;
             this.ButXoa.Text = "XÓA";
             this.ButXoa.Click += new System.EventHandler(this.ButXoa_Click);
-            // 
-            // ButSapXep
-            // 
-            this.ButSapXep.Animated = true;
-            this.ButSapXep.AutoRoundedCorners = true;
-            this.ButSapXep.BorderRadius = 18;
-            this.ButSapXep.DefaultAutoSize = true;
-            this.ButSapXep.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ButSapXep.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ButSapXep.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ButSapXep.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ButSapXep.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
-            this.ButSapXep.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButSapXep.ForeColor = System.Drawing.Color.Black;
-            this.ButSapXep.Location = new System.Drawing.Point(600, 784);
-            this.ButSapXep.Margin = new System.Windows.Forms.Padding(2);
-            this.ButSapXep.Name = "ButSapXep";
-            this.ButSapXep.Size = new System.Drawing.Size(110, 39);
-            this.ButSapXep.TabIndex = 14;
-            this.ButSapXep.Text = "SẮP XẾP";
-            this.ButSapXep.Click += new System.EventHandler(this.ButSapXep_Click);
-            // 
-            // guna2ComboBox1
-            // 
-            this.guna2ComboBox1.AutoRoundedCorners = true;
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderRadius = 17;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
-            "ID",
-            "Giá",
-            "Số Lượng"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(733, 784);
-            this.guna2ComboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(223, 36);
-            this.guna2ComboBox1.TabIndex = 15;
             // 
             // dataGridView1
             // 
@@ -501,8 +456,6 @@
             this.Controls.Add(this.cbbGioiTinh);
             this.Controls.Add(this.butTimKiem);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.guna2ComboBox1);
-            this.Controls.Add(this.ButSapXep);
             this.Controls.Add(this.ButXoa);
             this.Controls.Add(this.ButCapNhat);
             this.Controls.Add(this.ButThem);
@@ -522,8 +475,6 @@
         private Guna.UI2.WinForms.Guna2Button ButThem;
         private Guna.UI2.WinForms.Guna2Button ButCapNhat;
         private Guna.UI2.WinForms.Guna2Button ButXoa;
-        private Guna.UI2.WinForms.Guna2Button ButSapXep;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private Guna.UI2.WinForms.Guna2Button butTimKiem;
         private System.Windows.Forms.Label label9;

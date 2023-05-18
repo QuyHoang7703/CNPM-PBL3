@@ -11,20 +11,28 @@ namespace CNPM_PBL3.BLL
     internal class QLHD_BLL
     {
         QLHD_DAL dal = new QLHD_DAL();
+        QLSP_BLL bllsp= new QLSP_BLL(); 
         public List<string> GetDBCBB()
         {
             List<string> list = new List<string>();
-            foreach (DongHo i in dal.GetALLDH_DAL())
+            foreach (DongHo i in bllsp.GetAllSP_BLL())
             {
                 list.Add(i.MaSP);
             }
             return list;
         }
-        public List<dynamic> GetAllHD_BLL()
+        public List<HoaDon> GetAllHD()
+        {
+            QLDB db = new QLDB();
+            var s = db.HoaDons.Select(p => p).ToList();
+            return s;
+
+        }
+        public List<dynamic> GetAllHD_BLL_ForDGV()
         {
             List<dynamic> list = new List<dynamic>();
             //var s= dal.GetALLDH_DAL();
-            foreach (var i in dal.GetAllHD_DAL())
+            foreach (HoaDon i in GetAllHD())
             {
                 var pt = new
                 {
@@ -43,7 +51,7 @@ namespace CNPM_PBL3.BLL
         }
         public dynamic GetChiTietHoaDon(int maHD)
         {
-            foreach (var i in dal.GetAllHD_DAL())
+            foreach (HoaDon i in GetAllHD())
             {
                 if (i.MaHD == maHD)
                     return i;
@@ -54,8 +62,25 @@ namespace CNPM_PBL3.BLL
         //printbill
         public dynamic GetDetailBillForPrint_BLL(int maHD)
         {
-            return dal.GetDetailBillForPrint_DAL(maHD);
-            
+            QLDB db = new QLDB();
+            var s = db.ChiTietHoaDons.Where(p => p.MaHD == maHD).Select(p => new
+            {
+                p.MaSP,
+                p.SoLuong,
+                p.DonGia,
+                p.ThanhTien,
+                p.HoaDon.TaiKhoan.UserName,
+                p.HoaDon.NgayBan,
+                p.HoaDon.KhachHang.MaKH,
+                p.HoaDon.KhachHang.HoTenKH,
+                p.HoaDon.MaHD,
+                p.HoaDon.KhachHang.DiaChi,
+                p.HoaDon.KhachHang.SDT,
+                p.HoaDon.TaiKhoan.ID,
+                p.HoaDon.TaiKhoan.ChiTietTaiKhoan.HoTen
+            }).ToList();
+            return s;
+
         }
         //
 
@@ -63,7 +88,7 @@ namespace CNPM_PBL3.BLL
         public decimal GetDonGia(string maSP)
         {
             decimal giaSP = 0;
-            foreach (var i in dal.GetALLDH_DAL())
+            foreach (var i in bllsp.GetAllSP_BLL())
             {
                 if (i.MaSP == maSP)
                 {
@@ -77,11 +102,11 @@ namespace CNPM_PBL3.BLL
         public int GetSoLuong(string maSP)
         {
             int soLuong = 0;
-            foreach (var i in dal.GetALLDH_DAL())
+            foreach (var i in bllsp.GetAllSP_BLL())
             {
                 if (i.MaSP == maSP)
                 {
-                    soLuong = i.SoLuong;
+                    soLuong = (int)i.SoLuong;
                 }
             }
             return soLuong;
@@ -89,7 +114,7 @@ namespace CNPM_PBL3.BLL
         public float GetGiaTriKhuyenMai(string maSP)
         {
             float giaTriKM = 0.0f;
-            foreach(var i in dal.GetALLDH_DAL())
+            foreach(var i in bllsp.GetAllSP_BLL())
             {
                 if (i.MaSP == maSP)
                 {
@@ -102,14 +127,32 @@ namespace CNPM_PBL3.BLL
         //
         public void AddHD(HoaDon hd, List<ChiTietHoaDon> list)
         {
-            dal.AddHD_DAL(hd, list);
+            using (QLDB db = new QLDB())
+            {
+                db.HoaDons.Add(hd);
+                foreach (ChiTietHoaDon i in list)
+                {
+                    i.HoaDon = hd;
+                    db.ChiTietHoaDons.Add(i);
+
+                }
+                //    ct.HoaDon= hd;
+                //    db.ChiTietHoaDons.Add(ct);
+                db.SaveChanges();
+            }
         }
 
 
 
         public void UpdateSoLuong(string maSP, int soLuong)
         {
-            dal.UpDateSoLuong(maSP, soLuong);
+            using (QLDB db = new QLDB())
+            {
+
+                var s = db.DongHoes.Find(maSP);
+                s.SoLuong = soLuong;
+                db.SaveChanges();
+            }
         }
 
         public dynamic GetHD_ByTxtSearch(string text)
@@ -119,7 +162,7 @@ namespace CNPM_PBL3.BLL
 
             if (string.IsNullOrEmpty(text))
             {
-                list = GetAllHD_BLL();
+                list = GetAllHD_BLL_ForDGV();
             }
             else
             {              
@@ -127,7 +170,7 @@ namespace CNPM_PBL3.BLL
                 bool check = int.TryParse(text, out number);
                 DateTime dateTime;
                 bool checkDateTime = DateTime.TryParse(text, out dateTime);
-                foreach (var i in GetAllHD_BLL())
+                foreach (var i in GetAllHD_BLL_ForDGV())
                 {
                     if ((check && i.MaHoaDon == number) || (checkDateTime && i.NgayBan.Date == dateTime) || i.HoTen.Contains(text))
                     {
@@ -140,7 +183,7 @@ namespace CNPM_PBL3.BLL
         public int GetMaHoaDon_ByMaKH(int maKH)
         {
             int maHD = 0;
-            foreach (var i in dal.GetAllHD_DAL())
+            foreach (HoaDon i in GetAllHD())
             {
                 if (i.MaKH == maKH)
                 {

@@ -76,18 +76,15 @@ namespace CNPM_PBL3
             else
             {
                 account = bll.GetTaiKhoan(txtUserNameLogin.Text, txtPass.Text);
+                
                 if (checkRole(account) == 1)
                 {
                     FMainManager f = new FMainManager();
                     this.Hide();
-                    /*this.d += new FLogin.mydel(f.show);
-                    d();*/
                     f.Show();
                     
-
                 }
-                else
-                if (checkRole(account) == 0)
+                else if(checkRole(account) == 0)
                 {
                     FMainManager f = new FMainManager();
                     this.Hide();
@@ -127,12 +124,12 @@ namespace CNPM_PBL3
                     try
                     {
                         otp = Randomrandom.Next(100000, 999999);
-                        var fromAddress = new MailAddress("hoangvanquy772003@gmail.com");
+                        var fromAddress = new MailAddress("tranthangkhuong203@gmail.com");
                         var toAddress = new MailAddress(txtEmail.ToString());
-                        const string frompass = "kuiynitbihpxhtqw";// tìm hiểu lại
+                        const string frompass = "kuiynitbihpxhtqw";
                         const string subject = "Mật khẩu mới của bạn là:";
                         string body = otp.ToString();
-                        var smtp = new SmtpClient// tìm hiểu lại
+                        var smtp = new SmtpClient
                         {
                             Host = "smtp.gmail.com",
                             Port = 587,
@@ -150,7 +147,7 @@ namespace CNPM_PBL3
                         {
                             smtp.Send(message);
                         }
-                        MessageBox.Show("OTP đã được gửi" + otp);
+                        MessageBox.Show("Vui lòng kiểm tra gmail của bạn");
                         bll.UpdatePassForFogotLogin_BLL(bll.getIdByUserName_BLL(txtUserNameForgot.Text), otp.ToString());
                     }
                     catch (Exception ex)

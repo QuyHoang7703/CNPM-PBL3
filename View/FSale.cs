@@ -215,13 +215,6 @@ namespace CNPM_PBL3.View
             bll.UpdateKM(data);
         }
 
-        //private void butcancel_Click(object sender, EventArgs e)
-        //{
-        //    Enable(false);
-        //    butThem.Enabled = butCapNhap.Enabled = butChiTiet.Enabled = bttXoa.Enabled = true;
-        //    butLuu.Enabled = false;
-        //}
-
        
     }
 }

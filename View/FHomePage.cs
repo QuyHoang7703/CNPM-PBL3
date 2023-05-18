@@ -26,20 +26,18 @@ namespace CNPM_PBL3.View
             GetChatLieuDay();
             GetXuatXu();
             GetGiaSP();
-            //List<dynamic> l = bll.TimKiemTrangChu_BLL(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP);
-            //showTimKiem(l);
-            //showHinhAnh(l);
+            //showHinhAnh(bll.TimKiemTrenTXTTrangChu_BLL(txtsearch.Text, bll.TimKiemTrangChu_BLL(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP)));
         }
-        QLSP_DAL qLSP = new QLSP_DAL();
         QLSP_BLL bll = new QLSP_BLL();
         QLHD_BLL qLHD = new QLHD_BLL();
         public void showHinhAnh(dynamic list)
         {
             foreach (var item in list)
             {
+                //qLSP.tenThuongHieu_DAL(item.MaThuongHieu)
                 FUserControlClock fUserControlClock = new FUserControlClock();
-                fUserControlClock.chiTiet = qLSP.tenThuongHieu_DAL(item.MaThuongHieu) + " - " + item.MaSP + " - " + item.GioiTinhSP + "\n" +
-                    item.ChatLieuMatKinh + " - " + item.BoMayNangLuong;
+                fUserControlClock.chiTiet = item.ThuongHieu.TenThuongHieu + " - " + item.MaSP + " - " + item.GioiTinhSP + "\n" +
+                                            item.ChatLieuMatKinh + " - " + item.BoMayNangLuong;
                 fUserControlClock.GiaSP = Convert.ToString(item.GiaSP) + "đ";
                 fUserControlClock.hinhAnh = item.HinhAnh;
                 fUserControlClock.MSP = item.MaSP;
@@ -113,13 +111,18 @@ namespace CNPM_PBL3.View
         private void butTimKiem_Click(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
-            showTimKiem(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP);
+             showTimKiem(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP);
         }
 
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
             showHinhAnh(bll.TimKiemTrenTXTTrangChu_BLL(txtsearch.Text, bll.TimKiemTrangChu_BLL(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP)));
+        }
+
+        private void FHomePage_Load(object sender, EventArgs e)
+        {
+            showTimKiem(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP);
         }
     }
 }

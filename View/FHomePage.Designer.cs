@@ -388,6 +388,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FHomePage";
             this.Text = "FHomePage";
+            this.Load += new System.EventHandler(this.FHomePage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

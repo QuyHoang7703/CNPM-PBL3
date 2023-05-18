@@ -114,28 +114,18 @@ namespace CNPM_PBL3.View
 
         private void butSort_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    string columnname = cbbItems.SelectedItem.ToString();
-            //    string direction = cbbSort.SelectedItem.ToString();
-            //    if(direction=="Giảm dần")
-            //    {
-            //        dgvNV.Sort(dgvNV.Columns[columnname], ListSortDirection.Descending);
-
-            //    }
-            //    else
-            //    {
-            //        dgvNV.Sort(dgvNV.Columns[columnname], ListSortDirection.Ascending);
-            //    }
-
-            //}
-            //catch (Exception)
-            //{
-
-            //}
-            string columnname = cbbItems.SelectedItem.ToString();
-            string direction = cbbSort.SelectedItem.ToString();
-            showDGV(bll.SortBy_BLL(columnname, direction));
+            if(cbbItems.SelectedItem!=null && cbbSort.SelectedItem != null)
+            {
+                string columnname = cbbItems.SelectedItem.ToString();
+                string direction = cbbSort.SelectedItem.ToString();
+                showDGV(bll.SortBy_BLL(columnname, direction));
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn mục sắp xếp và chiều sắp xếp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+          
+          
         }
 
       

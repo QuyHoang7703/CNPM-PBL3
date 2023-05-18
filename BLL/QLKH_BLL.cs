@@ -10,31 +10,33 @@ namespace CNPM_PBL3.BLL
 {
     internal class QLKH_BLL
     {
-        QLKH_DAL dal = new QLKH_DAL();
-        public List<KhachHang> GetAllKH_BLL()
+        //QLKH_DAL dal = new QLKH_DAL();
+        public dynamic GetAllKH_BLL()
+        {
+            QLDB db = new QLDB();
+            var s = db.KhachHangs.Select(p => new { p.MaKH, p.HoTenKH, p.NgaySinh, p.SDT, p.DiaChi, p.GioiTinh }).ToList();
+
+            return s;
+        }
+        public List<KhachHang> GetAllKH_BLLl()
         {
             List<KhachHang> list = new List<KhachHang>();
-            foreach(var i in dal.GetAllKH_DAL())
+            foreach(var i in GetAllKH_BLL())
             {
                 list.Add(i);
             }
             return list;
         }
+        
         public void AddKhachHang_BLL(KhachHang khachHang)
-        {
-            dal.AddKhachHang_DAL(khachHang);
+        {  
+            QLDB db = new QLDB();
+            db.KhachHangs.Add(khachHang);
+            db.SaveChanges();
         }
         public int GetIdKhachHang_BLL(KhachHang khachHang)
         {
-            //int idKachHang = 0;
-            //foreach (KhachHang i in GetAllKH_BLL())
-            //{
-            //    if (i == khachHang)
-            //    {
-            //        idKachHang=
-            //    }
-
-            //}
+            
             return khachHang.MaKH;
         }
     }

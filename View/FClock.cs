@@ -27,6 +27,7 @@ namespace CNPM_PBL3.View
             GetChatLieuDay();
             GetXuatXu();
             GetGiaSP();
+            showTimKiem(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP);
         }
         public void GetCBBThuongHieu()
         {
@@ -114,7 +115,7 @@ namespace CNPM_PBL3.View
                     ListMaSP.Add(i.Cells["MaSP"].Value.ToString());
                 }
                 bll.DeleteSP_BLL(ListMaSP);
-                ShowDGV(bll.GetAllSP_BLL());
+                ShowDGV(bll.GetAllSP_BLL_ForDGV());
             }          
         }
 

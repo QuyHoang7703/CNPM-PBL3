@@ -21,11 +21,8 @@ namespace CNPM_PBL3.View
         }
         QLForm f = new QLForm();
         
-        QLNV_DAL dal = new QLNV_DAL();
-        public void get1()
-        {
-          // guna2ButBill.PerformClick();
-        }
+       // QLNV_DAL dal = new QLNV_DAL();
+     
         private void PanelFrame_Paint_1(object sender, PaintEventArgs e)
         {
             lbThongTin.Text = FLogin.account.ChiTietTaiKhoan.HoTen + "\n" + FLogin.account.Role + "\n" + "ID: " + FLogin.account.ID + "";
@@ -55,6 +52,7 @@ namespace CNPM_PBL3.View
         private void ButTrangChu_Click(object sender, EventArgs e)
         {
             f.OpenChildForm(panelMain, new FHomePage());
+
         }
         public static FBill fBill = new FBill();
         private void guna2ButBill_Click(object sender, EventArgs e)

@@ -16,7 +16,7 @@ namespace CNPM_PBL3.View
         public FPurchaseHistory()
         {
             InitializeComponent();
-            ShowDGV(bll.GetAllHD_BLL());
+            ShowDGV(bll.GetAllHD_BLL_ForDGV());
         }
         QLHD_BLL bll = new QLHD_BLL();
         public void ShowDGV(List<dynamic> list)

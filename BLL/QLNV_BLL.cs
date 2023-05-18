@@ -9,11 +9,14 @@ namespace CNPM_PBL3.BLL
 {
     internal class QLNV_BLL
     {
-        QLNV_DAL dal = new QLNV_DAL();
+        //QLNV_DAL dal = new QLNV_DAL();
         public dynamic GetAllNV_BLL()
         {
-            var s = dal.GetAllNV_DAL();
-            return s;
+            using (QLDB db = new QLDB())
+            {
+                var s = db.TaiKhoans.Where(p => p.Role == "Nhân viên").Select(p => new { p.ID, p.UserName, p.ChiTietTaiKhoan.HoTen, p.ChiTietTaiKhoan.SDT }).ToList();
+                return s;
+            }
         }
         public dynamic GetNV_ByTxtSearch(string text)
         {
@@ -29,36 +32,55 @@ namespace CNPM_PBL3.BLL
         }      
         public void AddNV_BLL(TaiKhoan t, ChiTietTaiKhoan ct)
         {
-            dal.AddNV_DAL(t, ct);
+            using (QLDB db = new QLDB())
+            {
+                db.TaiKhoans.Add(t);
+                // var s = db.TaiKhoans.Find(t.ID);
+                ct.TaiKhoan = t;
+                db.ChiTietTaiKhoans.Add(ct);
+                db.SaveChanges();
+            }
         }
         public void DeleteNV_BLL(int id)
         {
-            dal.DeleteNV_DAL(id);
+            using (QLDB db = new QLDB())
+            {
+                var s1 = db.ChiTietTaiKhoans.Find(id);
+                db.ChiTietTaiKhoans.Remove(s1);
+                var s2 = db.TaiKhoans.Find(id);
+                db.TaiKhoans.Remove(s2);
+                db.SaveChanges();
+
+            }
         }
-        public dynamic GetDetailStaff_BLL(int id)
+        public ChiTietTaiKhoan GetDetailStaff_BLL(int id)
         {
-            return dal.GetDetailStaff_DAL(id);
+            QLTK_BLL bll = new QLTK_BLL();
+            return bll.GetChiTietTaiKhoan_ByID_BLL(id);
         }
-        //public void SortBy_BLL(string columnName, string direction)
-        //{
-        //    dal.SortBy_DAL(columnName, direction);
-        //}
-        //public dynamic Sort_BLL(dynamic s, string direction)
-        //{
-        //    dynamic l = GetAllNV_BLL();
-        //    if(direction=="Tăng dần")
-        //    {
-        //        l.Sort();
-        //    }
-        //    else
-        //    {
-        //        l.Reverse();
-        //    }
-        //    return l;
-        //}
+       
         public dynamic SortBy_BLL(string sortBy, string direction)
         {
-            return dal.SortBy_DAL(sortBy, direction);
+            QLDB db = new QLDB();
+            var s = db.TaiKhoans.Where(p => p.Role == "Nhân viên").Select(p => new { p.ID, p.UserName, p.ChiTietTaiKhoan.HoTen, p.ChiTietTaiKhoan.SDT }).ToList();
+            //var s = GetAllNV2_DAL();
+            //s= s.ToList();
+            //var s = GetAllNV_DAL1();
+
+            if (direction == "Tăng dần")
+            {
+                return s.OrderBy(p => p.GetType().GetProperty(sortBy).GetValue(p, null)).ToList();
+                //return s = s.OrderBy(s => s.ID).ToList();
+                //var s = typeof(dynamic).GetProperty(sortBy);
+                //return s.OrderBy(p => propertyInfo.GetValue(p, null)).ToList();
+
+            }
+            else
+            {
+                return s = s.OrderByDescending(p => p.GetType().GetProperty(sortBy).GetValue(p, null)).ToList();
+
+            }
+
         }
     }
 }

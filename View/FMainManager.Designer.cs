@@ -142,7 +142,7 @@
             this.ButDangXuat.BorderThickness = 1;
             this.ButDangXuat.CheckedState.BorderColor = System.Drawing.Color.White;
             this.ButDangXuat.CheckedState.FillColor = System.Drawing.Color.White;
-            this.ButDangXuat.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.ButDangXuat.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.ButDangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ButDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.ButDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -353,6 +353,7 @@
             this.Controls.Add(this.PanelFrame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FMainManager";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.PanelFrame.ResumeLayout(false);
             this.PanelFrame.PerformLayout();

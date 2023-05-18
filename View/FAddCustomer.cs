@@ -78,12 +78,6 @@ namespace CNPM_PBL3.View
                         break;
                     }
                 }
-                //else if (control is RadioButton)
-                //{
-                //   RadioButton radioButton = (RadioButton)control;
-                //    if(radioButton.Checked==null) { }
-                //    hasEmptyControl = true;
-                //}
             }
             if (hasEmptyControl)
             {

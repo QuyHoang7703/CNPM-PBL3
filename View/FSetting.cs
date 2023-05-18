@@ -35,14 +35,14 @@ namespace CNPM_PBL3.View
 
         public void GetChiTietTaiKhoan(int id)
         {
-            QLHA qLHA_DAL = new QLHA(); 
-            var s = bll.GetChiTietTaiKhoan_ByID_BLL(id);
-            txtName.Text = s.HoTen;
-            txtPhone.Text = s.SDT;
-            txtEmail.Text = s.Email;
-            dtpNS.Value = s.NgaySinh;
-            txtAddress.Text = s.DiaChi;
-            if (s.GioiTinh == true)
+            QLHA qLHA_DAL = new QLHA();
+            ChiTietTaiKhoan chiTietTaiKhoan = bll.GetChiTietTaiKhoan_ByID_BLL(id);
+            txtName.Text = chiTietTaiKhoan.HoTen;
+            txtPhone.Text = chiTietTaiKhoan.SDT;
+            txtEmail.Text = chiTietTaiKhoan.Email;
+            dtpNS.Value = chiTietTaiKhoan.NgaySinh;
+            txtAddress.Text = chiTietTaiKhoan.DiaChi;
+            if (chiTietTaiKhoan.GioiTinh == true)
             {
                 rdbMale.Checked = true;
             }
@@ -50,9 +50,9 @@ namespace CNPM_PBL3.View
             {
                 rdbFemale.Checked = true;
             }
-            txtUserName.Text=s.UserName;
-            txtPass.Text = s.Pass;
-           ptbImage.Image = qLHA_DAL.ConverByteToTmage(s.AnhDaiDien);
+            txtUserName.Text=chiTietTaiKhoan.TaiKhoan.UserName;
+            txtPass.Text = chiTietTaiKhoan.TaiKhoan.Pass;
+            ptbImage.Image = qLHA_DAL.ConverByteToTmage(chiTietTaiKhoan.AnhDaiDien);
 
         }
 
@@ -66,7 +66,7 @@ namespace CNPM_PBL3.View
                 return true;
             else return false;
         }
-        public void UpadteInformation()
+        public void UpadateInformation()
         {
             PictureBox pi = new PictureBox();
             QLHA qLHA_DAL = new QLHA();
@@ -85,15 +85,23 @@ namespace CNPM_PBL3.View
         private void butUpdate_Click(object sender, EventArgs e)
         {
 
-            UpadteInformation();
+            UpadateInformation();
             MessageBox.Show("Cập nhập thành công", "Thông báo", MessageBoxButtons.OK);
 
         }
         private void butChangePass_Click(object sender, EventArgs e)
         {
-            UpdatePass();
-            MessageBox.Show("Thay đổi mật khẩu thành công");
-           
+            if (txtPass.Text == txtNewPass.Text)
+            {
+                MessageBox.Show("Mật khẩu mới không được trùng với mật khẩu hiện tại", "THÔNG BÁO");
+            }
+            else
+            {
+                UpdatePass();
+                MessageBox.Show("Thay đổi mật khẩu thành công");
+                txtPass.Text = txtNewPass.Text;
+                txtNewPass.Text = "";
+            }        
         }
         private void butAddImage_Click(object sender, EventArgs e)
         {
@@ -105,9 +113,6 @@ namespace CNPM_PBL3.View
             }
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

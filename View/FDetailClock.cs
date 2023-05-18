@@ -102,10 +102,14 @@ namespace CNPM_PBL3.View
                 else if (control is Guna2ComboBox)
                 {
                     Guna2ComboBox comboBox = (Guna2ComboBox)control;
-                    if (comboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(comboBox.SelectedItem.ToString()))
+                    if (comboBox.Name != "comboMaKM" && (comboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(comboBox.SelectedItem.ToString())))
                     {
                         hasEmptyControl = true;
                         break;
+                    }
+                    else if (comboBox.Name == "comboMaKM")
+                    {
+                        hasEmptyControl = false;
                     }
                 }
                 else if(picHinhAnh.Image == null)
@@ -146,28 +150,33 @@ namespace CNPM_PBL3.View
             QLHA ha = new QLHA();
             if (Check() == false && Exception())
             {
-                DongHo dongHo = new DongHo
+                DongHo dongHo = new DongHo();
+                dongHo.MaSP = txtMasp.Text;
+                dongHo.XuatSu = txtXuatxu.Text;
+                dongHo.GioiTinhSP = comboGioitinh.Text;
+                dongHo.ChatLieuMatKinh = comboChatlieumatkinh.Text;
+                dongHo.BoMayNangLuong = comboBomayNL.Text;
+                dongHo.MauMatSo = comboMaumatso.Text;
+                dongHo.ChatLieuDay = comboChatlieuday.Text;
+                dongHo.BeDayMatSo = Convert.ToDouble(txtBedaymatso.Text);
+                dongHo.DuongKinhMatSo = Convert.ToDouble(txtDuongkinh.Text);
+                dongHo.HinhDangMatSo = comboHinhdang.Text;
+                dongHo.MucChongNuoc = comboMucCN.Text;
+                dongHo.HinhAnh = ha.ImageToByteArray(picHinhAnh.Image);
+                dongHo.GiaTriBaoHanh = Convert.ToDouble(txtGiatriBH.Text);
+                dongHo.GiaSP = Convert.ToDecimal(txtGia.Text);
+                dongHo.SoLuong = Convert.ToInt32(txtSoluong.Text);
+                if (comboMaKM.SelectedIndex >= 1)
                 {
-                    MaSP = txtMasp.Text,
-                    XuatSu = txtXuatxu.Text,
-                    GioiTinhSP = comboGioitinh.Text,
-                    ChatLieuMatKinh = comboChatlieumatkinh.Text,
-                    BoMayNangLuong = comboBomayNL.Text,
-                    MauMatSo = comboMaumatso.Text,
-                    ChatLieuDay = comboChatlieuday.Text,
-                    BeDayMatSo = Convert.ToDouble(txtBedaymatso.Text),
-                    DuongKinhMatSo = Convert.ToDouble(txtDuongkinh.Text),
-                    HinhDangMatSo = comboHinhdang.Text,
-                    MucChongNuoc = comboMucCN.Text,
-                    HinhAnh = ha.ImageToByteArray(picHinhAnh.Image),
-                    GiaTriBaoHanh = Convert.ToDouble(txtGiatriBH.Text),
-                    GiaSP = Convert.ToDecimal(txtGia.Text),
-                    SoLuong = Convert.ToInt32(txtSoluong.Text),
-                    MaKhuyenMai = ((CBBItems)comboMaKM.SelectedItem).Value,
-                    MaThuongHieu = ((CBBItems)comboThuonghieu.SelectedItem).Value
-                };
+                    dongHo.MaKhuyenMai = ((CBBItems)comboMaKM.SelectedItem).Value;
+                }
+                else
+                {
+                    dongHo.MaKhuyenMai = null;
+                }
+                dongHo.MaThuongHieu = ((CBBItems)comboThuonghieu.SelectedItem).Value;
                 bll.ExecuteDB(dongHo);
-                d1(bll.GetAllSP_BLL());
+                d1(bll.GetAllSP_BLL_ForDGV());
                 this.Dispose();
             }
         }

@@ -12,18 +12,21 @@ namespace CNPM_PBL3.BLL
     {
         QLKM_DAL dal = new QLKM_DAL();
         QLSP_DAL dalsp = new QLSP_DAL();
+        QLSP_BLL bll = new QLSP_BLL();
         public dynamic GetAllKhuyenMai_BLL()
         {
             return dal.GetAllKhuyenMai_DAL();
         }
         public void AddKM_BLL(KhuyenMai k)
         {
-            dal.AddKM_DAL(k);
+            QLDB db = new QLDB();
+            db.KhuyenMais.Add(k);
+            db.SaveChanges();
         }
         public List<string> GetListCBBSP()
         {
             List<string> data = new List<string>();
-            foreach (DongHo i in dalsp.GetAllSP2_DAL())
+            foreach (DongHo i in bll.GetAllSP_BLL())
             {
                 if (i.MaKhuyenMai == null)
                     data.Add(i.MaSP);
@@ -36,12 +39,12 @@ namespace CNPM_PBL3.BLL
             List<string> data = new List<string>();
             //QLDB db = new QLDB();
             //var s= db.DongHoes.Select(p=>p).ToList();
-            foreach (var i in dalsp.GetAllSP2_DAL())
-            {
-                if (i.ThuongHieu.TenThuongHieu == thuongHieu && i.MaKhuyenMai == null)
+            //foreach (var i in bll.geta)
+            //{
+            //    if (i.ThuongHieu.TenThuongHieu == thuongHieu && i.MaKhuyenMai == null)
 
-                    data.Add(i.MaSP);
-            }
+            //        data.Add(i.MaSP);
+            //}
             // MessageBox.Show("blo");
             return data;
         }
@@ -89,7 +92,7 @@ namespace CNPM_PBL3.BLL
         public List<string> GetMaSPByMaKM(List<int> makm)
         {
             List<string> list = new List<string>();
-            foreach (DongHo i in dalsp.GetAllSP2_DAL())
+            foreach (DongHo i in bll.GetAllSP_BLL())
             {
                 foreach (int item in makm)
                 {

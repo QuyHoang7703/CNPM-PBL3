@@ -74,14 +74,14 @@ namespace CNPM_PBL3.View
         }
         public void GetDetailStaff(int id)
         {
-            var s =bll.GetDetailStaff_BLL(id);
+            ChiTietTaiKhoan chiTietTaiKhoan =bll.GetDetailStaff_BLL(id);
             QLHA qLHA_DAL = new QLHA();
-            txtName.Text = s.HoTen;
-            txtPhone.Text = s.SDT;
-            txtEmail.Text = s.Email;
-            dtpNS.Value = s.NgaySinh;
-            txtAddress.Text = s.DiaChi;
-            if (s.GioiTinh == true)
+            txtName.Text = chiTietTaiKhoan.HoTen;
+            txtPhone.Text = chiTietTaiKhoan.SDT;
+            txtEmail.Text = chiTietTaiKhoan.Email;
+            dtpNS.Value = chiTietTaiKhoan.NgaySinh;
+            txtAddress.Text = chiTietTaiKhoan.DiaChi;
+            if (chiTietTaiKhoan.GioiTinh == true)
             {
                 rdbMale.Checked = true;
             }
@@ -89,9 +89,10 @@ namespace CNPM_PBL3.View
             {
                 rdbFemale.Checked = true;
             }
-            txtUserName.Text = s.UserName;
-            txtPass.Text = s.Pass;
-            ptbAnhDaiDien.Image = qLHA_DAL.ConverByteToTmage(s.AnhDaiDien);
+            txtUserName.Text = chiTietTaiKhoan.TaiKhoan.UserName;
+            txtPass.Text = chiTietTaiKhoan.TaiKhoan.Pass;
+            ptbAnhDaiDien.Image = qLHA_DAL.ConverByteToTmage(chiTietTaiKhoan.AnhDaiDien);
+            cbbRole.Text = chiTietTaiKhoan.TaiKhoan.Role;
 
         }
         private void butOK_Click(object sender, EventArgs e)

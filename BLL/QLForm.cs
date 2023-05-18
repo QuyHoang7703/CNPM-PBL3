@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CNPM_PBL3.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,9 @@ namespace CNPM_PBL3.BLL
         {
             if (currentForm != null)
             {
+                //if (childForm.Name == "FHomePage") 
+                //currentForm.Dispose();
+                //else
                 currentForm.Hide();
             }
             currentForm = childForm;
