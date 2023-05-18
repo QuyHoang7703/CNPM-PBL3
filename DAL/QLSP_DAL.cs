@@ -36,31 +36,33 @@ namespace CNPM_PBL3.DAL
         //    return s;
         //}
         // var s = db.DongHoes.AsNoTracking().Select(p => p).ToList();
-        public void GetData()
-        {
+        //public void GetData()
+        //{
 
-        }
+        //}
 
-        public dynamic GetSpByThuongHieu(string thuongHieu)
-        {
-            var s = db.DongHoes.Where(p => p.ThuongHieu.TenThuongHieu == thuongHieu)
-                .Select(p => p).ToList();
-            return s;
-        }
-        public List<ThuongHieu> GetAllTH_DAL()
-        {
-            List<ThuongHieu> data = new List<ThuongHieu>();
-            var s = db.ThuongHieux.Select(p => p).ToList();
-            data = s;
-            return data;
-        }
-        public List<KhuyenMai> GetAllKM_DAL()
-        {
-            List<KhuyenMai> data = new List<KhuyenMai>();
-            var s = db.KhuyenMais.Select(p => p).ToList();
-            data = s;
-            return data;
-        }
+        //public dynamic GetSpByThuongHieu(string thuongHieu)
+        //{
+        //    var s = db.DongHoes.Where(p => p.ThuongHieu.TenThuongHieu == thuongHieu)
+        //        .Select(p => p).ToList();
+        //    return s;
+        //}
+        //public List<ThuongHieu> GetAllTH_DAL()
+        //{
+        //    List<ThuongHieu> data = new List<ThuongHieu>();
+        //    var s = db.ThuongHieux.Select(p => p).ToList();
+        //    data = s;
+        //    return data;
+        //}
+        //public List<KhuyenMai> GetAllKM_DAL()
+        //{
+        //    List<KhuyenMai> data = new List<KhuyenMai>();
+        //    var s = db.KhuyenMais.Select(p => p).ToList();
+        //    data = s;
+        //    return data;
+        //}
+
+
         //public void AddSP_DAL(DongHo dh)
         //{
         //    db.DongHoes.Add(dh);
@@ -92,22 +94,22 @@ namespace CNPM_PBL3.DAL
         //        Select(p => new { p.MaKhuyenMai }).FirstOrDefault();
         //    return (int)s.MaKhuyenMai;
         //}
-        public string tenThuongHieu_DAL(int math)
-        {
-            using (QLDB db = new QLDB())
-            {
-                var s = db.ThuongHieux.Where(p => p.MaThuongHieu == math).Select(p => p).Single();
-                return s.TenThuongHieu;
-            }
-        }
-        public string giaTriKuyenMai_DALa(int maKM)
-        {
-            using (QLDB db = new QLDB())
-            {
-                var s = db.KhuyenMais.Where(p => p.MaKhuyenMai == maKM).Select(p => p).Single();
-                return s.GiaTriKhuyenMai.ToString();
-            }
-        }
+        //public string tenThuongHieu_DAL(int math)
+        //{
+        //    using (QLDB db = new QLDB())
+        //    {
+        //        var s = db.ThuongHieux.Where(p => p.MaThuongHieu == math).Select(p => p).Single();
+        //        return s.TenThuongHieu;
+        //    }
+        //}
+        //public string giaTriKuyenMai_DALa(int maKM)
+        //{
+        //    using (QLDB db = new QLDB())
+        //    {
+        //        var s = db.KhuyenMais.Where(p => p.MaKhuyenMai == maKM).Select(p => p).Single();
+        //        return s.GiaTriKhuyenMai.ToString();
+        //    }
+        //}
        
         //public dynamic TimKiemDongHo_DAL(ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX, ComboBox cbbGSP)
         //{
@@ -255,10 +257,10 @@ namespace CNPM_PBL3.DAL
         //    }
         //    return li;
         //}
-        public dynamic TimKiemTrenTXT_DAL(string txt, List<DongHo> list)
-        {
-            var s = list.Where(p => p.MaSP.Contains(txt)).Select(p => p).ToList();
-            return s;
-        }
+        //public dynamic TimKiemTrenTXT_DAL(string txt, List<DongHo> list)
+        //{
+        //    var s = list.Where(p => p.MaSP.Contains(txt)).Select(p => p).ToList();
+        //    return s;
+        //}
     }
 }

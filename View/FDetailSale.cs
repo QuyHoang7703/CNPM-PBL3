@@ -81,18 +81,12 @@ namespace CNPM_PBL3.View
             {
                 cbbSanPham.Items.Clear();
                 string thuongHieu = ((CBBItems)cbbThuongHieu.SelectedItem).Text;
-                MessageBox.Show(thuongHieu);
                 cbbSanPham.Items.AddRange(bll.GetListCBBSPByThuongHieu(thuongHieu).ToArray());
             }
-            // SetCBBMaSP();
         }
         public void cbbSanPham_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            // MaSP = cbbSanPham.SelectedItem.ToString();
-            // cbbSanPham.Items.Remove(selectedItem);
-            //  cbbSanPham.Items.Clear();
-            // string thuongHieu = cbbThuongHieu.SelectedItem.ToString();
-            //cbbSanPham.Items.AddRange(bll.GetListCBBSPByThuongHieu(thuongHieu).ToArray());
+            
         }
 
 

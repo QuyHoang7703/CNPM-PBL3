@@ -11,7 +11,8 @@ namespace CNPM_PBL3.BLL
 {
     internal class QLSP_BLL
     {
-       QLSP_DAL dal= new QLSP_DAL();
+      // QLSP_DAL dal= new QLSP_DAL();
+      
         public dynamic GetAllSP_BLL_ForDGV()
         {
             QLDB db = new QLDB();
@@ -32,10 +33,27 @@ namespace CNPM_PBL3.BLL
             return s;
         }
 
+        public List<ThuongHieu> GetAllTH_DAL()
+        {
+            QLDB db = new QLDB();
+            List<ThuongHieu> data = new List<ThuongHieu>();
+            var s = db.ThuongHieux.Select(p => p).ToList();
+            data = s;
+            return data;
+        }
+        public List<KhuyenMai> GetAllKM_DAL()
+        {
+            QLDB db = new QLDB();
+            List<KhuyenMai> data = new List<KhuyenMai>();
+            var s = db.KhuyenMais.Select(p => p).ToList();
+            data = s;
+            return data;
+        }
+
         public List<CBBItems> GetListCBBThuongHieu()
         {
             List<CBBItems> data = new List<CBBItems>();
-            foreach (ThuongHieu i in dal.GetAllTH_DAL())
+            foreach (ThuongHieu i in GetAllTH_DAL())
             {
                 data.Add(new CBBItems { Text = i.TenThuongHieu, Value = i.MaThuongHieu });
             }
@@ -44,7 +62,7 @@ namespace CNPM_PBL3.BLL
         public List<CBBItems> GetListCBBKhuyenMai()
         {
             List<CBBItems> data = new List<CBBItems>();
-            foreach (KhuyenMai i in dal.GetAllKM_DAL())
+            foreach (KhuyenMai i in GetAllKM_DAL())
             {
                 data.Add(new CBBItems { Text = i.TenKhuyenMai, Value = i.MaKhuyenMai });
             }
@@ -385,13 +403,18 @@ namespace CNPM_PBL3.BLL
             var s = list.Select(p => new { p.MaSP, p.ThuongHieu.TenThuongHieu, p.GioiTinhSP, p.BoMayNangLuong, p.MauMatSo, p.HinhDangMatSo, p.ChatLieuMatKinh, p.ChatLieuDay, p.XuatSu, p.GiaSP }).ToList();
             return s;      
         }
+        public dynamic TimKiemTrenTXT_DAL(string txt, List<DongHo> list)
+        {
+            var s = list.Where(p => p.MaSP.Contains(txt)).Select(p => p).ToList();
+            return s;
+        }
         public dynamic TimKiemTrenTXTTrangChu_BLL(string txt, List<DongHo> list)
         {
-            if (dal.TimKiemTrenTXT_DAL(txt, list).Count == 0)
+            if (TimKiemTrenTXT_DAL(txt, list).Count == 0)
             {
                 MessageBox.Show("Không tồn tại sản phẩm");
             }
-            return dal.TimKiemTrenTXT_DAL(txt, list);
+            return TimKiemTrenTXT_DAL(txt, list);
         }
     }
 }

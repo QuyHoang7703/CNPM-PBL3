@@ -31,7 +31,6 @@ namespace CNPM_PBL3.BLL
         public List<dynamic> GetAllHD_BLL_ForDGV()
         {
             List<dynamic> list = new List<dynamic>();
-            //var s= dal.GetALLDH_DAL();
             foreach (HoaDon i in GetAllHD())
             {
                 var pt = new
@@ -59,7 +58,6 @@ namespace CNPM_PBL3.BLL
             return null;
         }
 
-        //printbill
         public dynamic GetDetailBillForPrint_BLL(int maHD)
         {
             QLDB db = new QLDB();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
@@ -11,16 +12,16 @@ namespace CNPM_PBL3.DAL
     {
         QLDB db = new QLDB();
         QLSP_DAL dal = new QLSP_DAL();
-        public dynamic GetAllKhuyenMai_DAL()
-        {
-            var s = db.KhuyenMais.Select(p => new { p.MaKhuyenMai, p.TenKhuyenMai, p.GiaTriKhuyenMai, p.NgayBatDau, p.NgayKetThuc }).ToList();
-            return s;
-        }
-        public void AddKM_DAL(KhuyenMai k)
-        {
-            db.KhuyenMais.Add(k);
-            db.SaveChanges();
-        }
+        //public dynamic GetAllKhuyenMai_DAL()
+        //{
+        //    var s = db.KhuyenMais.Select(p => new { p.MaKhuyenMai, p.TenKhuyenMai, p.GiaTriKhuyenMai, p.NgayBatDau, p.NgayKetThuc }).ToList();
+        //    return s;
+        //}
+        //public void AddKM_DAL(KhuyenMai k)
+        //{
+        //    db.KhuyenMais.Add(k);
+        //    db.SaveChanges();
+        //}
         public void UpdateKMByMaSP_DAL(string Masp, int MaKM)
         {
             var s = db.DongHoes.Find(Masp);
@@ -103,4 +104,4 @@ namespace CNPM_PBL3.DAL
         }
     }
 }
-
+*/
