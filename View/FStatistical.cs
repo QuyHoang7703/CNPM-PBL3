@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace CNPM_PBL3.View
 {
@@ -19,6 +20,7 @@ namespace CNPM_PBL3.View
         {
             InitializeComponent();
             hienThi(DateTime.Now);
+            BieuDo();
         }
         QLSP_BLL sp_bll = new QLSP_BLL();
         QLHD_BLL hd_bll = new QLHD_BLL();
@@ -78,7 +80,7 @@ namespace CNPM_PBL3.View
                 guna2Panel1.Visible = true;
                 int sl1 = lll[lll.Count - 1].soluong;
                 string masp1 = lll[lll.Count - 1].masp;
-                labelSP1.Text = masp1 +" - "+ sl1.ToString() +" Sản Phẩm";
+                labelSP1.Text = masp1 + " - " + sl1.ToString() + " Sản Phẩm";
 
                 int sl2 = lll[lll.Count - 2].soluong;
                 string masp2 = lll[lll.Count - 2].masp;
@@ -91,13 +93,73 @@ namespace CNPM_PBL3.View
                 int sl4 = lll[lll.Count - 4].soluong;
                 string masp4 = lll[lll.Count - 4].masp;
                 labelSP4.Text = masp4 + " - " + sl4.ToString() + " Sản Phẩm";
-              
+
             }
+
+
+
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            hienThi(monthCalendar1.SelectionStart);
+          
+           hienThi(monthCalendar1.SelectionStart);
+            BieuDo();
+            
+        }
+
+      
+        public void BieuDo()
+        {
+            labelNam.Text = monthCalendar1.SelectionStart.Year.ToString();
+            // làm mới và tạo series mới
+            ChartBDCC.Series.Clear();
+            ChartBDCC.ChartAreas[0].AxisX.Interval = 1;
+            Series ChartBDC = new Series();
+            ChartBDC.LegendText = "Sản Phẩm";
+
+            // đưa trục trung vào điểm thứ nhất
+            /*ChartArea chart = ChartBDCC.ChartAreas[0];
+            Axis yxit = chart.AxisX;
+            yxit.Crossing = 1;*/
+
+
+
+            // thêm dữ liệu
+            for (int i = 0; i <= 11; i++)
+            {
+               int thang = i + 1;
+                DateTime dt = new DateTime(monthCalendar1.SelectionStart.Year, thang, 1);
+                List<int> lii = hd_bll.GetMAHDTrongThang_BLL(dt);
+                int tongsptrongthang1 = sp_bll.GetTongSP_BLL(lii);
+                ChartBDC.Points.AddXY(thang, tongsptrongthang1);
+                ChartBDC.Points[i].Label = tongsptrongthang1.ToString();
+            }
+            
+            ChartBDCC.Series.Add(ChartBDC);
+
+
+            ChartBDCC.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            ChartBDCC.ChartAreas[0].AxisX.MinorGrid.Enabled = false;
+            ChartBDCC.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            ChartBDCC.ChartAreas[0].AxisY.MinorGrid.Enabled = false;
+
+        }
+       
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

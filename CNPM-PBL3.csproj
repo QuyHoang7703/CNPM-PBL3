@@ -95,12 +95,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="BLL\QLHA.cs" />
-    <Compile Include="DAL\QLHD_DAL.cs" />
-    <Compile Include="DAL\QLKH_DAL.cs" />
-    <Compile Include="DAL\QLKM_DAL.cs" />
-    <Compile Include="DAL\QLNV_DAL.cs" />
-    <Compile Include="DAL\QLSP_DAL.cs" />
-    <Compile Include="DAL\QLTK_DAL.cs" />
     <Compile Include="DongHo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

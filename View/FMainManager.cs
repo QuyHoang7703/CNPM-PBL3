@@ -20,7 +20,8 @@ namespace CNPM_PBL3.View
             f.OpenChildForm(panelMain, new FHomePage());
         }
         QLForm f = new QLForm();
-        
+        public delegate void Mydel(DateTime dt);
+        public Mydel d { get;set;}
        // QLNV_DAL dal = new QLNV_DAL();
      
         private void PanelFrame_Paint_1(object sender, PaintEventArgs e)
@@ -90,6 +91,7 @@ namespace CNPM_PBL3.View
 
         private void ButThongKe_Click(object sender, EventArgs e)
         {
+           
             f.OpenChildForm(panelMain, new FStatistical());
         }
     }

@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FStatistical));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.guna2ShadowPanel5 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.lableTongHoaDonT = new System.Windows.Forms.Label();
@@ -57,6 +61,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.labelSP4 = new System.Windows.Forms.Label();
+            this.labelSP3 = new System.Windows.Forms.Label();
+            this.labelSP2 = new System.Windows.Forms.Label();
+            this.labelSP1 = new System.Windows.Forms.Label();
             this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -79,11 +87,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.labelSP1 = new System.Windows.Forms.Label();
-            this.labelSP2 = new System.Windows.Forms.Label();
-            this.labelSP3 = new System.Windows.Forms.Label();
-            this.labelSP4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelNam = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ChartBDCC = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2ShadowPanel5.SuspendLayout();
@@ -108,6 +115,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartBDCC)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -169,6 +178,17 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tổng quan";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(720, 249);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(246, 32);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "TOP 4 SẢN PHẨM";
             // 
             // monthCalendar1
             // 
@@ -176,6 +196,7 @@
             this.monthCalendar1.Location = new System.Drawing.Point(752, 30);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 18;
+            this.monthCalendar1.TodayDate = new System.DateTime(2023, 5, 27, 0, 0, 0, 0);
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // guna2ShadowPanel5
@@ -478,6 +499,42 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(356, 511);
             this.guna2Panel1.TabIndex = 6;
+            // 
+            // labelSP4
+            // 
+            this.labelSP4.AutoSize = true;
+            this.labelSP4.Location = new System.Drawing.Point(65, 474);
+            this.labelSP4.Name = "labelSP4";
+            this.labelSP4.Size = new System.Drawing.Size(229, 23);
+            this.labelSP4.TabIndex = 20;
+            this.labelSP4.Text = "Mã Sản phẩm 4 - Số Lượng";
+            // 
+            // labelSP3
+            // 
+            this.labelSP3.AutoSize = true;
+            this.labelSP3.Location = new System.Drawing.Point(65, 432);
+            this.labelSP3.Name = "labelSP3";
+            this.labelSP3.Size = new System.Drawing.Size(229, 23);
+            this.labelSP3.TabIndex = 19;
+            this.labelSP3.Text = "Mã Sản phẩm 3 - Số Lượng";
+            // 
+            // labelSP2
+            // 
+            this.labelSP2.AutoSize = true;
+            this.labelSP2.Location = new System.Drawing.Point(65, 391);
+            this.labelSP2.Name = "labelSP2";
+            this.labelSP2.Size = new System.Drawing.Size(229, 23);
+            this.labelSP2.TabIndex = 18;
+            this.labelSP2.Text = "Mã Sản phẩm 2 - Số Lượng";
+            // 
+            // labelSP1
+            // 
+            this.labelSP1.AutoSize = true;
+            this.labelSP1.Location = new System.Drawing.Point(65, 347);
+            this.labelSP1.Name = "labelSP1";
+            this.labelSP1.Size = new System.Drawing.Size(229, 23);
+            this.labelSP1.TabIndex = 17;
+            this.labelSP1.Text = "Mã Sản phẩm 1 - Số Lượng";
             // 
             // guna2CircleButton4
             // 
@@ -792,6 +849,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.labelNam);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.ChartBDCC);
             this.tabPage2.Location = new System.Drawing.Point(4, 44);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
@@ -801,51 +862,53 @@
             this.tabPage2.Text = "Lịch sử kinh doanh";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // labelSP1
+            // labelNam
             // 
-            this.labelSP1.AutoSize = true;
-            this.labelSP1.Location = new System.Drawing.Point(65, 347);
-            this.labelSP1.Name = "labelSP1";
-            this.labelSP1.Size = new System.Drawing.Size(229, 23);
-            this.labelSP1.TabIndex = 17;
-            this.labelSP1.Text = "Mã Sản phẩm 1 - Số Lượng";
+            this.labelNam.AutoSize = true;
+            this.labelNam.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNam.Location = new System.Drawing.Point(795, 69);
+            this.labelNam.Name = "labelNam";
+            this.labelNam.Size = new System.Drawing.Size(100, 32);
+            this.labelNam.TabIndex = 3;
+            this.labelNam.Text = "label12";
             // 
-            // labelSP2
+            // label10
             // 
-            this.labelSP2.AutoSize = true;
-            this.labelSP2.Location = new System.Drawing.Point(65, 391);
-            this.labelSP2.Name = "labelSP2";
-            this.labelSP2.Size = new System.Drawing.Size(229, 23);
-            this.labelSP2.TabIndex = 18;
-            this.labelSP2.Text = "Mã Sản phẩm 2 - Số Lượng";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(44, 69);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(700, 32);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "BIỂU ĐỒ THỂ HIỆN TỔNG SẢN PHẨM TRONG NĂM";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // labelSP3
+            // label7
             // 
-            this.labelSP3.AutoSize = true;
-            this.labelSP3.Location = new System.Drawing.Point(65, 432);
-            this.labelSP3.Name = "labelSP3";
-            this.labelSP3.Size = new System.Drawing.Size(229, 23);
-            this.labelSP3.TabIndex = 19;
-            this.labelSP3.Text = "Mã Sản phẩm 3 - Số Lượng";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(867, 730);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 23);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Tháng";
             // 
-            // labelSP4
+            // ChartBDCC
             // 
-            this.labelSP4.AutoSize = true;
-            this.labelSP4.Location = new System.Drawing.Point(65, 474);
-            this.labelSP4.Name = "labelSP4";
-            this.labelSP4.Size = new System.Drawing.Size(229, 23);
-            this.labelSP4.TabIndex = 20;
-            this.labelSP4.Text = "Mã Sản phẩm 4 - Số Lượng";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(720, 249);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(246, 32);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "TOP 4 SẢN PHẨM";
+            chartArea1.Name = "ChartArea1";
+            this.ChartBDCC.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.ChartBDCC.Legends.Add(legend1);
+            this.ChartBDCC.Location = new System.Drawing.Point(4, 151);
+            this.ChartBDCC.Name = "ChartBDCC";
+            series1.ChartArea = "ChartArea1";
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.Legend = "Legend1";
+            series1.LegendText = "Sản Phẩm";
+            series1.Name = "ChartBDC";
+            this.ChartBDCC.Series.Add(series1);
+            this.ChartBDCC.Size = new System.Drawing.Size(1028, 644);
+            this.ChartBDCC.TabIndex = 0;
+            this.ChartBDCC.Text = "chart1";
             // 
             // FStatistical
             // 
@@ -891,12 +954,14 @@
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartBDCC)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.TabPage tabPage2;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
@@ -951,5 +1016,10 @@
         private System.Windows.Forms.Label labelSP2;
         private System.Windows.Forms.Label labelSP1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartBDCC;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelNam;
+        private System.Windows.Forms.Label label10;
     }
 }

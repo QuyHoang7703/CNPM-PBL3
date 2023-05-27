@@ -10,7 +10,7 @@ namespace CNPM_PBL3.BLL
 {
     internal class QLHD_BLL
     {
-        QLHD_DAL dal = new QLHD_DAL();
+    
         QLSP_BLL bllsp= new QLSP_BLL(); 
         public List<string> GetDBCBB()
         {
@@ -191,6 +191,7 @@ namespace CNPM_PBL3.BLL
             }
             return maHD;
         }
+        // thống kê doanh thu
         public List<int> GetMAHDTrongNgay_BLL(DateTime dt)
         {
             QLDB db = new QLDB();
@@ -198,10 +199,17 @@ namespace CNPM_PBL3.BLL
             var s = db.HoaDons.Select(p => new { p.MaHD, p.NgayBan }).ToList();
             foreach (var i in s)
             {
-                if (i.NgayBan.Date == dt)
+                if(i.NgayBan.Date.Year == dt.Year)
                 {
-                    list.Add(i.MaHD);
+                    if(i.NgayBan.Date.Month == dt.Month)
+                    {
+                        if (i.NgayBan.Date.Day == dt.Day)
+                        {
+                            list.Add(i.MaHD);
+                        }
+                    }
                 }
+                
             }
             return list;
         }
@@ -213,10 +221,14 @@ namespace CNPM_PBL3.BLL
             var s = db.HoaDons.Select(p => new { p.MaHD, p.NgayBan }).ToList();
             foreach (var i in s)
             {
-                if (i.NgayBan.Date.Month == dt.Month)
+                if(i.NgayBan.Date.Year == dt.Year)
                 {
-                    list.Add(i.MaHD);
+                    if (i.NgayBan.Date.Month == dt.Month)
+                    {
+                        list.Add(i.MaHD);
+                    }
                 }
+                
             }
             return list;
         }
@@ -234,7 +246,6 @@ namespace CNPM_PBL3.BLL
             }
             return t;
         }
-
     }
 }
 

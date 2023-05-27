@@ -431,6 +431,7 @@ namespace CNPM_PBL3.BLL
             }
             return l.Distinct().ToList();
         }
+        // thông kê sản phẩm
         public int GetTongSP_BLL(List<int> list)
         {
             QLDB db = new QLDB();
@@ -445,6 +446,7 @@ namespace CNPM_PBL3.BLL
             }
             return t;
         }
+        // coi sau
         public List<string> GetMaSPCoTrongThang(List<int> list)
         {
             QLDB db = new QLDB();

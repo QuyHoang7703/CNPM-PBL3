@@ -13,7 +13,7 @@ namespace CNPM_PBL3.BLL
 {
     internal class QLTK_BLL
     {
-        QLTK_DAL dal = new QLTK_DAL();
+       
         public List<TaiKhoan> GetAllTaiKhoan()
         {
             List<TaiKhoan> list = new List<TaiKhoan>();
