@@ -196,7 +196,7 @@
             this.monthCalendar1.Location = new System.Drawing.Point(752, 30);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 18;
-            this.monthCalendar1.TodayDate = new System.DateTime(2023, 5, 27, 0, 0, 0, 0);
+            this.monthCalendar1.TodayDate = new System.DateTime(2023, 5, 26, 0, 0, 0, 0);
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // guna2ShadowPanel5

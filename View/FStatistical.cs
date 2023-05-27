@@ -19,8 +19,10 @@ namespace CNPM_PBL3.View
         public FStatistical()
         {
             InitializeComponent();
+            monthCalendar1.TodayDate = DateTime.Now;
             hienThi(DateTime.Now);
             BieuDo();
+           
         }
         QLSP_BLL sp_bll = new QLSP_BLL();
         QLHD_BLL hd_bll = new QLHD_BLL();
@@ -102,7 +104,7 @@ namespace CNPM_PBL3.View
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-          
+           
            hienThi(monthCalendar1.SelectionStart);
             BieuDo();
             
