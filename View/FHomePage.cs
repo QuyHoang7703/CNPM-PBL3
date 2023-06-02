@@ -120,13 +120,11 @@ namespace CNPM_PBL3.View
                 flowLayoutPanel1.Controls.Clear();
                 showHinhAnh(bll.TimKiemTrenTXTTrangChu_BLL(txtsearch.Text, bll.TimKiemTrangChu_BLL(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP)));
             }
-
         }
 
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
-            //flowLayoutPanel1.Controls.Clear();
-            //showHinhAnh(bll.TimKiemTrenTXTTrangChu_BLL(txtsearch.Text, bll.TimKiemTrangChu_BLL(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP)));
+            
         }
 
         private void FHomePage_Load(object sender, EventArgs e)
