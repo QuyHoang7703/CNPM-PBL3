@@ -20,6 +20,7 @@ namespace CNPM_PBL3.View
             f.OpenChildForm(panelMain, new FHomePage());
         }
         QLForm f = new QLForm();
+        public static FBill fBill = new FBill();
         public delegate void Mydel(DateTime dt);
         public Mydel d { get;set;}
        // QLNV_DAL dal = new QLNV_DAL();
@@ -30,7 +31,6 @@ namespace CNPM_PBL3.View
         }
         public void show()
         {
-
             f.OpenChildForm(panelMain, new FHomePage());
             this.lbThongTin.Location = new System.Drawing.Point(35, 170);
             butClock.Visible = false;
@@ -55,7 +55,7 @@ namespace CNPM_PBL3.View
             f.OpenChildForm(panelMain, new FHomePage());
 
         }
-        public static FBill fBill = new FBill();
+        
         private void guna2ButBill_Click(object sender, EventArgs e)
         {
             f.OpenChildForm(panelMain, fBill);

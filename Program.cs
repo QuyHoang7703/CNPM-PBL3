@@ -18,8 +18,8 @@ namespace CNPM_PBL3
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
           
-              // Application.Run(new FLogin());
-            Application.Run(new FHomePage());
+               Application.Run(new FLogin());
+            //Application.Run(new FHomePage());
         }
     }
 }

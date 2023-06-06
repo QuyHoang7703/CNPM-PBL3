@@ -15,9 +15,14 @@ namespace CNPM_PBL3.BLL
         public List<string> GetDBCBB()
         {
             List<string> list = new List<string>();
-            foreach (DongHo i in bllsp.GetAllSP_BLL())
+            using (QLDB db = new QLDB())
             {
-                list.Add(i.MaSP);
+                // var s = db.DongHoes.Select(p => new { p.MaSP }).ToList();
+                foreach (var i in db.DongHoes)
+                {
+                    list.Add(i.MaSP);
+                }
+
             }
             return list;
         }
@@ -85,28 +90,36 @@ namespace CNPM_PBL3.BLL
         //bỏ bên QLSP
         public decimal GetDonGia(string maSP)
         {
-            decimal giaSP = 0;
-            foreach (var i in bllsp.GetAllSP_BLL())
-            {
-                if (i.MaSP == maSP)
-                {
-                    giaSP = i.GiaSP;
-                }
+            //decimal giaSP = 0;
+            //foreach (var i in bllsp.GetAllSP_BLL())
+            //{
+            //    if (i.MaSP == maSP)
+            //    {
+            //        giaSP = i.GiaSP;
+            //    }
 
-            }
+            //}
+            //return giaSP;
+           
+            QLDB db = new QLDB();
+            var s = db.DongHoes.Find(maSP);
+            decimal giaSP =s.GiaSP;
             return giaSP;
         }
         
         public int GetSoLuong(string maSP)
         {
-            int soLuong = 0;
-            foreach (var i in bllsp.GetAllSP_BLL())
-            {
-                if (i.MaSP == maSP)
-                {
-                    soLuong = (int)i.SoLuong;
-                }
-            }
+            //int soLuong = 0;
+            //foreach (var i in bllsp.GetAllSP_BLL())
+            //{
+            //    if (i.MaSP == maSP)
+            //    {
+            //        soLuong = (int)i.SoLuong;
+            //    }
+            //}
+            QLDB db = new QLDB();
+            var s = db.DongHoes.Find(maSP);
+            int soLuong = (int)s.SoLuong;
             return soLuong;
         }
         public float GetGiaTriKhuyenMai(string maSP)
@@ -146,7 +159,6 @@ namespace CNPM_PBL3.BLL
         {
             using (QLDB db = new QLDB())
             {
-
                 var s = db.DongHoes.Find(maSP);
                 s.SoLuong = soLuong;
                 db.SaveChanges();
@@ -155,9 +167,7 @@ namespace CNPM_PBL3.BLL
 
         public dynamic GetHD_ByTxtSearch(string text)
         {
-
             List<dynamic> list = new List<dynamic>();
-
             if (string.IsNullOrEmpty(text))
             {
                 list = GetAllHD_BLL_ForDGV();

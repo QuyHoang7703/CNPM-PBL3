@@ -17,9 +17,6 @@ namespace CNPM_PBL3.BLL
         {
             if (currentForm != null)
             {
-                //if (childForm.Name == "FHomePage") 
-                //currentForm.Dispose();
-                //else
                 currentForm.Hide();
             }
             currentForm = childForm;

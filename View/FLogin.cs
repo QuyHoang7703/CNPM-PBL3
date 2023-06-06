@@ -164,7 +164,9 @@ namespace CNPM_PBL3
 
         private void ctbCancel_Click(object sender, EventArgs e)
         {
+            
             this.Dispose();
+           
         }
     }
 }

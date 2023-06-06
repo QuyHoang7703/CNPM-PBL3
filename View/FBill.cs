@@ -23,14 +23,15 @@ namespace CNPM_PBL3.View
         public static int idKhacHang = 0;
         QLHD_BLL bll = new QLHD_BLL();
         public List<dynamic> list= new List<dynamic>();
+        public string maSP = "";
         public dynamic sp;
         public void GetCBB_MaSP()
         {
             cbbMaSP.Items.Clear();
             cbbMaSP.Items.AddRange(bll.GetDBCBB().ToArray());
         }
-
-        public void get(string s)
+     
+        public void SetMaSanPham(string s)
         {
             cbbMaSP.SelectedItem = s;
 
@@ -49,16 +50,46 @@ namespace CNPM_PBL3.View
 
 
         }
+        public int CheckAvailable(string maSanPham)
+        {
+
+            int index = -1;
+            foreach (dynamic i in list)
+            {
+                if (i.maSanPham == maSanPham)
+                {
+                    index = list.IndexOf(i);
+                    // MessageBox.Show(index.ToString());
+                    break;
+
+                }
+
+            }
+            return index;
+        }
 
         private void cbbMaSP_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string maSP = cbbMaSP.SelectedItem.ToString();
-            
+             maSP = cbbMaSP.SelectedItem.ToString();        
             float giaTriKM = bll.GetGiaTriKhuyenMai(maSP);
-           // MessageBox.Show("" + giaTriKM);
-            if (giaTriKM != 0)
+            // MessageBox.Show("" + giaTriKM);
+
+            if (CheckAvailable(maSP) == -1)
             {
-               
+                txtSLCoSan.Text = (bll.GetSoLuong(maSP)).ToString();
+                txtSoLuong.Text = "1";
+            }
+            else
+            {
+                dynamic t = list[CheckAvailable(maSP)];
+                int soLuongCoSan = bll.GetSoLuong(maSP) - t.soLuong;
+                txtSLCoSan.Text = soLuongCoSan.ToString();
+                txtSoLuong.Text = "1";
+
+
+            }
+            if (giaTriKM != 0)
+            {              
                 txtDonGia.Text = (bll.GetDonGia(maSP) - bll.GetDonGia(maSP)*(decimal)giaTriKM/100).ToString();
                 lbGiaThat.Visible = true;
                 lbGiaThat.Text = (bll.GetDonGia(maSP)).ToString();
@@ -68,12 +99,7 @@ namespace CNPM_PBL3.View
             {
                 txtDonGia.Text = (bll.GetDonGia(maSP)).ToString();
                 lbGiaThat.Visible = false;
-
             }
-           
-            txtSLCoSan.Text = (bll.GetSoLuong(maSP)).ToString();
-            txtSoLuong.Text = "";
-
 
         }
         public void ShowDGVHD()
@@ -97,76 +123,70 @@ namespace CNPM_PBL3.View
            
             dgvHD.DataSource = dt;
         }
-        public int CheckAvailable(string maSanPham)
+        public void ThemSPVaoList()
         {
-            
-            int index = -1;
-            foreach(dynamic i in list)
+            if (!string.IsNullOrEmpty(txtSoLuong.Text) && txtSoLuong.Text != "0")
             {
-                if (i.maSanPham == maSanPham)
+                int soLuong;
+                if (Int32.TryParse(txtSoLuong.Text, out soLuong))
                 {
-                    index = list.IndexOf(i);
-                   // MessageBox.Show(index.ToString());
-                    break;
-
+                    sp = new ExpandoObject();
+                    sp.maSanPham = cbbMaSP.SelectedItem.ToString();
+                    sp.soLuong = soLuong;
+                    sp.donGia = Convert.ToDecimal(txtDonGia.Text);
+                    sp.thanhTien = sp.soLuong * sp.donGia;
+                    int sLHienCo = (Convert.ToInt32(txtSLCoSan.Text) - soLuong);
+                    if (sLHienCo < 0)
+                    {
+                        MessageBox.Show("Số lượng không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    txtSLCoSan.Text = sLHienCo.ToString();
+                    int index = CheckAvailable(sp.maSanPham);
+                    if (index >= 0)
+                    {
+                        dynamic temp = list[index];
+                        temp.soLuong += sp.soLuong;
+                        temp.thanhTien = temp.soLuong * temp.donGia;
+                        list[index] = temp;
+                    }
+                    else
+                    {
+                        list.Add(sp);
+                    }
+                    ShowDGVHD();
                 }
-               
+                else
+                {
+                    MessageBox.Show("Hãy nhập đúng định dạng của số lượng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            return index;
+            else
+            {
+                MessageBox.Show("Hãy số lượng sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
-   
         private void butAdd_Click(object sender, EventArgs e)
         {
             
             if (cbbMaSP.SelectedIndex >= 0)
-            {    
-                if (!string.IsNullOrEmpty(txtSoLuong.Text) && txtSoLuong.Text!="0")
-                {
-                    int soLuong;
-                    if (Int32.TryParse(txtSoLuong.Text, out soLuong))
-                    {
-                        sp = new ExpandoObject();
-                        sp.maSanPham = cbbMaSP.SelectedItem.ToString();
-                        sp.soLuong = soLuong;
-                        sp.donGia = Convert.ToDecimal(txtDonGia.Text);
-                        sp.thanhTien = sp.soLuong * sp.donGia;
-                        int sLHienCo = (Convert.ToInt32(txtSLCoSan.Text) - soLuong);
-                        if (sLHienCo < 0)
-                        {
-                            MessageBox.Show("Số lượng không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        } 
-                        txtSLCoSan.Text = sLHienCo.ToString();
-                        int index = CheckAvailable(sp.maSanPham);
-                        if (index >= 0)
-                        {
-                            dynamic temp = list[index];
-                            temp.soLuong += sp.soLuong;
-                            temp.thanhTien = temp.soLuong * temp.donGia;
-                            list[index] = temp;
-                        }
-                        else
-                        {
-                            list.Add(sp);
-                        }
-                        ShowDGVHD();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Hãy nhập đúng định dạng của số lượng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Hãy số lượng sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }  
+            {
+
+                ThemSPVaoList();
             }
             else
             {
                 MessageBox.Show("Vui lòng điền chọn đầy đủ thông tin mã sản phẩm và mã khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        private void dgvHD_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvHD.SelectedRows.Count == 1)
+            {
+                cbbMaSP.SelectedItem = dgvHD.SelectedRows[0].Cells["Mã sản phẩm"].Value.ToString();
+           
+            }
+        }
         private void butDelete_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection l = dgvHD.SelectedRows;
@@ -182,18 +202,29 @@ namespace CNPM_PBL3.View
                         {
                             list.RemoveAt(index);
                         }
-                        
-                                                                  
+                      
+
+                        //txtSLCoSan.Text = (bll.GetSoLuong(i.Cells["Mã sản phẩm"].Value)).ToString();
+                        //txtSoLuong.Text = "1";
+                        txtSLCoSan.Text = (bll.GetSoLuong(i.Cells["Mã sản phẩm"].Value.ToString())).ToString();
+                        txtSoLuong.Text = "1";
+                        //int soLuong=Convert.ToInt32(txtSLCoSan.Text)+Convert.ToInt32(i.Cells["Số Lượng"].Value);
+                        //txtSLCoSan.Text=soLuong.ToString();
+                        //txtSoLuong.Text = "1";
                     }
-                    
+
+
+
                 }
                 ShowDGVHD();
+                
             }
             else
             {
                 MessageBox.Show("Hãy chọn sản phẩm muốn xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
+           
+
         }
         public void Add()
         {
@@ -234,9 +265,23 @@ namespace CNPM_PBL3.View
             }
             return t;
         }
+        //public bool CheckDGV()
+        //{
+        //    bool hasEmptyRow= false;
+        //    foreach(DataGridViewRow i in dgvHD.Rows)
+        //    {
+        //        if (i.IsNewRow)
+        //        {
+        //            hasEmptyRow = true;
+        //            dgvHD.Rows.Remove(i);
+        //            break;
+        //        }
+        //    }
+        //    return hasEmptyRow;
+        //}
         private void butThanhToan_Click(object sender, EventArgs e)
         {
-            if(idKhacHang > 0 && dgvHD.DataSource!=null)
+            if(idKhacHang > 0 && dgvHD.RowCount>0)
             {
                 Add();
                 foreach (var i in list)
@@ -260,16 +305,17 @@ namespace CNPM_PBL3.View
                 }
                 idKhacHang = 0;
                 dgvHD.DataSource = null;
-                cbbMaSP.Items.Clear();
                 txtSLCoSan.Text = "";
                 txtSoLuong.Text = "";
                 lbGiaThat.Visible= false;
                 txtDonGia.Text = "";
                 txtThanhTien.Text = "";
-                
+                GetCBB_MaSP();
+                list.Clear();
+
 
             }
-            else if(idKhacHang > 0 && dgvHD.DataSource == null)
+            else if(idKhacHang > 0 && dgvHD.RowCount == 0)
             {
                 MessageBox.Show("Hãy chọn sản phẩm muốn tạo hóa đơn", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -279,6 +325,14 @@ namespace CNPM_PBL3.View
             }
             
 
+        }
+
+        private void butChonSP_Click(object sender, EventArgs e)
+        {
+            FHomePage fHomePage = new FHomePage();
+
+            fHomePage.ShowDialog();
+            
         }
 
        

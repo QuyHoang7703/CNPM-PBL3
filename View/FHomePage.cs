@@ -26,7 +26,8 @@ namespace CNPM_PBL3.View
             GetChatLieuDay();
             GetXuatXu();
             GetGiaSP();
-            //showHinhAnh(bll.TimKiemTrenTXTTrangChu_BLL(txtsearch.Text, bll.TimKiemTrangChu_BLL(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP)));
+            ctbCancel.Visible = true;
+          
         }
         QLSP_BLL bll = new QLSP_BLL();
         QLHD_BLL qLHD = new QLHD_BLL();
@@ -36,20 +37,20 @@ namespace CNPM_PBL3.View
             {
                 //qLSP.tenThuongHieu_DAL(item.MaThuongHieu)
                 FUserControlClock fUserControlClock = new FUserControlClock();
-                fUserControlClock.chiTiet = item.ThuongHieu.TenThuongHieu + " - " + item.MaSP + " - " + item.GioiTinhSP + "\n" +
+                fUserControlClock.ChiTiet = item.ThuongHieu.TenThuongHieu + " - " + item.MaSP + " - " + item.GioiTinhSP + "\n" +
                                             item.ChatLieuMatKinh + " - " + item.BoMayNangLuong;
-                fUserControlClock.GiaSP = Convert.ToString(item.GiaSP) + "đ";
-                fUserControlClock.hinhAnh = item.HinhAnh;
-                fUserControlClock.MSP = item.MaSP;
+                fUserControlClock.GiaSanPham = Convert.ToString(item.GiaSP) + "đ";
+                fUserControlClock.HinhAnh = item.HinhAnh;
+                fUserControlClock.MaSanPham = item.MaSP;
                 if (item.MaKhuyenMai != null)
                 {
                     float giaTriKM = qLHD.GetGiaTriKhuyenMai(item.MaSP);
-                    fUserControlClock.khuyenmai = "Khuyến mãi " + giaTriKM.ToString() + "%\n"
+                    fUserControlClock.KhuyenMai = "Khuyến mãi " + giaTriKM.ToString() + "%\n"
                         + (qLHD.GetDonGia(item.MaSP) - qLHD.GetDonGia(item.MaSP) * (decimal)giaTriKM / 100).ToString() + "đ"; ;
                 }
                 else
                 {
-                    fUserControlClock.khuyenmai = null;
+                    fUserControlClock.KhuyenMai = null;
                 }
                 flowLayoutPanel1.Controls.Add(fUserControlClock);
             }
@@ -150,6 +151,11 @@ namespace CNPM_PBL3.View
         private void cbbThuongHieu_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ctbCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

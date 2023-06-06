@@ -143,6 +143,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1015, 323);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // guna2TaskBarProgress1
             // 

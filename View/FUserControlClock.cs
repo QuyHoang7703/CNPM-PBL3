@@ -20,18 +20,18 @@ namespace CNPM_PBL3.View
             InitializeComponent();
             //hienthi();
         }
-        public delegate void mydel(string s);
-        public mydel d { get; set; }
-        public delegate void mydel1();
-        public mydel1 d1 { get; set; }
+        public delegate void MyDel(string s);
+        public MyDel d { get; set; }
+        public delegate void MyDel1();
+        public MyDel1 d1 { get; set; }
 
 
-        public byte[] data { get; set; }
-        public string maSP { get; set; }
+        private byte[] hinhAnh { get; set; }
+        private string maSanPham { get; set; }
 
 
         QLHA qLHA = new QLHA();
-        public string chiTiet
+        public string ChiTiet
         {
             get
             {
@@ -43,7 +43,7 @@ namespace CNPM_PBL3.View
                 labelChiTiet.Text = value;
             }
         }
-        public string GiaSP
+        public string GiaSanPham
         {
             get
             {
@@ -55,30 +55,30 @@ namespace CNPM_PBL3.View
                 labelGiaTri.Text = value;
             }
         }
-        public byte[] hinhAnh
+        public byte[] HinhAnh
         {
             get
             {
-                return data;
+                return hinhAnh;
             }
             set
             {
-                data = value;
+                hinhAnh = value;
                 PTBHinhAnh.Image = qLHA.ConverByteToTmage(value);
             }
         }
-        public string MSP
+        public string MaSanPham
         {
             get
             {
-                return maSP;
+                return maSanPham;
             }
             set
             {
-                maSP = value;
+                maSanPham = value;
             }
         }
-        public string khuyenmai
+        public string KhuyenMai
         {
             get
             {
@@ -106,10 +106,15 @@ namespace CNPM_PBL3.View
 
             try
             {
+                // FMainManager fMainManager = new FMainManager();
+                this.d += new FUserControlClock.MyDel(FMainManager.fBill.SetMaSanPham);
+                this.d1 += new FUserControlClock.MyDel1(FMainManager.fBill.ThemSPVaoList);
+
+                d(MaSanPham);
+                d1();
                
-                FMainManager f = new FMainManager();
-                this.d += new FUserControlClock.mydel(FMainManager.fBill.get);
-                d(MSP);
+
+
                 MessageBox.Show("Thêm vào hóa đơn thành công");
             }
             catch

@@ -96,9 +96,10 @@ namespace CNPM_PBL3.View
             {
                 AddKachHang();
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FBill.idKhacHang = GetIdKhachHang();
                 this.Dispose();
             }
-            FBill.idKhacHang = GetIdKhachHang();
+          
             //MessageBox.Show(FBill.idKhacHang.ToString());
 
         }

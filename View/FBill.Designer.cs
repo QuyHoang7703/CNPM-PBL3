@@ -43,14 +43,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDonGia = new Guna.UI2.WinForms.Guna2TextBox();
-
-        //    this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.dgvHD = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSLCoSan = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbGiaThat = new System.Windows.Forms.Label();
+            this.butChonSP = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
@@ -141,9 +139,9 @@
             this.ButAddCustomers.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
             this.ButAddCustomers.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold);
             this.ButAddCustomers.ForeColor = System.Drawing.Color.Black;
-            this.ButAddCustomers.Location = new System.Drawing.Point(93, 408);
+            this.ButAddCustomers.Location = new System.Drawing.Point(110, 409);
             this.ButAddCustomers.Name = "ButAddCustomers";
-            this.ButAddCustomers.Size = new System.Drawing.Size(351, 50);
+            this.ButAddCustomers.Size = new System.Drawing.Size(329, 50);
             this.ButAddCustomers.TabIndex = 15;
             this.ButAddCustomers.Text = "Thêm Khách Hàng";
             this.ButAddCustomers.Click += new System.EventHandler(this.ButAddCustomers_Click);
@@ -281,31 +279,20 @@
             this.txtDonGia.Size = new System.Drawing.Size(193, 45);
             this.txtDonGia.TabIndex = 18;
             // 
-
-
-
-            /*// guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // */
-
-
-
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = global::CNPM_PBL3.Properties.Resources.bill_removebg_preview;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(110, 121);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(137, 125);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(282, 216);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(267, 190);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 11;
             this.guna2PictureBox1.TabStop = false;
             // 
             // dgvHD
             // 
+            this.dgvHD.AllowUserToAddRows = false;
             this.dgvHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHD.Location = new System.Drawing.Point(51, 533);
@@ -314,6 +301,8 @@
             this.dgvHD.RowTemplate.Height = 24;
             this.dgvHD.Size = new System.Drawing.Size(980, 346);
             this.dgvHD.TabIndex = 26;
+            this.dgvHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHD_CellClick);
+           
             // 
             // label3
             // 
@@ -358,12 +347,30 @@
             this.lbGiaThat.Text = "Giá thật";
             this.lbGiaThat.Visible = false;
             // 
+            // butChonSP
+            // 
+            this.butChonSP.BorderRadius = 10;
+            this.butChonSP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butChonSP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butChonSP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butChonSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butChonSP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(144)))), ((int)(((byte)(124)))));
+            this.butChonSP.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold);
+            this.butChonSP.ForeColor = System.Drawing.Color.Black;
+            this.butChonSP.Location = new System.Drawing.Point(110, 338);
+            this.butChonSP.Name = "butChonSP";
+            this.butChonSP.Size = new System.Drawing.Size(329, 52);
+            this.butChonSP.TabIndex = 28;
+            this.butChonSP.Text = "Chọn Sản Phẩm";
+            this.butChonSP.Click += new System.EventHandler(this.butChonSP_Click);
+            // 
             // FBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
             this.ClientSize = new System.Drawing.Size(1100, 900);
+            this.Controls.Add(this.butChonSP);
             this.Controls.Add(this.lbGiaThat);
             this.Controls.Add(this.dgvHD);
             this.Controls.Add(this.label2);
@@ -391,7 +398,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();        
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -416,5 +424,6 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox txtSLCoSan;
         private System.Windows.Forms.Label lbGiaThat;
+        private Guna.UI2.WinForms.Guna2Button butChonSP;
     }
 }

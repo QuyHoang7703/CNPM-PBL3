@@ -215,6 +215,9 @@ namespace CNPM_PBL3.View
             bll.UpdateKM(data);
         }
 
-       
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
