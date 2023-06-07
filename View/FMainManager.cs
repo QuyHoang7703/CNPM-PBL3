@@ -17,13 +17,37 @@ namespace CNPM_PBL3.View
         public FMainManager()
         {
             InitializeComponent();
-            f.OpenChildForm(panelMain, new FHomePage());
+            OpenChildForm(panelMain, new FHomePage());
+            fBill= new FBill();
         }
-        QLForm f = new QLForm();
-        public static FBill fBill = new FBill();
-        public delegate void Mydel(DateTime dt);
-        public Mydel d { get;set;}
-       // QLNV_DAL dal = new QLNV_DAL();
+        public static Form currentForm { get; set; }
+        // Chèn childForm 
+        public void OpenChildForm(Panel parentForm, Form childForm)
+        {
+            if (currentForm != null)
+            {
+                if (currentForm.Name == "FBill")
+                {
+                    currentForm.Hide();
+                }
+                else
+                {
+                    currentForm.Dispose();
+                }
+
+
+            }
+            currentForm = childForm;
+            currentForm.TopLevel = false;
+            currentForm.FormBorderStyle = FormBorderStyle.None;
+            currentForm.Dock = DockStyle.Fill;
+            parentForm.Controls.Add(currentForm);
+            currentForm.Show();
+        }
+       
+        public static FBill fBill;
+        //public delegate void Mydel(DateTime dt);
+        //public Mydel d { get;set;}
      
         private void PanelFrame_Paint_1(object sender, PaintEventArgs e)
         {
@@ -31,7 +55,7 @@ namespace CNPM_PBL3.View
         }
         public void show()
         {
-            f.OpenChildForm(panelMain, new FHomePage());
+            OpenChildForm(panelMain, new FHomePage());
             this.lbThongTin.Location = new System.Drawing.Point(35, 170);
             butClock.Visible = false;
             ButThongKe.Visible = false;
@@ -44,55 +68,54 @@ namespace CNPM_PBL3.View
 
         }
         private void ButDangXuat_Click(object sender, EventArgs e)
-        {
-            this.Hide();
+        {          
             FLogin f = new FLogin();
             f.Show();
+            this.Dispose();        
         }
 
         private void ButTrangChu_Click(object sender, EventArgs e)
-        {
-            f.OpenChildForm(panelMain, new FHomePage());
-
+        {      
+            OpenChildForm(panelMain, new FHomePage());
         }
         
         private void guna2ButBill_Click(object sender, EventArgs e)
-        {
-            f.OpenChildForm(panelMain, fBill);
+        {          
+            OpenChildForm(panelMain, fBill);
             guna2ButBill.Checked = true;
         }
 
         private void butClock_Click(object sender, EventArgs e)
-        {
-            f.OpenChildForm(panelMain, new FClock());
+        {   
+            OpenChildForm(panelMain, new FClock());
         }
 
         private void butLichSu_Click(object sender, EventArgs e)
-        {
-            f.OpenChildForm(panelMain, new FPurchaseHistory());
+        {       
+            OpenChildForm(panelMain, new FPurchaseHistory());
         }
 
         private void guna2ButSetting_Click(object sender, EventArgs e)
         {
             FSetting s = new FSetting();
             s.GetChiTietTaiKhoan(FLogin.account.ID);
-            f.OpenChildForm(panelMain, s);
+            OpenChildForm(panelMain, s);
         }
 
         private void guna2ButStaff_Click(object sender, EventArgs e)
         {
-            f.OpenChildForm(panelMain, new FStaff());
+            OpenChildForm(panelMain, new FStaff());
         }
 
         private void butKhuyenMai_Click(object sender, EventArgs e)
         {
-            f.OpenChildForm(panelMain, new FSale());
+            OpenChildForm(panelMain, new FSale());
         }
 
         private void ButThongKe_Click(object sender, EventArgs e)
         {
            
-            f.OpenChildForm(panelMain, new FStatistical());
+            OpenChildForm(panelMain, new FStatistical());
         }
     }
 }

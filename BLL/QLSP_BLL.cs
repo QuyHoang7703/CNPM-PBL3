@@ -12,14 +12,22 @@ namespace CNPM_PBL3.BLL
 {
     internal class QLSP_BLL
     {
-      // QLSP_DAL dal= new QLSP_DAL();
-      
+        // QLSP_DAL dal= new QLSP_DAL();
+
         public dynamic GetAllSP_BLL_ForDGV()
         {
             QLDB db = new QLDB();
             var s = db.DongHoes.Select(p => new { p.MaSP, p.XuatSu, p.ThuongHieu.TenThuongHieu, p.GiaSP, p.GioiTinhSP, p.GiaTriBaoHanh, p.SoLuong }).ToList();
             return s;
         }
+        //public List<DongHo> GetAllSP_BLL_ForDGV2()
+        //{
+        //    QLDB db = new QLDB();
+        //    var li = new List<DongHo>();
+        //    var s = db.DongHoes.Select(p =>p).ToList();
+        //    li.AddRange(s);
+        //    return li;
+        //}
         public List<DongHo> GetAllSP_BLL()
         {
             QLDB db = new QLDB();

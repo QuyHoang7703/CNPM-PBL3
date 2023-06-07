@@ -9,25 +9,36 @@ namespace CNPM_PBL3.BLL
 {
     internal class QLNV_BLL
     {
-        //QLNV_DAL dal = new QLNV_DAL();
-        public dynamic GetAllNV_BLL()
+      
+        public List<dynamic> GetAllNV_BLL()
         {
             using (QLDB db = new QLDB())
             {
                 var s = db.TaiKhoans.Where(p => p.Role == "Nhân viên").Select(p => new { p.ID, p.UserName, p.ChiTietTaiKhoan.HoTen, p.ChiTietTaiKhoan.SDT }).ToList();
-                return s;
+                List<dynamic> list = new List<dynamic>();
+                list.AddRange(s);
+                return list;
             }
+
         }
-        public dynamic GetNV_ByTxtSearch(string text)
+        public List<dynamic> GetNV_ByTxtSearch(string text)
         {
             List<dynamic> list = new List<dynamic>();
-            foreach (var s in GetAllNV_BLL())
+            if (string.IsNullOrEmpty(text))
             {
-                int number;
-                bool check = int.TryParse(text, out number);
-                if ((check && s.ID==number) || s.HoTen.Contains(text) || s.UserName==text) 
-                    list.Add(s);
+                list=GetAllNV_BLL();
             }
+            else
+            {
+                foreach (var s in GetAllNV_BLL())
+                {
+                    int number;
+                    bool check = int.TryParse(text, out number);
+                    if (check && (s.ID == number ) || s.HoTen.Contains(text) || s.UserName.Contains(text) || s.SDT.Contains(number.ToString())) 
+                        list.Add(s);
+                }
+            }
+            
             return list;
         }      
         public void AddNV_BLL(TaiKhoan t, ChiTietTaiKhoan ct)
@@ -35,7 +46,6 @@ namespace CNPM_PBL3.BLL
             using (QLDB db = new QLDB())
             {
                 db.TaiKhoans.Add(t);
-                // var s = db.TaiKhoans.Find(t.ID);
                 ct.TaiKhoan = t;
                 db.ChiTietTaiKhoans.Add(ct);
                 db.SaveChanges();
@@ -63,24 +73,14 @@ namespace CNPM_PBL3.BLL
         {
             QLDB db = new QLDB();
             var s = db.TaiKhoans.Where(p => p.Role == "Nhân viên").Select(p => new { p.ID, p.UserName, p.ChiTietTaiKhoan.HoTen, p.ChiTietTaiKhoan.SDT }).ToList();
-            //var s = GetAllNV2_DAL();
-            //s= s.ToList();
-            //var s = GetAllNV_DAL1();
-
             if (direction == "Tăng dần")
             {
                 return s.OrderBy(p => p.GetType().GetProperty(sortBy).GetValue(p, null)).ToList();
-                //return s = s.OrderBy(s => s.ID).ToList();
-                //var s = typeof(dynamic).GetProperty(sortBy);
-                //return s.OrderBy(p => propertyInfo.GetValue(p, null)).ToList();
-
             }
             else
             {
                 return s = s.OrderByDescending(p => p.GetType().GetProperty(sortBy).GetValue(p, null)).ToList();
-
             }
-
         }
     }
 }

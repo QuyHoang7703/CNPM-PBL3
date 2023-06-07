@@ -51,7 +51,7 @@ namespace CNPM_PBL3.View
                 rdbFemale.Checked = true;
             }
             txtUserName.Text=chiTietTaiKhoan.TaiKhoan.UserName;
-            txtPass.Text = chiTietTaiKhoan.TaiKhoan.Pass;
+            txtPass.Text = Encryption.MyDecrupt(chiTietTaiKhoan.TaiKhoan.Pass);
             ptbImage.Image = qLHA_DAL.ConverByteToTmage(chiTietTaiKhoan.AnhDaiDien);
 
         }

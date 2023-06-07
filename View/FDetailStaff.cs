@@ -20,7 +20,7 @@ namespace CNPM_PBL3.View
             InitializeComponent();
             SetCBBRole();
         }
-        public delegate void Mydel(dynamic a);
+        public delegate void Mydel(List<dynamic> list);
         public Mydel d { get; set; }
         QLNV_BLL bll = new QLNV_BLL();
         private void butCancel_Click(object sender, EventArgs e)

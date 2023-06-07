@@ -75,13 +75,16 @@ namespace CNPM_PBL3
             }
             else
             {
-                account = bll.GetTaiKhoan(txtUserNameLogin.Text, txtPass.Text);
+                
+                account = bll.GetTaiKhoan(txtUserNameLogin.Text, Encryption.MyEncrypt(txtPass.Text));
                 
                 if (checkRole(account) == 1)
                 {
                     FMainManager f = new FMainManager();
                     this.Hide();
                     f.Show();
+                    //this.Close();
+                   
                     
                 }
                 else if(checkRole(account) == 0)

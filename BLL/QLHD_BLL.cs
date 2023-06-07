@@ -40,13 +40,11 @@ namespace CNPM_PBL3.BLL
             {
                 var pt = new
                 {
-
                     MaHoaDon = i.MaHD,
                     MaKhachHang = i.KhachHang.MaKH,
                     HoTen = i.KhachHang.HoTenKH,
                     NgayBan = i.NgayBan,
                     MaNhanVien = i.ID,
-
                 };
                 list.Add(pt);
             }

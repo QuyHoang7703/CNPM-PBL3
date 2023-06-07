@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FStaff));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FStaff));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.butSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.butAdd = new Guna.UI2.WinForms.Guna2Button();
             this.butDetailStaff = new Guna.UI2.WinForms.Guna2Button();
             this.butDelete = new Guna.UI2.WinForms.Guna2Button();
@@ -54,6 +52,7 @@
             this.cbbSort = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txttSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
@@ -80,45 +79,6 @@
             this.label1.Size = new System.Drawing.Size(407, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "DANH SÁCH NHÂN VIÊN";
-            // 
-            // butSearch
-            // 
-            this.butSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.butSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.butSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.butSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.butSearch.FillColor = System.Drawing.Color.White;
-            this.butSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.butSearch.ForeColor = System.Drawing.Color.White;
-            this.butSearch.Image = ((System.Drawing.Image)(resources.GetObject("butSearch.Image")));
-            this.butSearch.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.butSearch.Location = new System.Drawing.Point(724, 158);
-            this.butSearch.Name = "butSearch";
-            this.butSearch.Size = new System.Drawing.Size(47, 49);
-            this.butSearch.TabIndex = 7;
-            this.butSearch.Click += new System.EventHandler(this.butSearch_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(771, 158);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "Tìm Kiếm";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(279, 50);
-            this.txtSearch.TabIndex = 8;
-           
             // 
             // butAdd
             // 
@@ -369,12 +329,38 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "CHIỀU SẮP XẾP";
             // 
+            // txttSearch
+            // 
+            this.txttSearch.Animated = true;
+            this.txttSearch.AutoRoundedCorners = true;
+            this.txttSearch.BorderRadius = 19;
+            this.txttSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txttSearch.DefaultText = "";
+            this.txttSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txttSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txttSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txttSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txttSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txttSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txttSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txttSearch.IconLeft")));
+            this.txttSearch.Location = new System.Drawing.Point(772, 163);
+            this.txttSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txttSearch.Name = "txttSearch";
+            this.txttSearch.PasswordChar = '\0';
+            this.txttSearch.PlaceholderText = "Tìm Kiếm";
+            this.txttSearch.SelectedText = "";
+            this.txttSearch.Size = new System.Drawing.Size(291, 41);
+            this.txttSearch.TabIndex = 90;
+            this.txttSearch.TextChanged += new System.EventHandler(this.txttSearch_TextChanged);
+            // 
             // FStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(222)))), ((int)(((byte)(201)))));
             this.ClientSize = new System.Drawing.Size(1100, 900);
+            this.Controls.Add(this.txttSearch);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvNV);
@@ -385,8 +371,6 @@
             this.Controls.Add(this.butDelete);
             this.Controls.Add(this.butDetailStaff);
             this.Controls.Add(this.butAdd);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.butSearch);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FStaff";
@@ -404,8 +388,6 @@
         #endregion
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button butSearch;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2Button butAdd;
         private Guna.UI2.WinForms.Guna2Button butDetailStaff;
         private Guna.UI2.WinForms.Guna2Button butDelete;
@@ -423,6 +405,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbbSort;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2TextBox txttSearch;
     }
 
 

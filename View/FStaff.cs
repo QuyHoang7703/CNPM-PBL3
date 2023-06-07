@@ -38,9 +38,9 @@ namespace CNPM_PBL3.View
                 
             }
         }
-        public void showDGV(dynamic s)
+        public void showDGV(List<dynamic> list)
         {
-            dgvNV.DataSource = s;
+            dgvNV.DataSource = list;
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -54,21 +54,10 @@ namespace CNPM_PBL3.View
             f.ShowDialog();
         }
 
-        private void butSearch_Click(object sender, EventArgs e)
+        
+        private void txttSearch_TextChanged(object sender, EventArgs e)
         {
-            if (txtSearch.Text != "")
-            {
-
-                var s = bll.GetNV_ByTxtSearch(txtSearch.Text);
-                if (s.Count>0)
-                    showDGV(s);
-                else
-                {
-                    showDGV(s);
-                    MessageBox.Show("Không tồn tại");
-                }
-               
-            }
+            showDGV(bll.GetNV_ByTxtSearch(txttSearch.Text));
         }
 
         private void butDelete_Click(object sender, EventArgs e)
@@ -128,6 +117,6 @@ namespace CNPM_PBL3.View
           
         }
 
-      
+       
     }
 }

@@ -44,7 +44,7 @@ namespace CNPM_PBL3.BLL
         {
             QLDB db = new QLDB();
             var s = db.TaiKhoans.Find(FLogin.account.ID);
-            s.Pass = pass;
+            s.Pass = Encryption.MyEncrypt(pass);
             db.SaveChanges();
         }
         public void UpdateInformation_BLL(ChiTietTaiKhoan ct)

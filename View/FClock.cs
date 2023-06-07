@@ -27,7 +27,8 @@ namespace CNPM_PBL3.View
             GetChatLieuDay();
             GetXuatXu();
             GetGiaSP();
-            showTimKiem(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP);
+            //showTimKiem(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP);
+            ShowDGV();
         }
         public void GetCBBThuongHieu()
         {
@@ -81,6 +82,10 @@ namespace CNPM_PBL3.View
         public void ShowDGV(dynamic s)
         {
             dataGridView1.DataSource= s;
+        }
+        public void ShowDGV()
+        {
+            dataGridView1.DataSource = bll.GetAllSP_BLL_ForDGV();
         }
 
         private void ButThem_Click(object sender, EventArgs e)
