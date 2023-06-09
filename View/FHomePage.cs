@@ -39,14 +39,15 @@ namespace CNPM_PBL3.View
                 FUserControlClock fUserControlClock = new FUserControlClock();
                 fUserControlClock.ChiTiet = item.ThuongHieu.TenThuongHieu + " - " + item.MaSP + " - " + item.GioiTinhSP + "\n" +
                                             item.ChatLieuMatKinh + " - " + item.BoMayNangLuong;
-                fUserControlClock.GiaSanPham = Convert.ToString(item.GiaSP) + "đ";
+                //fUserControlClock.GiaSanPham = Convert.ToString(item.GiaSP) + "đ";
+                fUserControlClock.GiaSanPham = item.GiaSP.ToString("N3") + "đ";
                 fUserControlClock.HinhAnh = item.HinhAnh;
                 fUserControlClock.MaSanPham = item.MaSP;
                 if (item.MaKhuyenMai != null)
                 {
                     float giaTriKM = qLHD.GetGiaTriKhuyenMai(item.MaSP);
                     fUserControlClock.KhuyenMai = "Khuyến mãi " + giaTriKM.ToString() + "%\n"
-                        + (qLHD.GetDonGia(item.MaSP) - qLHD.GetDonGia(item.MaSP) * (decimal)giaTriKM / 100).ToString() + "đ"; ;
+                        + (qLHD.GetDonGia(item.MaSP) - qLHD.GetDonGia(item.MaSP) * (decimal)giaTriKM / 100).ToString("N3") + "đ"; ;
                 }
                 else
                 {

@@ -106,7 +106,47 @@ namespace CNPM_PBL3.View
                 bll.UpdateKMByMaSP_BLL(ct.MaSP, ct.MaKhuyenMai);
                 ShowDGV();
             }
-            else
+            if(cbbThuongHieu.SelectedIndex >= 0 && cbbSanPham.SelectedIndex <= 0)
+            {
+                if (cbbThuongHieu.SelectedIndex > 0)
+                {
+                    List<DongHo> listSp = new List<DongHo>();
+                    listSp = bllsp.GetSPByThuongHieu(cbbThuongHieu.SelectedItem.ToString());
+                    foreach (DongHo s in listSp)
+                    {
+                        dynamic ct = new
+                        {
+                            MaKhuyenMai = IdKhuyenMai,
+                            MaSP = s.MaSP,
+                            TenThuongHieu = s.ThuongHieu.TenThuongHieu,
+                            GiaTruocKhuyenMai = s.GiaSP,
+                            GiaSauKhuyenMai = s.GiaSP * ((100 - GiaTriKM) / 100)
+                        };
+                        list.Add(ct);
+                        bll.UpdateKMByMaSP_BLL(ct.MaSP, ct.MaKhuyenMai);
+                    }
+                }
+                else if(cbbThuongHieu.SelectedIndex == 0)
+                {
+                    List<DongHo> listSp = new List<DongHo>();
+                    listSp = bllsp.GetAllSP_BLL();
+                    foreach (DongHo s in listSp)
+                    {
+                        dynamic ct = new
+                        {
+                            MaKhuyenMai = IdKhuyenMai,
+                            MaSP = s.MaSP,
+                            TenThuongHieu = s.ThuongHieu.TenThuongHieu,
+                            GiaTruocKhuyenMai = s.GiaSP,
+                            GiaSauKhuyenMai = s.GiaSP * ((100 - GiaTriKM) / 100)
+                        };
+                        list.Add(ct);
+                        bll.UpdateKMByMaSP_BLL(ct.MaSP, ct.MaKhuyenMai);
+                    }
+                }
+                ShowDGV();
+            }
+            if(cbbThuongHieu.SelectedIndex < 0 && cbbSanPham.SelectedIndex < 0)
             {
                 MessageBox.Show("Bạn chưa chọn sản phẩm nào ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

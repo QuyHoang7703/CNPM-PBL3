@@ -32,47 +32,47 @@ namespace CNPM_PBL3.View
         }
         public void GetCBBThuongHieu()
         {
-            cbbThuongHieu.Items.Add("");
+            cbbThuongHieu.Items.Add("Tất cả");
             cbbThuongHieu.Items.AddRange(bll.GetListCBBThuongHieu().ToArray());
         }
         public void GetCBBGioiTinhSP()
         {
-            cbbGioiTinh.Items.Add("");
+            cbbGioiTinh.Items.Add("Tất cả");
             cbbGioiTinh.Items.AddRange(bll.GetGioiTinhSP_BLL().Distinct().ToArray());
         }
         public void GetCBBBoMayNangLuong()
         {
-            cbbBoMayNangLuong.Items.Add("");
+            cbbBoMayNangLuong.Items.Add("Tất cả");
             cbbBoMayNangLuong.Items.AddRange(bll.GetBoMayNangLuong_BLL().Distinct().ToArray());
         }
         public void GetMauMatSo()
         {
-            cbbMauMatSo.Items.Add("");
+            cbbMauMatSo.Items.Add("Tất cả");
             cbbMauMatSo.Items.AddRange(bll.GetMauMatSo_BLL().Distinct().ToArray());
         }
         public void GetHinhDangMatSo()
         {
-            cbbHinhDangMatSo.Items.Add("");
+            cbbHinhDangMatSo.Items.Add("Tất cả");
             cbbHinhDangMatSo.Items.AddRange(bll.GetHinhDangMatSo_BLL().Distinct().ToArray());
         }
         public void GetChatLieuMatKinh()
         {
-            cbbChatLieuMatKinh.Items.Add("");
+            cbbChatLieuMatKinh.Items.Add("Tất cả");
             cbbChatLieuMatKinh.Items.AddRange(bll.GetChatLieuMatKinh_BLL().Distinct().ToArray());
         }
         public void GetChatLieuDay()
         {
-            cbbChatLieuDay.Items.Add("");
+            cbbChatLieuDay.Items.Add("Tất cả");
             cbbChatLieuDay.Items.AddRange(bll.GetChatLieuDay_BLL().Distinct().ToArray());
         }
         public void GetXuatXu()
         {
-            cbbXuatXu.Items.Add("");
+            cbbXuatXu.Items.Add("Tất cả");
             cbbXuatXu.Items.AddRange(bll.GetXuatXu_BLL().Distinct().ToArray());
         }
         public void GetGiaSP()
         {
-            cbbGiaSP.Items.Add("");
+            cbbGiaSP.Items.Add("Tất cả");
             cbbGiaSP.Items.Add("10.0000-50.0000");
             cbbGiaSP.Items.Add("50.0000-150.0000");
             cbbGiaSP.Items.Add("150.0000-250.0000");
@@ -131,7 +131,7 @@ namespace CNPM_PBL3.View
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = bll.GetSPByTxtSearch(txtsearch.Text);
+           // dataGridView1.DataSource = bll.GetSPByTxtSearch(txtsearch.Text);
         }
 
         private void cbbGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
@@ -155,6 +155,41 @@ namespace CNPM_PBL3.View
         }
         private void butTimKiem_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtsearch.Text))
+            {
+                showTimKiem(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP);
+            }
+            else
+            {
+                ShowDGV(bll.TimKiemFClock_All_BLL(txtsearch.Text, cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP));
+            }
+        }
+
+        private void FClock_Load(object sender, EventArgs e)
+        {
+            cbbThuongHieu.SelectedIndex = 0;
+            cbbGioiTinh.SelectedIndex = 0;
+            cbbBoMayNangLuong.SelectedIndex = 0;
+            cbbMauMatSo.SelectedIndex = 0;
+            cbbHinhDangMatSo.SelectedIndex = 0;
+            cbbChatLieuMatKinh.SelectedIndex = 0;
+            cbbChatLieuDay.SelectedIndex = 0;
+            cbbXuatXu.SelectedIndex = 0;
+            cbbGiaSP.SelectedIndex = 0;
+            showTimKiem(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP);
+        }
+
+        private void butAll_Click(object sender, EventArgs e)
+        {
+            cbbThuongHieu.SelectedIndex = 0;
+            cbbGioiTinh.SelectedIndex = 0;
+            cbbBoMayNangLuong.SelectedIndex = 0;
+            cbbMauMatSo.SelectedIndex = 0;
+            cbbHinhDangMatSo.SelectedIndex = 0;
+            cbbChatLieuMatKinh.SelectedIndex = 0;
+            cbbChatLieuDay.SelectedIndex = 0;
+            cbbXuatXu.SelectedIndex = 0;
+            cbbGiaSP.SelectedIndex = 0;
             showTimKiem(cbbThuongHieu, cbbGioiTinh, cbbBoMayNangLuong, cbbMauMatSo, cbbHinhDangMatSo, cbbChatLieuMatKinh, cbbChatLieuDay, cbbXuatXu, cbbGiaSP);
         }
     }

@@ -90,6 +90,16 @@ namespace CNPM_PBL3.BLL
             }
             return data;
         }
+
+        public List<DongHo> GetSPByThuongHieu(string th)
+        {
+            QLDB db = new QLDB();
+            List<DongHo> list = new List<DongHo>();
+            var s = db.DongHoes.Where(p => p.ThuongHieu.TenThuongHieu == th).Select(p => p).ToList();
+            list = s;
+            return list;
+        }
+
         public decimal GetGiaSPByIdSP(string masp)
         {
             decimal gia = 0;
@@ -481,9 +491,41 @@ namespace CNPM_PBL3.BLL
             var s = list.Select(p => new { p.MaSP, p.ThuongHieu.TenThuongHieu, p.GioiTinhSP, p.BoMayNangLuong, p.MauMatSo, p.HinhDangMatSo, p.ChatLieuMatKinh, p.ChatLieuDay, p.XuatSu, p.GiaSP }).ToList();
             return s;      
         }
+
+        public dynamic TimKiemFClock_All_BLL(string txt, ComboBox cbbTH, ComboBox cbbGT, ComboBox cbbBMNL, ComboBox cbbMMS, ComboBox cbbHDMS, ComboBox cbbCLMK, ComboBox cbbCLD, ComboBox cbbXX, ComboBox cbbGSP)
+        {
+            List<DongHo> list = TimKiemTrangChu_BLL(cbbTH, cbbGT, cbbBMNL, cbbMMS, cbbHDMS, cbbCLMK, cbbCLD, cbbXX, cbbGSP);
+            if (list.Count == 0)
+            {
+                MessageBox.Show("Không Tìm Thấy Sản Phẩm");
+            }
+            //var s = list.Where(p => p.MaSP.Contains(txt)).Select(p => new { p.MaSP, p.ThuongHieu.TenThuongHieu, p.GioiTinhSP, p.BoMayNangLuong, p.MauMatSo, p.HinhDangMatSo, p.ChatLieuMatKinh, p.ChatLieuDay, p.XuatSu, p.GiaSP }).ToList();
+            var s = list.Where(p => p.MaSP.IndexOf(txt, StringComparison.OrdinalIgnoreCase) >= 0)
+    .Select(p => new {
+        p.MaSP,
+        p.ThuongHieu.TenThuongHieu,
+        p.GioiTinhSP,
+        p.BoMayNangLuong,
+        p.MauMatSo,
+        p.HinhDangMatSo,
+        p.ChatLieuMatKinh,
+        p.ChatLieuDay,
+        p.XuatSu,
+        p.GiaSP
+    })
+    .ToList();
+
+            return s;
+        }
+
         public dynamic TimKiemTrenTXT_BLL(string txt, List<DongHo> list)
         {
-            var s = list.Where(p => p.MaSP.Contains(txt)).Select(p => p).ToList();
+            //var s = list.Where(p => p.MaSP.Contains(txt)).Select(p => p).ToList();
+            //return s;
+            var s = list.Where(p => p.MaSP.IndexOf(txt, StringComparison.OrdinalIgnoreCase) >= 0)
+   .Select(p => p)
+   .ToList();
+
             return s;
         }
         public dynamic TimKiemTrenTXTTrangChu_BLL(string txt, List<DongHo> list)

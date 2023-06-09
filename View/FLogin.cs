@@ -151,7 +151,7 @@ namespace CNPM_PBL3
                             smtp.Send(message);
                         }
                         MessageBox.Show("Vui lòng kiểm tra gmail của bạn");
-                        bll.UpdatePassForFogotLogin_BLL(bll.getIdByUserName_BLL(txtUserNameForgot.Text), otp.ToString());
+                        bll.UpdatePassForFogotLogin_BLL(bll.getIdByUserName_BLL(txtUserNameForgot.Text),Encryption.MyEncrypt(otp.ToString()));
                     }
                     catch (Exception ex)
                     {
