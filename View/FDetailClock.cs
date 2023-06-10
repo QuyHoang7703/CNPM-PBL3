@@ -17,6 +17,7 @@ namespace CNPM_PBL3.View
     public partial class FDetailClock : Form
     {
         QLSP_BLL bll= new QLSP_BLL();
+        QLTH_BLL bllth = new QLTH_BLL();
         public delegate void Mydel1(dynamic a);
         public Mydel1 d1 { get; set; }
         private string MasP;
@@ -102,7 +103,7 @@ namespace CNPM_PBL3.View
                 else if (control is Guna2ComboBox)
                 {
                     Guna2ComboBox comboBox = (Guna2ComboBox)control;
-                    if (comboBox.Name != "comboMaKM" && (comboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(comboBox.SelectedItem.ToString())))
+                    if (comboBox.Name != "comboThuonghieu1" && comboBox.Name != "comboMaKM" && (comboBox.SelectedIndex == -1 || string.IsNullOrWhiteSpace(comboBox.SelectedItem.ToString())))
                     {
                         hasEmptyControl = true;
                         break;
@@ -111,8 +112,12 @@ namespace CNPM_PBL3.View
                     {
                         hasEmptyControl = false;
                     }
+                    else if (comboBox.Name == "comboThuonghieu1")
+                    {
+                        hasEmptyControl = false;
+                    }
                 }
-                else if(picHinhAnh.Image == null)
+                else if (picHinhAnh.Image == null)
                 {
                     hasEmptyControl = true;
                 }
@@ -174,7 +179,15 @@ namespace CNPM_PBL3.View
                 {
                     dongHo.MaKhuyenMai = null;
                 }
-                dongHo.MaThuongHieu = ((CBBItems)comboThuonghieu.SelectedItem).Value;
+                if (comboThuonghieu.SelectedIndex >= 0 && string.IsNullOrWhiteSpace(textAddThuonghieu.Text))
+                {
+                    dongHo.MaThuongHieu = ((CBBItems)comboThuonghieu.SelectedItem).Value;
+                }
+                else if (textAddThuonghieu.Text != null)
+                {
+                    AddThuongHieu(textAddThuonghieu.Text);
+                    dongHo.MaThuongHieu = bllth.GetMaTHByTenTH(textAddThuonghieu.Text);
+                }
                 bll.ExecuteDB(dongHo);
                 d1(bll.GetAllSP_BLL_ForDGV());
                 this.Dispose();
@@ -194,6 +207,39 @@ namespace CNPM_PBL3.View
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        public void AddThuongHieu(string name)
+        {
+            List<ThuongHieu> listTH = bllth.GetAllThuongHieu();
+            int count = 0;
+            foreach (ThuongHieu i in listTH)
+            {
+                if (i.TenThuongHieu == name)
+                {
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                MessageBox.Show("Thuong hiệu đã tồn tại");
+            }
+            else
+            {
+                bllth.AddThuongHieu(name);
+            }
+
+        }
+
+        private void guna2GradientCircleButton1_Click(object sender, EventArgs e)
+        {
+            textAddThuonghieu.BringToFront();
+        }
+
+        private void guna2GradientCircleButton2_Click(object sender, EventArgs e)
+        {
+            comboThuonghieu.BringToFront();
+            textAddThuonghieu.Text = null;
         }
     }
 }

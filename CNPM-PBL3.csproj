@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\Encryption.cs" />
+    <Compile Include="BLL\QLTH_BLL.cs" />
     <Compile Include="DTO\CBBItems.cs" />
     <Compile Include="BLL\QLHD_BLL.cs" />
     <Compile Include="BLL\QLKH_BLL.cs" />
