@@ -20,6 +20,7 @@ namespace CNPM_PBL3.View
             InitializeComponent();
         }
         public int idKH;
+        public DateTime dateTime;
         QLHD_BLL bll = new QLHD_BLL();
 
         private void FPrintBill_Load(object sender, EventArgs e)
@@ -45,7 +46,7 @@ namespace CNPM_PBL3.View
             //    p.HoaDon.TaiKhoan.ID,
             //    p.HoaDon.TaiKhoan.ChiTietTaiKhoan.HoTen
             //}).ToList();
-            int maHD = bll.GetMaHoaDon_ByMaKH(idKH);
+            int maHD = bll.GetMaHoaDon_ByMaKH_Time(idKH, dateTime);
             var s = bll.GetDetailBillForPrint_BLL(maHD);
             reportViewer1.LocalReport.ReportPath = "./PrintBill.rdlc";
             ReportDataSource reportDataSource = new ReportDataSource("DataSetBill", s);

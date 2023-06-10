@@ -21,6 +21,7 @@ namespace CNPM_PBL3.View
             GetCBB_MaSP();
         }
         public static int idKhacHang = 0;
+        public DateTime dt;
         QLHD_BLL bll = new QLHD_BLL();
         public List<dynamic> list= new List<dynamic>();
         public string maSP = "";
@@ -38,15 +39,17 @@ namespace CNPM_PBL3.View
         }
         private void ButAddCustomers_Click(object sender, EventArgs e)
         {
-            FAddCustomer f = new FAddCustomer();
-            f.TopLevel = false;
-            f.FormBorderStyle = FormBorderStyle.None;
-            f.Dock = DockStyle.Fill;
-            this.Controls.Add(f);
-            f.BringToFront();
-            f.Show();
+            //FAddCustomer f = new FAddCustomer();
+            //f.TopLevel = false;
+            //f.FormBorderStyle = FormBorderStyle.None;
+            //f.Dock = DockStyle.Fill;
+            //this.Controls.Add(f);
+            //f.BringToFront();
+            //f.Show();
             //FAddCustomer fAddCustomer = new FAddCustomer();
             //fAddCustomer.BringToFront();
+            FTypeCustomer fTypeCustomer = new FTypeCustomer();
+            fTypeCustomer.ShowDialog();
 
 
         }
@@ -230,6 +233,7 @@ namespace CNPM_PBL3.View
         {
             if (idKhacHang > 0)
             {
+                dtpNgayBan.Value = dt = DateTime.Now;
                 HoaDon hd = new HoaDon()
                 {
                     ID= FLogin.account.ID,
@@ -291,15 +295,14 @@ namespace CNPM_PBL3.View
 
                 decimal tongTien = TinhTien();
                 txtThanhTien.Text = tongTien.ToString();
-              
-                
-                
+                           
                 MessageBox.Show("Tạo hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult result = MessageBox.Show("Bạn có muốn in hóa đơn không!", "THÔNG BÁO", MessageBoxButtons.OKCancel);
                 if (result == DialogResult.OK)
                 {
                     FPrintBill f = new FPrintBill();
                     f.idKH = idKhacHang;
+                    f.dateTime = dt;
                     f.Show();
                    
                 }

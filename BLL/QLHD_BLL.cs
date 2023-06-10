@@ -5,6 +5,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CNPM_PBL3.BLL
 {
@@ -186,17 +187,35 @@ namespace CNPM_PBL3.BLL
             }
             return list;
         }
-        public int GetMaHoaDon_ByMaKH(int maKH)
+        public int GetMaHoaDon_ByMaKH_Time(int maKH, DateTime t)
         {
-            int maHD = 0;
+            int maHD = 0;      
+            string t1 = t.ToString("dd/MM/yyyy HH:mm:ss");
             foreach (HoaDon i in GetAllHD())
             {
-                if (i.MaKH == maKH)
+                if (i.MaKH == maKH )
                 {
-                    maHD = i.MaHD;
-                    break;
+                    string t2= i.NgayBan.ToString("dd/MM/yyyy HH:mm:ss");
+                  
+                    if (t1 == t2)
+                    {
+                        maHD = i.MaHD;
+                        // MessageBox.Show(result + "");
+                        //l=1;
+                        break;
+                    }
+                   
                 }
             }
+            //if (l == 1)
+            //{
+            //    MessageBox.Show("2 date bằng nhau");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("2 date ko bằng nhau");
+            //}
+         
             return maHD;
         }
         // thống kê doanh thu

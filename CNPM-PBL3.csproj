@@ -167,6 +167,12 @@
     <Compile Include="View\FHomePage.Designer.cs">
       <DependentUpon>FHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FOldCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FOldCustomer.Designer.cs">
+      <DependentUpon>FOldCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FSale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +235,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\FTypeCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FTypeCustomer.Designer.cs">
+      <DependentUpon>FTypeCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FUserControlClock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -255,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FHomePage.resx">
       <DependentUpon>FHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FOldCustomer.resx">
+      <DependentUpon>FOldCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FSale.resx">
       <DependentUpon>FSale.cs</DependentUpon>
@@ -295,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FStaff.resx">
       <DependentUpon>FStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FTypeCustomer.resx">
+      <DependentUpon>FTypeCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FUserControlClock.resx">
       <DependentUpon>FUserControlClock.cs</DependentUpon>

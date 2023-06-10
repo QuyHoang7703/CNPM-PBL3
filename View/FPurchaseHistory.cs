@@ -58,6 +58,7 @@ namespace CNPM_PBL3.View
             if(l.Count == 1)
             {
                 fPrintBill.idKH = Convert.ToInt32(l[0].Cells["MaKhachHang"].Value.ToString());
+                fPrintBill.dateTime = Convert.ToDateTime(l[0].Cells["NgayBan"].Value.ToString());
                 fPrintBill.Show();
             }
             else

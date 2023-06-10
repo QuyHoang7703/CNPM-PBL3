@@ -68,7 +68,7 @@
             this.dtpNgayBan.Name = "dtpNgayBan";
             this.dtpNgayBan.Size = new System.Drawing.Size(246, 49);
             this.dtpNgayBan.TabIndex = 2;
-            this.dtpNgayBan.Value = new System.DateTime(2023, 4, 9, 15, 3, 0, 276);
+            this.dtpNgayBan.Value = new System.DateTime(2023, 6, 10, 16, 1, 30, 0);
             // 
             // butAdd
             // 
@@ -302,7 +302,6 @@
             this.dgvHD.Size = new System.Drawing.Size(980, 346);
             this.dgvHD.TabIndex = 26;
             this.dgvHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHD_CellClick);
-           
             // 
             // label3
             // 
