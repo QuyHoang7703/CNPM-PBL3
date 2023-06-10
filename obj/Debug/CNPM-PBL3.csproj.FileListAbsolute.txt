@@ -613,9 +613,7 @@ D:\New folder\CNPM-PBL3\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.d
 D:\New folder\CNPM-PBL3\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\New folder\CNPM-PBL3\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FDetailBill.resources
-D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FDetailKhuyenMai.resources
 D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FHomePage.resources
-D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FKhuyenMai.resources
 D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FPrintBill.resources
 D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FPurchaseHistory.resources
 D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FUserControlClock.resources
@@ -1907,3 +1905,7 @@ C:\Users\Admin\OneDrive\Máy tính\PBL3.4\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.C
 C:\Users\Admin\OneDrive\Máy tính\PBL3.4\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.CopyComplete
 C:\Users\Admin\OneDrive\Máy tính\PBL3.4\CNPM-PBL3\obj\Debug\CNPM-PBL3.exe
 C:\Users\Admin\OneDrive\Máy tính\PBL3.4\CNPM-PBL3\obj\Debug\CNPM-PBL3.pdb
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FDetailSale.resources
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FOldCustomer.resources
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FSale.resources
+D:\New folder\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FTypeCustomer.resources

@@ -19,15 +19,66 @@ namespace CNPM_PBL3.View
         public FStatistical()
         {
             InitializeComponent();
-            monthCalendar1.TodayDate = DateTime.Now;
-            hienThi(DateTime.Now);
-            BieuDo();
+            dtpngay.Value = DateTime.Now;
+            dtpthang.Value = DateTime.Now;
+            dtpnam.Value = DateTime.Now;
+            doangThuTheoNgay(DateTime.Now);
+            doanhThuTHeoThang(DateTime.Now);
+            BieuDo(DateTime.Now);
            
         }
         QLSP_BLL sp_bll = new QLSP_BLL();
         QLHD_BLL hd_bll = new QLHD_BLL();
         QLKH_BLL kh_bll = new QLKH_BLL();
-        public void hienThi(DateTime dateTime)
+
+        public String SoSanh(int a, int b)
+        {
+            int t;
+            t = b - a;
+            if (t == 0)
+            {
+                return null;
+            }
+            else
+            {
+                if (t < 0)
+                {
+                    return "Giảm " + Convert.ToString(Math.Round(Math.Abs(((double)(b - a) / a)) * 100, 2));
+                }
+                else
+                {
+                    if (a == 0)
+                        return "Tăng " + Convert.ToString(100);
+                    else
+                        return "Tăng " + Convert.ToString(Math.Round(((double)(b - a) / a) * 100, 2));
+                }
+            }
+        }
+
+        public String SoSanhtien(decimal a, decimal b)
+        {
+            decimal t;
+            t = b - a;
+            if (t == 0)
+            {
+                return null;
+            }
+            else
+            {
+                if (t < 0)
+                {
+                    return "Giảm " + Convert.ToString(Math.Round(Math.Abs(((decimal)(b - a) / a)) * 100, 2));
+                }
+                else
+                {
+                    if (a == 0)
+                        return "Tăng " + Convert.ToString(100);
+                    else
+                        return "Tăng " + Convert.ToString(Math.Round(((decimal)(b - a) / a) * 100, 2));
+                }
+            }
+        }
+        public void doangThuTheoNgay(DateTime dateTime)
         {
             // trong ngày
 
@@ -38,9 +89,35 @@ namespace CNPM_PBL3.View
             decimal tongtien = hd_bll.TongTienTrongNgay_BLL(list);
             lableTongSanPham.Text = tongsp.ToString() + " Sản Phẩm";
             lableTongKhachHang.Text = tongkh.ToString() + " Khách Hàng";
-            lableDoanhThu.Text = tongtien.ToString() + "đ";
+            lableDoanhThu.Text = tongtien.ToString("N0") + "đ";
             lableTongHoaDon.Text = tonghd.ToString() + " Hóa Đơn";
 
+            // so sánh tăng giảm trong ngày
+            List<int> list1 = hd_bll.GetMAHDTrongNgay_BLL(dateTime.AddDays(-1));
+            int tonghd1 = list1.Count;
+            int tongsp1 = sp_bll.GetTongSP_BLL(list1);
+            int tongkh1 = kh_bll.TongKHTrongNgay_BLL(list1);
+            decimal tongtien1 = hd_bll.TongTienTrongNgay_BLL(list1);
+            if (SoSanh(tonghd1, tonghd) == null)
+                TGHD.Text = "Không tăng giảm" + "\n So với ngày trước";
+            else
+                TGHD.Text = SoSanh(tonghd1, tonghd) + "%" + "\n so với ngày trước";
+            if (SoSanh(tongsp1, tongsp) == null)
+                TGSP.Text = "Không tăng giảm" + "\n So với ngày trước";
+            else
+                TGSP.Text = SoSanh(tongsp1, tongsp) + "%" + "\n so với ngày trước";
+            if (SoSanh(tongkh1, tongkh) == null)
+                TGKH.Text = "Không tăng giảm" + "\n So với ngày trước";
+            else
+                TGKH.Text = SoSanh(tongkh1, tongkh) + "%" + "\n so với ngày trước";
+            if (SoSanhtien(tongtien1, tongtien) == null)
+                TGDT.Text = "Không tăng giảm" + "\n So với ngày trước";
+            else
+                TGDT.Text = SoSanhtien(tongtien1, tongtien) + "%" + "\n so với ngày trước";
+           
+        }
+        public void doanhThuTHeoThang(DateTime dateTime)
+        {
             // trong tháng
             List<int> li = hd_bll.GetMAHDTrongThang_BLL(dateTime);
             int tonghdtrongthang = li.Count;
@@ -50,10 +127,33 @@ namespace CNPM_PBL3.View
             lableTongHoaDonT.Text = tonghdtrongthang.ToString() + " Hóa Đơn";
             lableTongSanPhamT.Text = tongsptrongthang.ToString() + " Sản Phẩm";
             lableTongKhachHangT.Text = tongkhtrongthang.ToString() + " Khách Hàng";
-            lableDoanhThuT.Text = tongtientrongthang.ToString() + "đ";
+            lableDoanhThuT.Text = tongtientrongthang.ToString("N0") + "đ";
+
+            // so sánh tháng
+            List<int> li1 = hd_bll.GetMAHDTrongThang_BLL(dateTime.AddMonths(-1));
+            int tonghdtrongthang1 = li1.Count;
+            int tongkhtrongthang1 = kh_bll.TongKHTrongNgay_BLL(li1);
+            int tongsptrongthang1 = sp_bll.GetTongSP_BLL(li1);
+            decimal tongtientrongthang1 = hd_bll.TongTienTrongNgay_BLL(li1);
+            if (SoSanh(tonghdtrongthang1, tonghdtrongthang) == null)
+                TGHD1.Text = "Không tăng giảm" + "\n So với tháng trước";
+            else
+                TGHD1.Text = SoSanh(tonghdtrongthang1, tonghdtrongthang) + "%" + "\n so với tháng trước";
+            if (SoSanh(tongsptrongthang1, tongsptrongthang) == null)
+                TGSP1.Text = "Không tăng giảm" + "\n So với tháng trước";
+            else
+                TGSP1.Text = SoSanh(tongsptrongthang1, tongsptrongthang) + "%" + "\n so với tháng trước";
+            if (SoSanh(tongkhtrongthang1, tongkhtrongthang) == null)
+                TGKH1.Text = "Không tăng giảm" + "\n So với tháng trước";
+            else
+                TGKH1.Text = SoSanh(tongkhtrongthang1, tongkhtrongthang) + "%" + "\n so với tháng trước";
+            if (SoSanhtien(tongtientrongthang1, tongtientrongthang) == null)
+                TGDT1.Text = "Không tăng giảm" + "\n So với tháng trước";
+            else
+                TGDT1.Text = SoSanhtien(tongtientrongthang1, tongtientrongthang) + "%" + "\n so với tháng trước";
+
 
             // Top 4
-
             List<string> l = new List<string>();
             l = sp_bll.GetMaSPCoTrongThang_BLL(li);
             List<SanPham> lll = sp_bll.TongSPTrongThang_BLL(l, li);
@@ -105,33 +205,27 @@ namespace CNPM_PBL3.View
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
            
-           hienThi(monthCalendar1.SelectionStart);
-            BieuDo();
+          // hienThi(monthCalendar1.SelectionStart);
+           // BieuDo();
             
         }
 
       
-        public void BieuDo()
+        public void BieuDo(DateTime datetime)
         {
-            labelNam.Text = monthCalendar1.SelectionStart.Year.ToString();
+            labelNam.Text = datetime.Year.ToString();
             // làm mới và tạo series mới
             ChartBDCC.Series.Clear();
             ChartBDCC.ChartAreas[0].AxisX.Interval = 1;
             Series ChartBDC = new Series();
             ChartBDC.LegendText = "Sản Phẩm";
 
-            // đưa trục trung vào điểm thứ nhất
-            /*ChartArea chart = ChartBDCC.ChartAreas[0];
-            Axis yxit = chart.AxisX;
-            yxit.Crossing = 1;*/
-
-
 
             // thêm dữ liệu
             for (int i = 0; i <= 11; i++)
             {
                int thang = i + 1;
-                DateTime dt = new DateTime(monthCalendar1.SelectionStart.Year, thang, 1);
+                DateTime dt = new DateTime(datetime.Year, thang, 1);
                 List<int> lii = hd_bll.GetMAHDTrongThang_BLL(dt);
                 int tongsptrongthang1 = sp_bll.GetTongSP_BLL(lii);
                 ChartBDC.Points.AddXY(thang, tongsptrongthang1);
@@ -139,7 +233,8 @@ namespace CNPM_PBL3.View
             }
             
             ChartBDCC.Series.Add(ChartBDC);
-
+            ChartBDCC.ChartAreas[0].AxisX.Minimum = 1;
+            ChartBDCC.ChartAreas[0].AxisX.Maximum = 12;
 
             ChartBDCC.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
             ChartBDCC.ChartAreas[0].AxisX.MinorGrid.Enabled = false;
@@ -147,21 +242,20 @@ namespace CNPM_PBL3.View
             ChartBDCC.ChartAreas[0].AxisY.MinorGrid.Enabled = false;
 
         }
-       
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void dtpngay_ValueChanged(object sender, EventArgs e)
         {
-           
+            doangThuTheoNgay(dtpngay.Value);
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void dtpthang_ValueChanged(object sender, EventArgs e)
         {
-
+            doanhThuTHeoThang(dtpthang.Value);
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void dtpnam_ValueChanged(object sender, EventArgs e)
         {
-
+            BieuDo(dtpnam.Value);
         }
     }
 }
