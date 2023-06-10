@@ -63,7 +63,7 @@ namespace CNPM_PBL3.View
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn 1 hóa đơn để in", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chỉ chọn 1 hóa đơn", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             

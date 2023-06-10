@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Dynamic;
+using System.Globalization;
 
 namespace CNPM_PBL3.View
 {
@@ -123,9 +124,23 @@ namespace CNPM_PBL3.View
 
                 dt.Rows.Add(dr);
             }
-           
+            
             dgvHD.DataSource = dt;
+           // dgvHD.CellFormatting += DataGridView_CellFormatting;
         }
+        //private static void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        //{
+        //    // Chỉnh định dạng của cột "Salary"
+        //    if (e.ColumnIndex == 2 || e.ColumnIndex==3) // Kiểm tra cột "Salary"
+        //    {
+        //        if (e.Value != null && e.Value is decimal salary) // Kiểm tra giá trị và kiểu dữ liệu
+        //        {
+        //            // Áp dụng định dạng tiền tệ cho giá trị
+        //            e.Value = salary.ToString("C0", CultureInfo.GetCultureInfo("vi-VN"));
+        //            e.FormattingApplied = true; // Đánh dấu đã chỉnh định dạng
+        //        }
+        //    }
+        //}
         public void ThemSPVaoList()
         {
             if (!string.IsNullOrEmpty(txtSoLuong.Text) && txtSoLuong.Text != "0")
@@ -136,6 +151,7 @@ namespace CNPM_PBL3.View
                     sp = new ExpandoObject();
                     sp.maSanPham = cbbMaSP.SelectedItem.ToString();
                     sp.soLuong = soLuong;
+                    //CultureInfo culture = new CultureInfo("vi-VN");
                     sp.donGia = Convert.ToDecimal(txtDonGia.Text);
                     sp.thanhTien = sp.soLuong * sp.donGia;
                     int sLHienCo = (Convert.ToInt32(txtSLCoSan.Text) - soLuong);

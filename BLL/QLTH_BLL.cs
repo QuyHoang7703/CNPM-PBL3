@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using CNPM_PBL3.DAL;
 namespace CNPM_PBL3.BLL
 {
     internal class QLTH_BLL

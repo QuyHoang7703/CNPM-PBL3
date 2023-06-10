@@ -89,16 +89,6 @@ namespace CNPM_PBL3.BLL
         //bỏ bên QLSP
         public decimal GetDonGia(string maSP)
         {
-            //decimal giaSP = 0;
-            //foreach (var i in bllsp.GetAllSP_BLL())
-            //{
-            //    if (i.MaSP == maSP)
-            //    {
-            //        giaSP = i.GiaSP;
-            //    }
-
-            //}
-            //return giaSP;
            
             QLDB db = new QLDB();
             var s = db.DongHoes.Find(maSP);
@@ -108,14 +98,7 @@ namespace CNPM_PBL3.BLL
         
         public int GetSoLuong(string maSP)
         {
-            //int soLuong = 0;
-            //foreach (var i in bllsp.GetAllSP_BLL())
-            //{
-            //    if (i.MaSP == maSP)
-            //    {
-            //        soLuong = (int)i.SoLuong;
-            //    }
-            //}
+        
             QLDB db = new QLDB();
             var s = db.DongHoes.Find(maSP);
             int soLuong = (int)s.SoLuong;
@@ -146,8 +129,7 @@ namespace CNPM_PBL3.BLL
                     db.ChiTietHoaDons.Add(i);
 
                 }
-                //    ct.HoaDon= hd;
-                //    db.ChiTietHoaDons.Add(ct);
+             
                 db.SaveChanges();
             }
         }
@@ -200,21 +182,12 @@ namespace CNPM_PBL3.BLL
                     if (t1 == t2)
                     {
                         maHD = i.MaHD;
-                        // MessageBox.Show(result + "");
-                        //l=1;
                         break;
                     }
                    
                 }
             }
-            //if (l == 1)
-            //{
-            //    MessageBox.Show("2 date bằng nhau");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("2 date ko bằng nhau");
-            //}
+         
          
             return maHD;
         }

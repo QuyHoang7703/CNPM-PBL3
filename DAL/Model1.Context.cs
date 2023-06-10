@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CNPM_PBL3
+namespace CNPM_PBL3.DAL
 {
     using System;
     using System.Data.Entity;
