@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,7 +33,7 @@ namespace CNPM_PBL3.View
         QLSP_BLL bll = new QLSP_BLL();
         QLHD_BLL qLHD = new QLHD_BLL();
         public void showHinhAnh(dynamic list)
-        {
+        {         
             foreach (var item in list)
             {
                 //qLSP.tenThuongHieu_DAL(item.MaThuongHieu)
@@ -40,14 +41,14 @@ namespace CNPM_PBL3.View
                 fUserControlClock.ChiTiet = item.ThuongHieu.TenThuongHieu + " - " + item.MaSP + " - " + item.GioiTinhSP + "\n" +
                                             item.ChatLieuMatKinh + " - " + item.BoMayNangLuong;
                 //fUserControlClock.GiaSanPham = Convert.ToString(item.GiaSP) + "đ";
-                fUserControlClock.GiaSanPham = item.GiaSP.ToString("N0") + "đ";
+                fUserControlClock.GiaSanPham = item.GiaSP.ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN"));
                 fUserControlClock.HinhAnh = item.HinhAnh;
                 fUserControlClock.MaSanPham = item.MaSP;
                 if (item.MaKhuyenMai != null)
                 {
                     float giaTriKM = qLHD.GetGiaTriKhuyenMai(item.MaSP);
                     fUserControlClock.KhuyenMai = "Khuyến mãi " + giaTriKM.ToString() + "%\n"
-                        + (qLHD.GetDonGia(item.MaSP) - qLHD.GetDonGia(item.MaSP) * (decimal)giaTriKM / 100).ToString("N0") + "đ"; ;
+                        + (qLHD.GetDonGia(item.MaSP) - qLHD.GetDonGia(item.MaSP) * (decimal)giaTriKM / 100).ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN")); ;
                 }
                 else
                 {

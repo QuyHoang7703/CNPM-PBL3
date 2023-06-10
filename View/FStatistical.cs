@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -89,7 +90,7 @@ namespace CNPM_PBL3.View
             decimal tongtien = hd_bll.TongTienTrongNgay_BLL(list);
             lableTongSanPham.Text = tongsp.ToString() + " Sản Phẩm";
             lableTongKhachHang.Text = tongkh.ToString() + " Khách Hàng";
-            lableDoanhThu.Text = tongtien.ToString("N0") + "đ";
+            lableDoanhThu.Text = tongtien.ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN"));
             lableTongHoaDon.Text = tonghd.ToString() + " Hóa Đơn";
 
             // so sánh tăng giảm trong ngày
@@ -127,7 +128,7 @@ namespace CNPM_PBL3.View
             lableTongHoaDonT.Text = tonghdtrongthang.ToString() + " Hóa Đơn";
             lableTongSanPhamT.Text = tongsptrongthang.ToString() + " Sản Phẩm";
             lableTongKhachHangT.Text = tongkhtrongthang.ToString() + " Khách Hàng";
-            lableDoanhThuT.Text = tongtientrongthang.ToString("N0") + "đ";
+            lableDoanhThuT.Text = tongtientrongthang.ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN"));
             // Top 4
             List<string> l = new List<string>();
             l = sp_bll.GetMaSPCoTrongThang_BLL(li);
