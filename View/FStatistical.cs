@@ -128,31 +128,6 @@ namespace CNPM_PBL3.View
             lableTongSanPhamT.Text = tongsptrongthang.ToString() + " Sản Phẩm";
             lableTongKhachHangT.Text = tongkhtrongthang.ToString() + " Khách Hàng";
             lableDoanhThuT.Text = tongtientrongthang.ToString("N0") + "đ";
-
-            // so sánh tháng
-            List<int> li1 = hd_bll.GetMAHDTrongThang_BLL(dateTime.AddMonths(-1));
-            int tonghdtrongthang1 = li1.Count;
-            int tongkhtrongthang1 = kh_bll.TongKHTrongNgay_BLL(li1);
-            int tongsptrongthang1 = sp_bll.GetTongSP_BLL(li1);
-            decimal tongtientrongthang1 = hd_bll.TongTienTrongNgay_BLL(li1);
-            if (SoSanh(tonghdtrongthang1, tonghdtrongthang) == null)
-                TGHD1.Text = "Không tăng giảm" + "\n So với tháng trước";
-            else
-                TGHD1.Text = SoSanh(tonghdtrongthang1, tonghdtrongthang) + "%" + "\n so với tháng trước";
-            if (SoSanh(tongsptrongthang1, tongsptrongthang) == null)
-                TGSP1.Text = "Không tăng giảm" + "\n So với tháng trước";
-            else
-                TGSP1.Text = SoSanh(tongsptrongthang1, tongsptrongthang) + "%" + "\n so với tháng trước";
-            if (SoSanh(tongkhtrongthang1, tongkhtrongthang) == null)
-                TGKH1.Text = "Không tăng giảm" + "\n So với tháng trước";
-            else
-                TGKH1.Text = SoSanh(tongkhtrongthang1, tongkhtrongthang) + "%" + "\n so với tháng trước";
-            if (SoSanhtien(tongtientrongthang1, tongtientrongthang) == null)
-                TGDT1.Text = "Không tăng giảm" + "\n So với tháng trước";
-            else
-                TGDT1.Text = SoSanhtien(tongtientrongthang1, tongtientrongthang) + "%" + "\n so với tháng trước";
-
-
             // Top 4
             List<string> l = new List<string>();
             l = sp_bll.GetMaSPCoTrongThang_BLL(li);
