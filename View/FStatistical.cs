@@ -177,16 +177,6 @@ namespace CNPM_PBL3.View
 
 
         }
-
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-           
-          // hienThi(monthCalendar1.SelectionStart);
-           // BieuDo();
-            
-        }
-
-      
         public void BieuDo(DateTime datetime)
         {
             labelNam.Text = datetime.Year.ToString();

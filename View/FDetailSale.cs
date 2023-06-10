@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,10 +62,10 @@ namespace CNPM_PBL3.View
                 dr["MaSanPham"] = i.MaSP;
                 dr["TenThuongHieu"] = i.TenThuongHieu;
                 decimal giaTruocKM = i.GiaTruocKhuyenMai;
-                string formattedDecimal = giaTruocKM.ToString("#,##0.000 đ");
+                string formattedDecimal = giaTruocKM.ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN")/*"#,##0.000 đ"*/);
                 dr["GiaTruocKhuyenMai"] = formattedDecimal;
                 decimal giaSauKM = i.GiaSauKhuyenMai;
-                string formattedDecimal1 = giaSauKM.ToString("#,##0.000 đ");
+                string formattedDecimal1 = giaSauKM.ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN")/*"#,##0.000 đ"*/);
                 dr["GiaSauKhuyenMai"] = formattedDecimal1;
                 dt.Rows.Add(dr);
             }
