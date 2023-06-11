@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FStatistical));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dtpthang = new System.Windows.Forms.DateTimePicker();
@@ -222,6 +222,7 @@
             // guna2ShadowPanel5
             // 
             this.guna2ShadowPanel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel5.Controls.Add(this.TGHD);
             this.guna2ShadowPanel5.Controls.Add(this.lableTongHoaDonT);
             this.guna2ShadowPanel5.Controls.Add(this.label8);
             this.guna2ShadowPanel5.Controls.Add(this.guna2PictureBox6);
@@ -239,7 +240,7 @@
             // 
             this.lableTongHoaDonT.AutoSize = true;
             this.lableTongHoaDonT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lableTongHoaDonT.Location = new System.Drawing.Point(69, 66);
+            this.lableTongHoaDonT.Location = new System.Drawing.Point(69, 41);
             this.lableTongHoaDonT.Name = "lableTongHoaDonT";
             this.lableTongHoaDonT.Size = new System.Drawing.Size(85, 23);
             this.lableTongHoaDonT.TabIndex = 5;
@@ -292,6 +293,7 @@
             // guna2ShadowPanel6
             // 
             this.guna2ShadowPanel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel6.Controls.Add(this.TGDT);
             this.guna2ShadowPanel6.Controls.Add(this.lableDoanhThuT);
             this.guna2ShadowPanel6.Controls.Add(this.label11);
             this.guna2ShadowPanel6.Controls.Add(this.guna2PictureBox8);
@@ -309,7 +311,7 @@
             // 
             this.lableDoanhThuT.AutoSize = true;
             this.lableDoanhThuT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lableDoanhThuT.Location = new System.Drawing.Point(50, 66);
+            this.lableDoanhThuT.Location = new System.Drawing.Point(50, 43);
             this.lableDoanhThuT.Name = "lableDoanhThuT";
             this.lableDoanhThuT.Size = new System.Drawing.Size(102, 23);
             this.lableDoanhThuT.TabIndex = 7;
@@ -340,6 +342,7 @@
             // guna2ShadowPanel7
             // 
             this.guna2ShadowPanel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel7.Controls.Add(this.TGKH);
             this.guna2ShadowPanel7.Controls.Add(this.lableTongKhachHangT);
             this.guna2ShadowPanel7.Controls.Add(this.label13);
             this.guna2ShadowPanel7.Controls.Add(this.guna2PictureBox9);
@@ -357,7 +360,7 @@
             // 
             this.lableTongKhachHangT.AutoSize = true;
             this.lableTongKhachHangT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lableTongKhachHangT.Location = new System.Drawing.Point(50, 65);
+            this.lableTongKhachHangT.Location = new System.Drawing.Point(50, 44);
             this.lableTongKhachHangT.Name = "lableTongKhachHangT";
             this.lableTongKhachHangT.Size = new System.Drawing.Size(113, 23);
             this.lableTongKhachHangT.TabIndex = 6;
@@ -388,6 +391,7 @@
             // guna2ShadowPanel8
             // 
             this.guna2ShadowPanel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel8.Controls.Add(this.TGSP);
             this.guna2ShadowPanel8.Controls.Add(this.lableTongSanPhamT);
             this.guna2ShadowPanel8.Controls.Add(this.label15);
             this.guna2ShadowPanel8.Controls.Add(this.guna2PictureBox10);
@@ -405,7 +409,7 @@
             // 
             this.lableTongSanPhamT.AutoSize = true;
             this.lableTongSanPhamT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lableTongSanPhamT.Location = new System.Drawing.Point(69, 65);
+            this.lableTongSanPhamT.Location = new System.Drawing.Point(69, 41);
             this.lableTongSanPhamT.Name = "lableTongSanPhamT";
             this.lableTongSanPhamT.Size = new System.Drawing.Size(93, 23);
             this.lableTongSanPhamT.TabIndex = 5;
@@ -436,7 +440,6 @@
             // guna2ShadowPanel4
             // 
             this.guna2ShadowPanel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel4.Controls.Add(this.TGHD);
             this.guna2ShadowPanel4.Controls.Add(this.lableTongHoaDon);
             this.guna2ShadowPanel4.Controls.Add(this.label6);
             this.guna2ShadowPanel4.Controls.Add(this.guna2PictureBox5);
@@ -454,7 +457,7 @@
             // 
             this.TGHD.AutoSize = true;
             this.TGHD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TGHD.Location = new System.Drawing.Point(41, 64);
+            this.TGHD.Location = new System.Drawing.Point(36, 66);
             this.TGHD.Name = "TGHD";
             this.TGHD.Size = new System.Drawing.Size(85, 23);
             this.TGHD.TabIndex = 6;
@@ -465,7 +468,7 @@
             // 
             this.lableTongHoaDon.AutoSize = true;
             this.lableTongHoaDon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lableTongHoaDon.Location = new System.Drawing.Point(68, 41);
+            this.lableTongHoaDon.Location = new System.Drawing.Point(68, 67);
             this.lableTongHoaDon.Name = "lableTongHoaDon";
             this.lableTongHoaDon.Size = new System.Drawing.Size(85, 23);
             this.lableTongHoaDon.TabIndex = 5;
@@ -738,7 +741,6 @@
             // guna2ShadowPanel3
             // 
             this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel3.Controls.Add(this.TGDT);
             this.guna2ShadowPanel3.Controls.Add(this.lableDoanhThu);
             this.guna2ShadowPanel3.Controls.Add(this.label4);
             this.guna2ShadowPanel3.Controls.Add(this.guna2PictureBox3);
@@ -756,7 +758,7 @@
             // 
             this.TGDT.AutoSize = true;
             this.TGDT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TGDT.Location = new System.Drawing.Point(27, 66);
+            this.TGDT.Location = new System.Drawing.Point(28, 66);
             this.TGDT.Name = "TGDT";
             this.TGDT.Size = new System.Drawing.Size(102, 23);
             this.TGDT.TabIndex = 8;
@@ -767,7 +769,7 @@
             // 
             this.lableDoanhThu.AutoSize = true;
             this.lableDoanhThu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lableDoanhThu.Location = new System.Drawing.Point(49, 43);
+            this.lableDoanhThu.Location = new System.Drawing.Point(49, 67);
             this.lableDoanhThu.Name = "lableDoanhThu";
             this.lableDoanhThu.Size = new System.Drawing.Size(102, 23);
             this.lableDoanhThu.TabIndex = 7;
@@ -798,7 +800,6 @@
             // guna2ShadowPanel2
             // 
             this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel2.Controls.Add(this.TGKH);
             this.guna2ShadowPanel2.Controls.Add(this.lableTongKhachHang);
             this.guna2ShadowPanel2.Controls.Add(this.label3);
             this.guna2ShadowPanel2.Controls.Add(this.guna2PictureBox2);
@@ -816,18 +817,19 @@
             // 
             this.TGKH.AutoSize = true;
             this.TGKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TGKH.Location = new System.Drawing.Point(26, 64);
+            this.TGKH.Location = new System.Drawing.Point(27, 67);
             this.TGKH.Name = "TGKH";
             this.TGKH.Size = new System.Drawing.Size(113, 23);
             this.TGKH.TabIndex = 7;
             this.TGKH.Text = "Khách Hàng";
             this.TGKH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TGKH.Click += new System.EventHandler(this.TGKH_Click);
             // 
             // lableTongKhachHang
             // 
             this.lableTongKhachHang.AutoSize = true;
             this.lableTongKhachHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lableTongKhachHang.Location = new System.Drawing.Point(50, 41);
+            this.lableTongKhachHang.Location = new System.Drawing.Point(49, 69);
             this.lableTongKhachHang.Name = "lableTongKhachHang";
             this.lableTongKhachHang.Size = new System.Drawing.Size(113, 23);
             this.lableTongKhachHang.TabIndex = 6;
@@ -858,7 +860,6 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.TGSP);
             this.guna2ShadowPanel1.Controls.Add(this.lableTongSanPham);
             this.guna2ShadowPanel1.Controls.Add(this.label2);
             this.guna2ShadowPanel1.Controls.Add(this.guna2PictureBox1);
@@ -876,7 +877,7 @@
             // 
             this.TGSP.AutoSize = true;
             this.TGSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TGSP.Location = new System.Drawing.Point(41, 64);
+            this.TGSP.Location = new System.Drawing.Point(51, 65);
             this.TGSP.Name = "TGSP";
             this.TGSP.Size = new System.Drawing.Size(93, 23);
             this.TGSP.TabIndex = 6;
@@ -887,7 +888,7 @@
             // 
             this.lableTongSanPham.AutoSize = true;
             this.lableTongSanPham.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lableTongSanPham.Location = new System.Drawing.Point(68, 41);
+            this.lableTongSanPham.Location = new System.Drawing.Point(68, 69);
             this.lableTongSanPham.Name = "lableTongSanPham";
             this.lableTongSanPham.Size = new System.Drawing.Size(93, 23);
             this.lableTongSanPham.TabIndex = 5;
@@ -973,18 +974,18 @@
             // 
             // ChartBDCC
             // 
-            chartArea1.Name = "ChartArea1";
-            this.ChartBDCC.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ChartBDCC.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.ChartBDCC.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.ChartBDCC.Legends.Add(legend3);
             this.ChartBDCC.Location = new System.Drawing.Point(4, 151);
             this.ChartBDCC.Name = "ChartBDCC";
-            series1.ChartArea = "ChartArea1";
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.Legend = "Legend1";
-            series1.LegendText = "Sản Phẩm";
-            series1.Name = "ChartBDC";
-            this.ChartBDCC.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.Legend = "Legend1";
+            series3.LegendText = "Sản Phẩm";
+            series3.Name = "ChartBDC";
+            this.ChartBDCC.Series.Add(series3);
             this.ChartBDCC.Size = new System.Drawing.Size(1028, 644);
             this.ChartBDCC.TabIndex = 0;
             this.ChartBDCC.Text = "chart1";

@@ -93,29 +93,6 @@ namespace CNPM_PBL3.View
             lableDoanhThu.Text = tongtien.ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN"));
             lableTongHoaDon.Text = tonghd.ToString() + " Hóa Đơn";
 
-            // so sánh tăng giảm trong ngày
-            List<int> list1 = hd_bll.GetMAHDTrongNgay_BLL(dateTime.AddDays(-1));
-            int tonghd1 = list1.Count;
-            int tongsp1 = sp_bll.GetTongSP_BLL(list1);
-            int tongkh1 = kh_bll.TongKHTrongNgay_BLL(list1);
-            decimal tongtien1 = hd_bll.TongTienTrongNgay_BLL(list1);
-            if (SoSanh(tonghd1, tonghd) == null)
-                TGHD.Text = "Không tăng giảm" + "\n So với ngày trước";
-            else
-                TGHD.Text = SoSanh(tonghd1, tonghd) + "%" + "\n so với ngày trước";
-            if (SoSanh(tongsp1, tongsp) == null)
-                TGSP.Text = "Không tăng giảm" + "\n So với ngày trước";
-            else
-                TGSP.Text = SoSanh(tongsp1, tongsp) + "%" + "\n so với ngày trước";
-            if (SoSanh(tongkh1, tongkh) == null)
-                TGKH.Text = "Không tăng giảm" + "\n So với ngày trước";
-            else
-                TGKH.Text = SoSanh(tongkh1, tongkh) + "%" + "\n so với ngày trước";
-            if (SoSanhtien(tongtien1, tongtien) == null)
-                TGDT.Text = "Không tăng giảm" + "\n So với ngày trước";
-            else
-                TGDT.Text = SoSanhtien(tongtien1, tongtien) + "%" + "\n so với ngày trước";
-           
         }
         public void doanhThuTHeoThang(DateTime dateTime)
         {
@@ -129,6 +106,30 @@ namespace CNPM_PBL3.View
             lableTongSanPhamT.Text = tongsptrongthang.ToString() + " Sản Phẩm";
             lableTongKhachHangT.Text = tongkhtrongthang.ToString() + " Khách Hàng";
             lableDoanhThuT.Text = tongtientrongthang.ToString("C0", CultureInfo.CreateSpecificCulture("vi-VN"));
+
+            // so sánh tháng
+            List<int> li1 = hd_bll.GetMAHDTrongThang_BLL(dateTime.AddMonths(-1));
+            int tonghdtrongthang1 = li1.Count;
+            int tongkhtrongthang1 = kh_bll.TongKHTrongNgay_BLL(li1);
+            int tongsptrongthang1 = sp_bll.GetTongSP_BLL(li1);
+            decimal tongtientrongthang1 = hd_bll.TongTienTrongNgay_BLL(li1);
+            if (SoSanh(tonghdtrongthang1, tonghdtrongthang) == null)
+                TGHD.Text = "Không tăng giảm" + "\n So với ngày trước";
+            else
+                TGHD.Text = SoSanh(tonghdtrongthang1, tonghdtrongthang) + "%" + "\n so với tháng trước";
+            if (SoSanh(tongsptrongthang1, tongsptrongthang) == null)
+                TGSP.Text = "Không tăng giảm" + "\n So với ngày trước";
+            else
+                TGSP.Text = SoSanh(tongsptrongthang1, tongsptrongthang) + "%" + "\n so với tháng trước";
+            if (SoSanh(tongkhtrongthang1, tongkhtrongthang) == null)
+                TGKH.Text = "Không tăng giảm" + "\n So với ngày trước";
+            else
+                TGKH.Text = SoSanh(tongkhtrongthang1, tongkhtrongthang) + "%" + "\n so với ngày trước";
+            if (SoSanhtien(tongtientrongthang1, tongtientrongthang) == null)
+                TGDT.Text = "Không tăng giảm" + "\n So với ngày trước";
+            else
+                TGDT.Text = SoSanhtien(tongtientrongthang1, tongtientrongthang) + "%" + "\n so với ngày trước";
+
             // Top 4
             List<string> l = new List<string>();
             l = sp_bll.GetMaSPCoTrongThang_BLL(li);
@@ -222,6 +223,11 @@ namespace CNPM_PBL3.View
         private void dtpnam_ValueChanged(object sender, EventArgs e)
         {
             BieuDo(dtpnam.Value);
+        }
+
+        private void TGKH_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

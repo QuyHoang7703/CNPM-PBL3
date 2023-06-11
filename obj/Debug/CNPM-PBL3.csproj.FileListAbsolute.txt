@@ -470,8 +470,6 @@ C:\Users\Admin\OneDrive\Máy tính\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FStat
 C:\Users\Admin\OneDrive\Máy tính\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FStaff.resources
 C:\Users\Admin\OneDrive\Máy tính\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FUserControlClock.resources
 D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FDetailBill.resources
-D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FDetailKhuyenMai.resources
-D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FKhuyenMai.resources
 D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FPurchaseHistory.resources
 D:\PBL3-DongHoVer8\CNPM-PBL3\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 D:\PBL3-DongHoVer8\CNPM-PBL3\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
@@ -1997,3 +1995,7 @@ D:\PBL3-DongHoVer19\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.CoreCompileInputs.cache
 D:\PBL3-DongHoVer19\CNPM-PBL3\obj\Debug\CNPM-PBL3.csproj.CopyComplete
 D:\PBL3-DongHoVer19\CNPM-PBL3\obj\Debug\CNPM-PBL3.exe
 D:\PBL3-DongHoVer19\CNPM-PBL3\obj\Debug\CNPM-PBL3.pdb
+D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FDetailSale.resources
+D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FOldCustomer.resources
+D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FSale.resources
+D:\PBL3\CNPM-PBL3\obj\Debug\CNPM_PBL3.View.FTypeCustomer.resources
